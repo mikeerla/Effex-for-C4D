@@ -1,0 +1,39 @@
+CONTAINER fx_grid_cooling
+{
+	NAME fx_grid_cooling;
+	INCLUDE fx_force_base;
+	INCLUDE fx_base_constraints;
+
+	GROUP ID_FORCE_BASE
+	{
+		DEFAULT 1;
+		GROUP
+		{
+			COLUMNS 2;
+			LINK GRID_COOLING_TEMPERATURE
+			{
+				ACCEPT { fx_channel_scalar; fx_channel_temp; fx_group; };
+			}
+			BUTTON GRID_COOLING_TEMPERATURE_SELECTOR {}
+			LINK GRID_COOLING_FIRE
+			{
+				ACCEPT { fx_channel_fire; fx_group; };
+			}
+			BUTTON GRID_COOLING_FIRE_SELECTOR {}
+		}
+
+		SEPARATOR {LINE;}
+
+		LONG GRID_COOLING_TYPE
+		{
+			CYCLE
+			{
+				GRID_COOLING_TYPE_PHYSICAL;
+				GRID_COOLING_TYPE_EXPONENT;
+				//GRID_COOLING_TYPE_DISIPATE;
+			}
+		}
+		REAL	GRID_COOLING_FACTOR { MIN 0.0; MAX 3000.0; MAXSLIDER 100.0; CUSTOMGUI REALSLIDER; UNIT PERCENT; }
+	}
+}
+			

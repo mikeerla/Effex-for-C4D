@@ -1,0 +1,12 @@
+STRINGTABLE fx_iop_repulsion
+{
+	fx_iop_repulsion "PIOP::Absto\u00dfkraft";
+	
+	IOP_REPULSION_BOUNCE	"St\u00E4rke";
+	IOP_REPULSION_DURATION "Dauer";
+	IOP_REPULSION_DURATION_SELECTOR "C";
+	IOP_REPULSION_POSITIONBASED "Positionsgeschwindigkeit nutzen";
+	IOP_REPULSION_SLIDEDRAG "Gleitreibung";
+
+	IOP_REPULSION_DUMMY_ "";
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="nodebases.html">Bases</a></div>
+<div class="content">
+<h3>Node</h3>
+</div>
+<div class="tabs">
+<span>Node</span>
+<a href="nodebases_inspector.html">Display (Live Inspector)</a>
+<a href="nodebases_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Node</div>
+<div class="data">
+<p>
+<img src="../../img/base_node.jpg" border="0">
+</p>
+</div>
+<h4><a name="FX_BASE_PIPELINESTAGE" onclick="HideNextDOM($(this));" >Pipeline Stage</A></h4><div class="selected"><p><br></br>
+<img src="../../img/global_node_pipelinestage.jpg" border="0"><br></br>
+Specifies in which pipeline stage this node is executed.<br>
+Please see the <a href="fx_pipelineviewer.html" onclick="Hide('SERVER_MINSUBSTEPS'); return true;">Pipeline Viewer</a> for more information on the Effex pipeline.
+<br></br>
+The default value is 'System Default' which is the stage
+that fits most the algorithmic nature of the corresponding node. This is totally node dependant.
+<br></br>
+Volumes for example are in the first stage because they are kind of a basic structure that is used 
+by other nodes. So it makes sense they are generated at the very beginning.
+<br></br>
+However, each algorithm has its own order of execution for certain
+functionalities to create a special effect. Same as you use deformer on meshes in a certain order to create that specific look.
+<br></br></p></div>
+<h4><a name="FX_BASE_PRIORITY" onclick="HideNextDOM($(this));" >Priority</A></h4><div class="selected"><p><br></br>
+<img src="../../img/global_node_priority.jpg" border="0"><br></br>
+As all nodes are evaluated in a certain order
+you can control which nodes inside a single pipeline stage are executed before/after other nodes.
+<br></br>
+To control the execution order you can use the priority. Lower values mean earlier and higher values mean later in the stage.
+You can check the pipeline order in the <a href="fx_pipelineviewer.html">Pipeline Viewer</a> dialog.
+<br></br></p></div>
+<h4><a name="FX_BASE_SPLIT" onclick="HideNextDOM($(this));" >Thread splitting</A></h4><div class="selected"><p><br></br>
+Imagine two nodes in the same pipeline stage.<br>
+Node A is executed before Node B. Node B requires information from Node A to do what it does.
+<br></br>
+Now when several CPU threads are working for a node
+and the first thread is finished doing its stuff, it should wait for the other threads
+to finish their Node A jobs.
+<br></br>
+Once all threads are finished working for Node A, Node B can be executed. This makes sure
+that Node B has access to the latest and complete information of Node A.
+This we call thread splitting.
+<br></br>
+Some other nodes however may not require information from a previous node.
+In that case, turning off thread splitting can result in a performance gain
+as the threads will not wait before they start working on Node B.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

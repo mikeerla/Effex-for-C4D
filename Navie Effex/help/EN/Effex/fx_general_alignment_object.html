@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_general.html">General</a> : <a href="fx_general_alignment.html">Alignment</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_alignment_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="ALIGNMENT_SPACE" onclick="HideNextDOM($(this));" >Take space from.. [any object]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_aligment_object_take_space_from.jpg" border="0"><br></br>
+If you link an object here, the space the resulting direction is defined in will be the space of the linked object and not of the alignment node itself.<br>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+You can drop any type of object here (not just Effex ones). 
+<br>Except in the Direction modes '<b>Motion</b>' and '<b>Along Normal</b>' where you need an Effex volume linked.
+</div>
+<br></br></p></div>
+<h4><a name="ALIGNMENT_MODE" onclick="HideNextDOM($(this));" >Direction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_aligment_object_direction.jpg" border="0"><br></br>
+Selects the direction. The space of the direction is either from the alingment node or any linked object in the Take space from.. setting.
+<br></br>
+<b>Along X-, Y-, Z-Axis</b><br>
+Along X, Y or the Z axis<br>
+<br></br>
+<b>Spherical</b><br>
+Direction points away from the according node's center point<br>
+<br></br>
+<b>Cubical</b><br>
+Direction points along the nearest face of a virtual cube around the according node's center point<br>
+<br></br>
+<b>Cylindrical</b><br>
+Direction points away from the according node's center point. But only along the X-Z plane (to the sides of a virtual cylinder).<br>
+<br></br>
+<b>Along normal</b><br>
+Direction points along the normal of the linked volume in Take space from.. (required)<br>
+<br></br>
+<b>Random</b><br>
+Random directions are generated<br>
+<br></br>
+<b>User defined</b><br>
+The setting 'Custom Direction' is used.<br>
+<br></br>
+<b>Motion (Volumen)</b><br>
+Direction is taken from the motion vectors of the linked volume in Take space from.. (required). The vector contains rotational and translational forces
+and the direction is NOT normalised. So it contains the full motion length.<br>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Invert result</A></h4><div class="selected"><p><br>
+<img src="../../img/general_aligment_object_invert_result.jpg" border="0"><br></br>
+Inverts the resulting direction.
+<br></br></p></div>
+<h4><a name="ALIGNMENT_CUSTOMDIRECTION" onclick="HideNextDOM($(this));" >Custom direction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_aligment_object_custom_direction.jpg" border="0"><br></br>
+Only used if 'Direction' is set to 'User-Defined'. Defines a custom direction.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

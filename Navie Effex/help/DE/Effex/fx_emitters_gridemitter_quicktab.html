@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_grid.html">Grid</a> : <a href="fx_emitters_gridemitter.html">Emitter::Grid</a></div>
+<div class="content">
+<h3>Quicktab</h3>
+</div>
+<div class="tabs">
+<span>Quicktab</span>
+<a href="fx_emitters_gridemitter_params.html">Parameters</a>
+</div>
+<div class="content">
+<div class="subtab">Quicktab</div>
+<div class="data">
+<p>
+<img src="../../img/fx_gridemitter_quicktab.jpg" border="0"">
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Standard setup</A></h4><div class="selected"><p><br>
+<img src="../../img/gridemitter_quicktab_standardsetup.jpg" border="0"><br></br>
+If you created this Grid Emitter manually, you can click "Standard Setup"
+to generate the most basic node setup to emit values into a single target grid.
+<br></br>
+<u>It will generate the following nodes:</u><br>
+<i>1. Container::Channel/Settings: to define the target channel and the grid emission settings used for it.<br>
+2. Settings::Grid Emission: the actual settings for the emission into the target channel.</i>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Duration looped</A></h4><div class="selected"><p><br>
+<img src="../../img/gridemitter_quicktab_durationlooped.jpg" border="0"><br></br>
+Generates a duration node providing a looped emission (like a pulse).
+<br>Each emission pulse lasts for 0.2 seconds and it creates 10 pulses (with half a second intermediate pause).
+<br></br>
+You need to assign the duration in any Settings::Grid Emission that should use it.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Pressure Emitter</A></h4><div class="selected"><p><br>
+<img src="../../img/gridemitter_quicktab_pressureemitter.jpg" border="0"><br></br>
+Generates a new emitter setup for emitting pressure (expansion) forces into a fluid simulation.
+<br><br>
+You need to assign a Volume in the newly generated emitter for it to work.<br>
+It will automatically link an existing fluid dynamics node.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

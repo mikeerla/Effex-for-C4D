@@ -1,0 +1,286 @@
+CONTAINER fx_c4d_krakatoa
+{
+	NAME fx_c4d_krakatoa;
+	//GROUP
+	//{
+		//BITMAPBUTTON FX_KRAKATOA_PREVIEW {BORDER;}
+	//}
+	INCLUDE VPbase;
+
+	GROUP ID_VIDEOPOSTPROPERTIES
+	{
+		BOOL FX_KRAKATOA_SKIP {}
+
+		//Factory Type stored in bits
+		IN_EXCLUDE FX_KRAKATOA_PARTICLEGROUPS
+		{
+			SEND_SELCHNGMSG 1;
+			NUM_FLAGS 4; 
+			INIT_STATE 2;
+			IMAGE_01_ON 1024284;
+			IMAGE_01_OFF 1024283;
+			IMAGE_02_ON 1024285;
+			IMAGE_02_OFF 1024283;
+			IMAGE_03_ON 1024286;
+			IMAGE_03_OFF 1024283;
+			IMAGE_04_ON 1024287;
+			IMAGE_04_OFF 1024283;
+			ACCEPT { fx_particlegroup; 1001381; Obase; Oparticle;1027133;};
+		}
+
+		BOOL  FX_KRAKATOA_ADDITIVE {}
+		COLOR FX_KRAKATOA_BGCOLOR {}
+		LONG  FX_KRAKATOA_MATTE_SUPERSAMPLING {MIN 1; MAX 4; }
+				
+		SEPARATOR {LINE;}
+		
+		BOOL FX_KRAKATOA_DOF {}
+		REAL FX_KRAKATOA_DOF_QUALITY { MIN 1; MAX 100; UNIT PERCENT; CUSTOMGUI REALSLIDER; }
+		REAL FX_KRAKATOA_DOF_FSTOP { MIN 0.01; }
+
+		SEPARATOR {LINE;}
+
+		BOOL FX_KRAKATOA_MOTIONBLUR {}
+		BOOL FX_KRAKATOA_MOTIONBLUR_JITTER {}
+		REAL FX_KRAKATOA_MOTIONBLUR_LENGTH { MIN 0; MAX 1000; UNIT PERCENT; }
+		LONG FX_KRAKATOA_MOTIONBLUR_SAMPLES { MIN 1; MAXSLIDER 20; MAX 100; }
+
+		SEPARATOR {LINE;}
+		
+		BOOL FX_KRAKATOA_CAMERABLUR {}
+	}
+	GROUP ID_KRAKATOA_PRERENDER
+	{
+		REAL FX_KRAKATOA_ADVECTION { MIN 0.0; MAX 100; UNIT PERCENT; CUSTOMGUI REALSLIDER;}
+		BOOL FX_KRAKATOA_REDUCE_BEFORE_POPULATE {}
+		REAL FX_KRAKATOA_REDUCTION { MIN 0.0; MAX 100; UNIT PERCENT; CUSTOMGUI REALSLIDER;}
+		GROUP FX_KRAKATOA_SUB_REPOPULATE
+		{
+			DEFAULT 1;
+			LONG FX_KRAKATOA_REPOPULATE_SEED { MIN 0;  }
+			REAL FX_KRAKATOA_REPOPULATE_RADIUS { MIN 0.0; UNIT METER; }
+			LONG FX_KRAKATOA_REPOPULATE_RADIUS_SUBD { MIN 0; MAX 10; }
+			LONG FX_KRAKATOA_REPOPULATE_RADIUS_NUMPERSUB { MIN 1; MAX 100000; }
+			REAL FX_KRAKATOA_REPOPULATE_FALLOFF { MIN 0.0; MAX 100; UNIT PERCENT; }
+		}
+	}
+	GROUP ID_KRAKATOA_RENDER
+	{
+		LONG FX_KRAKATOA_RENDERMODE
+		{
+			CYCLE
+			{
+				FX_KRAKATOA_RENDERMODE_PARTICLES;
+				FX_KRAKATOA_RENDERMODE_VOXELS;
+			}
+		}
+		BOOL FX_KRAKATOA_USESCENEVOXELSIZE {}
+		REAL FX_KRAKATOA_VOXELSIZE {MIN 0.001; UNIT METER; }
+		LONG FX_KRAKATOA_FILTER
+		{
+			CYCLE
+			{
+				FX_KRAKATOA_FILTER_NEAREST;
+				FX_KRAKATOA_FILTER_BILINEAR;
+				FX_KRAKATOA_FILTER_BICUBIC;
+			}
+		}
+		LONG FX_KRAKATOA_BILINEARFILTER_SIZE { MIN 1; MAX 5; }
+
+		GROUP FX_KRAKATOA_SUB_COLOR
+		{			
+			LONG FX_KRAKATOA_COLOR_PROPERTYMODE
+			{
+				CYCLE
+				{
+					FX_KRAKATOA_COLOR_PROPERTYMODE_OFF;
+					FX_KRAKATOA_COLOR_PROPERTYMODE_COLOR;
+					FX_KRAKATOA_COLOR_PROPERTYMODE_CUSTOM;
+				}
+			}
+			LINK FX_KRAKATOA_COLOR_PROPERTY		{ ACCEPT { fx_property_vector; fx_property_scalar; } }
+			COLOR FX_KRAKATOA_COLOR			{ }
+
+			SEPARATOR {LINE;}
+
+			GRADIENT FX_KRAKATOA_COLOR_SCALARMAPPING{COLOR; ANIM ON;}
+			REAL FX_KRAKATOA_COLOR_RANGEMIN		{ MIN 0.0; STEP 0.1; }
+			REAL FX_KRAKATOA_COLOR_RANGEMAX		{ MIN 0.001; STEP 0.1;}
+
+		}
+		GROUP FX_KRAKATOA_SUB_DENSITY
+		{	
+			LINK FX_KRAKATOA_DENSITY_PROPERTY	{ ACCEPT { fx_property_scalar; fx_property_vector; } }
+			REAL FX_KRAKATOA_DENSITY_VECMAX		{ MIN 0.001; STEP 0.1;}
+			REAL FX_KRAKATOA_DENSITY_COEFFICIENT	{ MIN 0.001; MAXSLIDER 10; STEP 0.1; CUSTOMGUI REALSLIDER; }
+			REAL FX_KRAKATOA_DENSITY_EXPONENT	{ MIN -10; MAX 10; STEP 0.1; CUSTOMGUI REALSLIDER; }
+			
+			IN_EXCLUDE FX_KRAKATOA_DENSITY_CONSTRAINTS
+			{
+				NUM_FLAGS 0; INIT_STATE 0; SEND_SELCHNGMSG 0;
+				ACCEPT 
+				{  
+					fx_constraint_coffee; 
+					fx_constraint_particledistance; 
+					fx_constraint_particlecount;
+					fx_constraint_volume; 
+					fx_constraint_noise; 
+					fx_constraint_gradient; 
+					fx_constraint_gridvalue; 
+					fx_constraint_gridaverage; 
+					fx_constraint_voxeldistance; 
+					fx_constraint_particle_collision;
+					fx_constraint_particle_property;
+				};
+			}
+		}
+		GROUP FX_KRAKATOA_SUB_ABSORPTION
+		{
+			LINK FX_KRAKATOA_ABSORPTION_PROPERTY	{ ACCEPT { fx_property_vector; fx_property_scalar; } }
+			COLOR FX_KRAKATOA_ABSORPTIONCOLOR	{ }
+			COLOR FX_KRAKATOA_ABSORPTION_PREVIEW	{ }
+
+			GRADIENT FX_KRAKATOA_ABSORPTION_SCALARMAPPING	{COLOR; ANIM ON;}
+			REAL FX_KRAKATOA_ABSORPTION_RANGEMIN		{ MIN 0.0; STEP 0.1; }
+			REAL FX_KRAKATOA_ABSORPTION_RANGEMAX		{ MIN 0.001; STEP 0.1;}
+
+			IN_EXCLUDE FX_KRAKATOA_ABSORPTION_CONSTRAINTS
+			{
+				NUM_FLAGS 0; INIT_STATE 0; SEND_SELCHNGMSG 0;
+				ACCEPT
+				{  
+					fx_constraint_coffee; 
+					fx_constraint_particledistance; 
+					fx_constraint_particlecount;
+					fx_constraint_volume; 
+					fx_constraint_noise; 
+					fx_constraint_gradient; 
+					fx_constraint_gridvalue; 
+					fx_constraint_gridaverage; 
+					fx_constraint_voxeldistance; 
+					fx_constraint_particle_collision;
+					fx_constraint_particle_property;
+				};
+			}
+		}
+		GROUP FX_KRAKATOA_SUB_EMISSION
+		{
+			LINK FX_KRAKATOA_EMISSION_PROPERTY	{ ACCEPT { fx_property_vector; fx_property_scalar;} }
+			COLOR FX_KRAKATOA_EMISSION_COLOR	{ }
+			REAL FX_KRAKATOA_EMISSION_STRENGTH	{ MIN 0.0; MAXSLIDER 50; STEP 0.1; CUSTOMGUI REALSLIDER; }
+			REAL FX_KRAKATOA_EMISSION_EXPONENT	{ MIN -10; MAX 10; STEP 0.1; CUSTOMGUI REALSLIDER; }
+
+			SEPARATOR {LINE;}
+
+			GRADIENT FX_KRAKATOA_EMISSION_SCALARMAPPING{COLOR; ANIM ON;}
+			REAL FX_KRAKATOA_EMISSION_RANGEMIN		{ MIN 0.0; STEP 0.1; }
+			REAL FX_KRAKATOA_EMISSION_RANGEMAX		{ MIN 0.001; STEP 0.1;}
+			
+			IN_EXCLUDE FX_KRAKATOA_EMISSION_CONSTRAINTS
+			{
+				NUM_FLAGS 0; INIT_STATE 0; SEND_SELCHNGMSG 0;
+				ACCEPT 
+				{  
+					fx_constraint_coffee; 
+					fx_constraint_particledistance; 
+					fx_constraint_particlecount;
+					fx_constraint_volume; 
+					fx_constraint_noise; 
+					fx_constraint_gradient; 
+					fx_constraint_gridvalue; 
+					fx_constraint_gridaverage; 
+					fx_constraint_voxeldistance; 
+					fx_constraint_particle_collision;
+					fx_constraint_particle_property;
+				};
+			}
+		}
+		GROUP FX_KRAKATOA_SUB_OPTICAL
+		{
+			LONG  FX_KRAKATOA_OPTICAL_PHASE
+			{
+				CYCLE
+				{
+					FX_KRAKATOA_OPTICAL_PHASE_ISOTROPIC;
+					FX_KRAKATOA_OPTICAL_PHASE_GREENSTEIN;
+					FX_KRAKATOA_OPTICAL_PHASE_SCHLICK;
+					FX_KRAKATOA_OPTICAL_PHASE_PHONG;
+				}
+			}
+
+			LINK FX_KRAKATOA_OPTICAL_PHASE_ANISOTROPY_PROPERTY	{ ACCEPT { fx_property_scalar; } }
+			REAL FX_KRAKATOA_OPTICAL_PHASE_ANISOTROPY_VECMAX	{ MIN 0.001; STEP 0.1;}
+			REAL FX_KRAKATOA_OPTICAL_PHASE_ANISOTROPY		{ MIN -100; MAX 100; UNIT PERCENT; }
+			
+			IN_EXCLUDE FX_KRAKATOA_OPTICAL_ANISOTROPY_CONSTRAINTS
+			{
+				NUM_FLAGS 0; INIT_STATE 0; SEND_SELCHNGMSG 0;
+				ACCEPT
+				{  
+					fx_constraint_coffee; 
+					fx_constraint_particledistance; 
+					fx_constraint_particlecount;
+					fx_constraint_volume; 
+					fx_constraint_noise; 
+					fx_constraint_gradient; 
+					fx_constraint_gridvalue; 
+					fx_constraint_gridaverage; 
+					fx_constraint_voxeldistance; 
+					fx_constraint_particle_collision;
+					fx_constraint_particle_property;
+				};
+			}
+			
+			LINK FX_KRAKATOA_OPTICAL_PHASE_SPECPOWER_PROPERTY	{ ACCEPT { fx_property_scalar; } }
+			LINK FX_KRAKATOA_OPTICAL_PHASE_SPECLEVEL_PROPERTY	{ ACCEPT { fx_property_scalar; } }
+			REAL FX_KRAKATOA_OPTICAL_PHASE_SPECPOWER		{ MIN 0.0; }
+			REAL FX_KRAKATOA_OPTICAL_PHASE_SPECLEVEL		{ MIN 0.0; }
+		}
+		GROUP FX_KRAKATOA_SUB_OCCLUSION
+		{			
+			LONG FX_KRAKATOA_OCCLUSION_FILTER
+			{
+				CYCLE
+				{
+					FX_KRAKATOA_OCCLUSION_FILTER_NEAREST;
+					FX_KRAKATOA_OCCLUSION_FILTER_BILINEAR;
+					FX_KRAKATOA_OCCLUSION_FILTER_BICUBIC;
+				}
+			}
+			LONG FX_KRAKATOA_OCCLUSION_BILINEARFILTER_SIZE { MIN 1; MAX 5; }
+
+			LINK FX_KRAKATOA_OCCLUSION_DENSITY_PROPERTY	{ ACCEPT { fx_property_scalar; fx_property_vector; } }
+			REAL FX_KRAKATOA_OCCLUSION_DENSITY_VECMAX		{ MIN 0.001; STEP 0.1;}
+			REAL FX_KRAKATOA_OCCLUSION_DENSITY_COEFFICIENT	{ MIN 0.001; MAXSLIDER 10; STEP 0.1; CUSTOMGUI REALSLIDER; }
+			REAL FX_KRAKATOA_OCCLUSION_DENSITY_EXPONENT	{ MIN -10; MAX 10; STEP 0.1; CUSTOMGUI REALSLIDER; }
+			
+			IN_EXCLUDE FX_KRAKATOA_OCCLUSION_DENSITY_CONSTRAINTS
+			{
+				NUM_FLAGS 0; INIT_STATE 0; SEND_SELCHNGMSG 0;
+				ACCEPT 
+				{  
+					fx_constraint_coffee; 
+					fx_constraint_particledistance; 
+					fx_constraint_particlecount;
+					fx_constraint_volume; 
+					fx_constraint_noise; 
+					fx_constraint_gradient; 
+					fx_constraint_gridvalue; 
+					fx_constraint_gridaverage; 
+					fx_constraint_voxeldistance; 
+					fx_constraint_particle_collision;
+					fx_constraint_particle_property;
+				};
+			}
+		}
+	}
+	GROUP ID_KRAKATOA_PASSES
+	{
+		BOOL FX_KRAKATOA_PASSES_STOREEXR {}
+
+		BOOL FX_KRAKATOA_PASSES_NORMAL {}
+		BOOL FX_KRAKATOA_PASSES_VELOCITY {}
+		BOOL FX_KRAKATOA_PASSES_ZDEPTH {}
+		BOOL FX_KRAKATOA_PASSES_OCCLUDEDRGBA {}
+	}
+}

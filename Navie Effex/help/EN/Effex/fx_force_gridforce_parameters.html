@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_c4d.html">Cinema 4D</a> : <a href="fx_force_gridforce.html">[Particle Force] Fluid Velocity Sampler</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+<a href="fx_force_gridforce_falloff.html">Falloff</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="GRID_PARTICLEFORCE_DYNAMICS" onclick="HideNextDOM($(this));" >Fluid Dynamics</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_grid_force_parameters_fluid_simulation_solver.jpg" border="0"><br></br>
+Takes the fluid dynamics object to take the velocities from (defined by the dynamics node internal velocity field).
+<br></br></p></div>
+<h4><a name="GRID_PARTICLEFORCE_INSIDELIQUID" onclick="HideNextDOM($(this));" >Only inside liquid</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_grid_force_parameters_only_inside_liquid.jpg" border="0"><br></br>
+Activates the force only to be defined inside of liquid (a liquid dynamics node must be assigned in the Fluid Simulation Solver field).
+<br></br></p></div>
+<h4><a name="GRID_PARTICLEFORCE_TIMESTEP_MODE" onclick="HideNextDOM($(this));" >Time step mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_grid_force_parameters_time_step_mode.jpg" border="0"><br></br>
+Defines which time step to use. Remember that the velocities extracted from the velocity field do not include substep information.
+<br></br>
+<b>Simulation</b><br>
+Uses the simulation time step
+<br></br>
+<b>Cinema 4D</b><br>
+Use the time step defined by Cinema 4D
+<br></br>
+<b>Custom</b><br>
+ Uses a user-defined time step set with 'Time Step'
+<br></br></p></div>
+<h4><a name="GRID_PARTICLEFORCE_TIMESTEP" onclick="HideNextDOM($(this));" >Time step</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_grid_force_parameters_time_step.jpg" border="0"><br></br>
+Only available if Time Step mode is set to 'Custom'. You can set a custom time step (in seconds) here. The default of 0.033 is a full C4D frame at 30fps (1/30 = 0.033).<br>
+If your scene uses 25fps, you would set this value to 1/25 = 0.04.
+<br></br></p></div>
+<h4><a name="GRID_PARTICLEFORCE_STRENGTH" onclick="HideNextDOM($(this));" >Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_grid_force_parameters_strength.jpg" border="0"><br></br>
+The overall strength of the force.
+<br></br></p></div>
+<h4><a name="GRID_PARTICLEFORCE_BLENDORIG" onclick="HideNextDOM($(this));" >Blend with original</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_grid_force_parameters_blend_with_original.jpg" border="0"><br></br>
+Mograph clones or particles for example can have an own motion force. This slider allows to mix the original force of the affected objects/particles with the velocities of the fluid simulation.<br>
+That way you can let particles be driven completely by the fluid flow instead of including their existing motion.
+<br></br></p></div>
+<h4><a name="GRID_PARTICLEFORCE_DRAG" onclick="HideNextDOM($(this));" >Flow Resistance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_grid_force_parameters_flow_resistance.jpg" border="0"><br></br>
+Defines the amount of flow resistance. Can simulate artistically some drag occuring. Helps with showing that the objects/particles affected have a different weight.
+<br></br></p></div>
+<h4><a name="GRID_PARTICLEFORCE_BUOYANCY" onclick="HideNextDOM($(this));" >Buoyancy</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_grid_force_parameters_buoyancy.jpg" border="0"><br></br>
+Defines the amount of buoyancy (rising of matter) included. This is a non-physical value.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

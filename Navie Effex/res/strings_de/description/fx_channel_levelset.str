@@ -1,0 +1,6 @@
+STRINGTABLE fx_channel_levelset
+{
+	fx_channel_levelset "Levelset Gitterkanal";
+
+	GRIDCHANNEL_LEVELSET_NODE "Knotengitter";
+}

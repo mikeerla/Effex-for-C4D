@@ -1,0 +1,16 @@
+STRINGTABLE fx_constraint_rotation
+{
+	fx_constraint_rotation "Beschr\u00E4nkung::Flow Rotation";
+
+
+	CONSTRAINT_ROTATION_CHANNEL "Geschwindigkeitsfeld";
+	CONSTRAINT_ROTATION_CHANNEL_SELECTOR "C";
+
+	CONSTRAINT_ROTATION_MODE "Merkmal";
+		CONSTRAINT_ROTATION_MODE_CURL "Verwirbelung";
+		CONSTRAINT_ROTATION_MODE_HELICITY "Helizit\u00E4t";
+
+	CONSTRAINT_ROTATION_ABSOLUTE "Absolut";
+
+	CONSTRAINT_ROTATION_DUMMY_ "";
+}

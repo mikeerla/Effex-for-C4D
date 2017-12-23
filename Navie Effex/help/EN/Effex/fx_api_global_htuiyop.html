@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_global.html">Getting started..</a></div>
+<div class="content">
+<h3>How to use in your own project</h3>
+</div>
+<div class="tabs">
+<a href="fx_api_classes_plugins_howto.html">How to create your own nodes</a>
+</div>
+<div class="content">
+<div class="subtab">How to use in your own project</div>
+<div class="data">
+<p>
+In order to include the library in your own Cinema 4D plugin project there is not much you need to do.
+<br></br>
+<i><b>1. Set the 'api_effex' folder path in your project's "include path" settings</b></i> <br>
+That way your VS/XCode project can see the library files and you can <span style="color: rgb(10,10,205);">#include</span> them in your project code.
+<br></br>That's it for the coding environment! Easy enough.
+<br>Now the next step is just as easy:
+<br></br>
+<i><b>2. Before you use the library in any way you must call  <span style="color:rgb(140,0,0);">InitEffex()</span> once</b></i><br>
+The <span style="color:rgb(140,0,0);">InitEffex</span>(); call will initialise the library for being used. You can call it for example before you register any plugins with the usual RegisterPlugin() calls.
+<br></br>
+See the <a href="fx_api_classes_plugins.html" onclick="Hide(''); return true;">Plugins chapters</a> for details.
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

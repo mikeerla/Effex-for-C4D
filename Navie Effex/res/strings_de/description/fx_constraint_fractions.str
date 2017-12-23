@@ -1,0 +1,10 @@
+STRINGTABLE fx_constraint_fractions
+{
+	fx_constraint_fractions "Beschr\u00E4nkung::Hindernisanteil";
+
+
+	CONSTRAINT_FRACTIONS_CHANNEL "Dynamics";
+	CONSTRAINT_FRACTIONS_CHANNEL_SELECTOR "C";
+
+	CONSTRAINT_FRACTIONS_DUMMY_ "";
+}

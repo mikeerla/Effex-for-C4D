@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_server.html">Effex Scene</a></div>
+<div class="content">
+<h3>Global</h3>
+</div>
+<div class="tabs">
+<a href="fx_server_framework.html">Framework</a>
+<span>Global</span>
+<a href="fx_server_bulletdynamics.html">Bullet Dynamics</a>
+<a href="fx_server_cachewizard.html">Cache Wizard</a>
+</div>
+<div class="content">
+<div class="subtab">Global</div>
+<div class="data">
+<p>
+<img src="../../img/fx_server_global.jpg" border="0"">
+<br><br>
+A lot of particle algorithms require particle density information. Density in this case doesn't mean the density of matter but
+how many particles are near to each other.
+<br><br>If one particle has a high particle density it therefore means it is surrounded by a lot of particles (e.g. particles inside of a liquid body).
+<br>A particle with only a few particles surrounding it has a low particle density (e.g. particles at the liquid body surface).
+<br><br>
+When particle densities are calculated, they also may need to be normalised (so brought into the range between 0.0 and 1.0).
+In order to do that a maximum particle density value is required which is pre-calculated (for performance reasons) by the Effex Scene.
+<br>Use the following settings to control the maximum density calculation.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: The POP::Volume Properties node is currently the only node using this feature. Optimally you want it to orient its settings on the ones here.
+</div>
+</p>
+</div>
+<h4><a name="SERVER_PARTICLES_DENSITY" onclick="HideNextDOM($(this));" >Particle Density</A></h4><div class="selected"><p><br></br>
+This sets the default particle density exponent which defines the spacing between particles.
+<br><br>
+By default it is 1 which means the spacing between particles is assumed to be half a voxel size (1/(2&sup1;)). 
+<br>
+A value of 2 assumes the particle spacing is a quarter of a voxel size (1/(2&sup2;)) and so on.
+<br><br>
+<b>The default value of 1 does generally not need to be changed because most algorithms use it (FLIP,SPH etc).
+<br>So only change it if you know exactly what you are doing.</b>
+<br></br></p></div>
+<h4><a name="SERVER_PARTICLES_RADIUS" onclick="HideNextDOM($(this));" >Radius</A></h4><div class="selected"><p><br></br>
+The radius used to search for neighboring particles in the vicinity of a particle. This is given in voxels.
+<br>Higher values will include more particles in the calculation (which results in smoother values) but will also slow down calculations.
+<br><br>
+Usually values between 1.2 and 3.0 make most sense.
+<br></br></p></div>
+<h4><a name="SERVER_PARTICLES_KERNEL" onclick="HideNextDOM($(this));" >Kernel</A></h4><div class="selected"><p><br></br>
+By default a cubic kernel (=falloff curve) will be used for weighting neighboring particles. <br>
+Here you can define a custom kernel.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

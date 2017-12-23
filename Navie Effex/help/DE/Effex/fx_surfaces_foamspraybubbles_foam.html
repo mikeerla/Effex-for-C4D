@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_surfaces_foamspraybubbles.html">POP::Foam/Spray/Bubbles</a></div>
+<div class="content">
+<h3>Foam</h3>
+</div>
+<div class="tabs">
+<a href="fx_surfaces_foamspraybubbles_params.html">Parameters</a>
+<a href="fx_surfaces_foamspraybubbles_unified.html">Unified</a>
+<span>Foam</span>
+<a href="fx_surfaces_foamspraybubbles_spray.html">Spray</a>
+</div>
+<div class="content">
+<div class="subtab">Foam</div>
+<div class="data">
+<p>
+<img src="../../img/fx_foamspray_foam.jpg" border="0"">
+<br><br>
+These settings define and control when and how foam particles are generated.
+
+</p>
+</div>
+<h4><a name="FOAM_OUTTOSPRAY" onclick="HideNextDOM($(this));" >Convert to Spray in air</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_foam_convert_to_spray_in_the_air.jpg" border="0"><br></br>
+If foam particles are displaced into the air (for example because the liquid distorted in a way so they detach from the liquid surface to far away) you
+can let them be converted into spray particles. Otherwise they will die.
+<br></br></p></div>
+<h4><a name="FOAM_CLAMPTOFLUIDSIM" onclick="HideNextDOM($(this));" >Clamp to Dynamics Boundary</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_foam_clamp_to_dynamics_boundary.jpg" border="0"><br></br>
+Clamps foam particle positions to the fluid dynamics container so they remain inside the fluid simulation space.
+<br></br></p></div>
+<h4><a name="FOAM_OFFSET" onclick="HideNextDOM($(this));" >Offset to surface [voxel]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_foam_offset_to_surface.jpg" border="0"><br></br>
+The foam particles are automatically projected onto the liquid surface but can be offset along the normal direction with this value (here the surface reconstructor or the internal volume is used).
+<br></br></p></div>
+<h4><a name="FOAM_CURVATURE" onclick="HideNextDOM($(this));" >Curvature Threshold (0=flat areas)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_foam_curvature_treshold.jpg" border="0"><br></br>
+Defines the surface curvature where foam particles are generated. Particles are only generated in areas with a curvature higher than this value.
+<br></br></p></div>
+<h4><a name="FOAM_VELOCITY" onclick="HideNextDOM($(this));" >Velocity Threshold [voxel]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_foam_velocity_treshold.jpg" border="0"><br></br>
+Defines the fluid speed where foam particles are generated. Particles are only generated in areas with a velocity higher than this value.
+<br></br></p></div>
+<h4><a name="FOAM_VELOCITYRND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+Randomizes the velocity threshold between 0.0 and 'Velocity Threshold'.
+<br></br></p></div>
+<h4><a name="FOAM_VORTICITY" onclick="HideNextDOM($(this));" >Vorticity Threshold [voxel]</A></h4><div class="selected"><p><br></br>
+<i>(Only available in Geometry mode)</i>
+<br><br>
+Defines the fluid vorticity where foam particles are generated. Particles are only generated in areas with a vorticity higher than this value.
+<br></br></p></div>
+<h4><a name="FOAM_VORTICITYRND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+<i>(Only available in Geometry mode)</i>
+<br><br>
+Randomizes the vorticity threshold between 0.0 and 'Vorticity Threshold'.
+<br></br></p></div>
+<h4><a name="FOAM_AGE" onclick="HideNextDOM($(this));" >Life time</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_foam_life_time.jpg" border="0"><br></br>
+The life time of a foam particle given in seconds.
+<br></br></p></div>
+<h4><a name="FOAM_AGERND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+Randomizes the Life time between 0.0 and 'Life Time'.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

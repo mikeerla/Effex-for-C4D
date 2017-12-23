@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_bodies.html">Bodies</a> : <a href="fx_surfaces.html">Surfaces</a> : <a href="fx_mesh.html">Mesh</a></div>
+<div class="content">
+<h3>Display</h3>
+</div>
+<div class="tabs">
+<a href="fx_mesh_quicktab.html">Quicktab</a>
+<a href="fx_mesh_params.html">Parameters</a>
+<span>Display</span>
+</div>
+<div class="content">
+<div class="subtab">Display</div>
+<div class="data">
+<p>
+<img src="../../img/fx_mesh_display.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FX_BASE_DRAW" onclick="HideNextDOM($(this));" >On</A></h4><div class="selected"><p><br></br>
+Turns on/off the editor display for this mesh completely.
+<br></br></p></div>
+<h4><a name="FXMESH_DISPLAY_DRAW" onclick="HideNextDOM($(this));" >Draw Brush data</A></h4><div class="selected"><p><br></br>
+Check to activate the drawing of brush data. See "Particle Brush" tool for more information.
+<br></br></p></div>
+<h4><a name="FXMESH_DISPLAY_PROPERTY" onclick="HideNextDOM($(this));" >Property (vertex data)</A></h4><div class="selected"><p><br></br>
+Drop here a point property node for the mesh vertex property you would like to be drawn on the mesh.
+<br></br></p></div>
+<h4><a name="FXMESH_DISPLAY_THRESHOLD" onclick="HideNextDOM($(this));" >Maximum property value</A></h4><div class="selected"><p><br></br>
+The maximum value the linked Property (vertex data) may contain in order to assign a drawing color intensity (i.e. white).
+<br></br></p></div>
+<h4><a name="FXMESH_DISPLAY_PROPERTY_BRUSH" onclick="HideNextDOM($(this));" >Property (brush data)</A></h4><div class="selected"><p><br></br>
+Drop here a point property node for the brush data property you would like to be drawn on the mesh.
+<br></br></p></div>
+<h4><a name="FXMESH_DISPLAY_THRESHOLD_BRUSH" onclick="HideNextDOM($(this));" >Maximum property value</A></h4><div class="selected"><p><br></br>
+The maximum value the linked Property (brush data) may contain in order to assign a drawing color intensity (i.e. white).
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

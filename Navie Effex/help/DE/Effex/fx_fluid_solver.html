@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_dynamics.html">Dynamics</a> : <a href="fx_fluid.html">Fluid Dynamics</a></div>
+<div class="content">
+<h3>Solver</h3>
+</div>
+<div class="tabs">
+<a href="fx_fluid_quicktab.html">Quicktab</a>
+<a href="fx_fluid_params.html">Parameters</a>
+<a href="fx_fluid_characteristica.html">Characteristica</a>
+<a href="fx_fluid_dynamics.html">Dynamics</a>
+<span>Solver</span>
+<a href="fx_fluid_display.html">Display</a>
+</div>
+<div class="content">
+<div class="subtab">Solver</div>
+<div class="data">
+<p>
+<img src="../../img/fx_fluiddynamics_solver.jpg" border="0"">
+<br><br>The solver determines quality and performance of the fluid dynamics. It is the core of any fluid motions
+as it handles all the pressure calculations and makes the velocity field incompressible. <br>
+Therefore you should take special care of adjusting solver settings which is always a speed-quality trade-off.
+</p>
+</div>
+<h4><a name="SOLVER_SOLVERTYPE" onclick="HideNextDOM($(this));" >Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/dynamics_solver_type.jpg" border="0"><br></br>
+The type of solver to use. 
+
+<br></br>
+<b>Conjugate Gradient</b><br>
+This is a multi-preconditioned CG solver. It is robust and has the best quality even though it only runs single threaded.
+<br></br>
+<b>Gauss-Seidel</b><br>
+This is a gauss-seidel relaxation solver. It is of lower accuracy but is multithreaded. Lower accuracy means it requires much more iterations to get a good result than the CG solver. Accuracy is worse than for CG. 
+
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Although the CG solver is only using 1 thread, it is qualitatively better than GS. This does NOT mean the quality of the simulation is better BUT it requires a lot less iterations before it solves the pressure problem! 
+<br><br>So, even if GS is mutlithreaded, it may take more iterations to reach the desired precision.
+<br><br>Conclusively the runtime of the CG solver can be less even though it is only single-threaded. It really is up to the simulation task at hand to what you would choose. Sometimes it's simply better to have one mastermind than 10 good minds. ;)
+</div>
+<br></br></p></div>
+<h4><a name="SOLVER_MAXITERATIONS" onclick="HideNextDOM($(this));" >Pressure: Max. Iterations</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_solver_pressuremaxiterations.jpg" border="0"><br></br>
+Solving for pressure is an iterative process. Here you can set the maximum amount of iterations.<br>
+Lower iterations result in lower quality motions but gets faster. Higher values improve incompressibility
+and result in better quality (also over time).
+<br></br>
+The solver only takes as many iterations as it needs (based on Precision) but never more than Max. Iterations.
+<br></br></p></div>
+<h4><a name="SOLVER_ACCURACY" onclick="HideNextDOM($(this));" >Pressure: Precision</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_solver_pressureprecision.jpg" border="0"><br></br>
+This sets the precision of the solver (in other words, how many digits after the comma are considered).
+The precision ranges from 1e-3 = 0.001 (0%) to 1e-16 = 0.0000000000000001 (100%). 
+<br></br></p></div>
+<h4><a name="SOLVER_MAXITERATIONS_VISCOSITY" onclick="HideNextDOM($(this));" >Viscosity: Max. Iterations (Viscosity)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_solver_viscositymaxiterations.jpg" border="0"><br></br>
+Solving for viscosity is an iterative process. Here you can set the maximum amount of iterations.<br>
+Lower iterations result in lower quality motions but gets faster. Higher values improve incompressibility
+and result in better quality (also over time).
+<br></br>
+The solver only takes as many iterations as it needs (based on Precision) but never more than Max. Iterations (Viscosity).
+<br></br></p></div>
+<h4><a name="SOLVER_ACCURACY_VISCOSITY" onclick="HideNextDOM($(this));" >Viscosity: Precision (Visosity)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_solver_viscosityprecision.jpg" border="0"><br></br>
+This sets the precision of the solver (in other words, how many digits after the comma are considered).
+The precision ranges from 1e-3 = 0.001 (0%) to 1e-16 = 0.0000000000000001 (100%). 
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Solver::</span>Advanced</span>
+</div>
+<div class="subdata selected">
+<h4><a name="SOLVER_PCG_MINDIAGONAL" onclick="HideNextDOM($(this));" >Min. Diagonal Ratio</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_solver_advanced_mindiagonal.jpg" border="0"><br></br>
+This is a safety constant (in case of single cell line cases in the solver's matrix). See Bridsons Book on MIC Preconditioners for more information. 
+<br></br></p></div>
+<h4><a name="SOLVER_PCG_FACTOR" onclick="HideNextDOM($(this));" >Cholesky Factor</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_solver_advanced_choleskyfactor.jpg" border="0"><br></br>
+A tuning constant. Controls the average weighting between IC (Incomplete Cholesky) and MIC (Modified Incomplete Cholesky) preconditioner.<br>
+0.97 is a good default. Gear this towards 1.0 the higher the resolution. Lower values make barely sense.
+<br></br></p></div>
+</div>
+<h4><a name="LIQUID_TRACKING_TYPE" onclick="HideNextDOM($(this));" >Free Surface identification</A></h4><div class="selected"><p><br></br>
+Defines what kind of algorithm to use to identify the free surface of a liquid body
+and therefore which grid cells are identified as a fluid for solving the Navier-Stokes pressure problem.
+<br><br>
+<br></br></p></div>
+<h4><a name="LIQUID_TRACKING_TYPE_INCELL_LEVELSETRATE" onclick="HideNextDOM($(this));" >Particles Threshold</A></h4><div class="selected"><p><br></br>
+The minimum amount of particles before a velocity grid cell is identified as a cell containing fluid.
+<br></br></p></div>
+<h4><a name="LIQUID_TRACKING_TYPE_DENSITY_LEVELSETRATE" onclick="HideNextDOM($(this));" >Density Threshold</A></h4><div class="selected"><p><br></br>
+The minimum particle density (NOT density of matter. See <a href="fx_server_global.html">Effex Scene::Global</a> for an explanation) before a velocity grid cell is identified as a fluid cell.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

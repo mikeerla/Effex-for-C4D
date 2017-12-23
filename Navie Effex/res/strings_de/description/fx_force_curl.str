@@ -1,0 +1,12 @@
+STRINGTABLE fx_force_curl
+{
+	fx_force_curl "Kraft::Feldrotation";
+
+	FORCE_CURL_INTENSITY	"Intensit\u00E4t";
+	
+	FORCE_CURL_DURATION "Dauer";
+	FORCE_CURL_SAMPLERADIUS "Sample Radius";
+	FORCE_CURL_DURATION_SELECTOR "C";
+
+	FORCE_CURL_DUMMY_ "";
+}

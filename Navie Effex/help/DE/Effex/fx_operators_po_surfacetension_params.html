@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_po_surfacetension.html">POP::Surface Tension</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="PFORCE_TENSION_PARTICLES" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_particle_group.jpg" border="0"><br></br>
+The particle group (containing the liquid particles) to calculate the surface tension for.
+<br></br></p></div>
+<h4><a name="PFORCE_TENSION_INPUT_FACTORY" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_particles.jpg" border="0"><br></br>
+The particle type of the Particle Group to use.
+<br></br>
+<b>Passive</b><br>
+<b>Vorticity</b><br>
+<b>Liquid</b><br>
+<b>Diffuse</b><br>
+<br></br></p></div>
+<h4><a name="PFORCE_TENSION_DYNAMICS" onclick="HideNextDOM($(this));" >Fluid Dynamics</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_surface_tension_params_fluid_dynamics.jpg" border="0"><br></br>
+Link a liquid dynamics node to emit surface tension forces.
+<br></br></p></div>
+<h4><a name="PFORCE_TENSION_MODE" onclick="HideNextDOM($(this));" >Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_surface_tension_params_mode.jpg" border="0"><br></br>
+Select which surface tension model to use (see top for a short description).
+<br></br>
+<b>Cohesion</b><br>
+Calculates surface tension based on cohesion (attraction) between liquid particles. The cohesion mode is much more forgiving and stable than the Surface Properties node.
+<br></br>
+<b>Surface Properties</b><br>
+Calculates surface tension based on geometric surface properties.<br>
+This mode requires you to have a Surface Properties operator available in the scene calculating a normal and curvature for the liquid particles.
+<br></br></p></div>
+<h4><a name="PFORCE_TENSION_K" onclick="HideNextDOM($(this));" >Tension Coefficient</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_surface_tension_params_tension_coefficient.jpg" border="0"><br></br>
+The surface tension coefficient or the strength of the surface tension.
+<br></br></p></div>
+<h4><a name="PFORCE_TENSION_RADIUS" onclick="HideNextDOM($(this));" >Sampling Radius</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_surface_tension_params_tension_sampling_radius.jpg" border="0"><br></br>
+To find particles nearby this radius defines the maximum distance around each particle to find neighboring particles.<br>
+It is advantageous if the search radius of the Surface Properties operator equals this one.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="dialogs.html">Dialogs</a></div>
+<div class="content">
+<h3>Pipeline Viewer</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">Pipeline Viewer</div>
+<div class="data">
+<p>
+<br></br>
+<img src="../../img/pipelineviewer_example.jpg" border="0"">
+<br></br>
+The Pipeline Viewer takes you inside the pipeline of the currently selected Effex scene (or the scene that the currently selected node belongs to).<br>
+All the operating nodes such as Emitters, POPs, Dynamics etc., they
+are all displayed in the Pipeline Viewer.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b><br>Container nodes, so nodes that are only used for data storage, such as a Particle Group or a Grid Channel, are NOT displayed in the pipeline viewer.
+Only nodes that actually create or modify data will be displayed.
+</div>
+<br>
+<b>But the important aspect is that it shows you when exactly your
+nodes are executed in the internal pipeline.</b> <br>Furthermore it supports
+dragging nodes around to change their priority and the pipeline stage
+they are executed in.</br>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b><br>Certain nodes are evaluated several times in the pipeline because they are compound nodes (currently only the Dynamics nodes).<br>
+These nodes <u>cannot</u> be rearranged in the Pipeline Viewer.
+</div>
+<br>
+<a href="pipelineviewer.mov" target="_blank">Wanna see a quickstart video?</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_constraints.html">Constraints</a></div>
+<div class="content">
+<h3>CS::Particle Count</h3>
+</div>
+<div class="tabs">
+<a href="fx_constraints_particlecount_params.html">Parameters</a>
+</div>
+<div class="content">
+<div class="subtab">CS::Particle Count</div>
+<div class="data">
+<p>
+The Particle Count constraint returns the amount of particles that are located in the vicinity.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Examples:</b><br>
+1. This is perfectly suited to restrict the amount of particles in space. In conjunction with a <a href="fx_operators_particleconverter.html">Particle Converter</a> operator (with output set to 'Nirvana')
+you can delete particles if there are two many. That's what the Particle Grid Emitter does when a fluid dynamics object is assigned.
+<br>
+<br>
+2. You can let <a href="fx_force_particleturbulence.html">particle turbulences</a> reduce or increase their intensity depending on the amount of particles.
+<br>
+<br>
+3. You can restrict a <a href="fx_surfaces_surfacereconstructor.html">Surface Reconstructor</a> to exclude particles with too few neighbors (for example to get rid of single particles being included
+which may speed up the reconstruction process.
+<br>
+<br>The list could be extented as it's a great constraint with lots of uses.
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

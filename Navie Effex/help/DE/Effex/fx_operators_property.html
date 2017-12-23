@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a></div>
+<div class="content">
+<h3>POP::Property</h3>
+</div>
+<div class="tabs">
+<a href="fx_operators_property_params.html">Parameters</a>
+<a href="fx_operators_property_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">POP::Property</div>
+<div class="data">
+<p>
+Emitters and other particle operators may attach properties to particles when they generate or generally operate on them.
+<br>With this node you can access and modify any particle property!
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<u><b>Example:</b></u> <br>
+You emit particles with an attached Age property. At this point the age property is the same value for all emitted particles.
+<br><br>In order to randomize the Age property you do:
+<br><br>1. Create the POP::Property
+<br>2. Link the <a href="fx_particles_properties_scalar.html">Age property</a> and <a href="fx_particles_particlegroup.html">Particle Group</a> in its settings
+<br>3. Set <a href="fx_operators_property_params.html#RATE_SCALAR">Value</a> to 1 and <a href="fx_operators_property_params.html#POP_PROPERTY_OPERATION">'Math Operation'</a> to multiply - this makes sure we randomize the existing Age property value
+<br>4. Add a <a href="fx_constraints_noise.html">CS::Noise</a> - this is used to randomize the age property
+<br>5. Add a <a href="fx_constraints_pc_attribute.html">PCS::Attribute</a> - checks for the "born" attribute so only newly generated particles are modified
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

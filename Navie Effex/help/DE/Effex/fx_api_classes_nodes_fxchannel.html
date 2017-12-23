@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_nodes.html">Nodes</a> : <a href="fx_api_classes_nodes_fxbase_derived.html">: public FXBase</a></div>
+<div class="content">
+<h3>FXScalarChannel</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXScalarChannel</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span>		 GetRangeMinimum	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the minimum floating point  value this scalar channel can hold.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span>		 GetRangeMaximum	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the maximum floating point  value this scalar channel can hold.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span>		 GetResetValue	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the floating point value this channel is reset with (whenever it is reset)
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span>		 GetBounds		(<span style="color:rgb(0,120,120);">vector3d</span>& ref_minimum, <span style="color:rgb(0,120,120);">vector3d</span>& ref_maximum)</A></h4><div class="selected"><p><br>
+<b>Parameters</b><BR>
+<i>vector3d& ref_minimum</i>: <br>
+Filled with the minimum position of the channel's bounds
+<br></br>
+<i>vector3d& ref_maximum</i>: <br>
+Filled with the maximum position of the channel's bounds
+<br></br>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> 		Inside			(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the given physical position is inside the channel bounds
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to check the inside state for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 InsideGrid		(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">bool</span> excludeborders = <span style="color:rgb(0,31,174);">false</span>)</A></h4><div class="selected"><p><br>
+Same as Inside but here the position is internally first converted into grid cell space.
+<br></br>
+<b>Returns</b><br>
+true if the given physical position is inside the channel bounds. 
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to check the inside state for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span>		 GetValue		(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the floating point value at the specifid physical position
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to get the grid channel value for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 Resize			(<span style="color:rgb(0,120,120);">vector3d</span>& ref_minimum, <span style="color:rgb(0,120,120);">vector3d</span>& ref_maximum)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if channel was successfully resized
+<br></br>
+<b>Parameters</b><BR>
+<i>vector3d& ref_minimum</i>: <br>
+This is the minimum position of the resized channel bounds
+<br></br>
+<i>vector3d& ref_maximum</i>: <br>
+This is the maximum position of the resized channel bounds
+<br></br>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span>		 UpdateBounds	(<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+Call UpdateBounds if you modified the data of the channel.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

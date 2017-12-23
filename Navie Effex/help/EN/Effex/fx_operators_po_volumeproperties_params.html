@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_po_volumeproperties.html">POP::Volume Properties</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="PVALUETOPROPERTY_PARTICLES" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_particle_group.jpg" border="0"><br></br>
+The particle group to calculate the volume property information for.
+<br></br></p></div>
+<h4><a name="PVALUETOPROPERTY_INPUT_FACTORY" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_particles.jpg" border="0"><br></br>
+The particle type of the Particle Group to use.
+<br></br>
+<b>Passive</b><br>
+<b>Vorticity</b><br>
+<b>Liquid</b><br>
+<b>Diffuse</b><br>
+<br></br></p></div>
+<h4><a name="PVALUETOPROPERTY_KERNELNODE" onclick="HideNextDOM($(this));" >Kernel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_popvolumenproperties_params_kernel.jpg" border="0"><br></br>
+By default a cubic kernel (=falloff curve) will be used for weighting neighboring particle data. <br>
+Here you can define a custom kernel.
+<br><br>
+Basically you kind of remap the particle density values. Though not as a post process but directly in the calculations.
+<br><br>
+Note: If you wanted to remap densities as a post process, you could use a POP::Property operator.
+<br></br></p></div>
+<h4><a name="PVALUETOPROPERTY_DENSITY" onclick="HideNextDOM($(this));" >Density</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_volume_properties_params_density.jpg" border="0"><br></br>
+This calculates the particle density of the given particle group (this is NOT a density of matter but only how close particles are located to each other in space).
+<br></br></p></div>
+<h4><a name="PVALUETOPROPERTY_ISODENSITY" onclick="HideNextDOM($(this));" >Iso-Density</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_volume_properties_params_iso_density.jpg" border="0"><br></br>
+This calculates an unnormalized particle isodensity.
+<br></br></p></div>
+<h4><a name="PVALUETOPROPERTY_WEIGHTEDPOS" onclick="HideNextDOM($(this));" >Weighted Position</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_volume_properties_params_weighted_position.jpg" border="0"><br></br>
+This calculates a weighted position which is for example required by the anistropic mesher but can also be used by an isotropic mesher.
+The weighted positions may result in a smoother particle distribution and therefore smoother surface reconstructions.
+<br></br></p></div>
+<h4><a name="PVALUETOPROPERTY_RADIUS" onclick="HideNextDOM($(this));" >Influence Radius</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_popvolumenproperties_params_influenceradius.jpg" border="0"><br></br>
+To find particles nearby this radius defines the maximum distance around each particle to find neighboring particles.<br>
+<br>Note: If you are using it for a thin sheet algorithm, this radius should be equal to the radius used in the thin sheet algorithm.
+<br></br></p></div>
+<h4><a name="PVALUETOPROPERTY_KERNEL" onclick="HideNextDOM($(this));" >Falloff</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_volume_properties_params_falloff.jpg" border="0"><br></br>
+<i>Only used if 'Kernel' is undefined</i>
+<br><br>Defines the falloff kernel. See <a href="#PVALUETOPROPERTY_KERNELNODE">'Kernel'</a> for more detailed information.
+<br></br>
+<b>Gaussion</b><br>
+<b>Poly6</b><br>
+<b>Poly 6 smooth</b><br>
+<b>Viscosity</b><br>
+<b>Spikey</b><br>
+<b>Spikey smooth</b><br>
+<b>Smooth</b><br>
+<b>Sharp</b><br>
+<b>Wyvill</b><br>
+<b>Blinn</b><br>
+<b>Cubic Spline</b><br>
+<b>Polynominal</b><br>
+
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

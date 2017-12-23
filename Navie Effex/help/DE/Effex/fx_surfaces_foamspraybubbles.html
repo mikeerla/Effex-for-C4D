@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a></div>
+<div class="content">
+<h3>POP::Foam/Spray/Bubbles</h3>
+</div>
+<div class="tabs">
+<a href="fx_surfaces_foamspraybubbles_params.html">Parameters</a>
+<a href="fx_surfaces_foamspraybubbles_unified.html">Unified</a>
+<a href="fx_surfaces_foamspraybubbles_foam.html">Foam</a>
+<a href="fx_surfaces_foamspraybubbles_spray.html">Spray</a>
+</div>
+<div class="content">
+<div class="subtab">POP::Foam/Spray/Bubbles</div>
+<div class="data">
+<p>
+The foam, Spray & Bubbles node is a highly sophisticated operator & emitter of diffuse particles for large scale scenarios.
+<br><br>
+Diffuse particles is an expression for particles that seem moving around randomly or visually appear diffuse when seen from a normal or far range.
+Just think of a breaking wave at a cliff.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: That's why these secondary particles are stored in the Diffuse subgroup type of a Particle Group.
+</div>
+<br>
+Foam, Spray and Bubbles are considered diffuse particles. We define these as follows:<br><br>
+<i>1. Spray particles are flying in mid-air<br>
+2. Foam particles are on the liquid surface<br> 
+3. Bubble particles are moving inside a liquid body.</i>
+<br>
+<br>
+In order to distinguish between these 3 diffuse particle types a particle carries an attribute namely: foam, spray or bubble.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: It's the same for thin sheet particles. They are of type Liquid, but they additionally have the 'sheet' attribute.
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+STRINGTABLE fx_iop_spawn
+{
+	fx_iop_spawn "PIOP::Partikelaufspannung";
+
+	
+	IOP_SPAWN_SEED				"Startwert";
+	IOP_SPAWN_COUNT				"Anzahl";
+	IOP_SPAWN_COUNT_RENDER			"Anzahl (Rendering)";
+	IOP_SPAWN_COUNT_VAR			"Variation";
+	IOP_SPAWN_AGE				"Lebensdauer";
+	IOP_SPAWN_AGE_VAR			"Variation";
+	IOP_SPAWN_ANGLE				"Winkel";
+	IOP_SPAWN_ANGLE_VAR			"Variation";
+	IOP_SPAWN_VELOCITY			"Geschwindigkeit des Originals";
+	IOP_SPAWN_VELOCITY_VAR			"Variation";
+	IOP_SPAWN_PARTICLESOUT			"Zielpartikelgruppe";
+	IOP_SPAWN_PARTICLESOUT_SELECTOR		"C";
+	IOP_SPAWN_DURATION			"Dauer";
+	IOP_SPAWN_DURATION_SELECTOR		"C";
+	IOP_SPAWN_PARTICLES_FACTORY		"Partikel";
+	IOP_SPAWN_PARTICLES_FACTORY_PASSIVE	"Passiv";
+	IOP_SPAWN_PARTICLES_FACTORY_VORTICITY	"Verwirbelung";
+	IOP_SPAWN_PARTICLES_FACTORY_LIQUID	"Fl\u00FCssigkeit";
+	IOP_SPAWN_PARTICLES_FACTORY_DIFFUSE	"Diffus";
+	IOP_SPAWN_POSITIONBASED			"Positions-Basiert";
+	IOP_SPAWN_ALLOWRESPAWNING		"Erneutes Aufspannen erlauben";
+	IOP_SPAWN_ALLOWSPAWNING_SPAWNED		"Aufspannen von Aufgespannten erlauben";
+	IOP_SPAWN_DISTRIBUTION_MODE		"Verteilungsmodus";
+	IOP_SPAWN_DISTRIBUTION_MODE_UNIFORM	"Gleichm‰ﬂig";
+	IOP_SPAWN_DISTRIBUTION_MODE_UNIFORM_RANDOM "Gleichm‰ﬂig variiert";
+	IOP_SPAWN_DISTRIBUTION_MODE_CUSTOM	"Benutzerdefiniert";
+	IOP_SPAWN_DISTRIBUTION_MODE_CUSTOM_RANDOM "Benutzerdefiniert variiert";
+	IOP_SPAWN_DISTRIBUTE			"Verteilungswinkel";
+	IOP_SPAWN_DISTRIBUTE_VAR		"Variation";
+	IOP_SPAWN_ACCELERATION			"Beschleunigung";
+	IOP_SPAWN_ACCELERATION_VAR		"Variation";
+	IOP_SPAWN_KILLORIGINAL			"Kill original";
+
+	IOP_SPAWN_DUMMY_ "";
+}

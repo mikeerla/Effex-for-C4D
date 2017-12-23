@@ -1,0 +1,23 @@
+STRINGTABLE fx_xpresso_advection
+{
+	fx_xpresso_advection "Advektion (Transport)";
+
+	XADVECTION_KINEMATIC "Ballistisch";
+	XADVECTION_TIMESCALE "Zeitliche Skalierung";
+	XADVECTION_CELLCENTER "Extrahiere Werte aus Zellenmitte";
+	XADVECTION_INTEGRATOR "Integrator";
+		XADVECTION_INTEGRATOR_EULER1ST "Euler 1. Ordnung";
+		XADVECTION_INTEGRATOR_RUNGA2ND "Runga-Kutta 2. Ordnung";
+		XADVECTION_INTEGRATOR_RUNGA3RD "Runga-Kutta 3. Ordnung";
+		XADVECTION_INTEGRATOR_RUNGA4TH "Runga-Kutta 4. Ordnung";
+	XADVECTION_KINEMATIC_INTEGRATOR "Integrator";
+		XADVECTION_KINEMATIC_INTEGRATOR_EULER "Euler-Croma";
+		XADVECTION_KINEMATIC_INTEGRATOR_VERLET "Verlet";
+	XADVECTION_DYNAMICS "Dynamics/Navié Szene";
+	XADVECTION_INPOS "alte physikalische Position (Global)";
+	XADVECTION_INMATRIX "alte Objektmatrix";
+	XADVECTION_OUTPOS "neue physikalische Position (Global)";
+	XADVECTION_OUTMATRIX "Neue Objektmatrix";
+
+	XADVECTION_DUMMY	"";
+}

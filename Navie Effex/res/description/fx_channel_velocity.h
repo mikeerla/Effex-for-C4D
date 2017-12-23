@@ -1,0 +1,9 @@
+#ifndef FX_CHANNEL_VELOCITY_H
+#define FX_CHANNEL_VELOCITY_H
+
+enum
+{
+	GRIDCHANNEL_VECTOR_DUMMY = 1050
+};
+
+#endif

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_forces.html">Forces</a> : <a href="fx_forces_df.html">Dual Forces (DF)</a> : <a href="fx_force_followspline.html">DF::Follow Spline</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_df_followspline_paramters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FORCE_FOLLOWSPLINE_SPLINE" onclick="HideNextDOM($(this));" >Spline</A></h4><div class="selected"><p><br></br>
+Drop here a Cinema 4D spline-based object.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+Defines when and how long this force operates.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Move To Spline</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FORCE_FOLLOWSPLINE_STEERDISTANCE" onclick="HideNextDOM($(this));" >Distance</A></h4><div class="selected"><p><br></br>
+Defines the maximum distance (in C4D space) this force creates forces that target the spline path (location it points to depends on the 'Target point on spline' setting).
+<br>Any position outside this distance creates no force at all.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_STEERMODE" onclick="HideNextDOM($(this));" >Target point on spline</A></h4><div class="selected"><p><br></br>
+Define the target point on the spline path to create target forces for.
+<br><br>
+1. <b>Nearest Point</b> - the nearest location to the processed position<br>
+2. <b>Nearest Vertex</b> - the nearest spline vertex to the processed position<br>
+3. <b>Vertex index</b> - a specific vertex<br>
+4. <b>Percentual Position</b> - a position on the spline defined by percentual length<br><br>
+
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: Keep in mind that at any time this force does all the calculations based on the current simulation state.
+</div>
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_STEERSEGMENT" onclick="HideNextDOM($(this));" >Segment index</A></h4><div class="selected"><p><br></br>
+<i>(Only used if 'Target point on spline' is set to 'Vertex Index' or 'Percentage')</i>
+<br><br>
+Defines the index of the segment to use.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_STEERVERTEX" onclick="HideNextDOM($(this));" >Vertex index</A></h4><div class="selected"><p><br></br>
+<i>(Only used if 'Target point on spline' is set to 'Vertex Index')</i>
+<br><br>
+Defines the index of the vertex to use.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_STEERPERCENT" onclick="HideNextDOM($(this));" >Percent</A></h4><div class="selected"><p><br></br>
+<i>(Only used if 'Target point on spline' is set to 'Percentual Position')</i>
+<br><br>
+The position along the spline given as a percentage value. 0% means at the first vertex, 50% means exactly at the middle of the path and 100% at the end (or at the first point in case the spline is closed).
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_STEERMAXVELOCITY" onclick="HideNextDOM($(this));" >Max. Force</A></h4><div class="selected"><p><br></br>
+The maximum magnitude of the resulting targeting force.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_STEERACUTENESS" onclick="HideNextDOM($(this));" >Acuteness</A></h4><div class="selected"><p><br></br>
+The urge to move to the target point on the spline.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_STEERINTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+The overall intensity multiplier of the resulting targeting force.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Follow Spline</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FORCE_FOLLOWSPLINE_FOLLOWDISTANCE" onclick="HideNextDOM($(this));" >Distance</A></h4><div class="selected"><p><br></br>
+The maximum distance to generate spline following forces instead of spline targeting forces.<br>
+Any position that is nearer to the spline as this distance will create spline following forces.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_FOLLOWMODE" onclick="HideNextDOM($(this));" >Direction</A></h4><div class="selected"><p><br></br>
+The spline path direction to follow. Either <b>forward</b> or <b>backward</b>.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_FOLLOWMAXVELOCITY" onclick="HideNextDOM($(this));" >Max. Force</A></h4><div class="selected"><p><br></br>
+The maximum magnitude of the resulting spline following force.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_FOLLOWACUTENESS" onclick="HideNextDOM($(this));" >Acuteness</A></h4><div class="selected"><p><br></br>
+The urge to follow the spline path.
+<br></br></p></div>
+<h4><a name="FORCE_FOLLOWSPLINE_FOLLOWINTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+The overall intensity multiplier of the resulting spline following force.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

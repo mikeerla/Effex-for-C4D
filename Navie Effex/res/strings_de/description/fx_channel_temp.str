@@ -1,0 +1,4 @@
+STRINGTABLE fx_channel_temp
+{
+	fx_channel_temp "Temperatur Gitterkanal";
+}

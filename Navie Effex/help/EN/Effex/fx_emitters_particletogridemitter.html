@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a></div>
+<div class="content">
+<h3>POP::PointData to Grid</h3>
+</div>
+<div class="tabs">
+<a href="fx_emitters_particletogridemitter_params.html">Parameters</a>
+<a href="fx_emitters_particletogridemitter_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">POP::PointData to Grid</div>
+<div class="data">
+<p>
+The PointData To Grid operator takes care of particle splatting. This simply means it encodes the data from a particle (lets say its color property value) into a grid channel (for a color property this would require a vector channel).<br>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+So each grid cell that is spatially near a particle can get information from this particle. This allows to customly fill grid channels and use these for variable viscosity, variable density, grid constraints but also to render particles with the gas renderer (or anything else you may want to use it for. These are only examples for what you could abuse the data).
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

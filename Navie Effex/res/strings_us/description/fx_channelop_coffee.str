@@ -1,0 +1,8 @@
+STRINGTABLE fx_channelop_coffee
+{
+	fx_channelop_coffee "Cell Operator::Coffee";
+
+	CHANNELOP_COFFEE_INTENSITY "Intensity";
+
+	CHANNELOP_COFFEE_DUMMY_ "";
+}

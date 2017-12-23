@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_general.html">General</a> : <a href="fx_general_duration.html">Duration</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_duration_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="DURATION_TIMER_FRAMES" onclick="HideNextDOM($(this));" >Given in Frames</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_duration_object_given_in_frames.jpg" border="0"><br></br>
+All settings are given in frames instead of seconds if you activate this checkbox.
+<br></br></p></div>
+<h4><a name="DURATION_TIMER_LENGTH" onclick="HideNextDOM($(this));" >Sequence duration [sec]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_duration_object_sequence_duration.jpg" border="0"><br></br>
+Defines the length of the time sequence.
+<br></br></p></div>
+<h4><a name="DURATION_TIMER_START" onclick="HideNextDOM($(this));" >Start of first sequence [sec]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_duration_object_start_of_first_sequence.jpg" border="0"><br></br>
+Defines the starting point in time of the sequence (the first sequence if it is looped).
+<br></br></p></div>
+<h4><a name="DURATION_TIMER_LOOPS" onclick="HideNextDOM($(this));" >Loops</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_duration_object_loops.jpg" border="0"><br></br>
+The time sequence defined by 'Sequence duration' and 'Start of first sequence' can be looped. This defines how many times.<br>
+A value of 0 means that the sequence is not looped but only evaluated once.
+<br></br></p></div>
+<h4><a name="DURATION_TIMER_LOOPOFFSET" onclick="HideNextDOM($(this));" >Offset between sequences [sec]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_duration_object_offset_between_sequences.jpg" border="0"><br></br>
+Only used if 'Loops' is > 0. Defines the offset between two looped sequences. 
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b><i>Example in an Emitter:</b></i></br>
+Loops = 1, Sequence duration = 10F, Start = 15F, Offset = 12F.
+<br></br>
+<u>With the above settings the emitter will operate as follows:</u>
+<br>
+1. start emitting at frame 15. <br>
+2. It will emit for 10 frames (so until frame 25).<br>
+3. Then we have a pause lasting 12 frames (the offset). <br>
+4. At frame 37 the sequence loops and jumps back to step 2.<br>
+<br>
+This is done 'Loops' times before the emitter ceases operating.
+</div>
+<br></br></p></div>
+<h4><a name="DURATION_TIMER_SPLINE" onclick="HideNextDOM($(this));" >Temporal intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/general_duration_object_temporal_intensity.jpg" border="0"><br></br>
+Here you can control the intensity of the sequence via a spline graph.
+<br></br>
+For example when the emitter asks the duration node internally if the sequence is currently active, it will return a full intensity if it is and if not it will return zero. <br>
+With the spline graph you can alter this intensity temporally. The spline graph ranges from the start of the sequence until the end of it (so this is per loop).
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

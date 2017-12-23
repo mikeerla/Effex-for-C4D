@@ -1,0 +1,575 @@
+|ROOT|Documentation|ROOT/index.html|
+	|PROD|Effex|ROOT/Effex/index.html|
+		|CHAP|Dialogs|ROOT/Effex/dialogs.html|
+			|CTAB|Pipeline Viewer|ROOT/Effex/fx_pipelineviewer.html|
+			|ENDE
+			|CTAB|Node Styler|ROOT/Effex/nodestyler.html|
+			|ENDE
+		|ENDE
+		|CHAP|Nodes|ROOT/Effex/objects.html|
+			|CTAB|Bases|ROOT/Effex/nodebases.html|
+				|TABS|Node|ROOT/Effex/nodebases_node.html|
+				|TABS|Display (Live Inspector)|ROOT/Effex/nodebases_inspector.html|
+				|TABS|Constraints|ROOT/Effex/nodebases_constraints.html|
+			|ENDE
+			|CTAB|Effex Scene|ROOT/Effex/fx_server.html|
+				|TABS|Framework|ROOT/Effex/fx_server_framework.html|
+				|TABS|Global|ROOT/Effex/fx_server_global.html|
+				|TABS|Bullet Dynamics|ROOT/Effex/fx_server_bulletdynamics.html|
+				|TABS|Cache Wizard|ROOT/Effex/fx_server_cachewizard.html|
+			|ENDE
+			|CTAB|Node Group|ROOT/Effex/nodegroup.html|
+				|TABS|Quicktab|ROOT/Effex/nodegroup_quicktab.html|
+			|ENDE
+			|CHAP|Dynamics|ROOT/Effex/fx_dynamics.html|
+				|CTAB|Fluid Dynamics|ROOT/Effex/fx_fluid.html|
+					|TABS|Quicktab|ROOT/Effex/fx_fluid_quicktab.html|
+					|TABS|Parameters|ROOT/Effex/fx_fluid_params.html|
+					|TABS|Characteristica|ROOT/Effex/fx_fluid_characteristica.html|
+					|TABS|Dynamics|ROOT/Effex/fx_fluid_dynamics.html|
+					|TABS|Solver|ROOT/Effex/fx_fluid_solver.html|
+					|TABS|Display|ROOT/Effex/fx_fluid_display.html|
+				|ENDE
+				|CTAB|Liquid Dynamics PBF|ROOT/Effex/fx_pbf.html|
+					|TABS|Parameters|ROOT/Effex/fx_pbf_parameters.html|
+				|ENDE
+			|ENDE
+			|CHAP|Forces|ROOT/Effex/fx_forces.html|
+				|CHAP|Dual Forces (DF)|ROOT/Effex/fx_forces_df.html|
+					|CTAB|DF::Buoyancy|ROOT/Effex/fx_dforce_buoyancy.html|
+						|TABS|Parameters|ROOT/Effex/fx_dforce_buoyancy_params.html|
+					|ENDE
+					|CTAB|DF::TrigoWave|ROOT/Effex/fx_dforce_trigowave.html|
+						|TABS|Parameters|ROOT/Effex/fx_dforce_trigowave_params.html|
+					|ENDE
+					|CTAB|DF::Vortex|ROOT/Effex/fx_dforce_vortex.html|
+						|TABS|Parameters|ROOT/Effex/fx_dforce_vortex_params.html|
+					|ENDE
+					|CTAB|DF::Field Curl|ROOT/Effex/fx_force_fieldcurl.html|
+						|TABS|Parameters|ROOT/Effex/fx_force_fieldcurl_params.html|
+					|ENDE
+					|CTAB|DF::Follow Spline|ROOT/Effex/fx_force_followspline.html|
+						|TABS|Parameters|ROOT/Effex/fx_force_followspline_params.html|
+					|ENDE
+				|ENDE
+				|CHAP|Grid Forces (GF)|ROOT/Effex/fx_forces_gf.html|
+					|CTAB|GF::External|ROOT/Effex/fx_force_external.html|
+						|TABS|Parameters|ROOT/Effex/fx_force_external_params.html|
+					|ENDE
+					|CTAB|GF::Swirling|ROOT/Effex/fx_force_swirling.html|
+						|TABS|Parameters|ROOT/Effex/fx_force_swirling_params.html|
+					|ENDE
+					|CTAB|GF::Particle Turbulence|ROOT/Effex/fx_force_particleturbulence.html|
+						|TABS|Parameters|ROOT/Effex/fx_force_particleturbulence_params.html|
+					|ENDE
+					|CTAB|GF::Coffee|ROOT/Effex/fx_force_coffee.html|
+						|TABS|Parameters|ROOT/Effex/fx_force_coffee_params.html|
+						|TABS|Scripting|ROOT/Effex/fx_force_coffee_scripting.html|
+					|ENDE
+				|ENDE
+				|CHAP|Particle Forces (PF)|ROOT/Effex/fx_forces_pf.html|
+					|CTAB|PF::Acceleration|ROOT/Effex/fx_pforce_acceleration.html|
+						|TABS|Parameters|ROOT/Effex/fx_pforce_acceleration_params.html|
+					|ENDE
+					|CTAB|PF::Coffee|ROOT/Effex/fx_pforce_coffee.html|
+						|TABS|Parameters|ROOT/Effex/fx_pforce_coffee_params.html|
+						|TABS|Scripting|ROOT/Effex/fx_pforce_coffee_scripting.html|
+					|ENDE
+					|CTAB|PF::Cohesion|ROOT/Effex/fx_pforce_cohesion.html|
+						|TABS|Parameters|ROOT/Effex/fx_pforce_cohesion_params.html|
+					|ENDE
+					|CTAB|PF::Steering|ROOT/Effex/fx_pforce_steering.html|
+						|TABS|Parameters|ROOT/Effex/fx_pforce_steering_params.html|
+					|ENDE
+					|CTAB|PF::Separation|ROOT/Effex/fx_pforce_separation.html|
+						|TABS|Parameters|ROOT/Effex/fx_pforce_separation_params.html|
+					|ENDE
+				|ENDE
+			|ENDE
+			|CHAP|Bodies|ROOT/Effex/fx_bodies.html|
+				|CHAP|Volumes|ROOT/Effex/fx_volumes.html|
+					|CTAB|Bases|ROOT/Effex/fx_volumes_bases.html|
+						|TABS|Display|ROOT/Effex/fx_volume_display.html|
+					|ENDE
+					|CTAB|Volume|ROOT/Effex/fx_volume.html|
+						|TABS|Quicktab|ROOT/Effex/fx_volume_quicktab.html|
+						|TABS|Parameters|ROOT/Effex/fx_volume_params.html|
+					|ENDE
+					|CTAB|MultiVolume|ROOT/Effex/fx_multivolume.html|
+						|TABS|Parameters|ROOT/Effex/fx_multivolume_params.html|
+					|ENDE
+					|CTAB|Constructive Solid Geometry (CSG)|ROOT/Effex/fx_construstivesolidgeometry.html|
+						|TABS|Parameters|ROOT/Effex/fx_construstivesolidgeometry_params.html|
+						|TABS|Display|ROOT/Effex/fx_construstivesolidgeometry_display.html|
+					|ENDE
+					|CTAB|Surface Reconstructor|ROOT/Effex/fx_surfaces_surfacereconstructor.html|
+						|TABS|Parameters|ROOT/Effex/fx_surfaces_surfacereconstructor_params.html|
+						|TABS|Display|ROOT/Effex/fx_surfaces_surfacereconstructor_display.html|
+						|TABS|Constraints|ROOT/Effex/fx_surfaces_surfacereconstructor_constraints.html|
+					|ENDE
+				|ENDE
+				|CHAP|Surfaces|ROOT/Effex/fx_surfaces.html|
+					|CTAB|Mesh|ROOT/Effex/fx_mesh.html|
+						|TABS|Quicktab|ROOT/Effex/fx_mesh_quicktab.html|
+						|TABS|Parameters|ROOT/Effex/fx_mesh_params.html|
+						|TABS|Display|ROOT/Effex/fx_mesh_display.html|
+					|ENDE
+					|CTAB|MultiMesh|ROOT/Effex/fx_multimesh.html|
+						|TABS|Quicktab|ROOT/Effex/fx_multimesh_quicktab.html|
+						|TABS|Parameters|ROOT/Effex/fx_multimesh_params.html|
+						|TABS|Display|ROOT/Effex/fx_multimesh_display.html|
+					|ENDE
+					|CTAB|Implicit Mesher|ROOT/Effex/fx_surfaces_implicitmesher.html|
+						|TABS|Parameters|ROOT/Effex/fx_surfaces_implicitmesher_params.html|
+					|ENDE
+				|ENDE
+			|ENDE
+			|CHAP|Channels|ROOT/Effex/fx_channel.html|
+				|CTAB|Bases|ROOT/Effex/fx_channel_bases.html|
+					|TABS|Quicktab|ROOT/Effex/fx_channel_bases_quicktab.html|
+					|TABS|Parameters|ROOT/Effex/fx_channel_bases_params.html|
+					|TABS|Display|ROOT/Effex/fx_channel_bases_display.html|
+				|ENDE
+				|CTAB|Vector|ROOT/Effex/fx_channel_vector.html|
+				|ENDE
+				|CTAB|Fuel|ROOT/Effex/fx_channel_fuel.html|
+				|ENDE
+				|CTAB|Fire|ROOT/Effex/fx_channel_fire.html|
+				|ENDE
+			|ENDE
+			|CHAP|Particles|ROOT/Effex/fx_particles.html|
+				|CTAB|Particle Group|ROOT/Effex/fx_particles_particlegroup.html|
+					|TABS|Quicktab|ROOT/Effex/fx_particlegroup_quicktab.html|
+					|TABS|Parameters|ROOT/Effex/fx_particlegroup_parameters.html|
+					|TABS|Display|ROOT/Effex/fx_particlegroup_display.html|
+				|ENDE
+				|CTAB|Particle Tracer|ROOT/Effex/fx_tracer.html|
+					|TABS|Parameters|ROOT/Effex/fx_tracer_params.html|
+				|ENDE
+				|CTAB|Particle Geometry|ROOT/Effex/fx_particlegeometry.html|
+					|TABS|Parameters|ROOT/Effex/fx_particlegeometry_params.html|
+				|ENDE
+				|CTAB|GeoVariance|ROOT/Effex/fx_geovariance.html|
+					|TABS|Parameters|ROOT/Effex/fx_geovariance_params.html|
+				|ENDE
+				|CTAB|Properties|ROOT/Effex/fx_particles_properties.html|
+					|TABS|Scalar|ROOT/Effex/fx_particles_properties_scalar.html|
+					|TABS|Vector|ROOT/Effex/fx_particles_properties_vector.html|
+				|ENDE
+			|ENDE
+			|CHAP|General|ROOT/Effex/fx_general.html|
+				|CTAB|Duration|ROOT/Effex/fx_general_duration.html|
+					|TABS|Parameters|ROOT/Effex/fx_general_duration_object.html|
+				|ENDE
+				|CTAB|Alignment|ROOT/Effex/fx_general_alignment.html|
+					|TABS|Parameters|ROOT/Effex/fx_general_alignment_object.html|
+				|ENDE
+				|CTAB|Value|ROOT/Effex/fx_general_value.html|
+					|TABS|Parameters|ROOT/Effex/fx_general_value_params.html|
+				|ENDE
+				|CTAB|Falloff Kernel|ROOT/Effex/fx_general_kernel.html|
+					|TABS|Parameters|ROOT/Effex/fx_general_kernel_params.html|
+				|ENDE
+			|ENDE
+			|CHAP|Emitters|ROOT/Effex/fx_emitters.html|
+				|CHAP|Grid|ROOT/Effex/fx_emitters_grid.html|
+					|CTAB|Emitter::Cell Iterator|ROOT/Effex/fx_emitters_celliterator.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_celliterator_params.html|
+					|ENDE
+					|CTAB|Emitter::Grid|ROOT/Effex/fx_emitters_gridemitter.html|
+						|TABS|Quicktab|ROOT/Effex/fx_emitters_gridemitter_quicktab.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_gridemitter_params.html|
+					|ENDE
+					|CTAB|Settings::Grid Emission |ROOT/Effex/fx_emitters_emissionsettings.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_emissionsettings_object.html|
+					|ENDE
+					|CTAB|Container::Channel/Settings|ROOT/Effex/fx_emitters_containerchannelsettings.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_containerchannelsettings_object.html|
+					|ENDE
+				|ENDE
+				|CHAP|Particle|ROOT/Effex/fx_emitters_particle.html|
+					|CTAB|Emitter::Particle In Volume|ROOT/Effex/fx_emitters_particlegridemitter.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_particlegridemitter_params.html|
+						|TABS|Constraints|ROOT/Effex/fx_emitters_particlegridemitter_constraints.html|
+					|ENDE
+					|CTAB|Emitter::Particle On Mesh|ROOT/Effex/fx_emitters_particlemeshemitter.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_particlemeshemitter_params.html|
+						|TABS|Constraints|ROOT/Effex/fx_emitters_particlemeshemitter_constraints.html|
+					|ENDE
+					|CTAB|Settings::Particle Emission|ROOT/Effex/fx_emitters_particleemissionsettings.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_particleemissionsettings_object.html|
+					|ENDE
+					|CTAB|Container::Channel/Value|ROOT/Effex/fx_emitters_container_channelvalue.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_container_channelvalue_object.html|
+					|ENDE
+				|ENDE
+			|ENDE
+			|CHAP|Constraints|ROOT/Effex/fx_constraints.html|
+				|CTAB|Bases|ROOT/Effex/fx_constraints_global.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_global_params.html|
+				|ENDE
+				|CTAB|CS::Coffee|ROOT/Effex/fx_constraints_coffee.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_coffee_params.html|
+					|TABS|Scripting|ROOT/Effex/fx_constraints_coffee_scripting.html|
+				|ENDE
+				|CTAB|CS::Distance To Object|ROOT/Effex/fx_constraints_voxeldistance.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_voxelsistance_params.html|
+				|ENDE
+				|CTAB|CS::Distance To Particle|ROOT/Effex/fx_constraints_particledistance.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_particledistance_params.html|
+				|ENDE
+				|CTAB|CS::Flow Rotation|ROOT/Effex/fx_constraints_flowrotation.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_flowrotation_params.html|
+				|ENDE
+				|CTAB|CS::Gradient|ROOT/Effex/fx_constraints_gradient.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_gradient_params.html|
+				|ENDE
+				|CTAB|CS::Grid Channel Average|ROOT/Effex/fx_constraints_gridchannelavearge.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_gridchannelavearge_params.html|
+				|ENDE
+				|CTAB|CS::Grid Value|ROOT/Effex/fx_constraints_gridvalue.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_gridvalue_params.html|
+				|ENDE
+				|CTAB|CS::Noise|ROOT/Effex/fx_constraints_noise.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_noise_params.html|
+				|ENDE
+				|CTAB|CS::Obstacle Fractions|ROOT/Effex/fx_constraints_obstaclefractions.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_obstaclefractions_params.html|
+				|ENDE
+				|CTAB|CS::Particle Count|ROOT/Effex/fx_constraints_particlecount.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_particlecount_params.html|
+				|ENDE
+				|CTAB|CS::Strain|ROOT/Effex/fx_constraints_strain.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_strain_params.html|
+				|ENDE
+				|CTAB|CS::Volume|ROOT/Effex/fx_constraints_volume.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_volume_params.html|
+				|ENDE
+				|CTAB|PCS::Attribute|ROOT/Effex/fx_constraints_pc_attribute.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_pc_attribute_params.html|
+				|ENDE
+				|CTAB|PCS::Property|ROOT/Effex/fx_constraints_pc_property.html|
+					|TABS|Parameters|ROOT/Effex/fx_constraints_pc_property_params.html|
+				|ENDE
+			|ENDE
+			|CHAP|Operators|ROOT/Effex/fx_operators.html|
+				|CHAP|Cell Operators (COP)|ROOT/Effex/fx_operators_cop.html|
+					|CTAB|COP::Math|ROOT/Effex/fx_cellop_math.html|
+						|TABS|Params|ROOT/Effex/fx_cellop_math_params.html|
+					|ENDE
+					|CTAB|COP::Coffee|ROOT/Effex/fx_cellop_coffee.html|
+						|TABS|Params|ROOT/Effex/fx_cellop_coffee_params.html|
+						|TABS|Scripting|ROOT/Effex/fx_cellop_coffee_scripting.html|
+					|ENDE
+				|ENDE
+				|CHAP|Grid Operators (GOP)|ROOT/Effex/fx_operators_gop.html|
+					|CTAB|GOP::Advection|ROOT/Effex/fx_operators_advection.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_advection_params.html|
+					|ENDE
+					|CTAB|GOP::Cacher|ROOT/Effex/fx_operators_gridcasher.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_gridcacher_params.html|
+						|TABS|Constraints|ROOT/Effex/fx_operators_gridcacher_constraints.html|
+					|ENDE
+					|CTAB|GOP::Combustion|ROOT/Effex/fx_operators_combustion.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_combustion_params.html|
+					|ENDE
+					|CTAB|GOP::Cooling|ROOT/Effex/fx_operators_cooling.html|
+						|TABS|Params|ROOT/Effex/fx_operators_cooling_params.html|
+					|ENDE
+					|CTAB|GOP::Diffusor|ROOT/Effex/fx_operators_diffusor.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_diffusor_params.html|
+					|ENDE
+					|CTAB|GOP::Dissipation|ROOT/Effex/fx_operators_dissipation.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_dissipation_params.html|
+					|ENDE
+					|CTAB|GOP::Sand|ROOT/Effex/fx_operators_sand.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_sand_params.html|
+					|ENDE
+					|CTAB|GOP::Variable Density|ROOT/Effex/fx_operators_variabledensity.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_variabledensity_node.html|
+					|ENDE
+				|ENDE
+				|CHAP|Mesh Operators (MOP)|ROOT/Effex/fx_operators_mop.html|
+					|CTAB|MOP::Cacher|ROOT/Effex/fx_operators_meshcacher.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_meshcacher_params.html|
+						|TABS|Constraints|ROOT/Effex/fx_operators_meshcacher_constraints.html|
+					|ENDE
+					|CTAB|MOP::Curvature|ROOT/Effex/fx_operators_meshcurvature.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_meshcurvature_params.html|
+					|ENDE
+					|CTAB|MOP::Smoother|ROOT/Effex/fx_operators_meshsmoother.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_meshsmoother_params.html|
+					|ENDE
+				|ENDE
+				|CHAP|Particle Operators (POP)|ROOT/Effex/fx_operators_pop.html|
+					|CTAB|POP::Advection|ROOT/Effex/fx_operators_particleadvection.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_particleadvection_params.html|
+					|ENDE
+					|CTAB|POP::Boids|ROOT/Effex/fx_operators_boids.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_boids_params.html|
+					|ENDE
+					|CTAB|POP::Cacher|ROOT/Effex/fx_operators_particlecacher.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_particlecacher_params.html|
+					|ENDE
+					|CTAB|POP::Deform|ROOT/Effex/fx_operators_deform.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_deform_params.html|
+					|ENDE
+					|CTAB|POP::Foam/Spray/Bubbles|ROOT/Effex/fx_surfaces_foamspraybubbles.html|
+						|TABS|Parameters|ROOT/Effex/fx_surfaces_foamspraybubbles_params.html|
+						|TABS|Unified|ROOT/Effex/fx_surfaces_foamspraybubbles_unified.html|
+						|TABS|Foam|ROOT/Effex/fx_surfaces_foamspraybubbles_foam.html|
+						|TABS|Spray|ROOT/Effex/fx_surfaces_foamspraybubbles_spray.html|
+					|ENDE
+					|CTAB|POP::Follow Spline|ROOT/Effex/fx_operators_followspline.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_followspline_params.html|
+					|ENDE
+					|CTAB|POP::Forces|ROOT/Effex/fx_operators_forces.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_forces_params.html|
+					|ENDE
+					|CTAB|POP::Grid to ParticleData|ROOT/Effex/fx_operators_pop_gridtoparticle.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_pop_gridtoparticle_parameters.html|
+					|ENDE
+					|CTAB|POP::Particle Converter|ROOT/Effex/fx_operators_particleconverter.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_particleconverter_params.html|
+					|ENDE
+					|CTAB|POP::PointData to Grid|ROOT/Effex/fx_emitters_particletogridemitter.html|
+						|TABS|Parameters|ROOT/Effex/fx_emitters_particletogridemitter_params.html|
+						|TABS|Constraints|ROOT/Effex/fx_emitters_particletogridemitter_constraints.html|
+					|ENDE
+					|CTAB|POP::Property|ROOT/Effex/fx_operators_property.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_property_params.html|
+						|TABS|Constraints|ROOT/Effex/fx_operators_property_constraints.html|
+					|ENDE
+					|CTAB|POP::Surface Properties|ROOT/Effex/fx_operators_po_surfaceproperties.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_po_surfaceproperties_params.html|
+					|ENDE
+					|CTAB|POP::Surface Tension|ROOT/Effex/fx_operators_po_surfacetension.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_po_surfacetension_params.html|
+					|ENDE
+					|CTAB|POP::Thin Sheet|ROOT/Effex/fx_operators_po_thinsheet.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_po_thinsheet_params.html|
+					|ENDE
+					|CTAB|POP::Volume Properties|ROOT/Effex/fx_operators_po_volumeproperties.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_po_volumeproperties_params.html|
+					|ENDE
+					|CTAB|POP::Weak Spring|ROOT/Effex/fx_operators_po_weakspring.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_po_weakspring_params.html|
+					|ENDE
+				|ENDE
+				|CHAP|Particle Instant Operators (PIOP)|ROOT/Effex/fx_operators_piop.html|
+					|CTAB|PIOP::Spawn Particles|ROOT/Effex/fx_operators_instant_spawnparticles.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_instant_spawnparticles_params.html|
+					|ENDE
+					|CTAB|PIOP::Repulsion|ROOT/Effex/fx_operators_pioprepulsion.html|
+						|TABS|Parameters|ROOT/Effex/fx_operators_pioprepulsion_params.html|
+					|ENDE
+				|ENDE
+				|CHAP|Rigid-Body Operators (ROP)|ROOT/Effex/fx_operators_rop.html|
+					|CTAB|ROP::Forces|ROOT/Effex/fx_ropforces.html|
+						|TABS|Parameters|ROOT/Effex/fx_ropforces_params.html|
+					|ENDE
+				|ENDE
+				|CHAP|Volume Operators (VOP)|ROOT/Effex/fx_operators_vop.html|
+					|CTAB|VOP::Smoother|ROOT/Effex/fx_levelsetsmoother.html|
+						|TABS|Parameters|ROOT/Effex/fx_levelsetsmoother_params.html|
+					|ENDE
+				|ENDE
+			|ENDE
+			|CHAP|Cinema 4D|ROOT/Effex/fx_c4d.html|
+				|CTAB|Spline Growth|ROOT/Effex/fx_c4d_splinegrowth.html|
+					|TABS|Object|ROOT/Effex/fx_c4d_splinegrowth_params.html|
+				|ENDE
+				|CTAB|[Particle Force] Fluid Velocity Sampler|ROOT/Effex/fx_force_gridforce.html|
+					|TABS|Parameters|ROOT/Effex/fx_force_gridforce_parameters.html|
+					|TABS|Falloff|ROOT/Effex/fx_force_gridforce_falloff.html|
+				|ENDE
+				|CTAB|[MoGraph Effector] Sync Clones to Rigid-Body|ROOT/Effex/fx_surfaces_multivolumeeffector.html|
+					|TABS|Params|ROOT/Effex/fx_surfaces_multivolumeeffector_params.html|
+					|TABS|Falloff|ROOT/Effex/fx_surfaces_multivolumeeffector_falloff.html|
+				|ENDE
+			|ENDE
+		|ENDE
+		|CHAP|Materials|ROOT/Effex/materials.html|
+			|CTAB|Gas Renderer|ROOT/Effex/fx_shader_gas.html|
+				|TABS|Presets|ROOT/Effex/fx_shader_gas_presets.html|
+				|TABS|General|ROOT/Effex/fx_shader_gas_general.html|
+				|TABS|Smoke|ROOT/Effex/fx_shader_gas_smoke.html|
+				|TABS|Fire|ROOT/Effex/fx_shader_gas_fire.html|
+				|TABS|Compositing|ROOT/Effex/fx_shader_gas_compositing.html|
+			|ENDE
+		|ENDE
+		|CHAP|Shaders|ROOT/Effex/fx_shaders.html|
+			|CTAB|Grid Sampler|ROOT/Effex/fx_shaders_gridsampler.html|
+			|ENDE
+			|CTAB|Particle Sampler|ROOT/Effex/fx_shaders_particlesampler.html|
+			|ENDE
+		|ENDE
+		|CHAP|Tags|ROOT/Effex/fx_tags.html|
+			|CTAB|Obstacle|ROOT/Effex/fx_obstacle.html|
+				|TABS|Tag|ROOT/Effex/fx_obstacle_tag.html|
+				|TABS|Dynamics|ROOT/Effex/fx_obstacle_dynamics.html|
+				|TABS|Collision|ROOT/Effex/fx_obstacle_collision.html|
+				|TABS|Dynamic Coupling|ROOT/Effex/fx_obstacle_dynamiccollion.html|
+				|TABS|RAM Cache|ROOT/Effex/fx_obstacle_ramcache.html|
+			|ENDE
+			|CTAB|One-Way Fluid Coupling|ROOT/Effex/fx_onewaycoupling.html|
+			|ENDE
+			|CTAB|VRay Gizmo|ROOT/Effex/fx_vraygizmo.html|
+			|ENDE
+		|ENDE
+		|CHAP|Tools|ROOT/Effex/fx_tools.html|
+			|CTAB|Particle Brush|ROOT/Effex/fx_tools_particlebrush.html|
+				|TABS|Sampling|ROOT/Effex/fx_tools_particlebrush_sampling.html|
+				|TABS|Painting|ROOT/Effex/fx_tools_particlebrush_painting.html|
+			|ENDE
+		|ENDE
+		|CHAP|Xpresso Nodes|ROOT/Effex/fx_xpresso.html|
+			|CHAP|General|ROOT/Effex/fx_xpresso_general.html|
+				|CTAB|Fluid Advection|ROOT/Effex/fx_xpresso_general_fluidadvection.html|
+					|TABS|Node|ROOT/Effex/fx_xpresso_general_fluidadvection_node.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_general_fluidadvection_parameter.html|
+					|TABS|Outports|ROOT/Effex/fx_xpresso_general_fluidadvection_parameter_out.html|
+				|ENDE
+				|CTAB|Ballistic Advection|ROOT/Effex/fx_xpresso_general_kinematicadvection.html|
+					|TABS|Node|ROOT/Effex/fx_xpresso_general_kinematicadvection_node.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_general_kinematicadvection_param.html|
+					|TABS|Outports|ROOT/Effex/fx_xpresso_general_kinematicadvection_paramout.html|
+				|ENDE
+				|CTAB|Point-Volume Collider|ROOT/Effex/fx_xpresso_general_pvcollider.html|
+					|TABS|Node|ROOT/Effex/fx_xpresso_general_pvcollider_node.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_general_pvcollider_param.html|
+					|TABS|Outports|ROOT/Effex/fx_xpresso_general_pvcollider_paramout.html|
+				|ENDE
+				|CTAB|Space Converter|ROOT/Effex/fx_xpresso_general_spaceconverter.html|
+					|TABS|Node|ROOT/Effex/fx_xpresso_general_spaceconverter_node.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_general_spaceconverter_param.html|
+					|TABS|Outports|ROOT/Effex/fx_xpresso_general_spaceconverter_paramout.html|
+				|ENDE
+			|ENDE
+			|CHAP|Particles|ROOT/Effex/fx_xpresso_particles.html|
+				|CTAB|Particle Edit|ROOT/Effex/fx_xpresso_particles_edit.html|
+					|TABS|Node|ROOT/Effex/fx_xpresso_particles_edit_node.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_particles_edit_param.html|
+				|ENDE
+				|CTAB|Particle Info|ROOT/Effex/fx_xpresso_particles_info.html|
+					|TABS|Node|ROOT/Effex/fx_xpresso_particles_info_node.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_particles_info_param.html|
+					|TABS|Outports|ROOT/Effex/fx_xpresso_particles_info_paramout.html|
+				|ENDE
+			|ENDE
+			|CHAP|Modifiers|ROOT/Effex/fx_xpresso_modifiers.html|
+				|CTAB|Gradient|ROOT/Effex/fx_xpresso_modifiers_gradient.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_modifiers_gradient_parameter.html|
+					|TABS|Outports|ROOT/Effex/fx_xpresso_modifiers_gradient_parameterout.html|
+				|ENDE
+				|CTAB|Grid Cell|ROOT/Effex/fx_xpresso_modifiers_gridcell.html|
+					|TABS|Node|ROOT/Effex/fx_xpresso_modifiers_gridcell_node.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_modifiers_gridcell_parameter.html|
+					|TABS|Outports|ROOT/Effex/fx_xpresso_modifiers_gridcell_parameterout.html|
+				|ENDE
+				|CTAB|Voxel Iterator|ROOT/Effex/fx_xpresso_modifiers_voxeliterator.html|
+					|TABS|Inports|ROOT/Effex/fx_xpresso_modifiers_voxeliterator_param.html|
+					|TABS|Outports|ROOT/Effex/fx_xpresso_modifiers_voxeliterator_paramout.html|
+				|ENDE
+			|ENDE
+		|ENDE
+		|CHAP|Post Effects|ROOT/Effex/fx_posteffects.html|
+			|CTAB|KrakatoaSR (Effex)|ROOT/Effex/fx_posteffects_krakatoa.html|
+				|TABS|Basic|ROOT/Effex/fx_posteffects_krakatoa_basic.html|
+				|TABS|Precomputations|ROOT/Effex/fx_posteffects_krakatoa_precomputation.html|
+				|TABS|Rendering|ROOT/Effex/fx_posteffects_krakatoa_rendering.html|
+				|TABS|Passes|ROOT/Effex/fx_posteffects_krakatoa_passes.html|
+			|ENDE
+		|ENDE
+		|CHAP|Developer API|ROOT/Effex/fx_api.html|
+			|CHAP|Getting started..|ROOT/Effex/fx_api_global.html|
+				|PAGE|Namespaces|ROOT/Effex/fx_api_global_namespace.html|
+				|PAGE|Server and Scenes|ROOT/Effex/fx_api_global_serverscences.html|
+				|PAGE|Pipeline|ROOT/Effex/fx_api_global_pipeline.html|
+				|PAGE|Nodes and Multithreading|ROOT/Effex/fx_api_global_nodesmultithreading.html|
+				|CTAB|How to use in your own project|ROOT/Effex/fx_api_global_htuiyop.html|
+					|TABS|How to create your own nodes|ROOT/Effex/fx_api_classes_plugins_howto.html|
+				|ENDE
+			|ENDE
+			|CHAP|Classes|ROOT/Effex/fx_api_classes.html|
+				|CTAB|FXServer|ROOT/Effex/fx_api_classes_fxserver.html|
+				|ENDE
+				|CTAB|FXScene|ROOT/Effex/fx_api_classes_fxscene.html|
+				|ENDE
+				|CHAP|Nodes|ROOT/Effex/fx_api_classes_nodes.html|
+					|CTAB|FXBase|ROOT/Effex/fx_api_classes_nodes_fxbase.html|
+					|ENDE
+					|CHAP|: public FXBase|ROOT/Effex/fx_api_classes_nodes_fxbase_derived.html|
+						|CTAB|FXConstraint|ROOT/Effex/fx_api_classes_nodes_fxconstraint.html|
+						|ENDE
+						|CTAB|FXParticleGroup|ROOT/Effex/fx_api_classes_nodes_fxparticlegroup.html|
+						|ENDE
+						|CTAB|FXMesher|ROOT/Effex/fx_api_classes_nodes_fxmesher.html|
+						|ENDE
+						|CTAB|FXVectorChannel|ROOT/Effex/fx_api_classes_nodes_fxchannelvector.html|
+						|ENDE
+						|CTAB|FXScalarChannel|ROOT/Effex/fx_api_classes_nodes_fxchannel.html|
+						|ENDE
+						|CHAP|: public FXScalarChannel|ROOT/Effex/fx_api_classes_nodes_fxscalarchannel_derived.html|
+							|CTAB|FXFireChannel|ROOT/Effex/fx_api_classes_nodes_fxchannelfire.html|
+							|ENDE
+							|CTAB|FXFuelChannel|ROOT/Effex/fx_api_classes_nodes_fxchannelfuel.html|
+							|ENDE
+						|ENDE
+						|CTAB|FXVolume|ROOT/Effex/fx_api_classes_nodes_fxvolume.html|
+						|ENDE
+						|CHAP|: public FXVolume|ROOT/Effex/fx_api_classes_nodes_fxvolume_derived.html|
+							|CTAB|FXVolumeMesh|ROOT/Effex/fx_api_classes_nodes_fxvolumemesh.html|
+							|ENDE
+						|ENDE
+					|ENDE
+				|ENDE
+				|CHAP|Particles|ROOT/Effex/fx_api_classes_particles.html|
+					|CTAB|FXParticle|ROOT/Effex/fx_api_classes_particles_fxparticle.html|
+					|ENDE
+					|PAGE|ParticleFactoryTypes|ROOT/Effex/fx_api_classes_particles_particlefactorytypes.html|
+					|PAGE|ParticleProperty|ROOT/Effex/fx_api_classes_particles_particleproperty.html|
+					|PAGE|NeighborData|ROOT/Effex/fx_api_classes_particles_neighbordata.html|
+				|ENDE
+				|CHAP|Iterators|ROOT/Effex/fx_api_classes_iterators.html|
+					|CTAB|FXParticleIterator|ROOT/Effex/fx_api_classes_particles_fxparticleiterator.html|
+					|ENDE
+					|CTAB|FXCellIterator|ROOT/Effex/fx_api_classes_fxscalarcelliterator.html|
+					|ENDE
+					|CTAB|FXMeshIterator|ROOT/Effex/fx_api_classes_fxmeshiterator.html|
+					|ENDE
+				|ENDE
+				|CHAP|Global|ROOT/Effex/fx_api_classes_global.html|
+					|PAGE|Conversions|ROOT/Effex/fx_api_classes_math_conversions.html|
+					|PAGE|NodeBaseType|ROOT/Effex/fx_api_classes_nodes_nodebasetype.html|
+					|PAGE|NodeSubType|ROOT/Effex/fx_api_classes_nodes_nodesubtype.html|
+					|PAGE|ProcessData|ROOT/Effex/fx_api_classes_global_processdata.html|
+					|PAGE|ProcessDataGrids|ROOT/Effex/fx_api_classes_global_processdatagrids.html|
+					|PAGE|ProcessDataParticles|ROOT/Effex/fx_api_classes_global_processdataparticles.html|
+					|PAGE|SimulationInfo|ROOT/Effex/fx_api_classes_global_siminfo.html|
+					|PAGE|SubstepInfo|ROOT/Effex/fx_api_classes_global_substepinfo.html|
+					|PAGE|NodeRetrieveType|ROOT/Effex/fx_api_classes_global_noderetrieve.html|
+				|ENDE
+				|CHAP|Plugins|ROOT/Effex/fx_api_classes_plugins.html|
+					|CTAB|Registration|ROOT/Effex/fx_api_classes_plugins_registration.html|
+					|ENDE
+					|CTAB|FXNodeData|ROOT/Effex/fx_api_classes_plugins_fxnodedata.html|
+					|ENDE
+					|CTAB|FXConstraintData|ROOT/Effex/fx_api_classes_plugins_fxconstraintdata.html|
+					|ENDE
+					|CTAB|FXForceData|ROOT/Effex/fx_api_classes_plugins_fxforcedata.html|
+					|ENDE
+					|CTAB|FXOperatorData|ROOT/Effex/fx_api_classes_plugins_fxoperatordata.html|
+					|ENDE
+				|ENDE
+			|ENDE
+			|CTAB|Global Functions|ROOT/Effex/fx_api_functions.html|
+			|ENDE
+		|ENDE
+		|CTAB|Libraries|ROOT/Effex/libraries.html|
+			|TABS|Boost|ROOT/Effex/libraries_boost.html|
+			|TABS|Partio|ROOT/Effex/partio.html|
+			|TABS|nedmalloc|ROOT/Effex/ned.html|
+		|ENDE
+	|ENDE
+|ENDE

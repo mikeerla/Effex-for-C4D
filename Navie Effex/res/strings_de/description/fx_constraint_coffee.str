@@ -1,0 +1,6 @@
+STRINGTABLE fx_constraint_coffee
+{
+	fx_constraint_coffee "Beschr\u00E4nkung::Coffee";
+
+	CONSTRAINT_COFFEE_INTENSITY "Intensit\u00E4t";
+}

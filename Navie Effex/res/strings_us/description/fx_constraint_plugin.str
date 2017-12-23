@@ -1,0 +1,5 @@
+STRINGTABLE fx_constraint_plugin
+{
+	fx_constraint_plugin "Constraint::Plugin";
+
+}

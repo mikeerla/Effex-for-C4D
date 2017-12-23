@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_iterators.html">Iterators</a></div>
+<div class="content">
+<h3>FXParticleIterator</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXParticleIterator</div>
+<div class="data">
+<p>
+The particle iterator allows you to browse particles of a specific particle group's subgroup type.
+<br>It natively supports multiple processors so you don't have to worry about it yourself.
+<br></br>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">FXParticle</span>* GetParticle (<span style="color:rgb(0,31,174);">void</span>);</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The current particle.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">FXParticle</span>* GetFirstParticle (<span style="color:rgb(0,31,174);">void</span>);</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The first particle for the given cpu.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">FXParticle</span>* GetLastParticle (<span style="color:rgb(0,31,174);">void</span>);</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The last particle for the given cpu.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> Init (<span style="color:rgb(0,120,120);">FXParticleGroup</span>* group, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">ParticleFactoryTypes</span> m_factory);</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the iterator was initialised successfully.
+<br></br>
+<b>Parameters</b><BR>
+<i>FXParticleGroup* group</i>: <br>
+Pass the particle group containing the particles to iterate.
+<br></br>
+<i>const ParticleFactoryTypes m_factory</i>: <br>
+The particle subgroup type.
+<br></br>
+<i>const int cpus</i>: <br>
+Pass the amount of cpu threads you will be using for iterating particles.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> Restart (<span style="color:rgb(0,31,174);">void</span>);</A></h4><div class="selected"><p><br>
+This will reset the iterator for the given cpu.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the cpu thread to reset the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> SetNext (<span style="color:rgb(0,31,174);">void</span>);</A></h4><div class="selected"><p><br>
+Steps the iterator to get the next iterator. Use for forward stepping.
+<br></br>
+<b>Returns</b><br>
+true if the iterator has been incremented.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread to increment the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> SetPrev (<span style="color:rgb(0,31,174);">void</span>);</A></h4><div class="selected"><p><br>
+Steps the iterator to get the previous iterator. Use for backward stepping.
+<br></br>
+<b>Returns</b><br>
+true if the iterator has been decremented.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread to decrement the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> Offset (long offset);</A></h4><div class="selected"><p><br>
+Offsets the iterator to a user defined position. This is currently private.
+<br></br>
+<b>Parameters</b><BR>
+
+<i>const long offset</i>: <br>
+the iterator offset.
+<br></br>
+<i>const int cpu</i>: <br>
+the current cpu thread to offset the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> OffsetSafe (long offset);</A></h4><div class="selected"><p><br>
+Offsets the iterator to a user defined position.
+<br></br>
+<b>Returns</b><br>
+true if the offset operation was successful and the resulting iterator is valid.
+<br></br>
+<b>Parameters</b><BR>
+<i>const long offset</i>: <br>
+the iterator offset.
+<br></br>
+<i>const int cpu</i>: <br>
+the current cpu thread to offset the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> IsValid (<span style="color:rgb(0,31,174);">void</span>) const;</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the current iterator is valid.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> <span style="color:rgb(0,120,120);">FXParticleIterator</span>* Alloc (<span style="color:rgb(0,31,174);">void</span>);</A></h4><div class="selected"><p><br>
+Allocates the iterator. You can use AutoAlloc for a scope based allocation.
+<br></br>
+<b>Returns</b><br>
+the FXParticleIterator. The user owns the pointed object.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> <span style="color:rgb(0,31,174);">void</span> Free (<span style="color:rgb(0,120,120);">FXParticleIterator</span>*& p);</A></h4><div class="selected"><p><br>
+Frees a previously allocated FXParticleIterator.
+<br></br>
+<b>Parameters</b><BR>
+<i>FXParticleIterator*&</i>: <br>
+Pass the FXParticleIterator to free.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+CONTAINER fx_c4d_effector_multi
+{
+	NAME fx_c4d_effector_multi;
+	INCLUDE Obase;
+	
+	GROUP ID_MULTIVOLUME_EFFECTOR
+	{		
+		LINK MULTIVOLUME_EFFECTOR_VOLUME { ACCEPT {fx_mesh_multi;}}
+		REAL	MULTIVOLUME_EFFECTOR_STRENGTH
+		{
+			MINSLIDER 0.0;
+			MAXSLIDER 100.0;
+			UNIT	  PERCENT;
+			CUSTOMGUI REALSLIDER;
+		}		
+	}
+	INCLUDE Oedeformer_panel;
+}

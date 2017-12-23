@@ -1,0 +1,26 @@
+STRINGTABLE fx_c4d_effector_sampler
+{
+	fx_c4d_effector_sampler		"Channel Sampler";
+
+	FX_EFFS_SCALE			"Skalierung";
+	FX_EFFS_CHANNEL			"Skalarkanal";
+	FX_EFFS_CHANNEL_SELECTOR	"C";
+	FX_EFFS_WEIGHT_TARGET		"Anwenden auf..";
+	FX_EFFS_WEIGHT_TARGET_ALL	"alle Effektorstärken";
+	FX_EFFS_WEIGHT_TARGET_POS	"Position";
+	FX_EFFS_WEIGHT_TARGET_ROT	"Rotation";
+	FX_EFFS_WEIGHT_TARGET_SCALE	"Skalierung";
+	FX_EFFS_WEIGHT_TARGET_COLOROPACITY	"Farbopazität";
+	FX_EFFS_WEIGHT_TARGET_VISIBILITY	"Sichtbarkeit";
+	FX_EFFS_WEIGHT_TARGET_WEIGHT	"Wichtung";
+	FX_EFFS_WEIGHT_TARGET_INDEX	"Klonindex";
+	FX_EFFS_WEIGHT_TARGET_TIME	"Zeit";
+	FX_EFFS_VMAXLEN			"Max. Vektorlänge";
+	FX_EFFS_VECMODE			"Modus";
+	FX_EFFS_VECMODE_LENGTH		"Länge";
+	FX_EFFS_VECMODE_SUM		"Summe";
+	FX_EFFS_VECMODE_AVERAGE		"Durchschnitt";
+	FX_EFFS_VECMODE_X		"X-Wert";
+	FX_EFFS_VECMODE_Y		"Y-Wert";
+	FX_EFFS_VECMODE_Z		"Z-Wert";
+}

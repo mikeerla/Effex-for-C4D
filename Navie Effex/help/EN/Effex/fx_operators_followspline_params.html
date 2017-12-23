@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_followspline.html">POP::Follow Spline</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="POP_FOLLOWSPLINE_SPLINE" onclick="HideNextDOM($(this));" >Spline</A></h4><div class="selected"><p><br></br>
+Drop here the spline based object that acts as a path for particles to approach and follow.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_PARTICLES" onclick="HideNextDOM($(this));" >Particle groups</A></h4><div class="selected"><p><br></br>
+Drop here any particle groups to include.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_PROPERTY" onclick="HideNextDOM($(this));" >Target property</A></h4><div class="selected"><p><br></br>
+This is optional. If you want another property than the position to be updated drop it in here.<br>
+It will contain the new position of the particle.
+
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+Define when and how long this node operates.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERMODE" onclick="HideNextDOM($(this));" >Start Position</A></h4><div class="selected"><p><br></br>
+Defines the location on the path where particle should start following it. It is determined in the first frame where this particle is seen by the operator (see 'Distance').
+<br></br>
+1. Nearest Point - starts at the nearest spline point to the particle <br>
+2. Nearest Vertex - starts at the nearest spline vertex to the particle<br>
+3. Vertex Index - user can specify a specific spline vertex index to start from<br>
+4. Percentage - user can specify a location on the spline with a percentage value (along length of spline)<br>
+5. Random - starts at a random position on the spline
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERVERTEX" onclick="HideNextDOM($(this));" >Vertex Index</A></h4><div class="selected"><p><br></br>
+<i>(Only available if 'Start Position' is set to 'Vertex Index')</i>
+<br><br>
+The vertex index to start from.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERPERCENT" onclick="HideNextDOM($(this));" >Percent</A></h4><div class="selected"><p><br></br>
+<i>(Only available if 'Start Position' is set to 'Percentage')</i>
+<br><br>
+The position along the spline to start from given as a percentage value. 0% means at the first vertex, 50% means exactly at the middle of the path and 100% at the end (or at the first point in case the spline is closed).
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERMODE_SEGMENT" onclick="HideNextDOM($(this));" >Segment</A></h4><div class="selected"><p><br></br>
+<i>(Only available if 'Start Position' is set to 'Vertex Index' or 'Percentage')</i>
+<br><br>
+Define the spline segment to use.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERSEGMENT" onclick="HideNextDOM($(this));" >Segment Index</A></h4><div class="selected"><p><br></br>
+<i>(Only available if 'Start Position' is set to 'Vertex Index' or 'Percentage')</i>
+<br><br>
+The index of the spline segment to use. See 'Segment'.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERDISTANCE" onclick="HideNextDOM($(this));" >Distance</A></h4><div class="selected"><p><br></br>
+The maximum distance for particles to check for a spline path point to start from. If further away they are not moving to the spline.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Move To Spline</span>
+</div>
+<div class="subdata selected">
+Settings to define how particles move to their starting position on the spline path.
+<h4><a name="POP_FOLLOWSPLINE_STEERMAXORIGVEL" onclick="HideNextDOM($(this));" >Original velocity</A></h4><div class="selected"><p><br></br>
+Defines that the maximum velocity for a particle to move to the spline may not exceed the particle's original velocity when it was detected in range of the spline.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERMAXVELOCITY" onclick="HideNextDOM($(this));" >Max. Velocity</A></h4><div class="selected"><p><br></br>
+<i>(Only available if 'Original Velocity' is unchecked)</i>
+<br><br>
+Defines that the maximum velocity for a particle to move to the spline may not exceed this value when it is detected in range of the spline.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERACUTENESS" onclick="HideNextDOM($(this));" >Acuteness</A></h4><div class="selected"><p><br></br>
+The acuteness or urge to move to the spline. Higher values make the particles move to the starting position more directly.
+<br>This value can be set higher than 100% if required.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_STEERINTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+The overall intensity of the movement to the spline.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Follow Spline</span>
+</div>
+<div class="subdata selected">
+Defines the path following behavior once particles reached their starting position.
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWPOSITION" onclick="HideNextDOM($(this));" >Blend position</A></h4><div class="selected"><p><br></br>
+Blend the follow spline position with any original particle position. Original means that you could have other forces etc. acting on the particles
+which would have no effect if this is set to 100% (fully following).
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWPOSITION_RND" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the blend position value.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWDISTANCE" onclick="HideNextDOM($(this));" >Offset</A></h4><div class="selected"><p><br></br>
+This is the offset from the spline along the spline path's normal.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWDISTANCE_RND" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the offset from the spline.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWROTATIONHULL" onclick="HideNextDOM($(this));" >Rotation</A></h4><div class="selected"><p><br></br>
+Allows to rotate the normal (used for the Offset) along  the spline path.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWROTATIONHULL_RND" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the Rotation of the path normals along the spline.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWROTATION" onclick="HideNextDOM($(this));" >Step rotation</A></h4><div class="selected"><p><br></br>
+Rotates the particle on each (sub)step around the spline path by the given angle.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWROTATION_RND" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the Step Rotation.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWROTATIONANGLE" onclick="HideNextDOM($(this));" >Slope</A></h4><div class="selected"><p><br></br>
+You can change the slope of the particle direction by the given angle.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWROTATIONANGLE_RND" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the Slope.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWLOOP" onclick="HideNextDOM($(this));" >Loop mode</A></h4><div class="selected"><p><br></br>
+Defines what happens once a particle has reached the end of the spline.
+<br><br>
+1. <b>Restart</b> - restarts moving to its starting position on the spline<br>
+2. <b>Loop</b> - keep on following from the beginning of the spline<br>
+3. <b>Finish</b> - finish the following and detach from being processed</i>
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWMODE" onclick="HideNextDOM($(this));" >Direction</A></h4><div class="selected"><p><br></br>
+Defines if the following happens in <b>forward</b> or <b>backward</b> direction along the spline.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWSPEED" onclick="HideNextDOM($(this));" >Velocity</A></h4><div class="selected"><p><br></br>
+Define the particle velocity while following the spline path.
+<br><br>
+<i>1. Entering Velocity - Use the velocity of the particle when it reached the starting position<br>
+2. Specific Velocity - Use a custom velocity<br>
+3. Frames for circumnavigation - Use a certain amount of frames for the particle to circumnavigate the spline path.</i>
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWINTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+An intensity multiplier for the chosen 'Velocity' type.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWSPEEDCUSTOM" onclick="HideNextDOM($(this));" >Custom</A></h4><div class="selected"><p><br></br>
+<i>(Only available if 'Velocity' is set to 'Specific Velocity')</i>
+<br><br>
+Defines the custom speed.
+<br></br></p></div>
+<h4><a name="POP_FOLLOWSPLINE_FOLLOWSPEEDFRAMES" onclick="HideNextDOM($(this));" >Frames</A></h4><div class="selected"><p><br></br>
+<i>(Only available if 'Velocity' is set to 'Frames for circumnavigation')</i>
+<br><br>
+Defines the amount of frames required for circumnavigation. The particle velocity is calculated automatically from this.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

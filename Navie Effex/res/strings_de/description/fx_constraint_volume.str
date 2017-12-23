@@ -1,0 +1,12 @@
+STRINGTABLE fx_constraint_volume
+{
+	fx_constraint_volume "Beschr\u00E4nkung::Volumen";
+
+	CONSTRAINT_VOLUME "Volumen";
+	CONSTRAINT_VOLUME_USEFALLOFF "Verwende Falloff";
+	CONSTRAINT_VOLUME_SPLINE "Spline";
+	CONSTRAINT_VOLUME_SELECTOR "C";
+	CONSTRAINT_VOLUME_OFFSET "Versatz [voxel]";
+
+	CONSTRAINT_VOLUME_DUMMY_ "";
+}

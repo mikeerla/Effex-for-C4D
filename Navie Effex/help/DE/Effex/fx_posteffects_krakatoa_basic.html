@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_posteffects.html">Post Effects</a> : <a href="fx_posteffects_krakatoa.html">KrakatoaSR (Effex)</a></div>
+<div class="content">
+<h3>Basic</h3>
+</div>
+<div class="tabs">
+<span>Basic</span>
+<a href="fx_posteffects_krakatoa_precomputation.html">Precomputations</a>
+<a href="fx_posteffects_krakatoa_rendering.html">Rendering</a>
+<a href="fx_posteffects_krakatoa_passes.html">Passes</a>
+</div>
+<div class="content">
+<div class="subtab">Basic</div>
+<div class="data">
+<p>
+In the following all description content that is displayed in italic
+is a quote taken from the thinkbox Krakatoa MY user reference manual which
+you can find here: <a href="http://www.thinkboxsoftware.com/krakatoa-my-render-settings/">http://www.thinkboxsoftware.com/krakatoa-my-render-settings/</a>
+</p>
+</div>
+<h4><a name="FX_KRAKATOA_SKIP" onclick="HideNextDOM($(this));" >Skip C4D Rendering</A></h4><div class="selected"><p><br></br>
+This will skip the C4D rendering and you will only get the KrakatoaSR result rendered.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_PARTICLEGROUPS" onclick="HideNextDOM($(this));" >Particle Groups</A></h4><div class="selected"><p><br></br>
+Drop here any particle groups, splines or meshes you want to render as spline points.
+<br></br>
+Each item in the list has 4 small icons behind it. <br>
+These are only meant for Effex Particle Groups
+allowing you to select which particle subgroup you want to use.
+<br></br>
+In order of appearance: Passive (brown), Liquid (blue), Vorticity (red), Diffuse (white)
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_ADDITIVE" onclick="HideNextDOM($(this));" >Additive Rendering</A></h4><div class="selected"><p><br></br>
+<i>"When checked, the Emission channel will be set to the Color channel, the (scatter) Color and Absorption channels will be set to black, producing pure Additive rendering which is fully emissive without scattering and absorption.
+Note no final pass sorting of the particles will be performed since additive rendering is order-independent - this makes forced Additive rendering faster than per-particle-channel-controlled Additive rendering."</i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_BGCOLOR" onclick="HideNextDOM($(this));" >Background Color</A></h4><div class="selected"><p><br></br>
+Defines the background color. By default black.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_MATTE_SUPERSAMPLING" onclick="HideNextDOM($(this));" >Matte Supersampling</A></h4><div class="selected"><p><br></br>
+All polygon objects in the scene are by default automatically considered as matte objects
+in Krakatoa renderings. So you don't need to worry about occlusions.
+<br></br>
+Matte objects can individually be defined in the usual C4D manner though.<br>
+Assign the objects a Compositing tag and activate the 'Matte Object' setting.<br>
+You deactivate it from being used as matte object if you don't activate that setting.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_DOF" onclick="HideNextDOM($(this));" >Depth Of Field</A></h4><div class="selected"><p><br></br>
+Activates or deactivates the depth of field effect.
+<br></br>
+<i>When checked, each particle will be drawn multiple times within a circle of confusion according to the f-step and focal distance of the camera. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_DOF_QUALITY" onclick="HideNextDOM($(this));" >Quality</A></h4><div class="selected"><p><br></br>
+<i>This value defines the number of samples to be drawn within the circle of confusion - higher values produce higher quality and require more time to calculate. </i>
+<br></br>
+For user convenience Effex includes this as a simple slider where 100% means best quality.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_DOF_FSTOP" onclick="HideNextDOM($(this));" >F-Stop (f/#)</A></h4><div class="selected"><p><br></br>
+This F-Stop value is only used when the camera in use does not
+have an F-Stop value.
+<br></br>
+Lower F-Stop values result in higher DOF effects.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_MOTIONBLUR" onclick="HideNextDOM($(this));" >Motion Blur</A></h4><div class="selected"><p><br></br>
+<i>When checked, motion blur will be calculated - the lighting will be calculated once at the center of the Shutter interval, then multiple passes will be rendered by shifting the particle Position along the Velocity vector. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_MOTIONBLUR_JITTER" onclick="HideNextDOM($(this));" >Jittered</A></h4><div class="selected"><p><br></br>
+<i>When unchecked (default) and if Enable Motion Blur is checked, the particle Position will be shifted along the Velocity vector at equal intervals within the Shutter range, potentially producing visible stepping.<br>
+When checked, an additional MotionBlurTime channel will be allocated and the sorting of particles will be a bit slower, but the Position will be shifted at random intervals within the Shutter range, producing jittered placement.</i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_MOTIONBLUR_LENGTH" onclick="HideNextDOM($(this));" >Length</A></h4><div class="selected"><p><br></br>
+The global motion blur strength..
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_MOTIONBLUR_SAMPLES" onclick="HideNextDOM($(this));" >Samples</A></h4><div class="selected"><p><br></br>
+<i>It defines the number of Motion Blur segments (passes) to render.<br>
+Note that setting the value to 1 and checking Jittered Motion Blur will render a single pass with particle Positions randomized along the Velocity vector. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_CAMERABLUR" onclick="HideNextDOM($(this));" >Use camera blur</A></h4><div class="selected"><p><br></br>
+If checked it uses camera blur.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

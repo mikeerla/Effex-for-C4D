@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_boids.html">POP::Boids</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="POP_FLOCK_BOIDS" onclick="HideNextDOM($(this));" >Prey Particle group</A></h4><div class="selected"><p><br></br>
+The prey particle group.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_PREDATORS" onclick="HideNextDOM($(this));" >Predator Particle group</A></h4><div class="selected"><p><br></br>
+The predators particle group.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+Define when (temporally) and how long this node operates.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Prey</span>
+</div>
+<div class="subdata selected">
+Prey particles always try to stay together in flocks (cohesion) but also try to avoid each other (separation).
+<br>Furthermore they try to fly in the same direction (alignment) and they try to escape any existing predators in their vicinity (fleeing).
+</div>
+<h4><a name="POP_FLOCK_BOIDS_FACTORY" onclick="HideNextDOM($(this));" >Prey Particle type</A></h4><div class="selected"><p><br></br>
+Define which particle type (subgroup) of the prey particle group to use.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_MAXVELOCITY" onclick="HideNextDOM($(this));" >Max. Velocity</A></h4><div class="selected"><p><br></br>
+The maximum velocity a prey particle can reach.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_COHESION" onclick="HideNextDOM($(this));" >Cohesion</A></h4><div class="selected"><p><br></br>
+Urge of prey particles to stay close to each other.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_COHESION_RADIUS" onclick="HideNextDOM($(this));" >Cohesion distance</A></h4><div class="selected"><p><br></br>
+Each prey particle tries to stay close to other prey particles in its vicinity. 
+This is the maximum distance to check for other prey particles.
+
+<br></br></p></div>
+<h4><a name="POP_FLOCK_SEPARATION" onclick="HideNextDOM($(this));" >Separation</A></h4><div class="selected"><p><br></br>
+Prey particles try to avoid collisions with other prey particles, so they need to separate. This defines the urge to separate.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_SEPARATION_RADIUS" onclick="HideNextDOM($(this));" >Separation distance</A></h4><div class="selected"><p><br></br>
+The distance to check for close particles to separate from.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_ALIGNMENT" onclick="HideNextDOM($(this));" >Alignment</A></h4><div class="selected"><p><br></br>
+Prey particles try to fly in the same direction as the rest of the flock. This defines the urge to align the flight direction.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_ALIGNMENT_RADIUS" onclick="HideNextDOM($(this));" >Alignment distance</A></h4><div class="selected"><p><br></br>
+The maximum distance to check for other prey particles in order to align to their flight direction.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_FLEE" onclick="HideNextDOM($(this));" >Fleeing</A></h4><div class="selected"><p><br></br>
+<i>(Only available if Predator particle group is defnied)</i>
+<br><br>
+Prey particles try to flee from Predator particles. This defines the urge to flee.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_FLEE_RADIUS" onclick="HideNextDOM($(this));" >Fleeing distance</A></h4><div class="selected"><p><br></br>
+The maximum distance to check for predators in order to escape their (possibly) deadly attack! :)
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Predator</span>
+</div>
+<div class="subdata selected">
+</div>
+<h4><a name="POP_FLOCK_PREDATORS_FACTORY" onclick="HideNextDOM($(this));" >Predator Particle type</A></h4><div class="selected"><p><br></br>
+Define which particle type (subgroup) of the predator particle group to use as predators.
+<br><br>
+This must not be the same as the Prey::particle type if it is the same particle group
+<br></br></p></div>
+<h4><a name="POP_FLOCK_PREDATORS_MAXVELOCITY" onclick="HideNextDOM($(this));" >Max. Velocity</A></h4><div class="selected"><p><br></br>
+The maximum velocity a predator particle can reach.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_PREDATORS_COHESION" onclick="HideNextDOM($(this));" >Prey chasing</A></h4><div class="selected"><p><br></br>
+The urge to chase prey particles in the vicinity.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_PREDATORS_COHESION_RADIUS" onclick="HideNextDOM($(this));" >Prey chasing radius</A></h4><div class="selected"><p><br></br>
+The maximum distance to check for prey in order to chase it.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_PREDATORS_SEPARATION" onclick="HideNextDOM($(this));" >Predator separation</A></h4><div class="selected"><p><br></br>
+Predator particles try to avoid collisions with other predator particles, so they need to separate. This defines the urge to separate.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_PREDATORS_SEPARATION_RADIUS" onclick="HideNextDOM($(this));" >Separation distance</A></h4><div class="selected"><p><br></br>
+The distance to check for close particles to separate from.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_PREDATORS_EATPREY" onclick="HideNextDOM($(this));" >Eat prey</A></h4><div class="selected"><p><br></br>
+Kill prey particles once the predator reaches them.
+<br></br></p></div>
+<h4><a name="POP_FLOCK_PREDATORS_EATPREY_RADIUS" onclick="HideNextDOM($(this));" >Distance</A></h4><div class="selected"><p><br></br>
+The distance to a prey particle to consider it caught (and ready to be eaten = killed).
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

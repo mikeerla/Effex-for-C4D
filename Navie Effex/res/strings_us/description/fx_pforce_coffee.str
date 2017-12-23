@@ -1,0 +1,10 @@
+STRINGTABLE fx_pforce_coffee
+{
+	fx_pforce_coffee "ParticleForce::Coffee";
+
+	PFORCE_COFFEE_INTENSITY "Intensity";
+	PFORCE_COFFEE_DURATION "Duration";
+	PFORCE_COFFEE_DURATION_SELECTOR "C";
+	
+	PFORCE_COFFEE_DUMMY_ "";
+}

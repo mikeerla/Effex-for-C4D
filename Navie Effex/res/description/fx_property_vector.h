@@ -1,0 +1,10 @@
+#ifndef FX_PROPERTY_VECTOR_H
+#define FX_PROPERTY_VECTOR_H
+
+enum
+{
+	PROPERTY_VALUE_VECTOR = 1000
+
+};
+
+#endif

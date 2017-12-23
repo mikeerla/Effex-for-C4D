@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_particle.html">Particle</a> : <a href="fx_emitters_container_channelvalue.html">Container::Channel/Value</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_channelvalue_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="CHANNELVALUE_CHANNEL" onclick="HideNextDOM($(this));" >Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_channel_value_channel.jpg" border="0"><br></br>
+Takes a <a href="fx_channel.html">Grid Channel</a> as input (which can be extracted by other nodes as a target channel)
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Property</A></h4><div class="selected"><p><br>
+<img src="../../img/emitters_channel_value_property.jpg" border="0"><br></br>
+Takes a <a href="fx_particles_properties.html">Particle Property</a> to use with the linked Channel.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<i><b>Example <a href="fx_emitters_particletogridemitter.html">POP::PointData To Grid</a> (P2G):</i></b><br>
+The P2G reads the Property link field and asks the particles if they carry this property. If they do the particle will return the value of this property
+and P2G will write this value into the defined channel grid.
+</div>
+<br></br></p></div>
+<h4><a name="CHANNELVALUE_SCALAR" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_channel_value_value.jpg" border="0"><br></br>
+Used if no Property is linked. That way you can directly link a value to the defined Channel.<br>
+This value is also used as default value when a Property is linked but the particles do not contain such a property.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_dynamics.html">Dynamics</a> : <a href="fx_fluid.html">Fluid Dynamics</a></div>
+<div class="content">
+<h3>Dynamics</h3>
+</div>
+<div class="tabs">
+<a href="fx_fluid_quicktab.html">Quicktab</a>
+<a href="fx_fluid_params.html">Parameters</a>
+<a href="fx_fluid_characteristica.html">Characteristica</a>
+<span>Dynamics</span>
+<a href="fx_fluid_solver.html">Solver</a>
+<a href="fx_fluid_display.html">Display</a>
+</div>
+<div class="content">
+<div class="subtab">Dynamics</div>
+<div class="data">
+<p>
+<img src="../../img/fx_fluiddynamics_dynamics.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FLUID_CONVECT" onclick="HideNextDOM($(this));" >Memory for advection</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_dynamics_advect.jpg" border="0"><br></br>
+Allocates additional memory for the velocity field advection.
+<br>
+<br>
+Deactivate this if you load a cached velocity field via a GOP::Cacher.
+It will save 50% of the memory in that case.
+<br></br></p></div>
+<h4><a name="FLUID_CONTAINER_EXTRAPOLATION_LAYERS" onclick="HideNextDOM($(this));" >Velocity Extrapolation [iterations]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/dynamics_container_obstacles_velocity_extrapolation.jpg" border="0"><br></br>
+The velocity field is extrapolated into regions where no fluid is defined but which are required for correct interpolations.
+It however is also useful for caches and resimulation. The higher the value the more cells have velocity information which may prevent particles from sticking in air during resimulation.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Dynamics::</span>Obstacle</span>
+</div>
+<div class="subdata selected">
+<img src="../../img/fx_fluiddynamics_obstacles.jpg" border="0"">
+</div>
+<h4><a name="FLUID_CONTAINER_OBSTACLES_POLYNORMALS" onclick="HideNextDOM($(this));" >Use Polygon normals (if available)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/dynamics_container_obstacles_use_polygon_normals.jpg" border="0"><br></br>
+If an obstacle volume in the simulation is based on a polygon mesh the dynamics can use the original (nearest) polygon normal instead of the volume normal. This is especially useful with low resolution. The volume normal gets more exact with higher resolutions and is used if deactivated. 
+<br></br></p></div>
+<h4><a name="FLUID_CONTAINER_VELCONSTRAINT_DIRICHLET" onclick="HideNextDOM($(this));" >Use obstacle velocity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_dynamics_useobstaclevelocity.jpg" border="0"><br></br>
+Should be activated in case of a fluid (liquid or gas) simulation using viscosity > 0.0 (either global viscosity value or variable viscosity) and the scene contains moving obstacles.
+<br>Inviscid simulations (= no viscosity used) should keep this unchecked!
+<br>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: it won't break your simulation if you don't activate it. It just makes sure one of the fluid equation conditions is met.
+</div>
+<br></br></p></div>
+<h4><a name="FLUID_CONTAINER_VELCONSTRAINT_SLIP" onclick="HideNextDOM($(this));" >Slipping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_dynamics_slipping.jpg" border="0"><br></br>
+Controls the amount of slipping along boundary surfaces (e.g. obstacles or container walls) and is like a reversed drag value. <br></br>
+100% means the fluid can slip along the obstacle's surface boundary without drag (full sliding) 
+<br> 0% means no tangential slipping is allowed (no sliding)..
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> the fluid law actually is clear about when tangential slipping is allowed and when it is not.<br>
+As a rule of thumb you can say: if you use viscosity, you could set this to 0%. Otherwise 100%.
+<br><br>
+Still, this is optional as it won't break your simulation if you don't. So this can be used artistically as you see fit (but is not guaranteed to be physically correct anymore).
+</div>
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Dynamics::</span>Flip Settings</span>
+</div>
+<div class="subdata selected">
+<img src="../../img/fx_fluiddynamics_flip.jpg" border="0"">
+<br><br>The FLIP (Fluid-Implicit-Particle) algorithm is a hybrid algorithm and the core of the liquid dynamics.
+<br>
+It is partly particle based (advection and velocity transport) and partly grid based (pressure solving) => Hybrid.
+<br><br>
+FLIP is well known for preserving motion details that are very useful for splashing and turbulent behaviors.<br>
+
+</div>
+<h4><a name="LIQUID_FLIP_GTP" onclick="HideNextDOM($(this));" >Splat to Particles if cached</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_dynamics_flip_splattoparticles.jpg" border="0"><br></br>
+If you have only cached the velocity field but not particles in a previous liquid simulation
+and if you then let particles be advected by that cached velocity (when you load it back in via GOP::Cacher), the current particles
+don't have the correct velocity value with them.
+<br><br>
+As a lot of other nodes try to read velocity from liquid particles this could lead to problems.
+<br>
+Activating this option will write (splat) the velocity values from the cached velocity field back to the particles
+so that they carry this information with them.
+<br></br></p></div>
+<h4><a name="LIQUID_FLIP_PICFLIP" onclick="HideNextDOM($(this));" >Pic (viscous) <-> Flip (inviscid)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_dynamics_flip_picflip.jpg" border="0"><br></br>
+PIC and FLIP are both velocity transfer (particles->grid->particles) strategies.<br><br>
+In case of using liquid particles for the simulation, this controls the amount of PIC <-> FLIP weighting during transfer.<br>Roughly spoken, this controls how splashy the fluids behave! 
+<br><br>
+FLIP is good for splashing/turbulent behaviors while PIC is not. So the more viscous the simulation the more PIC you can use.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: Using 0% here (= fully PIC) is faster than an intermediate value (so this can save calculations in highly viscous scenarios).
+</div>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>PIC</b> is a simple linear algorithm and very diffuse over time. So it looses velocity information over time. Rotational motions are dampened over time and not preserved very well. But it's fast and is a great way to simulate low viscosity fluids without using the more calculation intensive Viscosity setting.
+<br><br>
+<b>FLIP</b> is a much better algorithm and preserves motions almost completely over time. Rotational motions are much better preserved, though not fully. So it is a great choice for splashy fluids. One thing that plagues FLIP is that due to high-low frequency variations it can get a bit noisy and particles tend to clump together.
+<br><i>You can counteract both issues with a POP::Weak Spring operator!</i>
+</div>
+<br></br></p></div>
+<h4><a name="LIQUID_FLIP_SPH" onclick="HideNextDOM($(this));" >SPH-Style sampling</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_dynamics_flip_sphstylesampling.jpg" border="0"><br></br>
+By default (deactivated) sampling of the PIC/FLIP transfer will be done in a linear fashion according to the particle's position in a grid cell. This is very fast (but a bit limited too).
+<br><br>
+Traditional SPH (smoothed particle hydrodynamics) uses a particle-based sampling strategy
+which samples areas around each used simulation particle (imagine a sphere around each particle with a certain size and inside this sphere a falloff is defined).
+This allows to smoothly (hence the name) sample data around areas where particles are defined.
+<br><br>
+You want to activate this especially when dealing with small scale simulations. It can be very advantageous to smoothly transfer velocities over several grid cells (e.g. in case using POP::Surface Tension).<br>
+
+
+<br></br></p></div>
+<h4><a name="LIQUID_FLIP_SPHRADIUS" onclick="HideNextDOM($(this));" >Radius [cell size]</A></h4><div class="selected"><p><br></br>
+Defines the length of the SPH-style velocity sampling radius around each particle, given in voxels size.<br>Usually values between 1.3 and 3.0 make sense (though higher values are possible). 
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: However, <u>the bigger the sampling radius</u> used <u>the slower</u> the sampling process.
+</div>
+<br></br></p></div>
+<h4><a name="LIQUID_FLIP_SPHKERNEL" onclick="HideNextDOM($(this));" >Kernel</A></h4><div class="selected"><p><br></br>
+Defines the type of falloff for the SPH-style velocity sampling.
+<br>By default (none linked) a smooth falloff kernel is used.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+STRINGTABLE fx_xpresso_cell
+{
+	fx_xpresso_cell "Zelle";
+	
+	XCELL_SETCELL	"Interpoliert";
+	XCELL_CHANNEL	"Kanal";
+	XCELL_INDEX	"Zellindex";
+	XCELL_VELINDEX	"Geschwindigkeit Zellindex";
+	XCELL_C4DPOS	"C4D Raumposition";
+	XCELL_PHYSICAL	"Physikalische Position";
+	XCELL_GCOORD	"Zellkoordinaten";
+	XCELL_VALUE	"Wert";
+	XCELL_VALUEV	"Vektor Wert";
+	XCELL_VALUE_OUT "Wert";
+	XCELL_VALUEV_OUT "Vektor Wert";
+
+	XCELL_DUMMY	"";
+}

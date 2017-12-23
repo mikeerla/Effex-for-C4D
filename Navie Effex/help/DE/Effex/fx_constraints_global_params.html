@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_constraints.html">Constraints</a> : <a href="fx_constraints_global.html">Bases</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_constraints_bases_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="CONSTRAINT_INVERT" onclick="HideNextDOM($(this));" >Invert</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_global_invert.jpg" border="0"><br></br>
+Inverts the final result. This happens after Range Mapping.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_INTENSITY" onclick="HideNextDOM($(this));" >Intensity (multiplier)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_global_intensity_multiplier.jpg" border="0"><br></br>
+The global intensity of this constraint.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Range Mapping</span>
+</div>
+<div class="subdata selected">
+The following settings allow to remap the result of the constaint.
+<h4><a name="CONSTRAINT_MAPPING_CLAMP_MIN" onclick="HideNextDOM($(this));" >Clamp Lower</A></h4><div class="selected"><p><br></br>
+Clamp the constraint result (before mapping happens) to Input Lower.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_MAPPING_CLAMP_MAX" onclick="HideNextDOM($(this));" >Clamp Upper</A></h4><div class="selected"><p><br></br>
+Clamp the constraint result (before mapping happens) to Input Upper.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_MAPPING_INPUT_MIN" onclick="HideNextDOM($(this));" >Input Lower</A></h4><div class="selected"><p><br></br>
+The minimum value to input into the range mapper.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_MAPPING_INPUT_MAX" onclick="HideNextDOM($(this));" >Input Upper</A></h4><div class="selected"><p><br></br>
+The maximum  value to input into the range mapper.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_MAPPING_OUTPUT_MIN" onclick="HideNextDOM($(this));" >Output Lower</A></h4><div class="selected"><p><br></br>
+The minimum value to output.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_MAPPING_OUTPUT_MAX" onclick="HideNextDOM($(this));" >Output Upper</A></h4><div class="selected"><p><br></br>
+The maximum value to output.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_MAPPING_SPLINE_USE" onclick="HideNextDOM($(this));" >Use Spline</A></h4><div class="selected"><p><br></br>
+Use the spline graph for custom mapping. If unused it will be automatically remapped linearly.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_MAPPING_SPLINE" onclick="HideNextDOM($(this));" >Spline</A></h4><div class="selected"><p><br></br>
+<i>Only available if 'Use Spline' is activated</i>
+<br></br>The spline graph controlling the remapping (between Output Lower and Output Upper).
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

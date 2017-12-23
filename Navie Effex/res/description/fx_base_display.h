@@ -1,0 +1,10 @@
+#ifndef FX_BASE_DISPLAY_H
+#define FX_BASE_DISPLAY_H
+
+enum
+{	
+	FX_BASE_DISPLAYTAB = 8000,
+	FX_BASE_DRAW
+};
+
+#endif

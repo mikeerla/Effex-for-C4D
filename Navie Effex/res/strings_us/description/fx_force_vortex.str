@@ -1,0 +1,11 @@
+STRINGTABLE fx_force_vortex
+{
+	fx_force_vortex "Force::Swirling";
+
+	FORCE_VORTEX_INTENSITY	"Intensity";
+	
+	FORCE_VORTEX_DURATION "Duration";
+	FORCE_VORTEX_DURATION_SELECTOR "C";
+
+	FORCE_VORTEX_DUMMY_ "";
+}

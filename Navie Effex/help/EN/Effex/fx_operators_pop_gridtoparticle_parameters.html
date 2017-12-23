@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_pop_gridtoparticle.html">POP::Grid to ParticleData</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="PARTICLE_GTP_PARTICLES_MODE" onclick="HideNextDOM($(this));" >Particle Groups Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/pop_gtop_particlegroupsmode.jpg" border="0"><br></br>
+Defines if the 'Particle Groups' list includes or excludes its entries.
+<br></br></p></div>
+<h4><a name="PARTICLE_GTP_PARTICLES" onclick="HideNextDOM($(this));" >Particle Groups</A></h4><div class="selected"><p><br></br>
+<img src="../../img/pop_gtop_particlegroups.jpg" border="0"><br></br>
+Define the particle groups you would like to store the grid data in.
+<br></br></p></div>
+<h4><a name="PARTICLE_GTP_CHANNEL" onclick="HideNextDOM($(this));" >Source Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_celloperator_math_parms_source_channel.jpg" border="0"><br></br>
+Drop here the source grid channel to read/sample in order to transfer that value on the defined particles.
+<br></br></p></div>
+<h4><a name="PARTICLE_GTP_PROPERTY" onclick="HideNextDOM($(this));" >Particle Property</A></h4><div class="selected"><p><br></br>
+<img src="../../img/pop_gtop_particleproperty.jpg" border="0"><br></br>
+Define which particle property should store the sampled grid channel value.
+<br><br>If your Source Channel is a scalar channel the property should optimally be a scalar property as well.
+<br>If it's not a scalar property (but a vector property for example) the operator will try to convert the sample value to a vector.
+<br><br>The same happens in any other cases.
+<br></br></p></div>
+<h4><a name="PARTICLE_GTP_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/pop_gtop_dauer.jpg" border="0"><br></br>
+Defines when (temporally) and how long this node operates.
+<br></br></p></div>
+<h4><a name="PARTICLE_GTP_MODE" onclick="HideNextDOM($(this));" >Math Operation</A></h4><div class="selected"><p><br></br>
+<img src="../../img/pop_gtop_mathoperation.jpg" border="0"><br></br>
+Which mathematical method should be used to update the existing particle property value with the sample value.
+<br><br>
+<b>Add</b><br>
+The sample value is added to the existing property value.
+<br><br>
+<b>Set</b><br>
+The sample value overwrites the existing property value.
+<br></br></p></div>
+<h4><a name="PARTICLE_GTP_INTERPOLATOR" onclick="HideNextDOM($(this));" >Grid sampling interpolation</A></h4><div class="selected"><p><br></br>
+<img src="../../img/pop_gtop_gridsamplinginterpolation.jpg" border="0"><br></br>
+Defines how to interpolate grid values to retrieve the sample value at the particle position.
+<br><br>
+<b>Linear</b><br>
+Fast & reliable but not very accurate
+<br><br>
+<b>Cosine</b><br>
+Fast but also not very accurate and quite special
+<br><br>
+<b>Cubic</b><br>
+Good quality but slower
+<br><br>
+<b>Hermite</b><br>
+Good and sharp quality (without overshooting) but slow
+<br><br>
+<b>Quadratic</b><br>
+Quadratic interpolation
+Good and accurate quality but slow
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

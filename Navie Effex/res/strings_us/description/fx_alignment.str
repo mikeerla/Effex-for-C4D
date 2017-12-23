@@ -1,0 +1,22 @@
+STRINGTABLE fx_alignment
+{
+	fx_alignment "FSS Alignment";
+
+	ALIGNMENT_MODE "Direction";
+		ALIGNMENT_MODE_X "Along X-Axis";
+		ALIGNMENT_MODE_Y "Along Y-Axis";
+		ALIGNMENT_MODE_Z "Along Z-Axis";
+		ALIGNMENT_MODE_SPHERICAL "Spherical";
+		ALIGNMENT_MODE_BOX "Cubical";
+		ALIGNMENT_MODE_CYLINDRICAL "Cylindrical";
+		ALIGNMENT_MODE_NORMAL "Along normal";
+		ALIGNMENT_MODE_CUSTOM "User defined";
+		ALIGNMENT_MODE_RANDOM "Random";
+		ALIGNMENT_MODE_VOLUMETRANSLATIONS "Motion (Volumen)";
+	ALIGNMENT_INVERT "Invert result";
+	ALIGNMENT_CUSTOMDIRECTION "Custom direction";
+	ALIGNMENT_SPACE "Take space from.. [any object]";
+	ALIGNMENT_SPACE_SELECTOR "C";
+
+	ALIGNMENT_DUMMY_ "";
+}

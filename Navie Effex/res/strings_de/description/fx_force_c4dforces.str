@@ -1,0 +1,9 @@
+STRINGTABLE fx_force_c4dforces
+{
+	fx_force_c4dforces "Force::C4D Particle Forces";
+
+	FORCE_C4DFORCES "Einschlie\u00dfen";
+	FORCE_C4DFORCES_INTENSITY "Intensit\u00E4t";
+
+	FORCE_C4DFORCES_DUMMY_ "";
+}

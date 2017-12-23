@@ -1,0 +1,8 @@
+STRINGTABLE fx_constraint_gridaverage
+{
+	fx_constraint_gridaverage "Beschr\u00E4nkung::Gitter Durchschnitt";
+
+	CONSTRAINT_GRIDAVERAGE_CHANNEL "Kanal";
+	CONSTRAINT_GRIDAVERAGE_THRESHOLD "Schwellenwert";
+	CONSTRAINT_GRIDAVERAGE_CHANNEL_SELECTOR "C";
+}

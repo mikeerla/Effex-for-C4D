@@ -1,0 +1,6 @@
+STRINGTABLE fx_channel_levelset
+{
+	fx_channel_levelset "Channel::Levelset Grid";
+
+	GRIDCHANNEL_LEVELSET_NODE "Nodal Grid";
+}

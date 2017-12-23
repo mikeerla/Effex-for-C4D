@@ -1,0 +1,6 @@
+STRINGTABLE fx_channel_fuel
+{
+	fx_channel_fuel "Benzin Gitterkanal";
+
+	GRIDCHANNEL_FUEL_IGNITION_TEMP "Entz\u00FCndungstemperatur";
+}

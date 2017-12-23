@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_nodes.html">Nodes</a></div>
+<div class="content">
+<h3>FXBase</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXBase</div>
+<div class="data">
+<p>
+The base class all scene nodes are derived from.<br></br>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">BaseObject</span>* GetInterface (<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The interface associated with this node.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> GetType (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the type id of this node. This is NOT the plugin id of the interface.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">NodeBaseType</span> GetBaseType (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The base type of this node. See <a href="fx_api_classes_nodes_nodebasetype.html" onclick="Hide('SERVER_MINSUBSTEPS'); return true;">NodeBaseType</a>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> GetSubType (<span style="color:rgb(0,31,174);">int</span>& subtype) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+none
+<br></br>
+<b>Parameters</b><BR>
+<i>int& subtype</i>: <br>
+Will have the <a href="fx_api_classes_nodes_nodesubtype.html" onclick="Hide('SERVER_MINSUBSTEPS'); return true;">NodeSubType</a> bits set that this node represents
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> Initialise (<span style="color:rgb(0,120,120);">BaseObject</span>* ptr_interface, <span style="color:rgb(0,120,120);">FXScene</span>* scene)</A></h4><div class="selected"><p><br>
+Currently private
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> 				IsCached		(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if this node is cached.
+
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> 				IsDirty			(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if this node is dirty. This is the case if any of the settings or the ports it operates on are dirty.
+
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_global.html">Getting started..</a></div>
+<div class="content">
+<h3>Namespaces</h3>
+</div>
+<div class="content">
+<div class="subtab">Namespaces</div>
+<div class="data">
+<p>
+The Effex API is defined in its own namespace to avoid any conflicts with any other code or library you may use.
+The following namespaces are important to know about if you want to use the Effex API in your plugin project.
+<br></br>
+
+<b>NOTE: </b><i>We highly suggest NOT to use "use namespace FXAPI". This avoids any library conflicts and makes your code clearer to read anyway (especially when you only come back to it at a later time)..</i>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(74,100,127);">NAVIE_GLOBAL</span></A></h4><div class="selected"><p><br>
+This is the global namespace of Navie products. <br>
+Everyday things like vectors are defined in this namesapce.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(74,100,127);">NAVIE_GLOBAL</span>::<span style="color:rgb(74,100,127);">NAVIE_EFFEX</span></A></h4><div class="selected"><p><br>
+This is the global namespace of Effex. <br>
+Global Effex specific classes are defined and declared here.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(74,100,127);">NAVIE_GLOBAL</span>::<span style="color:rgb(74,100,127);">NAVIE_EFFEX</span>::<span style="color:rgb(74,100,127);">NAVIE_API</span></A></h4><div class="selected"><p><br>
+This is the namespace of the API for Cinema 4D. All the classes for interacting with Effex are in this namespace.
+So whenever you have an object starting with FX (e.g. FXParticle) you can be sure you need to include the API namespace in your definition:
+<br></br>
+<span style="color:rgb(74,100,127);">NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::</span><span style="color:rgb(140,0,0);">FXParticle</span>
+<br></br>
+As this can be intriguing code wise we define a preprocessor macro as <span style="color:rgb(140,0,0);">FXAPI</span> so instead write:
+<br></br>
+<span style="color:rgb(74,100,127);">FXAPI::</span><span style="color:rgb(140,0,0);">FXParticle</span>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(74,100,127);">std</span></A></h4><div class="selected"><p><br>
+The Effex API also uses the std namespace and the C++ standard template library (STL).
+Mostly you will come across vector containers.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

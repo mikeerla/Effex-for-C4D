@@ -1,0 +1,12 @@
+STRINGTABLE fx_rate
+{
+	fx_rate "Value";
+
+	RATE_TYPE "Data type";
+		RATE_TYPE_SCALAR "Scalar (floating point)";
+		RATE_TYPE_VECTOR "Vector";
+		RATE_TYPE_INTEGER "Integer";
+	RATE_SCALAR "Value";
+	RATE_VECTOR "Value";
+	RATE_INTEGER "Value";
+}

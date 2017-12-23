@@ -1,0 +1,21 @@
+STRINGTABLE fx_property
+{
+	fx_property "Eigenschaft";
+
+	ID_PROPERTY_GROUP "Eigenschaft";
+	PROPERTY_TYPE "Voreinstellung";
+		PROPERTY_TYPE_RADIUS "Radius";
+		PROPERTY_TYPE_BIRTH "Geburt";
+		PROPERTY_TYPE_AGE "Alter";
+		PROPERTY_TYPE_DENSITY "Dichte";
+		PROPERTY_TYPE_VISCOSITY "Viskosit\u00E4t";
+		PROPERTY_TYPE_PRESSURE "Druck";
+		PROPERTY_TYPE_TEMPERATURE "Temperatur";
+		PROPERTY_TYPE_FIRE "Feuer";
+		PROPERTY_TYPE_FUEL "Benzin";
+
+		PROPERTY_TYPE_COLOR "Farbe";
+				
+		PROPERTY_TYPE_STATE "Status";
+		PROPERTY_TYPE_CUSTOM "Benutzerdefiniert";
+}

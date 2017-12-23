@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_iterators.html">Iterators</a></div>
+<div class="content">
+<h3>FXCellIterator</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXCellIterator</div>
+<div class="data">
+<p>
+The FXCellIterator grants browse, read & write access to grid cells of a specific channel or volume.
+<br>It natively supports multiple processors so you don't have to worry about it yourself.
+<br></br>
+There are three different iterator types:<br>
+FXScalarCellIterator (for any scalar channel)<br>
+FXVectorCellIterator (for any vector channel)<br>
+FXVolumeCellIterator (for volumes)<br>
+</br>
+The below definitions are displayed as if it was a class template although the specific classes are NOT accessed as a template.<br>
+It is just for convenience because all available cell iterators have the same interface definitions.
+<br></br>
+The template typenames are T and C, while T represents the datatype (double or vector3d) and C is the node type (FXScalarChannel, FXVectorChannel or FXVolume)
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">typename</span> T GetValue(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> cpu)</A></h4><div class="selected"><p><br>
+Retrieves the value stored in the current cell.
+<br></br>
+<b>Returns</b><br>
+the cell value. T is either double (FXScalarChannel, FXVolume) or vector3d (FXVectorChannel)
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">typename</span> T GetNeighborValue(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> cpu, short x, short y, short z)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the cell value of a neighboring cell. Either double (FXScalarChannel, FXVolume) or vector3d (FXVectorChannel)
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread.
+<br></br>
+<i>short x</i>: <br>
+either 1 or -1 for the right or left neighbor cell respectively.
+<br></br>
+<i>short y</i>: <br>
+either 1 or -1 for the top or bottom neighbor cell respectively.
+<br></br>
+<i>short z</i>: <br>
+either 1 or -1 for the back or front neighbor cell respectively.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> SetValue(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> cpu, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">typename</span> T& value)</A></h4><div class="selected"><p><br>
+Overwrites the current cell's value.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread.
+<br></br>
+<i>const T& value</i>: <br>
+the new cell value. T is either double (FXScalarChannel, FXVolume) or vector3d (FXVectorChannel)
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> Init(<span style="color:rgb(0,31,174);">typename</span> C* channel)</A></h4><div class="selected"><p><br>
+Initialise the iterator for a specific channel and for single processor use.
+<br></br>
+<b>Returns</b><br>
+true if the iterator was successfully initialised.
+<br></br>
+<b>Parameters</b><BR>
+<i>C* channel</i>: <br>
+the node to initialise the iterator for. C can be a FXScalarChannel, a FXVectorChannel or a FXVolume
+depending on the type of this iterator (FXScalarCellIterator, FXVectorCellIterator or FXVolumeCellIterator respectively).
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> Init(<span style="color:rgb(0,31,174);">typename</span> C* channel, <span style="color:rgb(0,31,174);">int</span> cpus, <span style="color:rgb(0,31,174);">bool</span> include_borders = <span style="color:rgb(0,31,174);">false</span>)</A></h4><div class="selected"><p><br>
+Initialise the iterator for a specific channel and for multiple processor usage.
+<br></br>
+<b>Returns</b><br>
+true if the iterator was successfully initialised.
+<br></br>
+
+<b>Parameters</b><BR>
+<i>C* channel</i>: <br>
+Pass the node to initialise the iterator for. C can be a FXScalarChannel, a FXVectorChannel or a FXVolume
+depending on the type of this iterator (FXScalarCellIterator, FXVectorCellIterator or FXVolumeCellIterator respectively).
+<br></br>
+<i>int cpus</i>: <br>
+Pass the amount of cpu threads you will be using for iterating cells.
+<br></br>
+<i>bool include_borders</i>: <br>
+Specifies if you want to also browse the outermost border cells. By default it does not.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">inline</span> <span style="color:rgb(0,31,174);">void</span> Start(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> cpu, <span style="color:rgb(0,31,174);">bool</span> reverse = <span style="color:rgb(0,31,174);">false</span>)</A></h4><div class="selected"><p><br>
+This will reset the iterator for the given cpu.
+<br>You should call this once before browsing in a multiprocessor context.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+Pass the cpu thread to reset the iterator for.
+<br></br>
+<i>bool reverse</i>: <br>
+Pass true if you want to reverse iterate (backwards).
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">inline</span> <span style="color:rgb(0,31,174);">bool</span> SetNext(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> cpu)</A></h4><div class="selected"><p><br>
+Steps the iterator to get the next cell. Use for forward stepping.
+<br></br>
+<b>Returns</b><br>
+true if the iterator has been incremented.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread to increment the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">inline</span> <span style="color:rgb(0,31,174);">bool</span> SetPrev(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> cpu)</A></h4><div class="selected"><p><br>
+Steps the iterator to get the previous cell. Use for backward stepping.
+<br></br>
+<b>Returns</b><br>
+true if the iterator has been decremented.
+<br></br>
+<b>Parameters</b><BR>
+<i>const int cpu</i>: <br>
+the current cpu thread to decrement the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">inline</span> <span style="color:rgb(0,31,174);">void</span> Offset(long offset)</A></h4><div class="selected"><p><br>
+Offsets the iterator to a user defined position. This is only used for single processor iterations!
+<br>You need to make sure yourself the resulting iterator position is valid.
+<br></br>
+<b>Parameters</b><BR>
+
+<i>const long offset</i>: <br>
+the iterator cell offset.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">inline</span> <span style="color:rgb(0,31,174);">void</span> OffsetSafe(long offset)</A></h4><div class="selected"><p><br>
+Offsets the iterator to a user defined position. This is only used for single processor iterations!
+<br>It will make sure the iterator never falls out of range (trades of performance though).
+<br></br>
+<b>Parameters</b><BR>
+
+<i>const long offset</i>: <br>
+the iterator cell offset.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">inline</span> <span style="color:rgb(0,31,174);">bool</span> IsValid(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the current iterator is valid.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> FXCellIterator* Alloc()</A></h4><div class="selected"><p><br>
+Allocates the iterator. You can use AutoAlloc for a scope based allocation.
+<br>Works the same for FXVectorCellIterator and FXVolumeCellIterator.
+<br></br>
+<b>Returns</b><br>
+the according Cell iterator. The user owns the pointed object.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> <span style="color:rgb(0,31,174);">void</span> Free(FXCellIterator*& p)</A></h4><div class="selected"><p><br>
+Frees a previously allocated Cell Iterator..
+<br></br>
+<b>Parameters</b><BR>
+<i>FXCellIterator*&</i>: <br>
+Pass the Cell iterator to free.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

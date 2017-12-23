@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="nodebases.html">Bases</a></div>
+<div class="content">
+<h3>Constraints</h3>
+</div>
+<div class="tabs">
+<a href="nodebases_node.html">Node</a>
+<a href="nodebases_inspector.html">Display (Live Inspector)</a>
+<span>Constraints</span>
+</div>
+<div class="content">
+<div class="subtab">Constraints</div>
+<div class="data">
+<p>
+<a href="fx_constraints.html">Constraints</a> are a cornerstone of the framework and allow you to control functionality of other operating nodes (similar to Mographs Effectors).
+<br></br>
+You can see constraints like alpha channels controlling the intensity of an image.
+<br><a href="fx_constraints.html">Constraints</a> usually mask the node's effect intensity, so their value range lies most of the time between 0% - 100%.
+<br></br>
+You will use constraints in your everyday work as they are really one of the most important components to customize and extent the framework functionality
+and specialize other operating nodes to meet your requirements.
+<br></br>
+The great thing is that almost all nodes in the framework can use them and that they can be called fully multithreaded.
+<br>
+So you better get used to them if you want to create complex setups.
+</p>
+</div>
+<h4><a name="FORCE_BASE_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_global_constraints.jpg" border="0"><br></br>
+The constraints are always evaluated in the order specified by the list:<br>
+<i>Constraint A -> Constraint B -> Constraint C...</i>
+<br></br>
+Each constraint returns a floating point value; most of the time ranging from 0.0 to 1.0 (0% to 100% if seen as an intensity).
+<br></br>
+So they are <b>layered</b> and the <b><i>result of the current constraint  will always be blended
+with the previous constraint's result</i></b> (similar to layers in Photoshop or C4D's Layer Shader but blending is bottom-to-top).
+<br><br>The <b>blend mode</b> for each layer can be set behind each constraint in the list (one dot for each blend mode).
+<br>Clicking in that area will open a popup menu where you can choose the blend mode from. 
+<br><br>
+<img src="../../img/base_constraints_blendmodes.jpg" border="0">
+<br><br>By default the blend mode "multiply" is used.
+So our list will be calculated as: <br><b>Constraint A * Constraint B * Constraint C</b>
+
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

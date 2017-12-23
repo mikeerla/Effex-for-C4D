@@ -1,0 +1,21 @@
+CONTAINER fx_mesh_multi
+{
+	NAME fx_mesh_multi;
+	INCLUDE fx_mesh;
+
+	//Basic Tab
+	GROUP ID_FORCE_BASE
+	{			
+		DEFAULT 1;
+		GROUP ID_PORT_BASE
+		{
+			COLUMNS 2;
+			IN_EXCLUDE FXMESHMULTI_MESHES 
+			{
+				NUM_FLAGS 0; INIT_STATE 0; SEND_SELCHNGMSG 1; SCALE_H;
+				ACCEPT {  Obase; };
+			}
+			BUTTON FXMESHMULTI_MESHES_SELECTOR {SCALE_V; FIT_H;}
+		}
+	}
+}

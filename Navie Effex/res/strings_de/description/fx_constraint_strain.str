@@ -1,0 +1,24 @@
+STRINGTABLE fx_constraint_strain
+{
+	fx_constraint_strain "Beschr\u00E4nkung::Spannung";
+
+
+	CONSTRAINT_STRAIN_CHANNEL "Geschwindigkeitsfeld";
+	CONSTRAINT_STRAIN_CHANNEL_SELECTOR "C";
+
+	CONSTRAINT_STRAIN_MODE "Spannungstyp";
+		CONSTRAINT_STRAIN_MODE_MEAN "Durchschnittsspannung";
+		CONSTRAINT_STRAIN_MODE_SHEAR "von Mises Scherspannung";
+		CONSTRAINT_STRAIN_MODE_NORMALX "Normalenspannung X";
+		CONSTRAINT_STRAIN_MODE_NORMALY "Normalenspannung Y";
+		CONSTRAINT_STRAIN_MODE_NORMALZ "Normalenspannung Z";
+		CONSTRAINT_STRAIN_MODE_SHEARXY "Scherspannung XY";
+		CONSTRAINT_STRAIN_MODE_SHEARXZ "Scherspannung XZ";
+		CONSTRAINT_STRAIN_MODE_SHEARYZ "Scherspannung YZ";
+
+	CONSTRAINT_STRAIN_LENGTH "Maximaler Spannungswert";
+
+	CONSTRAINT_STRAIN_ABSOLUTE "Absolut";
+
+	CONSTRAINT_STRAIN_DUMMY_ "";
+}

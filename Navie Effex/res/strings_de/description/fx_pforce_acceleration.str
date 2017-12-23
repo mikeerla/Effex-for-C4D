@@ -1,0 +1,15 @@
+STRINGTABLE fx_pforce_acceleration
+{
+	fx_pforce_acceleration "Partikelkraft::Beschleunigung";
+	
+	PFORCE_ACCELERATION_ALIGNMENT "Ausrichtung";
+	PFORCE_ACCELERATION_INTENSITY "Intensit\u00E4t [m/s²]";
+	PFORCE_ACCELERATION "Beschleunigung";
+	PFORCE_ACCELERATION_MIX "Mit Original mischen";
+	PFORCE_ACCELERATION_DURATION "Dauer";
+
+	PFORCE_ACCELERATION_DURATION_SELECTOR "C";
+	PFORCE_ACCELERATION_ALIGNMENT_SELECTOR "C";
+
+	PFORCE_ACCELERATION_DUMMY_ "";
+}

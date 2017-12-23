@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_posteffects.html">Post Effects</a> : <a href="fx_posteffects_krakatoa.html">KrakatoaSR (Effex)</a></div>
+<div class="content">
+<h3>Precomputations</h3>
+</div>
+<div class="tabs">
+<a href="fx_posteffects_krakatoa_basic.html">Basic</a>
+<span>Precomputations</span>
+<a href="fx_posteffects_krakatoa_rendering.html">Rendering</a>
+<a href="fx_posteffects_krakatoa_passes.html">Passes</a>
+</div>
+<div class="content">
+<div class="subtab">Precomputations</div>
+<div class="data">
+<p>
+In the following all description content that is displayed in italic
+is a quote taken from the thinkbox Krakatoa MY user reference manual which
+you can find here: <a href="http://www.thinkboxsoftware.com/krakatoa-my-render-settings/">http://www.thinkboxsoftware.com/krakatoa-my-render-settings/</a>
+<br></br>
+It is generally a great resource for getting to know Krakatoa better.
+</p>
+</div>
+<h4><a name="FX_KRAKATOA_ADVECTION" onclick="HideNextDOM($(this));" >Advection [sec]</A></h4><div class="selected"><p><br></br>
+If this value is 0.0 it is deactivated.<br>
+Any value above 0.0 will advect the particles using their velocity property.
+<br></br>
+The value is given in seconds.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_REDUCE_BEFORE_POPULATE" onclick="HideNextDOM($(this));" >Reduce before repopulation</A></h4><div class="selected"><p><br></br>
+If checked it activates the reduction algorithm of KrakatoaSR.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_REDUCTION" onclick="HideNextDOM($(this));" >Reduce particles to..</A></h4><div class="selected"><p><br></br>
+Reduces the density by removing particles from the input particles.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Precomputations::</span>Repopulate</span>
+</div>
+<div class="subdata selected">
+Contains settings for the KrakatoaSR repopulation algorithm, which
+produces new particles around existing particles to increase the visual density.
+<br></br>
+It is not an intelligent hole filling algorithm so don't expect it to be.<br>
+And according to thinkbox it is best suited for liquid simulations with even particle distributions
+(which you pretty much get by using the weak spring operator in your simulations).
+<h4><a name="FX_KRAKATOA_REPOPULATE_SEED" onclick="HideNextDOM($(this));" >Seed</A></h4><div class="selected"><p><br></br>
+The seed value for the random placement of particles. This is like a starting index
+inside the random sequence array.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_REPOPULATE_RADIUS" onclick="HideNextDOM($(this));" >Fill radius</A></h4><div class="selected"><p><br></br>
+This is the space around particles (imagine a sphere) considered for the generation of new particles.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_REPOPULATE_RADIUS_SUBD" onclick="HideNextDOM($(this));" >Particle emission subdivisions</A></h4><div class="selected"><p><br></br>
+<i>The Particle emission subdivisions defines the Voxel Spacing to use as a fraction of the Fill Radius. <br>
+In other words, a value of 1 means that if the Fill Radius has a value of 1.0, this value will be divided once, producing a Spacing of 0.5 units. <br>
+Each subdivision increases the number of voxels in a cubic manner, in other words, Subdiv 1 means 2x2x2 = 8 voxels within the Fill Radius volume, a value of 2 means 3x3x3=27 voxels and so on.</i>
+<br></br>
+So this can quickly result in an exponential increment of particle counts and takes longer to process.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_REPOPULATE_RADIUS_NUMPERSUB" onclick="HideNextDOM($(this));" >Particles per subdivision</A></h4><div class="selected"><p><br></br>
+<i>The Particles per subdivision value defines the number of particles to seed randomly inside each Voxel. Increasing the number two times (e.g. from 1 to 2 particles) will produce roughly twice as many particles (some particles might not be generated if inside a Voxel but outside of the Fill Radius).</i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_REPOPULATE_FALLOFF" onclick="HideNextDOM($(this));" >Density falloff</A></h4><div class="selected"><p><br></br>
+<i>The Density Falloff value can range from 0.0 to 1.0 and defines the falloff of the Density channel based on the distance from the "surface" of the volume defined by all Fill Radii. <br>
+When the value is 0.0, all particles will get the same Density regardless of their distance to the surface. A value of 1.0 produces a linear falloff. A value of 0.5 produces constant density if the new particle is farther away from the surface than half of the Fill Radius value, and linear falloff in the range from half the distance to the actual surface.</i>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

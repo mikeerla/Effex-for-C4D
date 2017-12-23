@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_shaders.html">Shaders</a></div>
+<div class="content">
+<h3>Particle Sampler</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">Particle Sampler</div>
+<div class="data">
+<p>
+The particle sampler allows to sample (read out at an arbitrary location in space) any particle related data
+and map it to a color (except when that data is already a color of course).
+<br></br>
+That way you can render a liquid mesh using liquid particle colors for example.<br>
+Or color them based on their velocity or vorticity or any other particle property.
+
+</p>
+</div>
+<h4><a name="FX_PARTICLESAMPLER_PARTICLES" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_particle_group.jpg" border="0"><br></br>
+The particle group to read out particles from.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_PROPERTY" onclick="HideNextDOM($(this));" >Particle Property</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_particle_property.jpg" border="0"><br></br>
+The particle property to read out.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_PARTICLETYPE" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_particles.jpg" border="0"><br></br>
+The particle type to use from the particle group.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_AVERAGE" onclick="HideNextDOM($(this));" >Weighted</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_weighted.jpg" border="0"><br></br>
+If activated a weighted color is calculated out of the particles. This is of higher quality than
+if it is deactivated because it would then only calculate a simple average color.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_VECTORASCOLOR" onclick="HideNextDOM($(this));" >Property is a color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_property_is_a_color.jpg" border="0"><br></br>
+Only used if a vector property is linked. 
+<br></br>
+If activated it treats the vector directly as a color.
+<br></br>
+If deactivated it will take the length of the vector property which will be mapped to the range
+defined by <a href="#FX_PARTICLESAMPLER_RANGE_MIN">Input Minimum</a> and <a href="#FX_PARTICLESAMPLER_RANGE_MAX">Input Maximum</a> and
+will be colored with the <a href="#FX_PARTICLESAMPLER_COLOR">Color</a> gradient.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_RADIUS" onclick="HideNextDOM($(this));" >Search radius</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_search_radius.jpg" border="0"><br></br>
+The maximum distance used to search for particles (from the surface point that the material belongs to).<br>
+The value is given in grid cell/voxel size.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_MINPARTICLES" onclick="HideNextDOM($(this));" >Min. Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_min_particles.jpg" border="0"><br></br>
+Minimum amount of particles that are required before being included in the color calculation (weighting).<br>
+If less particles are found the shader will return black.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_MAXPARTICLES" onclick="HideNextDOM($(this));" >Max. Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_max_particles.jpg" border="0"><br></br>
+Maximum amount of particles that will be included in the color calculation (weighting).<br>
+Higher amounts allow more particles to be included but may take longer.
+<br></br>
+Depending on the search radius (if it increases) you may need to increase the maximum amount.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_RANGE_MIN" onclick="HideNextDOM($(this));" >Input Minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_input_minimum.jpg" border="0"><br></br>
+Defines the range minimum used to map scalar properties values and vector properties length
+for being colored by the Color gradient.
+<br></br>
+<i><b>Example:</b></i><br>
+You have a velocity property linked (which is a vector).<br>
+We know the minimum length of the velocity vector can only be 0.0. So this would be our minimum.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_RANGE_MAX" onclick="HideNextDOM($(this));" >Input Maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_input_maximum.jpg" border="0"><br></br>
+Defines the range maximum used to map scalar properties values and vector properties length
+for being colored by the Color gradient.
+<br></br>
+<i><b>Example:</b></i><br>
+You have a velocity property linked (which is a vector).<br>
+We know the maximum length of the velocity vector can be arbitrary. So we choose a value of 100.0.<br>
+If the velocity length is 50.0, the mapped value is 0.5 (0...50...100. Exactly in the middle of the range).
+<br></br>
+The color at the gradient center is therefore output.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Particle Sampler::</span>Displacement</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FX_PARTICLESAMPLER_DISPLACEMENT" onclick="HideNextDOM($(this));" >Offset</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particlesampler_offset.jpg" border="0"><br></br>
+The offset (in c4d world coordinates) to displace the sampled surface position.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_DISPLACEMENT_SHADER" onclick="HideNextDOM($(this));" >Shader</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particlesampler_shader.jpg" border="0"><br></br>
+A shader that will be used to displace the currently sampled surface position. <br>
+White colors in the shader will displace the sample position by 'Offset' amount while black colors represent no displacement.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Particle Sampler::</span>Color</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FX_PARTICLESAMPLER_COLOR_PRESETS" onclick="HideNextDOM($(this));" >Presets</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_global_presets.jpg" border="0"><br></br>
+Two coloring modes can be chosen.<br>
+Either using a custom color gradient or a blackbody color spectrum (flame colors).
+<br></br>
+If you use the blackbody mode, the property values should be defined in temperature range.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color.jpg" border="0"><br></br>
+Defines the color of the mapped particle property value.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_COLOR_HEATPLANCK" onclick="HideNextDOM($(this));" >Color (Blackbody)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color_preview.jpg" border="0"><br></br>
+A preview of the blackbody color spectrum.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_COLOR_HEATPLANCK_CLAMP" onclick="HideNextDOM($(this));" >Tone Mapping type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color_tonemappingtype.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+As the Blackbody spectrum is highly dynamic (its intensities can go beyond 100% and are radiance values) it must be converted to RGB space. The tone mapping is used for this. You have several color spaces and encoding systems as targets to accomplish this.
+<br></br>
+<b>NTSC</b><br>
+Blackbody spectrum as perceived on NTSC systems
+<br></br>
+<b>PAL/Secam</b><br>
+Blackbody spectrum as perceived on PAL/SECAM systems
+<br></br>
+<b>SMPTE</b><br>
+Blackbody spectrum as perceived in SMPTE standard (see http://www. smpte.org, SMPTE 0274M HD 1080 Standard)
+<br></br>
+<b>HDTV</b><br>
+Blackbody spectrum as perceived in HDTV standard
+<br></br>
+<b>CIE Human perception</b><br>
+Blackbody spectrum taking into account the perception of human eyes (physically most accurate mode)
+<br></br>
+<b>CIE REC 709</b><br>
+Blackbody spectrum as perceived in HD Widescreen (16:9) standard
+
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_COLOR_HEATPLANCK_BOOST" onclick="HideNextDOM($(this));" >Color Boost</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color_colorboost.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Allows to boost certain colors of the Blackbody spectrum.
+<br></br>
+<b>X-component:</b> Redish part<br>
+<b>Y-component:</b> Yellowish part<br>
+<b>Z-component:</b> Red-Yellow shift
+
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_COLOR_HEATPLANCK_INTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_intensity.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Blackbody intensity. This results in a brighter appearance of the colors.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_COLOR_HEATPLANCK_SCALE" onclick="HideNextDOM($(this));" >Temperature scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color_temperaturescale.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Rescales the temperature that is used to extract the Blackbody colors. This results in the spectrum to be shifted more to the white point.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Particle Sampler::</span>Clipping</span>
+</div>
+<div class="subdata selected">
+Clips the output to the given range.
+<h4><a name="FX_PARTICLESAMPLER_RANGEOUT_MIN" onclick="HideNextDOM($(this));" >Output Minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_global_clipping_output_minimum.jpg" border="0"><br></br>
+The minimum of the output range. Output colors will not be lower than this value.
+<br></br></p></div>
+<h4><a name="FX_PARTICLESAMPLER_RANGEOUT_MAX" onclick="HideNextDOM($(this));" >Output Maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_global_clipping_output_maximum.jpg" border="0"><br></br>
+The maximum of the output range. Output colors will not be higher than this value.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

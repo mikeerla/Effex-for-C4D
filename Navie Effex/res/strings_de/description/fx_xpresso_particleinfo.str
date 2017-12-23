@@ -1,0 +1,27 @@
+STRINGTABLE fx_xpresso_particleinfo
+{
+	fx_xpresso_particleinfo "Partikel Info";
+	
+	XPARTICLE_INFO_PARTICLEGROUP "Partikelgruppe";
+	XPARTICLE_INFO_TYPE "Partikel";
+		XPARTICLE_INFO_TYPE_PASSIVE "Passiv";
+		XPARTICLE_INFO_TYPE_VORTICITY "Verwirbelung";
+		XPARTICLE_INFO_TYPE_LIQUID "Fl\u00FCssigkeit";
+		XPARTICLE_INFO_TYPE_DIFFUSE "Diffus";
+
+	XPARTICLE_INFO_INDEX "Partikelindex";
+	XPARTICLE_INFO_POS "Physische Position";
+	XPARTICLE_INFO_ALIVE "Attribut::Lebendig";
+	XPARTICLE_INFO_COLLISION "Attribut::Kollidiert";
+	XPARTICLE_INFO_SPRAY "Attribut::Spray";
+	XPARTICLE_INFO_BUBBLE "Attribut::Blase";
+	XPARTICLE_INFO_TEMP "Attribut::Vor\u00FCbergehend";
+	XPARTICLE_INFO_PROP_SCALAR "Skalare Eigenschaft";
+	XPARTICLE_INFO_PROP_VECTOR "Vektor Eigenschaft";
+	XPARTICLE_INFO_PROP_STATE "Status Eigenschaft";
+	XPARTICLE_INFO_PROPERTIES "Eigenschaften";
+	XPARTICLE_INFO_COUNT "Anzahl";
+	XPARTICLE_INFO_COUNTITER "Anzahl (f\u00FCbr Iterator)";
+
+	XPARTICLE_INFO_DUMMY	"";
+}

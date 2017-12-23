@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_surfaces_foamspraybubbles.html">POP::Foam/Spray/Bubbles</a></div>
+<div class="content">
+<h3>Spray</h3>
+</div>
+<div class="tabs">
+<a href="fx_surfaces_foamspraybubbles_params.html">Parameters</a>
+<a href="fx_surfaces_foamspraybubbles_unified.html">Unified</a>
+<a href="fx_surfaces_foamspraybubbles_foam.html">Foam</a>
+<span>Spray</span>
+</div>
+<div class="content">
+<div class="subtab">Spray</div>
+<div class="data">
+<p>
+<img src="../../img/fx_foamspray_spray.jpg" border="0"">
+<br><br>
+These settings define and control when and how spray particles are generated.
+</p>
+</div>
+<h4><a name="SPRAY_OUTTOFOAM" onclick="HideNextDOM($(this));" >Convert to Foam on surface</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_spray_convert_to_foam_on_surface.jpg" border="0"><br></br>
+If spray particles hit the liquid surface you can let them be converted into foam particles. Otherwise they will die.
+<br></br></p></div>
+<h4><a name="SPRAY_CLAMPTOFLUIDSIM" onclick="HideNextDOM($(this));" >Clamp to Dynamics Boundary</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_spray_clamp_to_dynamics_boundary.jpg" border="0"><br></br>
+Clamps spray particle positions to the fluid dynamics container so they remain inside the fluid simulation space.
+<br></br></p></div>
+<h4><a name="SPRAY_MASS" onclick="HideNextDOM($(this));" >Mass</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_spray_mass.jpg" border="0"><br></br>
+The initial mass of a spray particle when it is generated.
+<br></br></p></div>
+<h4><a name="SPRAY_DRAG" onclick="HideNextDOM($(this));" >Drag</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_spray_drag.jpg" border="0"><br></br>
+The initial drag of a spray particle when it is generated.
+<br></br></p></div>
+<h4><a name="SPRAY_CURVATURE" onclick="HideNextDOM($(this));" >Curvature Threshold (0=flat areas)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_spray_curvature_treshold.jpg" border="0"><br></br>
+Defines the surface curvature where spray particles are generated. Particles are only generated in areas with a curvature higher than this value.
+<br></br></p></div>
+<h4><a name="SPRAY_VELOCITY" onclick="HideNextDOM($(this));" >Velocity Threshold [voxel]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_spray_velocity_treshold.jpg" border="0"><br></br>
+Defines the fluid speed where spray particles are generated. Particles are only generated in areas with a velocity higher than this value.
+<br></br></p></div>
+<h4><a name="SPRAY_VELOCITYRND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+Randomizes the velocity threshold between 0.0 and 'Velocity Threshold'.
+<br></br></p></div>
+<h4><a name="SPRAY_VORTICITY" onclick="HideNextDOM($(this));" >Vorticity Threshold [voxel]</A></h4><div class="selected"><p><br></br>
+<i>(Only available in Geometry mode)</i>
+<br><br>
+Defines the fluid vorticity where spray particles are generated. Particles are only generated in areas with a vorticity higher than this value.
+<br></br></p></div>
+<h4><a name="SPRAY_VORTICITYRND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+<i>(Only available in Geometry mode)</i>
+<br><br>
+Randomizes the vorticity threshold between 0.0 and 'Vorticity Threshold'.
+<br></br></p></div>
+<h4><a name="SPRAY_AGE" onclick="HideNextDOM($(this));" >Life time [seconds]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_spray_lifetime_seconds_randomness.jpg" border="0"><br></br>
+The life time of a spray particle given in seconds.
+<br></br></p></div>
+<h4><a name="SPRAY_AGERND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+Randomizes the Life time between 0.0 and 'Life Time'.
+<br></br></p></div>
+<h4><a name="SPRAY_SPEED" onclick="HideNextDOM($(this));" >Velocity [multiplier]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_spray_velocity.jpg" border="0"><br></br>
+A multiplier for the initial velocity of a generated spray particle. 100% means the original fluid velocity at the location where it was generated.
+<br></br></p></div>
+<h4><a name="SPRAY_SPEEDRND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+Randomizes the Velocity (multiplier) between 0.0 and 'Velocity (multiplier)'.
+<br></br></p></div>
+<h4><a name="SPRAY_SPEEDNORMAL" onclick="HideNextDOM($(this));" >Normal velocity [multiplier]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fsb_spray_normalvelocity.jpg" border="0"><br></br>
+A multiplier for the velocity along the surface normal direction. 100% means the original normal direction at the location where it was generated.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: this normal velocity is added to the spray particle velocity.
+</div>
+<br></br></p></div>
+<h4><a name="SPRAY_SPEEDNORMALRND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+Randomizes the Normal velocity [multiplier] value between 0.0 and 'Normal velocity [multiplier]'.
+<br></br></p></div>
+<h4><a name="SPRAY_SPEEDANGLE" onclick="HideNextDOM($(this));" >Max. Angle</A></h4><div class="selected"><p><br></br>
+<i>(Only available in Geometry mode)</i>
+<br><br>
+Define the maximum spawning angle of spray particles.
+<br></br></p></div>
+<h4><a name="SPRAY_SPEEDANGLERND" onclick="HideNextDOM($(this));" >Randomness</A></h4><div class="selected"><p><br></br>
+<i>(Only available in Geometry mode)</i>
+<br><br>
+Randomizes the Max. Angle value between 0&deg; and 'Max. Angle'.
+<br></br></p></div>
+<h4><a name="SPRAY_KEEPLENGTH" onclick="HideNextDOM($(this));" >Keep Length</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fsb_spray_keeplength.jpg" border="0"><br></br>
+The final velocity of a spray particle is a combination out of the original velocity, the normal velocity and the Spreading angle velocity.
+<br>Activating this option will clamp the length of the resulting velocity to the original particle velocity.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

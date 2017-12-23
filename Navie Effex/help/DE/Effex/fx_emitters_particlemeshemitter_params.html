@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_particle.html">Particle</a> : <a href="fx_emitters_particlemeshemitter.html">Emitter::Particle On Mesh</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+<a href="fx_emitters_particlemeshemitter_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_pmeshemitter_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="PARTICLEMESHEMITTER_MESH" onclick="HideNextDOM($(this));" >Mesh Volume</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_mesh.jpg" border="0"><br></br>
+Takes a <a href="fx_volume.html">mesh-based Volume</a> or <a href="fx_mesh.html">Mesh</a> node to emit particles from.
+<br></br>
+Currently MultiVolume and MultiMeshes are not supported.
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_PARTICLEFACTORY" onclick="HideNextDOM($(this));" >Target Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_particle_group.jpg" border="0"><br></br>
+Link the <a href="fx_particles_particlegroup.html">Particle Group</a> which should take the generated particles.
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_SETTINGS" onclick="HideNextDOM($(this));" >Emission Settings</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_emission_settings.jpg" border="0"><br></br>
+Link <a href="fx_emitters_particleemissionsettings.html">Particle Emission Settings</a> in here that define the emission behavior.
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_PROPS" onclick="HideNextDOM($(this));" >Particle Properties to attach</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_particle_properties.jpg" border="0"><br></br>
+The emitter will attach any <a href="fx_particles_properties.html">particle property</a> you assign here to each generated/emitted particle. <br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b><br>
+Remember that each particle automatically gets a Position and a Velocity property attached, so it's not necessary to drop them here.
+<br>If you do drop a velocity property here, it will initialise born particles with its start value.
+</div>
+<br></br></p></div>
+<h4><a name="FX_FORCE_BASE_ITERATIONS" onclick="HideNextDOM($(this));" >Iterations</A></h4><div class="selected"><p><br></br>
+Allows to loop the evaluation of the emitter. Define how many times it should repeat.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+This is used if you want to have a regular distribution of samples on the mesh surface.<br><br>
+Choose a rather low particle emission count value (in the Emission Settings) and then use some higher iterations.
+<br>Finally control the distance between the samples with "Minimum Distance between samples".
+</div>
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_PARTICLETYPE" onclick="HideNextDOM($(this));" >Particle Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_particle_type.jpg" border="0"><br></br>
+Defines the particle type to generate in the linked target particle group.
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_SOURCETYPE" onclick="HideNextDOM($(this));" >Source</A></h4><div class="selected"><p><br></br>
+Define the emission source.
+<br><br>
+<i>1. Polygon: particles are generated randomly on the polygon surface.<br>
+2. Points: particles are generated only at mesh points.<br>
+3. BrushData: particles only generated at brush data locations stored on the source mesh node.</i>
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_SAMPLING_MINIMUM" onclick="HideNextDOM($(this));" >Minimum distance between particles</A></h4><div class="selected"><p><br></br>
+Defines the minimum distance between existing and newly generated particles.
+<br>The value is given in voxels. 100% = length of a grid cell.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Filling attached particle properties</span>
+</div>
+<div class="subdata selected">
+<img src="../../img/fx_pmeshemitter_properties.jpg" border="0"">
+</div>
+<h4><a name="PARTICLEMESHEMITTER_FILLPROP_UVW" onclick="HideNextDOM($(this));" >Assign UV</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPoM_params_assignuv.jpg" border="0"><br></br>
+If the mesh node has UV data (means if the original C4D source mesh had UV data)
+you can store the UV coordinates of the emission locations in the UV property of a particle.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> You need to add the UV property node to the "Particle Properties to attach" list for this to work.
+</div>
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_FILLPROP_NORMAL" onclick="HideNextDOM($(this));" >Assign Normal</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_assign_normal.jpg" border="0"><br></br>
+You can store the surface normal of the emission locations in the Normal property of a particle.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> 
+You need to add the Normal property to the "Particle Properties to attach" list for this to work.
+</div>
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_FILL_COLOR" onclick="HideNextDOM($(this));" >Assign Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPoM_params_assigncolor.jpg" border="0"><br></br>
+You can store a surface color (either sampled directly from a material sitting on the mesh or with a custom channel shader) into the color property of a particle.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> 
+You need to add the 'Color' property to the "Particle Properties to attach" list for this to work. 
+</div>
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_PROPS_BRUSH" onclick="HideNextDOM($(this));" >Use Brush properties</A></h4><div class="selected"><p><br></br>
+Here you can define available brush properties (generated by the Particle Brush tool)  instead of surface data to transfer to the particles.
+<br>These can be: Normal, UV and Color.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> Brush properties are accessible by using the <a href="fx_particles_properties.html">Particle properties</a>.
+</div>
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Color Sampling</span>
+</div>
+<div class="subdata selected">
+<i>Only available if 'Assign Color' is activated</i>
+<br><br>
+<img src="../../img/fx_pmeshemitter_color.jpg" border="0"">
+
+</div>
+<h4><a name="PARTICLEMESHEMITTER_MATERIALSPACE" onclick="HideNextDOM($(this));" >Material Space</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_material_space.jpg" border="0"><br></br>
+Defines which material space should be used to sample the shader that is defined in the mesh material's channel (the channel to use is defined with Assign color from channel..).
+<br></br>
+<b>2D</b><br>
+UV space<br>
+<br>
+<b>3D</b><br>
+World Space
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_POINTSPACE" onclick="HideNextDOM($(this));" >Position Space</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_position_space.jpg" border="0"><br></br>
+The space the position is defined in to sample the shader. It can either be in <a href="fx_server_framework.html#SERVER_WORLD_SCALE">Cinema 4D unit space or the physical space of the Effex framework</a>.
+
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_COLORSHADER" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPoM_params_color.jpg" border="0"><br></br>
+Define a channel shader here to sample the color value from. It will be stored in the Color property of the generated particles.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> You must attach a <a href="fx_particles_properties_vector.html">Color property</a> (via <a href="#PARTICLEMESHEMITTER_PROPS">Particle Properties to attach</a>) for this to work.
+</div>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> If you want to see the color of the particles in the editor view, assign the Color property node in the linked <a href="fx_particlegroup_display.html#FLUIDGROUP_LIQUID_PROPERTY">Particle Group::Display</a> settings.
+</div>
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_FILLPROP_COLOR" onclick="HideNextDOM($(this));" >Assign Color from Channel..</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_mesh_grid_emitter_params_assign_color_from_channel.jpg" border="0"><br></br>
+You can sample the color of any shader sitting on the surface. The original mesh object (the c4d polygon mesh) must have a material assigned for this.
+<br><br>
+Select the material channel that contains the shader you want to sample the color from. The channel must have a channel shader assigned.</br>
+<br>If a color was successfully sampled it will be stored into the unique color property of each particle (must be attached).
+<br></br>
+Off - No color sampling takes place.
+Any other mode - the according material channel to use.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

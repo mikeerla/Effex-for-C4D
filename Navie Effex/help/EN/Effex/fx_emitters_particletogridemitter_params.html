@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_emitters_particletogridemitter.html">POP::PointData to Grid</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+<a href="fx_emitters_particletogridemitter_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="PROPERTIES_PARTICLES_GROUP" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_particle_group.jpg" border="0"><br></br>
+Link the Particle Group which contains the source particles.
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_DURATION" onclick="HideNextDOM($(this));" >Emission Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_emission_duration.jpg" border="0"><br></br>
+Takes a duration node that defines when the emitter is allowed to operate. This node is optional.
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_CHANNELVALUES" onclick="HideNextDOM($(this));" >Channel Values</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_channel_values.jpg" border="0"><br></br>
+Takes several channel/value containers that define the target channels and the values/properties that should be emitted into them. This is required.
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_PARTICLES" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_particles.jpg" border="0"><br></br>
+Defines the particle type to use from the source particle group.
+
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_RADIUS" onclick="HideNextDOM($(this));" >Radius [voxel]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_radius.jpg" border="0"><br></br>
+Defines the radius around each particle which should be used to find neighboring grid cells that the particle will affect. The radius is given in grid cell/voxel size.
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_EMIT_PROPERTIES" onclick="HideNextDOM($(this));" >Time integrated</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_time_integrated.jpg" border="0"><br></br>
+The values emitted can be time integrated. This means the current time step (or sub time step) is multiplied with the emitted value, to correctly
+synchronize it with the simulation framework (just like smoke is emitted time integrated).
+<br></br>
+If you are for example only generating variable viscosity grids with the emitter, you wouln't want it activated because you want the particles
+to write a direct viscosity value (not linked to time).
+
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_MASSINFLUENCE" onclick="HideNextDOM($(this));" >Mass influence</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_mass_influence.jpg" border="0"><br></br>
+If the particles carry a mass property (scalar), the intensity of the value can be based on that mass. A higher mass would result in a higher splatted value.
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_SIZEINFLUENCE" onclick="HideNextDOM($(this));" >Size influence</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_size_influence.jpg" border="0"><br></br>
+If the particles carry a radius property (scalar), the intensity of the splatted value can be based on that size. A lower particle radius would result in a lower splatting value.
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_RADFALLOFF" onclick="HideNextDOM($(this));" >Falloff</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_falloff.jpg" border="0"><br></br>
+In the range of the Radius [voxel] (imagine a sphere around each particle) you can define a spatial falloff.
+<br></br>
+<b>None</b><br>
+No falloff is used. Grid cells that are affected get the full intensity value.<br>
+<br>
+<b>Linear</b><br>
+A linear falloff is used. The further away a grid cell is from the particle the lower the value will be it receives.<br>
+<br>
+<b>Custom</b><br>
+Allows a user-defined value being distributed to the affected cells. Once set, a 'Gradient' unhides in the node's attributes and can be used to define the falloff.
+<br></br></p></div>
+<h4><a name="PROPERTIES_PARTICLES_RADFALLOFF_GRAD" onclick="HideNextDOM($(this));" >Gradient</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_to_grid_params_gradient.jpg" border="0"><br></br>
+<i>Only available if 'Falloff' is set to 'Custom'.</i> 
+<br></br>
+Here you can define a custom falloff.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

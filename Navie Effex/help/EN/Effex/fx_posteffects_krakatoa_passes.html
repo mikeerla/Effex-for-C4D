@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_posteffects.html">Post Effects</a> : <a href="fx_posteffects_krakatoa.html">KrakatoaSR (Effex)</a></div>
+<div class="content">
+<h3>Passes</h3>
+</div>
+<div class="tabs">
+<a href="fx_posteffects_krakatoa_basic.html">Basic</a>
+<a href="fx_posteffects_krakatoa_precomputation.html">Precomputations</a>
+<a href="fx_posteffects_krakatoa_rendering.html">Rendering</a>
+<span>Passes</span>
+</div>
+<div class="content">
+<div class="subtab">Passes</div>
+<div class="data">
+<p>
+Krakatoa can output several other passes and Effex can write them
+into a Cinema 4D multipass for compositing (which is much more powerful than direct rendering).
+<br></br>
+In order to let them be created you need to add the 'Post Effects' multipass.<br>
+Effex will then create new passes and write the Krakatoa passes into them.
+</p>
+</div>
+<h4><a name="FX_KRAKATOA_PASSES_NORMAL" onclick="HideNextDOM($(this));" >Normal</A></h4><div class="selected"><p><br></br>
+Outputs a pass containing the normals of the rendered particles.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_PASSES_VELOCITY" onclick="HideNextDOM($(this));" >Velocity</A></h4><div class="selected"><p><br></br>
+Outputs a pass containing the motion vectors of the rendered particles.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_PASSES_ZDEPTH" onclick="HideNextDOM($(this));" >Z-Depth</A></h4><div class="selected"><p><br></br>
+Outputs a pass containing the depth of the rendered particles.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_PASSES_OCCLUDEDRGBA" onclick="HideNextDOM($(this));" >Occluded RGBA</A></h4><div class="selected"><p><br></br>
+Outputs a pass containing the occluded particles.
+<br></br>
+<i>The Occluded Particles pass includes all particles that are partially or completely occluded by matte objects, while the main Beauty RGBA pass will contain all the particles completely in front of matte objects.</i>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

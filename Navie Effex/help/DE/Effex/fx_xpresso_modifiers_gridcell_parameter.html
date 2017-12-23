@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_xpresso.html">Xpresso Nodes</a> : <a href="fx_xpresso_modifiers.html">Modifiers</a> : <a href="fx_xpresso_modifiers_gridcell.html">Grid Cell</a></div>
+<div class="content">
+<h3>Inports</h3>
+</div>
+<div class="tabs">
+<a href="fx_xpresso_modifiers_gridcell_node.html">Node</a>
+<span>Inports</span>
+<a href="fx_xpresso_modifiers_gridcell_parameterout.html">Outports</a>
+</div>
+<div class="content">
+<div class="subtab">Inports</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="XCELL_CHANNEL" onclick="HideNextDOM($(this));" >Channel</A></h4><div class="selected"><p><br></br>
+The grid-based node to access (read & write)
+<br><br>
+The following nodes are supported:<br>
+<br>
+<i>1. Any Scalar/Vector Channels (incl. Fire/Fuel/Temp..)<br>
+2. Fluid Dynamics (Gas & Liquid) - will read out the velocity grid<br>
+3. Volumes - will read out the levelset
+</i>
+<br></br></p></div>
+<h4><a name="XCELL_C4DPOS" onclick="HideNextDOM($(this));" >C4D World Position</A></h4><div class="selected"><p><br></br>
+<img src="../../img/xpresso_grid_cell_inports_c4d_world_position.jpg" border="0"><br></br>
+Access the cell value at this C4D world position.
+<br></br></p></div>
+<h4><a name="XCELL_PHYSICAL" onclick="HideNextDOM($(this));" >Physical Position</A></h4><div class="selected"><p><br></br>
+<img src="../../img/xpresso_grid_cell_inports_physical_position.jpg" border="0"><br></br>
+Access the cell value at this global physical position.
+<br></br></p></div>
+<h4><a name="XCELL_GCOORD" onclick="HideNextDOM($(this));" >Cell Coordinates</A></h4><div class="selected"><p><br></br>
+<img src="../../img/xpresso_grid_cell_inports_cell_coordinates.jpg" border="0"><br></br>
+Access the cell value at this local cell coordinates.
+<br></br></p></div>
+<h4><a name="XCELL_VELINDEX" onclick="HideNextDOM($(this));" >Velocity Cell Index</A></h4><div class="selected"><p><br></br>
+Access the cell value at this local velocity cell index.
+<br></br></p></div>
+<h4><a name="XCELL_INDEX" onclick="HideNextDOM($(this));" >Cell Index</A></h4><div class="selected"><p><br></br>
+<img src="../../img/xpresso_grid_cell_inports_cell_index.jpg" border="0"><br></br>
+Access the cell value at this local cell index.
+<br></br></p></div>
+<h4><a name="XCELL_VALUE" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+Changes the current grid cell value to this scalar value.
+<br></br></p></div>
+<h4><a name="XCELL_VALUEV" onclick="HideNextDOM($(this));" >Vector Value</A></h4><div class="selected"><p><br></br>
+Changes the current grid cell value to this vector value.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

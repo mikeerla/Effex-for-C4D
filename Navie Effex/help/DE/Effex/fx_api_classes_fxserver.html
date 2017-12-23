@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a></div>
+<div class="content">
+<h3>FXServer</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXServer</div>
+<div class="data">
+<p>
+The FXServer holds all Effex Scenes available in a Cinema 4D scene and executes them.
+<br>You can retrieve the FXServer like this:
+<br><br>
+FXAPI::FXServer* server = FXAPI::FXServer::Get(doc);
+<hr line></hr>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> GetSceneCount (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the amount of scenes available in the current Cinema 4D scene.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> GetActiveSceneCount (<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+ the amount of active Effex Scenes.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">FXScene</span>* GetEffexScene(<span style="color:rgb(0,120,120);">BaseObject</span>* node)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The Effex Scene associated with the passed node interface. Returns nullptr if scene was not found.
+<br></br>
+<b>Parameters</b><BR>
+<i>BaseObject* node</i>: The Effex Scene node interface
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">FXParticleGroup</span>* GetParticleGroup(<span style="color:rgb(0,120,120);">BaseObject</span>* node)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The particle group associated with the passed node interface. Returns nullptr if group was not found.
+<br></br>
+<b>Parameters</b><BR>
+<i>BaseObject* node</i>: The particle group node interface
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">FXParticleGroup</span>* GetParticleGroup(<span style="color:rgb(0,120,120);">BaseObject</span>* node) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The particle group associated with the passed node interface. Returns nullptr if the particle group was not found.
+<br></br>
+<b>Parameters</b><BR>
+<i>BaseObject* node</i>: The particle group node interface
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> GetConstraints(<span style="color:rgb(0,120,120);">InExcludeData</span>* filter, <span style="color:rgb(74,100,127);">std</span>::<span style="color:rgb(0,120,120);">vector</span>*>& result)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+none
+<br></br>
+<b>Parameters</b><BR>
+<i>InExcludeData* filter</i>: <br>
+a list of constraint node interfaces to retrieve from any Effex Scene.
+<BR></br>
+<i>std::vector<FXConstraint*>& result</i>:<br>
+filled with all found constraints
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> <span style="color:rgb(0,120,120);">FXServer</span>* Get(<span style="color:rgb(0,120,120);">BaseDocument</span>* <span style="color:rgb(0,31,174);">do</span>)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The FXServer in the passed BaseDocument
+<br></br>
+<b>Parameters</b><BR>
+<i>BaseDocument* doc</i>: <br>
+The document to retrieve the FXServer from
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

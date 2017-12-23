@@ -1,0 +1,14 @@
+STRINGTABLE fx_grid_diffusion
+{
+	fx_grid_diffusion	"Gitterdiffusor";
+
+	GRID_DIFFUSION "Diffusion";
+	GRID_DIFFUSION_ITER_INTENSITY "Intensit\u00E4t [pro Durchlauf]";
+	GRID_DIFFUSION_ITER "Durchl\u00E4ufe";
+	GRID_DIFFUSION_TYPE "Modus";
+		GRID_DIFFUSION_TYPE_KERNEL "Kernel";
+		GRID_DIFFUSION_TYPE_NEARESTNEIGHBOR "Nearest neighbor";
+	
+	GRID_DIFFUSION_CHANNEL "Kanal";
+	GRID_DIFFUSION_CHANNEL_SELECTOR "C";
+}

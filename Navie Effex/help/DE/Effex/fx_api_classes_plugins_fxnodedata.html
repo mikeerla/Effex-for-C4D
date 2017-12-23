@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_plugins.html">Plugins</a></div>
+<div class="content">
+<h3>FXNodeData</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXNodeData</div>
+<div class="data">
+<p>
+This node data is private! Don't ever derive from this nodedata! Really...don't.
+<br>Use the derived classes FXConstraintData, FXForceData and FXOperatorData.
+<br></br>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">void</span> GetSubType (<span style="color:rgb(0,31,174);">int</span>& subtype) </A></h4><div class="selected"><p><br>
+Overloaded to define on what kind of data this plugin is operating on. <br>
+Most of the time this will either be operating on grids, particles or both (dual)
+<br></br>
+<b>Parameters</b><BR>
+<i>int& subtype</i>:<br>
+Depending on type of plugin set a an according NodeSubType bit in the passed subtype reference integer.
+<br></br>
+Example (for grids): <br>subtype |= (1 << nst_grid);
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> PortsDirty (<span style="color:rgb(0,120,120);">FXServer</span>* server) </A></h4><div class="selected"><p><br>
+Overloaded to check if any of the linked nodes in your ports are dirty.<br>
+Called once at the beginning of the pipeline and before substepping.
+<br></br>
+<b>Returns</b><br>
+true if there are dirty nodes..
+<br></br>
+<b>Parameters</b><BR>
+<i>FXServer* server</i>:<br>
+The server this node is called from. Use it to retrieve any information you may need..
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> FillData (<span style="color:rgb(0,120,120);">BaseObject</span>* node)</A></h4><div class="selected"><p><br>
+Overloaded to get the node interface settings.<br>
+Called at the beginning of the pipeline and before substepping.
+<br></br>
+<b>Returns</b><br>
+false if there was an error. If so, the node is set as not-operational (for example if a
+port is not filled although it is necessary for your plugin to correctly operate).
+<br></br>
+<b>Parameters</b><BR>
+<i>BaseObject* node</i>:<br>
+The node interface for convenience and to retrieve the settings from.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> FillPorts (<span style="color:rgb(0,120,120);">BaseObject</span>* node , <span style="color:rgb(0,120,120);">FXServer</span>* server)</A></h4><div class="selected"><p><br>
+Overloaded to get the node interface ports.<br>
+Called at the beginning of the pipeline and before substepping..
+<br></br>
+<b>Returns</b><br>
+false if there was an error. If so, the node is set as not-operational (for example if a
+port is not filled although it is necessary for your plugin to correctly operate).
+<br></br>
+<b>Parameters</b><BR>
+<i>BaseObject* node</i>:<br>
+The node interface for convenience and to retrieve the ports from.
+<br></br>
+<i>FXServer* server</i>:<br>
+The server this node is called from. Use it to find the nodes from any node interfaces linked in your ports.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">void</span> ClearPorts (<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+Overloaded to clear any nodes and node interfaces data you have stored as class members.<br>
+Is called after the pipeline is finished and all substeps have been processed.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

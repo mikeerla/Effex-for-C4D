@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_particles.html">Particles</a> : <a href="fx_particles_particlegroup.html">Particle Group</a></div>
+<div class="content">
+<h3>Display</h3>
+</div>
+<div class="tabs">
+<a href="fx_particlegroup_quicktab.html">Quicktab</a>
+<a href="fx_particlegroup_parameters.html">Parameters</a>
+<span>Display</span>
+</div>
+<div class="content">
+<div class="subtab">Display</div>
+<div class="data">
+<p>
+<img src="../../img/fx_particlegroup_display.jpg" border="0"">
+<br><br>All settings here are only applicable to the editor views and hardware renderings.
+</p>
+</div>
+<h4><a name="FX_BASE_DRAW" onclick="HideNextDOM($(this));" >On</A></h4><div class="selected"><p><br></br>
+Turns on/off the display for this particle group and all its subgroups.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Display::</span>Passive Particles</span>
+</div>
+<div class="subdata selected">
+Contains all the settings for the display of passive particles in the editor view.
+<h4><a name="FLUIDGROUP_PASSIVE_DRAW" onclick="HideNextDOM($(this));" >Draw each Xth particle</A></h4><div class="selected"><p><br></br>
+<img src="../../img/particle_particle_group_passive_particles_display_draw_each_xth_particle.jpg" border="0"><br></br>
+Allows to set an interval for drawing particles. A value of 0 will turn off the display of particles.<br>
+A value of 1 will display all particles, a value of 2 will draw each second particle and so on.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_PASSIVE_DRAWSIZE" onclick="HideNextDOM($(this));" >Display Size</A></h4><div class="selected"><p><br></br>
+The display size in the editor view or during hardware rendering.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_PASSIVE_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/particle_particle_group_passive_particles_display_color.jpg" border="0"><br></br>
+The display color of this particle type.
+<br>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> This does NOT change the Color property of the particles but is a separate color only used for display (not for simulation).
+</div>
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_PASSIVE_DEFORMED" onclick="HideNextDOM($(this));" >Deformed Position</A></h4><div class="selected"><p><br></br>
+Draws the deformed position of the particles instead of the real position.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_PASSIVE_DRAWRADIUS" onclick="HideNextDOM($(this));" >Draw Radius</A></h4><div class="selected"><p><br></br>
+Draws the particle's radius as a circle/sphere. But only if the particles have a Radius property attached!
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_PASSIVE_DRAWRADIUS2D" onclick="HideNextDOM($(this));" >Draw Radius in 2D</A></h4><div class="selected"><p><br></br>
+Draws the particle radius as a camera facing circle instead of as a sphere.
+<br>It is faster than drawing as sphere but slower than drawing as a point.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_PASSIVE_PROPERTY" onclick="HideNextDOM($(this));" >Property</A></h4><div class="selected"><p><br></br>
+Here you can assign (either manually or via its candidate button) a particle property that
+should be used for coloring the particles.<br>
+If the particle has no such property attached (you can attach properties directly in the according particle emitters) then
+the particles are displayed in black (no color).
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_PASSIVE_THRESHOLD" onclick="HideNextDOM($(this));" >Threshold [voxel size]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/particle_particle_group_liquid_particles_display_threshold.jpg" border="0"><br></br>
+Here you can set a threshold value (the value is given in physical space) to quickly range map
+the property value (while the threshold is the maximum value allowed).
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Example:</b><br>
+Imagine the velocity property is linked. A velocity vector value could be arbitrary in length, depending on the scene.
+<br>Let's say you have maximum velocity lengths (speed) of 40m/s, then a threshold of 40 is the best option (so 40/40 = 100%). In that case the particles would be completely white (full intensity).
+</div>
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Display::</span>Vorticity Particles</span>
+</div>
+<div class="subdata selected">
+Contains all the settings for the display of liquid particles in the editor view. 
+<h4><a name="FLUIDGROUP_VORTICITY_DRAW" onclick="HideNextDOM($(this));" >Draw each Xth particle</A></h4><div class="selected"><p><br></br>
+Allows to set an interval for drawing particles. A value of 0 will turn off the display of particles.<br>
+A value of 1 will display all particles, a value of 2 will draw each second particle and so on.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_VORTICITY_DRAWSIZE" onclick="HideNextDOM($(this));" >Display Size</A></h4><div class="selected"><p><br></br>
+The display size in the editor view or during hardware rendering.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_VORTICITY_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+The display color of this particle type.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> This does NOT change the Color property of the particles but is a separate color only used for display (not for simulation).
+</div>
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_VORTICITY_DEFORMED" onclick="HideNextDOM($(this));" >Deformed Position</A></h4><div class="selected"><p><br></br>
+Draws the deformed position of the particles instead of the real position.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_VORTICITY_DRAWRADIUS" onclick="HideNextDOM($(this));" >Draw Radius</A></h4><div class="selected"><p><br></br>
+Draws the particle's radius as a circle/sphere. But only if the particles have a Radius property attached!
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_VORTICITY_DRAWRADIUS2D" onclick="HideNextDOM($(this));" >Draw Radius in 2D</A></h4><div class="selected"><p><br></br>
+Draws the particle radius as a camera facing circle instead of as a sphere.
+<br>It is faster than drawing as sphere but slower than drawing as a point.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_VORTICITY_PROPERTY" onclick="HideNextDOM($(this));" >Property</A></h4><div class="selected"><p><br></br>
+Here you can assign (either manually or via its candidate button) a particle property that
+should be used for coloring the particles.<br>
+If the particle has no such property attached (you can attach properties directly in the according particle emitters) then
+the particles are displayed in black (no color).
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_VORTICITY_THRESHOLD" onclick="HideNextDOM($(this));" >Threshold [voxel size]</A></h4><div class="selected"><p><br></br>
+Here you can set a threshold value (the value is given in physical space) to quickly range map
+the property value (while the threshold is the maximum value allowed).
+<br></br><div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Example:</b><br>
+Imagine the velocity property is linked. A velocity vector value could be arbitrary in length, depending on the scene.
+<br>Let's say you have maximum velocity lengths (speed) of 40m/s, then a threshold of 40 is the best option (so 40/40 = 100%). In that case the particles would be completely white (full intensity).
+</div>
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Display::</span>Liquid Particles</span>
+</div>
+<div class="subdata selected">
+Contains all the settings for the display of vorticity particles in the editor view.
+<h4><a name="FLUIDGROUP_LIQUID_DRAW" onclick="HideNextDOM($(this));" >Draw each Xth particle</A></h4><div class="selected"><p><br></br>
+Allows to set an interval for drawing particles. A value of 0 will turn off the display of particles.<br>
+A value of 1 will display all particles, a value of 2 will draw each second particle and so on.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_LIQUID_DRAWSIZE" onclick="HideNextDOM($(this));" >Display Size</A></h4><div class="selected"><p><br></br>
+The display size in the editor view or during hardware rendering.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_LIQUID_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+The display color of this particle type.
+<br>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> This does NOT change the Color property of the particles but is a separate color only used for display (not for simulation).
+</div>
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_LIQUID_DEFORMED" onclick="HideNextDOM($(this));" >Deformed Position</A></h4><div class="selected"><p><br></br>
+Draws the deformed position of the particles instead of the real position.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_LIQUID_DRAWRADIUS" onclick="HideNextDOM($(this));" >Draw Radius</A></h4><div class="selected"><p><br></br>
+Draws the particle's radius as a circle/sphere. But only if the particles have a Radius property attached!
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_LIQUID_DRAWRADIUS2D" onclick="HideNextDOM($(this));" >Draw Radius in 2D</A></h4><div class="selected"><p><br></br>
+Draws the particle radius as a camera facing circle instead of as a sphere.
+<br>It is faster than drawing as sphere but slower than drawing as a point.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_LIQUID_PROPERTY" onclick="HideNextDOM($(this));" >Property</A></h4><div class="selected"><p><br></br>
+Here you can assign (either manually or via its candidate button) a particle property that
+should be used for coloring the particles.<br>
+If the particle has no such property attached (you can attach properties directly in the according particle emitters) then
+the particles are displayed in black (no color).
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_LIQUID_VELTHRESHOLD" onclick="HideNextDOM($(this));" >Threshold [voxel size]</A></h4><div class="selected"><p><br></br>
+Here you can set a threshold value (the value is given in physical space) to quickly range map
+the property value (while the threshold is the maximum value allowed).
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Example:</b><br>
+Imagine the velocity property is linked. A velocity vector value could be arbitrary in length, depending on the scene.
+<br>Let's say you have maximum velocity lengths (speed) of 40m/s, then a threshold of 40 is the best option (so 40/40 = 100%). In that case the particles would be completely white (full intensity).
+</div>
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Display::</span>Diffuse Particles</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FLUIDGROUP_FOAM_DRAW" onclick="HideNextDOM($(this));" >Draw each Xth particle</A></h4><div class="selected"><p><br></br>
+Allows to set an interval for drawing particles. A value of 0 will turn off the display of particles.<br>
+A value of 1 will display all particles, a value of 2 will draw each second particle and so on.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_FOAM_DRAWSIZE" onclick="HideNextDOM($(this));" >Display Size</A></h4><div class="selected"><p><br></br>
+The display size in the editor view or during hardware rendering.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_FOAM_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+The display color of this particle type.
+<br>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> This does NOT change the Color property of the particles but is a separate color only used for display (not for simulation).
+</div>
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_FOAM_DEFORMED" onclick="HideNextDOM($(this));" >Deformed Position</A></h4><div class="selected"><p><br></br>
+Draws the deformed position of the particles instead of the real position.
+<br></br></p></div>
+<h4><a name="FLUIDGROUP_FOAM_THRESHOLD" onclick="HideNextDOM($(this));" >Threshold [voxel size]</A></h4><div class="selected"><p><br></br>
+Here you can set a threshold value (the value is given in physical space) to quickly range map
+the property value (while the threshold is the maximum value allowed).
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Example:</b><br>
+Imagine the velocity property is linked. A velocity vector value could be arbitrary in length, depending on the scene.
+<br>Let's say you have maximum velocity lengths (speed) of 40m/s, then a threshold of 40 is the best option (so 40/40 = 100%). In that case the particles would be completely white (full intensity).
+</div>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

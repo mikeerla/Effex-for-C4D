@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_global.html">Getting started..</a></div>
+<div class="content">
+<h3>Nodes and Multithreading</h3>
+</div>
+<div class="content">
+<div class="subtab">Nodes and Multithreading</div>
+<div class="data">
+<p>
+<br><b>Nodes</b>
+<br></br>If you think of a node system you probably get Cinema 4Ds Xpresso in your mind.<br>
+The Effex system is pretty similar to it internally. However, the Effex framework could work with
+any interface as long as the nodes themselves provide settings and port information.
+<br></br>
+It could support data flow graphs, information flow graphs or even tree based graphs like Cinema 4Ds object manager.
+<br>Currently only the object manager approach is used which most C4D users feel comfortable with.
+<br></br>
+
+<br><b>Multithreading</b>
+<br></br>Nodes are by default always executed with multiple processors.
+There are virtual functions you can overload that are evaluated with a single processor so you
+can precompute algorithmic things and allocate memory for multiple processors.
+<br></br>
+There are also virtual functions that let you decide if your node should be executed with multiple threads 
+or single threaded. See the <a href="fx_api_classes_plugins.html" onclick="Hide(''); return true;">Plugins chapter</a> for detailed information.
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

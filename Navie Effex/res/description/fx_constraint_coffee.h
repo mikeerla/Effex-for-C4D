@@ -1,0 +1,9 @@
+#ifndef FX_CONSTRAINT_COFFEE_H
+#define FX_CONSTRAINT_COFFEE_H
+
+enum
+{
+	CONSTRAINT_COFFEE_INTENSITY = 1000
+};
+
+#endif

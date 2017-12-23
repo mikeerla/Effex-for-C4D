@@ -1,0 +1,13 @@
+STRINGTABLE fx_xpresso_volumecollider
+{
+	fx_xpresso_volumecollider "Punktvolumen Kollisionserkennung";
+
+	XVOLUMECOLLIDER_VOLUMES		"Volumen";
+	XVOLUMECOLLIDER_POS		"Physikalische Position";
+	XVOLUMECOLLIDER_COLLIDED	"Kollidiert";
+	XVOLUMECOLLIDER_COLLPOS		"Kollisionspunkt (Projeziert)";
+	XVOLUMECOLLIDER_COLLN		"Kollisionsnormale";
+	XVOLUMECOLLIDER_COLLPOLYN	"Polygonnormale";
+
+	XVOLUMECOLLIDER_DUMMY	"";
+}

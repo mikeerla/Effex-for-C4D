@@ -1,0 +1,74 @@
+STRINGTABLE fx_foamspraybubbles
+{
+	fx_foamspraybubbles	"Foam, Spray & Bubbles";
+
+	FOAM_SID			"Foam";
+	SPRAY_SID			"Spray";
+	UNIFIED_SID			"Unified";
+
+	FSB_GROUP			"Liquid Particle Group";
+	FSB_GROUP_SELECTOR		"C";
+	FSB_FOAM_TARGET			"Target Particles (Spray)";
+	FSB_FOAM_TARGET_SELECTOR	"C";
+	FSB_SPRAY_TARGET		"Target Particles (Spray)";
+	FSB_SPRAY_TARGET_SELECTOR	"C";
+	FSB_DYNAMICS			"Dynamics";
+	FSB_DYNAMICS_SELECTOR		"C";
+	FSB_MESHER			"Mesher";
+	FSB_MESHER_SELECTOR		"C";
+	FSB_RECONSTRUCTOR		"Surface Reconstructor";
+	FSB_RECONSTRUCTOR_SELECTOR	"C";
+	FSB_GROUP_TARGET		"Target Particles (Foam)";
+	FSB_GROUP_TARGET_SELECTOR	"C";
+
+	FSB_VOXELSCALE			"Voxel Scale";
+	FSB_DENSITY			"Sampling Density";
+	FSB_SMOOTHING			"Curvature Smoothing";
+	FSB_MODE			"Mode";
+	FSB_MODE_GEOMETRY		"Geometry";
+	FSB_MODE_PARTICLES		"Particles";
+
+	FOAM_ON				"Generate Foam";
+	FOAM_OUTTOSPRAY			"Convert to Spray in air";
+	FOAM_CLAMPTOFLUIDSIM		"Clamp to Dynamics Boundary";
+	FOAM_CURVATURE			"Curvature Threshold (0=flat areas)";
+	FOAM_OFFSET			"Offset to surface [voxel]";
+	FOAM_VELOCITY			"Velocity Threshold [voxel]";
+	FOAM_VELOCITYRND		"Randomness";
+	FOAM_VORTICITY			"Vorticity Threshold [voxel]";
+	FOAM_VORTICITYRND		"Randomness";
+	FOAM_AGE			"Life time";
+	FOAM_AGERND			"Randomness";
+
+	SPRAY_ON			"Generate Spray";
+	BUBBLES_ON			"Generate Bubbles";
+	SPRAY_OUTTOFOAM			"Convert to Foam on surface";
+	SPRAY_CLAMPTOFLUIDSIM		"Clamp to Dynamics Boundary";
+	SPRAY_MASS			"Mass";
+	SPRAY_DRAG			"Drag";
+	SPRAY_CURVATURE			"Curvature Threshold (0=flat areas)";
+	SPRAY_VELOCITY			"Velocity Threshold [voxel]";
+	SPRAY_VELOCITYRND		"Randomness";
+	SPRAY_VORTICITY			"Vorticity Threshold [voxel]";
+	SPRAY_VORTICITYRND		"Randomness";
+	SPRAY_AGE			"Life time [seconds]";
+	SPRAY_AGERND			"Randomness";
+	SPRAY_SPEED			"Velocity [multiplier]";
+	SPRAY_SPEEDRND			"Randomness";
+	SPRAY_SPEEDNORMAL		"Normal Velocity [multiplier]";
+	SPRAY_SPEEDNORMALRND		"Randomness";
+	SPRAY_SPEEDANGLE		"Max. Angle";
+	SPRAY_SPEEDANGLERND		"Randomness";
+	SPRAY_KEEPLENGTH		"Keep Length";
+
+	FSB_WAVECREST_SAMPLES		"Wavecrest samples";
+	FSB_WAVECREST_MIN		"Wavecrest minimum";
+	FSB_WAVECREST_MAX		"Wavecrest maximum";
+	FSB_TRAPPEDAIR_SAMPLES		"Trapped Air samples";
+	FSB_TRAPPEDAIR_MIN		"Trapped Air minimum";
+	FSB_TRAPPEDAIR_MAX		"Trapped Air maximum";
+	FSB_ENERGY_MIN			"Kinetic Energy minimum";
+	FSB_ENERGY_MAX			"Kinetic Energy maximum";
+
+	FSB_DUMMY_ "";
+}

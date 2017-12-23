@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="materials.html">Materials</a> : <a href="fx_shader_gas.html">Gas Renderer</a></div>
+<div class="content">
+<h3>Fire</h3>
+</div>
+<div class="tabs">
+<a href="fx_shader_gas_presets.html">Presets</a>
+<a href="fx_shader_gas_general.html">General</a>
+<a href="fx_shader_gas_smoke.html">Smoke</a>
+<span>Fire</span>
+<a href="fx_shader_gas_compositing.html">Compositing</a>
+</div>
+<div class="content">
+<div class="subtab">Fire</div>
+<div class="data">
+<p>
+This tab holds settings to define the look of rendered fire. However, you can render any channel as fire.
+<br></br>
+For the rendering of fire Effex uses two channels, the Temperature channel and the Fire (Burn products) channel.
+<br></br>
+What we perceive as flames is actually soot created from fire combustion that becomes visible (or starts to get luminant) by the so called blackbody radiation of the temperature. Roughly said, when temperature becomes so hot it starts to emit light which we then see as flames.<br>
+<br>So flames are tightly linked to smoke/soot when we want to model flames. At least when you want to render fire in a physically accurate manner. Of course, it's not necessary to have smoke to render fire in  Effex, so you have every artistic freedom to render your fire simulations.
+
+</p>
+</div>
+<h4><a name="GASSHADER_FIRE_TEMPERATURE" onclick="HideNextDOM($(this));" >Temperature channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_temperatur_channel.jpg" border="0"><br></br>
+Takes a scalar channel containing temperature values. This channel is required.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_FIRE" onclick="HideNextDOM($(this));" >Fire Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_fire_channel.jpg" border="0"><br></br>
+Takes a fire channel. This node is optional.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_FLUID" onclick="HideNextDOM($(this));" >Fluid Dynamics</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_fluid_dynamics.jpg" border="0"><br></br>
+Takes a fluid dynamics node to allow render advection of fire. This node is optional.<br>
+The <a href="#GASSHADER_FIRE_ADVECTION">Advection</a> setting is activated once linked.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_ADVECTION" onclick="HideNextDOM($(this));" >Advection</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_advection.jpg" border="0"><br></br>
+During rendering the channel data can be advected resulting in way sharper and more details.<br>
+Setting this too high may result in artefacts though.
+<br></br>
+The value is given as a percentage of a second (e.g 10% are 0.1 seconds).
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_AFFECTGI" onclick="HideNextDOM($(this));" >GI intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_gi_intensity.jpg" border="0"><br></br>
+A multiplier for the fire radiation during GI calculations.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_VISIBILITY" onclick="HideNextDOM($(this));" >Visibility determined by..</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_visivility_determined_by.jpg" border="0"><br></br>
+This lets you select the channel that is used to detect the visibility of flames/fire. Either the burn channel (lifetime of fire, burn products) or the temperature (blackbody radiation).
+<br></br>
+Using the temperature is physically correct as it generates the 'light' emission but using the burn channel can be easier and still plausible.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_FIRESOOT" onclick="HideNextDOM($(this));" >Default Density</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_default_density.jpg" border="0"><br></br>
+If no smoke density channel is linked (so if no smoke is rendered) the fire is missing soot information.<br>
+This sets a constant default smoke density for use in fire rendering (see top description why this is needed).
+<br><br>
+Note: If you have a smoke channel in use, you should set this value to 0.0!
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Fire::</span>Color</span>
+</div>
+<div class="subdata selected">
+Define the fire colors during rendering with the following settings.
+<h4><a name="GASSHADER_FIRE_RADIATION" onclick="HideNextDOM($(this));" >Luminance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_luminance.jpg" border="0"><br></br>
+Defines how much light is scattered into the direction of the used camera.<br>
+Higher values result in brighter fire..
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_ABSORPTION" onclick="HideNextDOM($(this));" >Absorption</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_absorption.jpg" border="0"><br></br>
+The absorption coefficient defines how the light is absorbed by the fire.
+<br></br>
+Usually for fire you leave it at 0% because the smoke channel will already do its absorption.<br>
+But it can be used for artistic adjustments. It's great to get brownish looking flames.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_TYPE" onclick="HideNextDOM($(this));" >Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_type.jpg" border="0"><br></br>
+The colors are sampled on each step along the ray. This defines on what the color of the fire depends on at each step.
+<br></br>
+<b>Blackbody</b><br>
+The temperature based physical blackbody spectrum is used to define the fire color. This gives the most realistic results.
+<br></br>
+<b>Artistic</b><br>
+The detection channel's density at the sample position is used to select a color from the color gradient. This allows to use custom colors for your flames.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_CUSTOM" onclick="HideNextDOM($(this));" >Color (Artistic)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_color_artistic.jpg" border="0"><br></br>
+<i>Only available if Type is set to 'Artistic'. </i>
+<br></br>
+Defines the color of the fire  based on the visibility detection channel values (the temperature values are already
+modified by the <a href="#GASSHADER_FIRE_DENSITY_TEMP_MAPPING">Mapping</a> at this stage).
+<br></br>
+The mapping range is defined by the detection channel's 
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MIN_SCALAR">Minimum Value</a> and
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MAX_SCALAR">Maximum Value</a> settings.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_BLACKBODYPREVIEW" onclick="HideNextDOM($(this));" >Color (Blackbody)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_color.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Gives a preview gradient field (which cannot be edited) of the physical blackbody colors.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_BLACKBODY_TONE" onclick="HideNextDOM($(this));" >Mapping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_mapping.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+As the Blackbody spectrum is highly dynamic (its intensities can go beyond 100% and are radiance values) it must be converted to RGB space. The tone mapping is used for this. You have several color spaces and encoding systems as targets to accomplish this.
+<br></br>
+<b>NTSC</b><br>
+Blackbody spectrum as perceived on NTSC systems
+<br></br>
+<b>PAL/Secam</b><br>
+Blackbody spectrum as perceived on PAL/SECAM systems
+<br></br>
+<b>SMPTE</b><br>
+Blackbody spectrum as perceived in SMPTE standard (see <a href="http://www.smpte.org" target="_blank">http://www. smpte.org</a>, SMPTE 0274M HD 1080 Standard)
+<br></br>
+<b>HDTV</b><br>
+Blackbody spectrum as perceived in HDTV standard
+<br></br>
+<b>CIE Human perception</b><br>
+Blackbody spectrum taking into account the perception of human eyes (physically most accurate mode)
+<br></br>
+<b>CIE REC 709</b><br>
+Blackbody spectrum as perceived in HD Widescreen (16:9) standard
+
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_BLACKBODY_BOOST" onclick="HideNextDOM($(this));" >Color Boost</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_color_boost.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Allows to boost certain colors of the Blackbody spectrum.
+<br></br>
+<b>X-component:</b> Redish part<br>
+<b>Y-component:</b> Yellowish part<br>
+<b>Z-component:</b> Red-Yellow shift<br>
+
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_BLACKBODY_INTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_intensity.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Blackbody intensity. This results in a brighter appearance of the colors.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_BLACKBODY_TSCALE" onclick="HideNextDOM($(this));" >Temperature Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_temperature_scale.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Rescales the temperature that is used to extract the Blackbody colors. This results in the spectrum to be shifted more to the white point.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_BLACKBODY_GAMMA" onclick="HideNextDOM($(this));" >Gamma correction</A></h4><div class="selected"><p><br></br>
+Correct gamma according to human perception (see Gamma correction on Wikipedia for more details).
+<br>Basically this visually brightens the blackbody spectrum.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_COLOR_BLACKBODY_NORMALIZE" onclick="HideNextDOM($(this));" >White Point normalised</A></h4><div class="selected"><p><br></br>
+Normalise the range so that the white areas of the blackbody specturm is at maximum (most right in the blackbody 'Color' preview).
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Fire::</span>Radiation</span>
+</div>
+<div class="subdata selected">
+This is the multiple scattering part of fire rendering that results from
+radiation. So smoke that is lit by the fire is calculated with the following settings.
+<h4><a name="GASSHADER_FIRE_RADIATION_POWER" onclick="HideNextDOM($(this));" >Power</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_radiation_power.jpg" border="0"><br></br>
+The power of fire light radiation.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_ALGORITHM" onclick="HideNextDOM($(this));" >Algorithm</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_radiation_algorithm.jpg" border="0"><br></br>
+Effex incorporates two different algorithms to simulate lighting of smoke from fire.
+<br></br>
+<b>Spread Map</b><br>
+This is the simpler algorithm but it's fast and gives great and predictable results.
+<br></br>
+<b>Scatter Map</b><br>
+This is an Effex own invention and works similar to the Spread map except that it
+uses a leveset approach for distance calculations and can include absorption effects as well.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_VOXELSCALE" onclick="HideNextDOM($(this));" >Voxel Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_radiation_voxel_scale.jpg" border="0"><br></br>
+The radiation map resolution is based on the resolution of the linked detection channel (temperature or fire).
+With this setting you can lower the resolution of the map. A value of 0.5 is half the resolution.
+</b><br>
+This can increase precomputation time especially at higher resolutions. The default value
+is a good trade between speed and quality.
+</b><br>
+Lower resolutions result in lower quality of the radiation map.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_REMAP" onclick="HideNextDOM($(this));" >Mapping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_mapping.jpg" border="0"><br></br>
+This controls the mapping of the radiation map intensities.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_COLOR_TYPE" onclick="HideNextDOM($(this));" >Color Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_radiation_color_type.jpg" border="0"><br></br>
+The color of the radiation to use.
+<br></br>
+<b>Blackbody</b><br>
+Use the blackbody color of the fire.
+</b><br>
+<b>Artistic</b><br>
+Use a custom color gradient to define the color.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_color_artistic.jpg" border="0"><br></br>
+<i>(Only available if Color Type: Artistic)</i>
+<br></br>
+The user-defineable color gradient for the radiation.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_RADIUS" onclick="HideNextDOM($(this));" >Max. Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_radiation_max_distance.jpg" border="0"><br></br>
+The maximum distance of smoke from the flames that is affected by the radiation map.
+<br></br>
+Higher values result in further away areas to be affected.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_TSCALE" onclick="HideNextDOM($(this));" >Temperature Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_radiation_temperature_scale.jpg" border="0"><br></br>
+<i>(Only available when Color Type: Blackbody)</i>
+<br></br>
+Rescales the temperature that is used to extract the Blackbody colors. <br>
+This results in the spectrum to be shifted more to the white point.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_RADIATION_USEPHASE" onclick="HideNextDOM($(this));" >Scatter</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_radiation_scatter.jpg" border="0"><br></br>
+<i>(Only available if Algorithm: Scatter Map)</i>
+<br></br>
+Activates the scatter map to also include scattering.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Fire::</span>Temperature</span>
+</div>
+<div class="subdata selected">
+Global settings to modify and edit the values of the specified temperature channel.
+<br></br>
+This is the most important setting to control the look of your flames!
+It's better to alter the temperature here instead of directly in the simulation.
+<h4><a name="GASSHADER_FIRE_DENSITY_TEMP_THRESHOLD" onclick="HideNextDOM($(this));" >Threshold (kelvin)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_temperature_treshold_kelvin.jpg" border="0"><br></br>
+This is a threshold value given in kelvin that defines at which temperature flames become visible.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_DENSITY_TEMP_MAPPING" onclick="HideNextDOM($(this));" >Mapping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_mapping.jpg" border="0"><br></br>
+Remaps the temperature values in the temperature grid before rendering.
+<br></br>
+The mapping range is defined by the temperature channel 
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MIN_SCALAR">Minimum Value</a> and
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MAX_SCALAR">Maximum Value</a> settings.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_DENSITY_TEMP_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+<img src="../../img/Global_constraints.jpg" border="0"><br></br>
+You can alter the temperature values with constraints here.
+<br></br>
+See 'Constraints' for more information.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_DENSITY_TEMP_BLURITER" onclick="HideNextDOM($(this));" >Blur iterations</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_grid_blur_iterations.jpg" border="0"><br></br>
+Defines the amount of blurring passes performed on the temperature channel data.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_DENSITY_TEMP_BLUR" onclick="HideNextDOM($(this));" >Blur amount (voxels)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_temperature_blur_amount_voxels.jpg" border="0"><br></br>
+Defines the strength (length of falloff kernel) of the blurring per iteration. The value is given in grid cell/voxel size.
+<br></br>
+This allows for smoother transitions of the flames, but also results in less details. As blurring is an iterative process and can be slow for large values, this should always be used with caution and sensible values.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Fire::</span>Flames</span>
+</div>
+<div class="subdata selected">
+Here you can control the appearance of the fire channel. It is called flames because if
+you do link a fire channel, you would only do this to have it be used as detection channel for
+the flames visibility, so the fire grid contains the flames directly.
+<h4><a name="GASSHADER_FIRE_DENSITY_FIRE_THRESHOLD" onclick="HideNextDOM($(this));" >Threshold</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_flames_treshold.jpg" border="0"><br></br>
+This threshold value controls which parts of the fire is visible as flames.
+<br></br>
+Make sure you never set this value higher than the Cooling Point setting in the fire channel
+but always keep it lower. So threshold < (Cooling Point/Max. Temperature).
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_DENSITY_FIRE_MAPPING" onclick="HideNextDOM($(this));" >Mapping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_color_mapping.jpg" border="0"><br></br>
+Remaps the  values in the fire grid before rendering.
+<br></br>
+The mapping range is defined by the fire  channel 
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MIN_SCALAR">Minimum Value</a> and
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MAX_SCALAR">Maximum Value</a> settings.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_DENSITY_FIRE_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+<img src="../../img/Global_constraints.jpg" border="0"><br></br>
+You can alter the fire  values with constraints here.
+<br></br>
+See 'Constraints' for more information.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_DENSITY_FIRE_BLURITER" onclick="HideNextDOM($(this));" >Blur iterations</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_grid_blur_iterations.jpg" border="0"><br></br>
+Defines the amount of blurring passes performed on the fire channel data.
+<br></br></p></div>
+<h4><a name="GASSHADER_FIRE_DENSITY_FIRE_BLUR" onclick="HideNextDOM($(this));" >Blur amount (voxels)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_fire_temperature_blur_amount_voxels.jpg" border="0"><br></br>
+Defines the strength (length of falloff kernel) of the blurring per iteration. The value is given in grid cell/voxel size.
+<br></br>
+This allows for smoother transitions of the flames, but also results in less details. As blurring is an iterative process and can be slow for large values, this should always be used with caution and sensible values.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

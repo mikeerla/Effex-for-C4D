@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_dynamics.html">Dynamics</a> : <a href="fx_fluid.html">Fluid Dynamics</a></div>
+<div class="content">
+<h3>Display</h3>
+</div>
+<div class="tabs">
+<a href="fx_fluid_quicktab.html">Quicktab</a>
+<a href="fx_fluid_params.html">Parameters</a>
+<a href="fx_fluid_characteristica.html">Characteristica</a>
+<a href="fx_fluid_dynamics.html">Dynamics</a>
+<a href="fx_fluid_solver.html">Solver</a>
+<span>Display</span>
+</div>
+<div class="content">
+<div class="subtab">Display</div>
+<div class="data">
+<p>
+<img src="../../img/fx_fluiddynamics_display.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FX_BASE_DRAW" onclick="HideNextDOM($(this));" >On</A></h4><div class="selected"><p><br></br>
+Turns On/Off the drawing of this node. 
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_SHOWBOUNDS" onclick="HideNextDOM($(this));" >Show Adaptive Bounds</A></h4><div class="selected"><p><br></br>
+<img src="../../img/dynamics_display_show_adaptive_bounds.jpg" border="0"><br></br>
+Displays the adaptive grid bounds in the editor.
+<br></br></p></div>
+<h4><a name="FLUID_CONTAINER_INFO" onclick="HideNextDOM($(this));" >Info</A></h4><div class="selected"><p><br></br>
+<img src="../../img/dynamics_container_info.jpg" border="0"><br></br>
+Shows some general information about the resulting grid fitting into the Dimensions setting (so these are max. values) 
+given the current voxel and container size.
+<br></br>
+<b>Cells:</b> the amount of cells along each direction followed by the overall cell count.
+<br></br>
+<b>Cells Rendering:</b> the amount of cells for rendering along each direction followed by the overall cell count.
+<br></br>
+<b>Container size:</b> the Dimension setting given in the Effex framework units (see Effex Scene)
+<br></br>
+<b>Cell size:</b> Size of a voxel in C4D space units.
+
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_VELOCITY" onclick="HideNextDOM($(this));" >Velocity drawing plane</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_display_velocitymotionfield.jpg" border="0"><br></br>
+Turn <b>ON/Off</b> the drawing of the velocity field motions in the editor.
+<br><br>
+You can define along which axis the drawing slice is displayed.
+<br>Use the "Relative Position" to define where the slice is drawn along that axis.
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_VELOCITY_MIX" onclick="HideNextDOM($(this));" >Relative Position</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_display_relativeposition.jpg" border="0"><br></br>
+The relative position of the drawing slice inside the (adaptive!) dynamics container bounds.<br>
+50% means in the center along the currently selected slice direction. 
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_VELOCITY_DOTONLY" onclick="HideNextDOM($(this));" >Dot display</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_display_dotdisplay.jpg" border="0"><br></br>
+If checked the velocities are only displayed by dots instead of lines.
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_VELOCITY_CUTOFF" onclick="HideNextDOM($(this));" >Minimum velocity [cells]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_display_minimumvelocity.jpg" border="0"><br></br>
+The minimum velocity magnitude shown. The unit is given in voxels. So a value of 1 means the length of 1 voxel size.
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_VELOCITY_MAX" onclick="HideNextDOM($(this));" >Maximum velocity [cells] </A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_display_maximumvelocity.jpg" border="0"><br></br>
+The maximum velocity magnitude shown. The unit is given in voxels. So a value of 1 means the length of 1 voxel size. 
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_VELOCITY_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_display_color.jpg" border="0"><br></br>
+The display color of the velocity field. 
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_VELOCITY_AUTOTRANSPARENCY" onclick="HideNextDOM($(this));" >Velocity driven Transparency</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fluiddynamics_display_velocitydriventrans.jpg" border="0"><br></br>
+Activate to let the editor display transparency be controlled by the velocity magnitude itself while
+high velocities mean less transparent. Zero velocity means fully transparent.
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_BOUNDARY" onclick="HideNextDOM($(this));" >Obstacles Cells</A></h4><div class="selected"><p><br></br>
+<img src="../../img/dynamics_display_obstacle_cells.jpg" border="0"><br></br>
+Turn <b>ON/Off</b> the drawing of the cells that are defined as obstacles in the editor.
+<br></br></p></div>
+<h4><a name="FLUID_DISPLAY_GRID" onclick="HideNextDOM($(this));" >Grid</A></h4><div class="selected"><p><br></br>
+<img src="../../img/dynamics_display_grid.jpg" border="0"><br></br>
+Turn <b>ON/Off</b> the drawing of the grid plane in the editor.
+
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

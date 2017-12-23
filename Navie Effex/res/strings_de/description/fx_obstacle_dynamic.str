@@ -1,0 +1,10 @@
+STRINGTABLE fx_obstacle_dynamic
+{
+	fx_obstacle_dynamic "Dynamic Hinderniss";
+
+	DYNAMIC_OBSTACLE_VOLUME "Volume";
+	DYNAMIC_OBSTACLE_LINEARSTRENGTH "\u00DCbermittelnde St\u00E4rke";
+	DYNAMIC_OBSTACLE_ANGULARSTRENGTH "Rotierende St\u00E4rke";
+
+	DYNAMIC_OBSTACLE_DUMMY_ "";
+}

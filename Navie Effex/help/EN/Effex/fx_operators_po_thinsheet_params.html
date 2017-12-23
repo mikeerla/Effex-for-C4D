@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_po_thinsheet.html">POP::Thin Sheet</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="PSHEET_PARTICLES" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_shit_params_particle_group.jpg" border="0"><br></br>
+The particle group to preserve thin sheets for.
+<br></br></p></div>
+<h4><a name="PSHEET_INPUT_FACTORY" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_shit_params_particles.jpg" border="0"><br></br>
+The particle type of the Particle Group to use.
+<br></br></p></div>
+<h4><a name="PSHEET_DISTANCE_INCREASE" onclick="HideNextDOM($(this));" >Check for increasing inter-particle distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_check_for_increasing_interparticle_distance.jpg" border="0"><br></br>
+Used by default to only create thin sheet particles if particles are really drifting apart. But for artistic purposes this can be deactivated.
+<br></br></p></div>
+<h4><a name="PSHEET_RADIUS_DENSITY" onclick="HideNextDOM($(this));" >Density Radius</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_density_radius.jpg" border="0"><br></br>
+To find particles nearby and their according densities this radius defines the maximum distance around each particle to find neighboring particles.
+<br></br></p></div>
+<h4><a name="PSHEET_RECALCULATE_ANISOTROPY" onclick="HideNextDOM($(this));" >Calculate Anisotropic</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_calculate_anisotropy.jpg" border="0"><br></br>
+Calculates particle anistropy.
+<br></br></p></div>
+<h4><a name="PSHEET_ANISOTROPIC_RATE" onclick="HideNextDOM($(this));" >Anisotropic threshold</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_anisotropic_threshold.jpg" border="0"><br></br>
+A particle must have an anistropy higher than this threshold value to be included in the thin sheet calculations.
+<br></br></p></div>
+<h4><a name="PSHEET_CANDIDATES_MINDENSITY" onclick="HideNextDOM($(this));" >Hole Detection - Min. Density</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_hole_detection_min_density.jpg" border="0"><br></br>
+The minimum density a particle must have in order to be included in the hole detection.
+<br></br></p></div>
+<h4><a name="PSHEET_CANDIDATES_MAXDENSITY" onclick="HideNextDOM($(this));" >Hole Detection - Max. Density</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_hole_detection_max_density.jpg" border="0"><br></br>
+The maximum density a particle must have in order to be included in the hole detection.
+<br></br></p></div>
+<h4><a name="PSHEET_CANDIDATES_MINDISTANCE" onclick="HideNextDOM($(this));" >Hole Detection - Min. Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_hole_detection_min_distance.jpg" border="0"><br></br>
+The minimum distance between particles that is identified as a hole.
+<br></br></p></div>
+<h4><a name="PSHEET_CANDIDATES_MAXDISTANCE_FINDING" onclick="HideNextDOM($(this));" >Hole Detection - Max. Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_hole_detection_max_distance.jpg" border="0"><br></br>
+The maximum distance between particles that is identified as a hole.
+<br></br></p></div>
+<h4><a name="PSHEET_CANDIDATES_MAXDISTANCE_INSERTION" onclick="HideNextDOM($(this));" >Hole Filling - Max. Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_hole_filling_max_distance.jpg" border="0"><br></br>
+The maximum distance inserted particles can have to other particles when a hole is filled.
+<br></br></p></div>
+<h4><a name="PSHEET_COLLAPSE_MAXDENSITY" onclick="HideNextDOM($(this));" >Collapse Max. Densitiy</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_collapse_max_density.jpg" border="0"><br></br>
+The maximum particle density before particles are killed. Particles that have a lower density will be killed.
+<br></br></p></div>
+<h4><a name="PSHEET_COLLAPSE_MINDISTANCE" onclick="HideNextDOM($(this));" >Collapse Min. Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_thin_sheet_params_collapse_min_distance.jpg" border="0"><br></br>
+The minimum distance between particles at which particles are killed.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+STRINGTABLE fx_base_display
+{
+	fx_base_display "Display";
+
+	FX_BASE_DISPLAYTAB "Display";
+	FX_BASE_DRAW "On";
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_constraints.html">Constraints</a> : <a href="fx_constraints_gradient.html">CS::Gradient</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_cs_gradient_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="CONSTRAINT_GRADIENT_ALIGNMENT" onclick="HideNextDOM($(this));" >Alignment</A></h4><div class="selected"><p><br></br>
+<img src="../../img/particleforce_acceleration_params_alignment.jpg" border="0"><br></br>
+An <a href="fx_general_alignment.html">alignment</a> node that will allow the gradient direction to be cylindrical.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRADIENT_ORIGIN" onclick="HideNextDOM($(this));" >Origin [Object]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_gradient_constraint_origin.jpg" border="0"><br></br>
+Define the start of the gradient in space by using another object (start would be the left side of the Gradient setting).<br>
+This is optional. If none is defined the constraints position is used as start of the gradient.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRADIENT_AXIS" onclick="HideNextDOM($(this));" >Direction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_gradient_constraint_direction.jpg" border="0"><br></br>
+The gradients direction in space.
+<br></br>
+<b>X,Y,Z Axis</b></br>
+Direction is along the X, Y or Z-Axis.
+<br></br>
+<b>Spherical</b></br>
+Direction is from the center of the Origin outward to the point of interest (so the location in space the caller node is currently processing).
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRADIENT_CLAMPAXIS" onclick="HideNextDOM($(this));" >One-sided</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_gradients_params_onside.jpg" border="0"><br></br>
+The gradient ranges from the origin to the origin + falloff distance AND origin - falloff distance along the given direction.
+<br>Activate this option to only make it range to one side.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRADIENT_SQUARED" onclick="HideNextDOM($(this));" >Use squared distance</A></h4><div class="selected"><p><br></br>
+Instead of normal distance, it will use the squared distance which is more exponential.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRADIENT_DISTANCE" onclick="HideNextDOM($(this));" >Falloff Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_gradient_constraint_falloff_distance.jpg" border="0"><br></br>
+The distance which defines the end of the gradient range in space.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+So if the origin is at (0,0,0) coordinates, which is the gradient start, and Falloff is set to 100.0 then the end of the gradient range would be at (0,100,0) coordinate; assuming 'Direction' is set to Y-Axis.
+<br>It also range from (0,0,0) to (0,-100,0) if "One-sided" is turned off.
+</div>
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRADIENT" onclick="HideNextDOM($(this));" >Gradient</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_gradient_constraint_gradient.jpg" border="0"><br></br>
+Defines the gradient mapping from Origin to Falloff Distance.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

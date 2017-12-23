@@ -1,0 +1,11 @@
+STRINGTABLE fx_base_constraints
+{
+	fx_base_constraints "Base::Beschr\u00E4nkungen";
+
+	ID_FORCE_BASE_CONSTRAINTS "Beschr\u00E4nkung";
+	FORCE_BASE_CONSTRAINTS "Beschr\u00E4nkung";
+	FORCE_BASE_MOEFFECTORS "MoGraph Effektors";
+	FORCE_BASE_CONSTRAINTS_SELECTOR "C";
+	ID_FORCE_BASE_CONSTRAINTS_SUB "";
+	FORCE_BASE_CONSTRAINTS_BLENDVALUES "";
+}

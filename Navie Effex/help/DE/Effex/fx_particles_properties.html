@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_particles.html">Particles</a></div>
+<div class="content">
+<h3>Properties</h3>
+</div>
+<div class="tabs">
+<a href="fx_particles_properties_scalar.html">Scalar</a>
+<a href="fx_particles_properties_vector.html">Vector</a>
+</div>
+<div class="content">
+<div class="subtab">Properties</div>
+<div class="data">
+<p>
+In Effex each particle can carry properties of different data types: <a href="fx_particles_properties_scalar.html">Scalar</a> (floating point), <a href="fx_particles_properties_vector.html">Vector</a> (three scalars) and state (boolean).
+<br>
+Attaching such properties is accomplished mostly by the <a href="fx_emitters_particle.html">Particle Emitters</a> and <a href="fx_operators_particleconverter.html">POP::Converter</a>.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> These properties are always attached to a particle and do not need to be attached explicitly: <b>Position & Velocity</b>.
+</div><br>
+Some properties will be filled with corresponding data by other nodes (density for example is filled by the <a href="fx_operators_po_volumeproperties.html">POP::Volume Properties</a> node).
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> <br>
+The property objects in the Object Manager itself are considered a key to access attached properties.<br>
+Therefore you can link them in other Effex nodes to identify which properties should be processed.
+<br></br>
+So, the property object itself is not the actual property attached to the particle, it's just an access identifier (like an ID).
+</div>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Unique Properties</A></h4><div class="selected"><p><br>
+There are predefined unique properties. A unique property can only be available once on a particle..
+<br> <br>
+For example a particle can only carry one color property. It doesn't matter if you create more color property nodes. As it is a unique property it will only be available once per particle.
+<br></br>
+So you would only create more color properties in your Effex Scene if you for example need to assign different initial colors to different particles.<br>
+If you are reading out the color property somewhere (in a shader or similar) you only need one property node though (and it doesn't matter if it was the one you assigned the property with in the first place).
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Custom Properties</A></h4><div class="selected"><p><br>
+<img src="../../img/fx_prop_custom.jpg" border="0"><br></br>
+Then there are custom properties. A particle can carry unlimited amounts of this property type and the interfaces (so the objects in the C4D object manager)
+are directly linked to these properties. Reading out these properties require the explicit interface to be used to access the property.
+<br></br></p></div>
+<h4><a name="PROPERTY_VALUE_SCALAR" onclick="HideNextDOM($(this));" >Start value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/particle_property_all_value.jpg" border="0"><br></br>
+
+The start value of the property.
+<br></br>
+This means it is the value that is assigned to a particle (that carries this property) when 
+it is born (e.g. when a Particle emitter generates it). So it is its initial value.
+<br>
+<br>
+Also it is the value used when the particle is asked by another node for this property but the particle does not have this property attached.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

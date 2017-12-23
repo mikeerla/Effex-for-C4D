@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_xpresso.html">Xpresso Nodes</a> : <a href="fx_xpresso_particles.html">Particles</a> : <a href="fx_xpresso_particles_info.html">Particle Info</a></div>
+<div class="content">
+<h3>Node</h3>
+</div>
+<div class="tabs">
+<span>Node</span>
+<a href="fx_xpresso_particles_info_param.html">Inports</a>
+<a href="fx_xpresso_particles_info_paramout.html">Outports</a>
+</div>
+<div class="content">
+<div class="subtab">Node</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="XPARTICLE_INFO_PARTICLEGROUP" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/xpresso_particle_edit_node_particle_group.jpg" border="0"><br></br>
+Link here the Particle Group that contains the particles you want to access..
+<br></br></p></div>
+<h4><a name="XPARTICLE_INFO_TYPE" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/xpresso_particle_edit_node_particles.jpg" border="0"><br></br>
+Defines the particle type (subgroup) in the given Particle Group to access.
+<br></br></p></div>
+<h4><a name="XPARTICLE_INFO_PROPERTIES" onclick="HideNextDOM($(this));" >Properties</A></h4><div class="selected"><p><br></br>
+<img src="../../img/xpresso_particle_edit_node_properties.jpg" border="0"><br></br>
+Drag & Drop here any properties you would like to access.
+<br></br>
+<b>Example:</b><br>
+You add 3 properties to the list: Age (Scalar), Viscosity (Scalar) and Position (Vector).<br>
+Once dropped in the list, you can now add 3 outports: 2 of type Scalar and 1 of type Vector. In the same order as you have them in the list.
+<br><br>
+The outports will be linked (internally) and renamed respectively.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

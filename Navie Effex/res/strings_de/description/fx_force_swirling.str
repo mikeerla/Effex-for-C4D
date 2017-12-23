@@ -1,0 +1,13 @@
+STRINGTABLE fx_force_swirling
+{
+	fx_force_swirling "Kraft::Wirbeln";
+
+	FORCE_SWIRLING_INTENSITY	"Intensit\u00E4t";
+	
+	FORCE_SWIRLING_DURATION "Dauer";
+	FORCE_SWIRLING_CONSERVE "Momenterhaltung";
+	FORCE_SWIRLING_ADAPTIVE "Räumliche Anpassung";
+	FORCE_SWIRLING_DURATION_SELECTOR "C";
+
+	FORCE_SWIRLING_DUMMY_ "";
+}

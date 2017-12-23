@@ -1,0 +1,8 @@
+STRINGTABLE fx_channel_fire
+{
+	fx_channel_fire "Channel::Fire Grid";
+
+	GRIDCHANNEL_FIRE_COOLING_POINT "Cooling Point [kelvin]";
+	GRIDCHANNEL_FIRE_DEATHRATE "Flames Lifetime [sec]";
+	GRIDCHANNEL_FIRE_AFTERLIFE "Flames Afterlife [sec]";
+}

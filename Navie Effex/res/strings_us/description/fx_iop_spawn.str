@@ -1,0 +1,40 @@
+STRINGTABLE fx_iop_spawn
+{
+	fx_iop_spawn "InstantOperator::Spawn Particles";
+
+	
+	IOP_SPAWN_SEED				"Seed";
+	IOP_SPAWN_COUNT				"Count";
+	IOP_SPAWN_COUNT_RENDER			"Count (Rendering)";
+	IOP_SPAWN_COUNT_VAR			"Variation";
+	IOP_SPAWN_AGE				"Lifetime";
+	IOP_SPAWN_AGE_VAR			"Randomize";
+	IOP_SPAWN_ANGLE				"Angle";
+	IOP_SPAWN_ANGLE_VAR			"Randomize";
+	IOP_SPAWN_VELOCITY			"Velocity of original";
+	IOP_SPAWN_VELOCITY_VAR			"Randomize";
+	IOP_SPAWN_PARTICLESOUT			"Particle Group Target";
+	IOP_SPAWN_PARTICLESOUT_SELECTOR		"C";
+	IOP_SPAWN_DURATION			"Duration";
+	IOP_SPAWN_DURATION_SELECTOR		"C";
+	IOP_SPAWN_PARTICLES_FACTORY		"Particles";
+	IOP_SPAWN_PARTICLES_FACTORY_PASSIVE	"Passive";
+	IOP_SPAWN_PARTICLES_FACTORY_VORTICITY	"Vorticity";
+	IOP_SPAWN_PARTICLES_FACTORY_LIQUID	"Liquid";
+	IOP_SPAWN_PARTICLES_FACTORY_DIFFUSE	"Diffuse";
+	IOP_SPAWN_POSITIONBASED			"Position-Based";
+	IOP_SPAWN_ALLOWRESPAWNING		"Allow Respawning";
+	IOP_SPAWN_ALLOWSPAWNING_SPAWNED		"Allow Spawning of spawned";
+	IOP_SPAWN_DISTRIBUTION_MODE		"Verteilungsmodus";
+	IOP_SPAWN_DISTRIBUTION_MODE_UNIFORM	"Gleichm‰ﬂig";
+	IOP_SPAWN_DISTRIBUTION_MODE_UNIFORM_RANDOM "Gleichm‰ﬂig variiert";
+	IOP_SPAWN_DISTRIBUTION_MODE_CUSTOM	"Benutzerdefiniert";
+	IOP_SPAWN_DISTRIBUTION_MODE_CUSTOM_RANDOM "Benutzerdefiniert variiert";
+	IOP_SPAWN_DISTRIBUTE			"Verteilungswinkel";
+	IOP_SPAWN_DISTRIBUTE_VAR		"Variation";
+	IOP_SPAWN_ACCELERATION			"Beschleunigung";
+	IOP_SPAWN_ACCELERATION_VAR		"Variation";
+	IOP_SPAWN_KILLORIGINAL			"Original sterben lassen";
+
+	IOP_SPAWN_DUMMY_ "";
+}

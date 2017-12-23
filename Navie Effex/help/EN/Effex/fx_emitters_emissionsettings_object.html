@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_grid.html">Grid</a> : <a href="fx_emitters_emissionsettings.html">Settings::Grid Emission </a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_gridsettings_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="EMISSION_SETTINGS_RATE" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gridemission_object_value.jpg" border="0"><br></br>
+Takes a node of type 'Value' and is the setting for an emission rate.<br>
+If no Value node is linked the 'Value' Setting is used instead.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_RATE_LIMIT" onclick="HideNextDOM($(this));" >Limit</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_emission_settings_object_limit.jpg" border="0"><br></br>
+Takes a node of type Value and is the setting for limiting the resulting value of the emission.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Example:</b><br>
+If you are using a grid emitter to emit smoke into a grid channel and you don't want the values to ever get bigger than a certain amount
+you would set a limit within the linked Value node here. This node is optional. The 'Mode' must be set to 'Limit'.
+</div>
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_emission_settings_object_duration.jpg" border="0"><br></br>
+Takes a duration node that defines how long the node operates that is using these emission settings. This node is optional.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_RATETYPE" onclick="HideNextDOM($(this));" >Value is vector</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gridemission_object_valueisvector.jpg" border="0"><br></br>
+Activate this if you are emitting into a vector channel. Because the value emitted should be a vector value then.
+<br>Otherwise it is assumed that a scalar (floating point) value is to be emitted.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_RATESCALAR" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gridemission_object_value1.jpg" border="0"><br></br>
+The scalar emission value.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_RATEVECTOR" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+<i>Only available if 'Value is vector' is activated.</i>
+<br></br>
+The vector emission value.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_INTERPOLATED" onclick="HideNextDOM($(this));" >Interpolated emission</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gridemission_object_interpolatedemission.jpg" border="0"><br></br>
+Defines that emissions into a grid should be interpolated. This is a bit slower but yields smoother emissions.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_RATE_MODE" onclick="HideNextDOM($(this));" >Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_emission_settings_object_mode.jpg" border="0"><br></br>
+Provides any emitter with informatin about how the values should be written (e.g. into a scalar channel).
+<br></br>
+<b>Rate</b><br>
+Emitted values are added.<br>
+<br>
+<b>Set</b><br>
+Emitted values are overwriting old channel values.<br>
+<br>
+<b>Limit</b><br>
+Emitted values are added but use the linked limit.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_PERFRAME" onclick="HideNextDOM($(this));" >Shot</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_emission_settings_object_shot.jpg" border="0"><br></br>
+Shot will enforce that the emitter using these settings will emit the values directly and not time integrated (not based on the current sub time step).<br>
+So deactivated the values are emitted per second and if activated per frame.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_FALLOFFMODE" onclick="HideNextDOM($(this));" >Falloff</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_emission_settings_object_falloff.jpg" border="0"><br></br>
+This is a falloff that can be sampled by the emitter. 
+For example a grid emitter will use its defined Volume and the falloff range is from the inside to the surface of the volume.
+<br></br>
+<b>None</b><br>
+No falloff is used.<br>
+<br>
+<b>Linear</b><br>
+A linear falloff is used.<br>
+<br>
+<b>Custom</b><br>
+Allows a user-defined falloff being used. Once set, a spline graph (Temporal Intensity) unhides in the node's attributes and can be used to define the falloff.
+<br></br></p></div>
+<h4><a name="EMISSION_SETTINGS_TEMPORAL_INTENSITY" onclick="HideNextDOM($(this));" >Temporal Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_emission_settings_object_temporal_intensity.jpg" border="0"><br></br>
+<i>Only available if 'Falloff' is set to 'Custom'.</i>
+<br></br>
+Allows to define a custom falloff curve.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

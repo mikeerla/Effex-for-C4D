@@ -1,0 +1,22 @@
+STRINGTABLE fx_mesh
+{
+	fx_mesh	"Mesh";
+
+	ID_FXMESH_DISPLAY	"Ansicht";
+
+	FXMESH_MESH		"Ursprungsmesh";
+	FXMESH_MESH_SELECTOR	"C";
+	FXMESH_DISPLAY_PROPERTY "Eigenschaft (Punktdaten)";
+	FXMESH_DISPLAY_DRAW	"Zeichne Pinseldaten";
+	FXMESH_MESHMOTION	"Punktgeschwindigkeiten speichern";
+	FXMESH_DISPLAY_THRESHOLD "Maximaler Eigenschaftswert";
+	FXMESH_DISPLAY_PROPERTY_BRUSH "Eigenschaft (Pinseldaten)";
+	FXMESH_DISPLAY_THRESHOLD_BRUSH "Maximaler Eigenschftswert";
+	FXMESH_DISPLAY_PROPERTY_SELECTOR "C";
+	FXMESH_DISPLAY_PROPERTY_BRUSH_SELECTOR "C";
+
+	FXMESH_QUICKTAB_OBSTACLE "Hinderniss An/Aus";
+	FXMESH_QUICKTAB_VOLUME	 "Volumen erzeugen";
+	FXMESH_QUICKTAB_CURVATURE "Meshkrümmung";
+	FXMESH_QUICKTAB_SMOOTHING "Mesh Weichzeichner";
+}

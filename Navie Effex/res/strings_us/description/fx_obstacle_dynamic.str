@@ -1,0 +1,10 @@
+STRINGTABLE fx_obstacle_dynamic
+{
+	fx_obstacle_dynamic "FSS Dynamic Obstacle";
+
+	DYNAMIC_OBSTACLE_VOLUME "Volume";
+	DYNAMIC_OBSTACLE_LINEARSTRENGTH "Translational Strength";
+	DYNAMIC_OBSTACLE_ANGULARSTRENGTH "Rotational Strength";
+
+	DYNAMIC_OBSTACLE_DUMMY_ "";
+}

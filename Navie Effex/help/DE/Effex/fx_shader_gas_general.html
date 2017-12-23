@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="materials.html">Materials</a> : <a href="fx_shader_gas.html">Gas Renderer</a></div>
+<div class="content">
+<h3>General</h3>
+</div>
+<div class="tabs">
+<a href="fx_shader_gas_presets.html">Presets</a>
+<span>General</span>
+<a href="fx_shader_gas_smoke.html">Smoke</a>
+<a href="fx_shader_gas_fire.html">Fire</a>
+<a href="fx_shader_gas_compositing.html">Compositing</a>
+</div>
+<div class="content">
+<div class="subtab">General</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="GASSHADER_UPSAMPLING_VOXELSCALE" onclick="HideNextDOM($(this));" >Voxel Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_voxel_scale.jpg" border="0"><br></br>
+The Gas Renderer is a voxel renderer. It uses channel grids
+and therefore its resolution is bound to the Global voxel size of the
+Effex scene that these channels belong to.
+<br></br>
+In order to get smoother results or to have more resolution
+for modifications at render time (such as render advection and noises applied
+in precomputation stage) you can scale the resolution (i.e. the voxel size of the channels used).<br>
+This will resample the channel grids to that higher resolution.
+<br></br>
+A voxel scale of 2.0 will rescale the voxel size to double the resolution (half the voxel size!).
+<br></br></p></div>
+<h4><a name="GASSHADER_UPSAMPLING_NOPREVIEW" onclick="HideNextDOM($(this));" >Only in rendering</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_only_in_rendering.jpg" border="0"><br></br>
+This setting belongs to the Voxel Scale setting.<br>
+It will allow the voxel scale setting only to be applied during rendering and not in the material preview
+(simply in order to have a better performance in the preview).
+<br></br></p></div>
+<h4><a name="GASSHADER_UPSAMPLING_INTERPOLATION" onclick="HideNextDOM($(this));" >Interpolation</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_interpolation.jpg" border="0"><br></br>
+Defines the interpolation used when resampling any used channel grids due to the Voxel Scale setting.
+<br></br>
+<b>Linear</b><br>
+Simple trilinear interpolation. Fast but of simple quality.
+<br></br>
+<b>Cubic</b><br>
+Cubic interpolation. This is a more accurate interpolation type
+and its result is a little fluffy.
+<br></br>
+<b>Hermite Cubic</b><br>
+Cubic interpolation with a limiter that can catch details more sharply
+but is also slower.
+<br></br></p></div>
+<h4><a name="GASSHADER_RAY_JITTER" onclick="HideNextDOM($(this));" >Jittering</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_jittering.jpg" border="0"><br></br>
+The rays that the shader marches along could end in banding artefacts if a big step lengths are used.<br>
+This jitters the ray in order to get rid of banding. It gives a more noisy result
+which is not as troubling to the viewer as the banding and it can be smoothed in compositing by noise reduction.
+<br></br></p></div>
+<h4><a name="GASSHADER_STEPMIN" onclick="HideNextDOM($(this));" >Min. Step</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_minsteps.jpg" border="0"><br></br>
+The minimum step length that should be used during adaptive ray marching.
+<br></br></p></div>
+<h4><a name="GASSHADER_STEPMAX" onclick="HideNextDOM($(this));" >Max. Step</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_maxsteps.jpg" border="0"><br></br>
+The maximum step length that should be used during adaptive ray marching
+and also the starting step length.
+<br></br></p></div>
+<h4><a name="GASSHADER_RENDER_INTERPOLATION" onclick="HideNextDOM($(this));" >Interpolation</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_interpolation.jpg" border="0"><br></br>
+Defines the interpolation used during rendering.<br>
+<br></br>
+<b>Linear</b><br>
+Simple trilinear interpolation. Fast but of simple quality.
+<br></br>
+<b>Cubic</b><br>
+Cubic interpolation. This is a more accurate interpolation type
+but its result is a little fluffy.
+<br></br>
+<b>Hermite Cubic</b><br>
+Cubic interpolation with a limiter that can catch details more sharply
+but is also slower.
+<br></br></p></div>
+<h4><a name="GASSHADER_TRAPEZOIDAL" onclick="HideNextDOM($(this));" >Precise Integration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_precise_integration.jpg" border="0"><br></br>
+The light equations for a participating media and all the absorption and scattering integration
+is more precise with this (trapezoidal) integration and results in sharper effects.
+<br></br></p></div>
+<h4><a name="GASSHADER_LIGHTLIST" onclick="HideNextDOM($(this));" >Exclude Lights</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_general_exclude_lights.jpg" border="0"><br></br>
+Any lights you would like to exclude can be dropped here.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

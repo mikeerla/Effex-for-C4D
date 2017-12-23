@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_channel.html">Channels</a> : <a href="fx_channel_bases.html">Bases</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<a href="fx_channel_bases_quicktab.html">Quicktab</a>
+<span>Parameters</span>
+<a href="fx_channel_bases_display.html">Display</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_channel_base_parameters.jpg" border="0"">
+</p>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Attributes</span>
+</div>
+<div class="subdata selected">
+</div>
+<h4><a name="GRIDCHANNEL_MIN_SCALAR" onclick="HideNextDOM($(this));" >Minimum Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_fire_grid_object_attributes_minimum_value_maxiumum_value.jpg" border="0"><br></br>
+The minimum floating point value this channel can hold. 
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<i><b>Example (Gaseous Fluid Simulation):</b></i><br>
+If a channel is used to store smoke densities, temperatures and similar the minimum value of 0.0 
+means the cell has no smoke, temperature etc. in it. So it is the perfect minimum value for this task.
+</div></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<i><b>Example (Viscous liquid Simulation):</b></i><br>
+If a channel is used to store viscosity values the minimum value may be higher than 0.0. If I wanted to not let the viscosity get lower than 0.1, I set it as minimum value (and clearing value).
+</div>
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_MAX_SCALAR" onclick="HideNextDOM($(this));" >Maximum Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_fire_grid_object_attributes_minimum_value_maxiumum_value.jpg" border="0"><br></br>
+The maximum floating point value this channel can hold. <br>
+</b><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<i><b>Example (Gaseous Fluid Simulation):</b></i></br>
+If a channel is used to store smoke densities the maximum value of 1.0 means the cell is full of smoke. 
+So it is the perfect (most convenient and straight forward) maximum value for this task.
+<br>
+For a temperature grid you would probably set the value to something like 5000 (as the whole framwork operates in SI units the unit for temperature is kelvin).<br>
+</div>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<i><b>Example (Viscous liquid Simulation):</b></i></br>
+If a channel is used to store viscosity values the maximum value may be higher than 1.0. If I wanted to allow the viscosity to be as high as 10000, I set it as maximum value.
+No cell will then have a value higher than 10000.
+</div>
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_RESET_SCALAR" onclick="HideNextDOM($(this));" >Clearing Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_scalar_grid_object_attributes_clearing_value.jpg" border="0"><br></br>
+Whenever you activate "Clear each Frame" or the grid is cleared by the framework, the whole grid and consequently all grid cells will be initialised with the clearing value.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_CLEAR" onclick="HideNextDOM($(this));" >Clear each Frame</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_scalar_grid_object_clear_each_frame.jpg" border="0"><br></br>
+Clears all data in the 3d grid at each frame, initialising it with the Clearing Value.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_CONTRIBUTE" onclick="HideNextDOM($(this));" >Contribute to bounds</A></h4><div class="selected"><p><br></br>
+Defines if the content of this grid channel is taken into account by the adaptive container bounds in fluid simulations.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_CONVECT" onclick="HideNextDOM($(this));" >Advection</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_scalar_grid_object_advection.jpg" border="0"><br></br>
+Turns on/off the advection memory of the grid. 
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+If you are using a <a href="fx_operators_advection.html">GOP::Advection</a> for this channel you need to switch on this option
+so (grid based) advection can take place. 
+<br>
+Otherwise this option could be turned off and it will reduce the memory consumption of this channel by 50%.
+</div>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

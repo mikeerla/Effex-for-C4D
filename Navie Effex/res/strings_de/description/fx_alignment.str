@@ -1,0 +1,22 @@
+STRINGTABLE fx_alignment
+{
+	fx_alignment "Ausrichtung";
+
+	ALIGNMENT_MODE "Richtung";
+		ALIGNMENT_MODE_X "Entlang X-Axis";
+		ALIGNMENT_MODE_Y "Entlang Y-Axis";
+		ALIGNMENT_MODE_Z "Entlang Z-Axis";
+		ALIGNMENT_MODE_SPHERICAL "Spherisch";
+		ALIGNMENT_MODE_BOX "Kubisch";
+		ALIGNMENT_MODE_CYLINDRICAL "Zylindrisch";
+		ALIGNMENT_MODE_NORMAL "Entlang der Normalen (Volumen)";
+		ALIGNMENT_MODE_CUSTOM "Benutzerdefiniert";
+		ALIGNMENT_MODE_RANDOM "Zufall";
+		ALIGNMENT_MODE_VOLUMETRANSLATIONS "Bewegung (Volumen)";
+	ALIGNMENT_INVERT "Resultat umkehren";
+	ALIGNMENT_CUSTOMDIRECTION "Benutzerdefinierte Richtung";
+	ALIGNMENT_SPACE "Verwende den Raum von.. [beliebiges Objekt]";
+	ALIGNMENT_SPACE_SELECTOR "C";
+
+	ALIGNMENT_DUMMY_ "";
+}

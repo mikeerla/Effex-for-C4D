@@ -1,0 +1,6 @@
+STRINGTABLE fx_property_vector
+{
+	fx_property_vector "Eigenschaft::Vektor";
+
+	PROPERTY_VALUE_VECTOR  "Startwert";
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_channel.html">Channels</a></div>
+<div class="content">
+<h3>Fire</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">Fire</div>
+<div class="data">
+<p>
+<img src="../../img/fx_channel_fire_parameters.jpg" border="0"">
+<br><br>
+Please also refer to <a href="fx_channel_bases_params.html">Channels::Bases::Parameters</a>
+<br>
+<hr line><br>
+This is a specialized Scalar Channel which has a fixed range of values between 0.0 and 1.0.
+<br><br>
+It is primarily a container to store and simulate fire generation data (hence the name). <br>
+The grid values are specifically used by the <a href="fx_operators_combustion.html">GOP::Combustion</a> node to model the dynamic process of combustion.
+</p>
+</div>
+<h4><a name="GRIDCHANNEL_FIRE_COOLING_POINT" onclick="HideNextDOM($(this));" >Cooling Point [kelvin]</A></h4><div class="selected"><p><br></br>
+This value defines the temperature that flames need to reach before the temperature starts to cool down (this is a natural process in the combustion stage).<br>
+Normally you set this to a value near the maximum temperature (defined in the used temperature channel). 90% of the max. temperature is a good reference value.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_FIRE_DEATHRATE" onclick="HideNextDOM($(this));" >Flames Lifetime [sec]</A></h4><div class="selected"><p><br></br>
+Defines how long the flames live until they start to cool down (so how long it takes until the temperature reaches the cooling point).<br>
+This value is for example used by the GOP::Combustion operator (non-fuel mode) and is given in seconds.<br>
+<br></br>
+Keep in mind that this is no explicit value. As a fire simulation is dynamic these timings are approximate ranges.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_FIRE_AFTERLIFE" onclick="HideNextDOM($(this));" >Flames Afterlife [sec]</A></h4><div class="selected"><p><br></br>
+Defines how long the flames live after they reached the Cooling Point 
+(in other words how long it takes the flames to completely disappear after their lifetime).
+<br></br>
+Keep in mind that this is no explicit value. As a fire simulation is dynamic these timings are approximate ranges.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

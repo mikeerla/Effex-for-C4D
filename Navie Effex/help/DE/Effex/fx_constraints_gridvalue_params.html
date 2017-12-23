@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_constraints.html">Constraints</a> : <a href="fx_constraints_gridvalue.html">CS::Grid Value</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_cs_gridvalue_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="CONSTRAINT_GRIDVALUE_CHANNEL" onclick="HideNextDOM($(this));" >Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_grid_value_constraint_channel.jpg" border="0"><br></br>
+The <a href="fx_channel.html">channel</a> to sample (read the value from).
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRIDVALUE_MODE" onclick="HideNextDOM($(this));" >Threshold</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_grid_value_constraint_treshold.jpg" border="0"><br></br>
+The threshold defines the range (set with 'Minimum' and 'Maximum') type that the original grid value is defined in.
+<br></br>
+<b>Equals Minimum (==)</b><br>
+If the grid value is the same as the Minimum value, the base result of the constraint will be 100%. Otherwise it is 0%.<br>
+<br>
+<b>Is not Minimum (!=)</b><br>
+If the grid value is NOT the same as the 'Minimum' value, the intensity of the constraint will be 100%. Otherwise it is 0%.<br>
+<br>
+<b>Range (<= Minimum) or (>= Maximum)</b><br>
+If the grid value is smaller or equals 'Minimum' or is bigger or equals 'Maximum', the result will be 100%. Otherwise it is 0%.<br>
+<br>
+<b>Range (>= Minimum) or (<= Maximum)</b><br>
+If the grid value is within 'Minimum' and 'Maximum' the result will be of the constraint will be 100%. Otherwise it is 0%.
+The 'Range spline' setting applies here though.
+
+
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRIDVALUE_A" onclick="HideNextDOM($(this));" >Minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_grid_value_constraint_minimum_maximum.jpg" border="0"><br></br>
+The input range minimum for the sampled grid value. It is given in percent (%) for it uses the Channels <a href="fx_channel_bases_params.html#GRIDCHANNEL_MIN_SCALAR">Minimum</a> value.<br>
+A value of 0% means exactly the minimum value of the channel. 
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRIDVALUE_B" onclick="HideNextDOM($(this));" >Maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_grid_value_constraint_minimum_maximum.jpg" border="0"><br></br>
+The input range maximum for the sampled grid value. It is given in percent (%) for it uses the Channel's <a href="fx_channel_bases_params.html#GRIDCHANNEL_MAX_SCALAR">Maximum</a> value.<br>
+A value of 100% means exactly the maximum value of the channel.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRIDVALUE_MAPRESULTS" onclick="HideNextDOM($(this));" >Map results</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_grid_value_constraint_map_results.jpg" border="0"><br></br>
+If activated, the result will be mapped to an intensity range of 0.0 and 1.0 using the range spline.<br>
+Otherwise the result will directly be used and may not necessarily be in the unit range.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_GRIDVALUE_SPLINE" onclick="HideNextDOM($(this));" >Range spline</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_grid_value_constraint_range_spline.jpg" border="0"><br></br>
+If results are mapped, this spline curve defines the new mapping.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

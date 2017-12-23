@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_bodies.html">Bodies</a> : <a href="fx_surfaces.html">Surfaces</a> : <a href="fx_surfaces_implicitmesher.html">Implicit Mesher</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_mesher_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="MESHER_VOLUME" onclick="HideNextDOM($(this));" >Volume</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_implicit_mesher_object_volume.jpg" border="0"><br></br>
+Drop any volume here that you want to mesh. This node is required.
+<br></br></p></div>
+<h4><a name="MESHER_SOLVER" onclick="HideNextDOM($(this));" >Dynamics (Mesh Advection)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/implicitmesher_params_dynamics.jpg" border="0"><br></br>
+Takes a fluid dynamics node to extract velocity information from. This node is optional.<br>
+If linked activates the 'Time step' setting and allows simple mesh advection which can generate sharper meshes.
+<br></br></p></div>
+<h4><a name="MESHER_TYPE" onclick="HideNextDOM($(this));" >Algorithm</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_implicit_mesher_object_algorithm.jpg" border="0"><br></br>
+Defines the algorithm used to create the mesh.
+<br></br>
+<b>Marching Cubes</b><br>
+Very fast algorithm but can produce artefacts (like missing polygons). Perfect for previews.
+<br></br>
+<b>Marching Tets</b><br>
+Pretty fast algorithm but good surface quality.
+<br></br>
+<b>Marching Tiles</b><br>
+Slower algorithm but very good surface quality. Also it allows to use a lower voxel scale in the linked surface reconstructor because it operates in subgrids.
+
+<br></br></p></div>
+<h4><a name="MESHER_ISOSURFACE" onclick="HideNextDOM($(this));" >Isosurface at value.. [voxel size]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_implicit_mesher_object_isosurfaces_at_value.jpg" border="0"><br></br>
+This allows to shrink the surface to get smaller features. Most of the time positive values between 0.2 and 0.8 give best results.<br>
+You should definetly use this instead of lowering the Particle Radius in the Surface Reconstructor.
+
+<br></br></p></div>
+<h4><a name="MESHER_RENDERONLY" onclick="HideNextDOM($(this));" >Evaluate on in picture viewer</A></h4><div class="selected"><p><br></br>
+<img src="../../img/implicitmesher_params_evaluate.jpg" border="0"><br></br>
+If activated it will only operate if rendering to the picture viewer or via network rendering.
+<br></br></p></div>
+<h4><a name="MESHER_CALCNORMALS" onclick="HideNextDOM($(this));" >Calculate Normals</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_implicit_mesher_object_calculate_normals.jpg" border="0"><br></br>
+Calculates smooth normals for the mesh. This is much better than letting C4D calculate phong normals from the mesh (which happens if deactivated).
+<br></br></p></div>
+<h4><a name="MESHER_ADVECTION" onclick="HideNextDOM($(this));" >Time step</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_implicit_mesher_object_time_step.jpg" border="0"><br></br>
+Only used if a Fluid dynamics node is linked. This will allow mesh advection according to a velocity motion field. 
+<br></br>
+The time step is given in seconds.A value of 0.0 will deactivate the mesh advection.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

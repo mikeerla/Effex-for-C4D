@@ -1,0 +1,9 @@
+#ifndef FX_CHANNEL_TEMP_H
+#define FX_CHANNEL_TEMP_H
+
+enum
+{
+	GRIDCHANNEL_TEMP_DUMMY_
+};
+
+#endif

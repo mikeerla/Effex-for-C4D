@@ -1,0 +1,28 @@
+STRINGTABLE fx_gop_particletolevelset
+{
+	fx_gop_particletolevelset "GOP::Particle To Levelset";
+
+	GOP_PTL_GROUP			"Particle Groups";
+	GOP_PTL_GROUP_SELECTOR		"C";
+	GOP_PTL_DURATION		"Duration";
+	GOP_PTL_DURATION_SELECTOR	"C";
+	GOP_PTL_PARTICLES		"Particle type";
+	GOP_PTL_PARTICLES_PASSIVE	"Passive";
+	GOP_PTL_PARTICLES_LIQUID	"Liquid";
+	GOP_PTL_PARTICLES_VORTICITY	"Vorticity";
+	GOP_PTL_PARTICLES_FOAM		"Foam";
+	GOP_PTL_MODE			"Free Surface identification";
+	GOP_PTL_MODE_INCELL		"Particles in cell";
+	GOP_PTL_MODE_SPHERE		"Particle spheres";
+	GOP_PTL_MODE_DENSITY		"Particle Density";
+	GOP_PTL_MODE_POSITIONS		"Particle Positions";
+	GOP_PTL_MODE_INCELL_LEVELSETRATE "Threshold Particles";
+	GOP_PTL_MODE_DENSITY_LEVELSETRATE "Threshold Density";
+	GOP_PTL_EXTRAPOLATESOLIDS	"Extrapolate into solids";
+	GOP_PTL_TARGET			"Target Levelset";
+	GOP_PTL_TARGET_SELECTOR		"C";
+	GOP_PTL_RADIUS			"Radius";
+	GOP_PTL_EXTRAPOLATEMODE		"Mode";
+	GOP_PTL_EXTRAPOLATEMODE_SIMPLE	"Simple";
+	GOP_PTL_EXTRAPOLATEMODE_ADVANCED "Advanced";
+}

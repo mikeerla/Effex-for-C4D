@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_piop.html">Particle Instant Operators (PIOP)</a> : <a href="fx_operators_instant_spawnparticles.html">PIOP::Spawn Particles</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="IOP_SPAWN_PARTICLESOUT" onclick="HideNextDOM($(this));" >Particle Target Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_group_target.jpg" border="0"><br></br>
+The particle group to emit the spawned particles to.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_PARTICLES_FACTORY" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_particles.jpg" border="0"><br></br>
+The particle type of the Particle Group to use.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_duration.jpg" border="0"><br></br>
+Takes a duration node that defines when the spawning instant is allowed to operate.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_SEED" onclick="HideNextDOM($(this));" >Seed</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_seed.jpg" border="0"><br></br>
+The random seed for any randomize values in this node. A seed value is like a start location inside of a random sequence.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_COUNT" onclick="HideNextDOM($(this));" >Count</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_count.jpg" border="0"><br></br>
+The amount of spawned particles.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_COUNT_RENDER" onclick="HideNextDOM($(this));" >Count (Rendering)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_count_rendering.jpg" border="0"><br></br>
+The amount of spawned particles in rendering (to picture viewer).
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_COUNT_VAR" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_count_rendering_randomize.jpg" border="0"><br></br>
+Randomize the particle count each time a new spawning cluster is generated.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_AGE" onclick="HideNextDOM($(this));" >Lifetime </A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_lifetime.jpg" border="0"><br></br>
+Defines how long spawned particles survive.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_AGE_VAR" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_lifetime_randomize.jpg" border="0"><br></br>
+Randomize the life time of spawned particles.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_ANGLE" onclick="HideNextDOM($(this));" >Angle </A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_angle.jpg" border="0"><br></br>
+Defines the spawning angle along the spawning normal (if the particle for example spawn on a surface, it's the surface normal).
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_ANGLE_VAR" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_angle_randomize.jpg" border="0"><br></br>
+Randomize the spawning angle of spawned particles.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_VELOCITY" onclick="HideNextDOM($(this));" >Velocity of original </A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_velocity_of_original.jpg" border="0"><br></br>
+Defines a multiplier for the initial velocity (taken over from the original particle that triggered the spawning) of the spawned particles.
+<br></br></p></div>
+<h4><a name="IOP_SPAWN_VELOCITY_VAR" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_spawn_particles_params_velocity_of_original_randomize.jpg" border="0"><br></br>
+Randomize the initial velocity of spawned particles.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a></div>
+<div class="content">
+<h3>POP::Cacher</h3>
+</div>
+<div class="tabs">
+<a href="fx_operators_particlecacher_params.html">Parameters</a>
+</div>
+<div class="content">
+<div class="subtab">POP::Cacher</div>
+<div class="data">
+<p>
+The particle cacher can save/load particles to/from disk.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+It is necessary to cache your simulation particles to disk in order to correctly render your simulation over a network renderer.<br>
+As simulations themselves can only be calculated on one machine currently.
+</div>
+<br>
+<b>Loading Cached Particles</b><br>
+Cachers that load data are always executed at the very beginning of the pipeline, before any substeps are taken.
+<br>This makes sure all the adaptive information can be gathered at the right time by the framework in order to inform
+the target Particle Groups about the cache data loading.
+<br><br>
+<b>Saving Particles to Disk</b><br>
+Currently Cachers that save data are always executed at the very end of the pipeline when all stepping has been done.
+<br>This makes sure all the data is indeed final for that specific frame. Substeps are therefore not cached.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+The particle cacher also uses the Partio open source library to load and save several other industry standard particle file formats
+which allow you to exchange your data with other applications such as Maya, 3DSMax, Houdini, RealFlow, Krakatoa and more.
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

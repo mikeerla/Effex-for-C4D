@@ -1,0 +1,106 @@
+STRINGTABLE fx_server
+{
+	fx_server	"Effex Scene";
+
+	SERVER_GROUP_ID "Framework";
+	SERVER_GROUP_CACHE "Cache Wizard";
+	SERVER_CACHE_LOAD "Laden";
+	SERVER_CACHE_SAVE "Speichern";
+	SERVER_GROUP_BULLET "Bullet Dynamics";
+	SERVER_GROUP_GLOBALS "Global";
+
+	SERVER_WORLD_SCALE "Skalierung: C4D Einheiten..";
+	SERVER_PHYSICAL_SCALE "..entspricht Effex Einheiten [m]";
+	SERVER_PHYSICAL_VOXELSIZE "Globale Voxelgr\u00F6\u00dfe [m]";
+	SERVER_PHYSICAL_VOXELSIZE_RENDER "Globale Render Voxelgr\u00F6\u00dfe [m]";
+
+	SERVER_TIMESTEP_MODE "Zeitschritte (L\u00E4nge)";
+		SERVER_TIMESTEP_MODE_CFL "Adaptiv (CFL)";
+		SERVER_TIMESTEP_MODE_FRAME "C4D Framel\u00E4nge";
+		SERVER_TIMESTEP_MODE_CUSTOM "Benutzerdefiniert";
+	SERVER_CFLSENSITIVITY "CFL Sensibilit\u00E4t";
+	SERVER_TIMESTEP "Expliziter Zeitschritt [sek/bild]";
+	SERVER_SUBSTEPS "Maximale Zwischenschritte";
+	SERVER_AUTOTIME "Automatische Simulationszeit";
+	SERVER_FROM "Von [Frame]";
+	SERVER_TO "Bis [Frame]";
+	SERVER_CPUS "CPU Threads (0 = alle)";
+	SERVER_GPU "GPU";
+		SERVER_GPU_DEFAULT "Alle verf\u00FCgbaren";
+	SERVER_MINSUBSTEPS "Minimale Zwischenschritte";
+	SERVER_GRAVITY "Gravitation [m/s²]";
+	SERVER_SECOND "Timing";
+	SERVER_GLOBALSEED "Globaler Startwert";
+
+	SERVER_PARTICLES_KERNEL "Kernel";
+	SERVER_PARTICLES_DENSITY "Partikeldichte";
+	SERVER_PARTICLES_RADIUS "Radius";
+	SERVER_PARTICLES_KERNEL_SELECTOR "C";
+
+	SERVER_BULLET_SOLVERITERATIONS "Solver Wiederholungen";
+	SERVER_BULLET_MAXSUBSTEPS "Max. Zwischenschritte";
+	SERVER_BULLET_BROADPHASE "Broadphase Typ";
+		SERVER_BULLET_BROADPHASE_DBVT "Dbvt";
+		SERVER_BULLET_BROADPHASE_SWEEP "Axis Sweeping";
+		SERVER_BULLET_BROADPHASE_SWEEP32 "32Bit Axis Sweeping";
+	SERVER_BULLET_DEACTIVATIONTIME "Deaktivierungszeitraum";
+
+	SERVER_CACHE_RENDERONLY "Nur während Bildmanager Rendering ausführen";
+	SERVER_CACHE_MODE "Cache Modus";
+		SERVER_CACHE_MODE_LOAD "Laden";
+		SERVER_CACHE_MODE_SAVE "Speichern";
+		SERVER_CACHE_MODE_LOADSAVE "Laden & Speichern";
+	SERVER_CACHE_FILESELECT "Zielordner ausw\u00E4hlen ..";
+	SERVER_CACHE_FILEPATH "Dateipfad";
+	SERVER_CACHE_FILENAME "Dateiname";
+	
+	SERVER_CACHE_LOAD_FRAME_INITIALISE "Nur im Startbild laden";
+	SERVER_CACHE_LOAD_FRAME "Lade Bild..";
+	SERVER_CACHE_LOAD_OFFSET "Bildversatz";
+
+	SERVER_CACHE_SAVE_COMPRESS "Wenn m\u00F6glich komprimieren";
+	SERVER_CACHE_SAVE_PARTICLES "Partikel Dateityp";
+		SERVER_CACHE_SAVE_PARTICLES_EFFEX ".pcache (Effex v2.57.12)";
+		SERVER_CACHE_SAVE_PARTICLES_EFFEXNEW ".pcache (Effex v2.60.27)";
+		SERVER_CACHE_SAVE_PARTICLES_PRT ".prt (Krakatoa)";
+		SERVER_CACHE_SAVE_PARTICLES_BGEOJSON ".bgeo (Houdini JSON, read-only)";
+		SERVER_CACHE_SAVE_PARTICLES_BGEO ".bgeo (Houdini)";
+		SERVER_CACHE_SAVE_PARTICLES_GEO ".geo (Houdini)";
+		SERVER_CACHE_SAVE_PARTICLES_BIN ".bin (RealFlow)";
+		SERVER_CACHE_SAVE_PARTICLES_PDA ".pda (ascii)";
+		SERVER_CACHE_SAVE_PARTICLES_PDB ".pdb (binary)";
+		SERVER_CACHE_SAVE_PARTICLES_PDB32 ".pdb32 (Maya)";
+		SERVER_CACHE_SAVE_PARTICLES_PDB64 ".pdb64 (Maya)";
+		SERVER_CACHE_SAVE_PARTICLES_PDC ".pdc (Maya)";
+		SERVER_CACHE_SAVE_PARTICLES_PTC ".ptc (Renderman)";
+		SERVER_CACHE_SAVE_PARTICLES_PTS ".pts (Point Clouds, read-only)";
+		SERVER_CACHE_SAVE_PARTICLES_RIB ".rib (Renderman,write-only)";
+		SERVER_CACHE_SAVE_PARTICLES_XYZ ".xyz (read-only)";
+		SERVER_CACHE_SAVE_PARTICLES_MC ".mc (Maya nCache, read-only)";
+		SERVER_CACHE_SAVE_PARTICLES_ICE ".icecache (XSI ICE cache)";
+		SERVER_CACHE_SAVE_PARTICLES_HCLASSIC ".hclassic (Houdini, read-only)";
+		SERVER_CACHE_SAVE_PARTICLES_BHCLASSIC ".bhclassic (Houdini, read-only)";
+		SERVER_CACHE_SAVE_PARTICLES_ITBL ".itbl";
+		SERVER_CACHE_SAVE_PARTICLES_ATBL ".atbl";
+	SERVER_CACHE_SAVE_GRIDS "Gitter Dateityp";
+		SERVER_CACHE_SAVE_GRIDS_EFFEX ".cache (Effex)";
+		SERVER_CACHE_SAVE_GRIDS_FIELD3D "Field3D";
+		SERVER_CACHE_SAVE_GRIDS_OPENVDB ".vdb (OpenVDB)";
+		SERVER_CACHE_SAVE_GRIDS_OPENVDBFX ".vdb (Effex OpenVDB)";
+	SERVER_CACHE_SAVE_FRAME "Cache Datei Bildnummer verwendet..";
+		SERVER_CACHE_SAVE_FRAME_SIM "Effex Simulationszeit";
+		SERVER_CACHE_SAVE_FRAME_C4D "C4D Zeit";
+	SERVER_CACHE_SAVE_EXCLUDE "Eigenschaften einschlie\u00dfen";
+	
+	SERVER_CACHE_PATHMODE "Pfad..";
+		SERVER_CACHE_PATHMODE_SCENEPATH "C4D Szenedatei Pfad";
+		SERVER_CACHE_PATHMODE_CUSTOM "Benutzerdefiniert";
+	SERVER_CACHE_LOAD_FRAME_REVERSE "Ladereihenfolge umkehren";
+	SERVER_CACHE_NODES "Nodes";
+	SERVER_CACHE_FINDNODES "Alle cachef\u00E4higen Nodes sammeln";
+	SERVER_CACHE_SETUP "Cache-Nodes erzeugen";
+	SERVER_CACHE_NEWSCENE "Erzeuge neue Effex Szene";
+	SERVER_CACHE_NODES_PARTICLES "Partikelgruppen";
+	SERVER_CACHE_WIZARDINFO "";
+	SERVER_CACHE_SETUPNEXT "Weiter";
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="nodebases.html">Bases</a></div>
+<div class="content">
+<h3>Display (Live Inspector)</h3>
+</div>
+<div class="tabs">
+<a href="nodebases_node.html">Node</a>
+<span>Display (Live Inspector)</span>
+<a href="nodebases_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Display (Live Inspector)</div>
+<div class="data">
+<p>
+The live inspector is a display feature that allows to preview the result of a node live in the editor view of Cinema 4D.
+<br>Forces and Constraints are both using the live inspector (see below images respectively) helping tremendously with the setup.
+<br><br>
+<img src="../../img/base_force_display.jpg" border="0"">
+<br><i>Live Inspector in a GF/DF/PF</i>
+<br><br>
+<img src="../../img/fx_constraints_bases_display.jpg" border="0"">
+<br><i>Live Inspector in a CS/PCS</i>
+
+
+</p>
+</div>
+<h4><a name="FX_BASE_DRAW" onclick="HideNextDOM($(this));" >On</A></h4><div class="selected"><p><br></br>
+De/activates the editor display of this node completely.
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+Define the editor display color of this node's live inspector preview.
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_USE" onclick="HideNextDOM($(this));" >Use Live Inspector</A></h4><div class="selected"><p><br></br>
+Activate the Live Inspector which will show you a live preview of the generated node result (if supported by the node).
+<br>This is a tremendous help to preview individual results.
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_USEFULLFORCE" onclick="HideNextDOM($(this));" >Show full force</A></h4><div class="selected"><p><br></br>
+<i>Only available in Forces</i>
+<br><br>
+If checked the length of the force preview line will show the full length of the force.
+<br>Otherwise the line will have unit length (therefore will only display the direction of the force).
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_EVALCONSTRAINTS" onclick="HideNextDOM($(this));" >Evaluate Constraints</A></h4><div class="selected"><p><br></br>
+Activate if the preview shall evaluate any linked constraints. 
+<br>May reduce performance though (depending on node complexity).
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_DIMENSION" onclick="HideNextDOM($(this));" >Inspection area size</A></h4><div class="selected"><p><br></br>
+The live inspector shows the node's result inside of a box. You can define the dimensions of this box here.
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_STEP" onclick="HideNextDOM($(this));" >Sample density</A></h4><div class="selected"><p><br></br>
+<i>Only available in grid based or dual nodes</i><br><br>
+Inside the live inspector preview box, directional lines show the force's result.
+<br>Here you can in/decrease the samples count (this is the distance between samples, so more samples means lower Sample density values).
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_DUALPARTICLES" onclick="HideNextDOM($(this));" >Particles Mode</A></h4><div class="selected"><p><br></br>
+<i>Only available in Particle Forces (PF::) or Dual Forces (DF::)</i><br><br>
+If activated the Live Inspector pretents that the Dual Force is a Particle Force.<br>
+And therefore shows the result preview for particles (based on <a href="#INSPECTOR_DISPLAY_PARTICLES">Particle Group</a> and <a href="#INSPECTOR_DISPLAY_FACTORY">Type</a> set).
+<br><br>
+Otherwise it will display the result as if it was a Grid Force (so using the <a href="#INSPECTOR_DISPLAY_STEP">Sampling density</a>.
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_PARTICLES" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<i>Only available in particle based or dual nodes.</i><br><br>
+Defines the Particle Group to preview the result for.
+<br></br></p></div>
+<h4><a name="INSPECTOR_DISPLAY_FACTORY" onclick="HideNextDOM($(this));" >Type</A></h4><div class="selected"><p><br></br>
+<i>Only available in particle based or dual nodes.</i><br><br>
+Defines the <a href="#INSPECTOR_DISPLAY_PARTICLES">Particle Group</a>'s particle (subgroup) type to preview the result for.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

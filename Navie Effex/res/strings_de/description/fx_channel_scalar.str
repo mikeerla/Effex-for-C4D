@@ -1,0 +1,8 @@
+STRINGTABLE fx_channel_scalar
+{
+	fx_channel_scalar "Skalar Gitterkanal";
+
+	GRIDCHANNEL_MIN_SCALAR "Wert Minimum";
+	GRIDCHANNEL_MAX_SCALAR "Wert Maximum";
+	GRIDCHANNEL_RESET_SCALAR "L\u00F6schwert";
+}

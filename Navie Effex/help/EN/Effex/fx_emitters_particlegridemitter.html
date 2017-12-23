@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_particle.html">Particle</a></div>
+<div class="content">
+<h3>Emitter::Particle In Volume</h3>
+</div>
+<div class="tabs">
+<a href="fx_emitters_particlegridemitter_params.html">Parameters</a>
+<a href="fx_emitters_particlegridemitter_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Emitter::Particle In Volume</div>
+<div class="data">
+<p>
+The Particle In Volume is used to generate particles inside of a <a href="fx_volume.html">Volume</a> and store them into a <a href="fx_particles_particlegroup.html">Particle Group</a> of choice. It can generate any Effex particle type.
+<br></br>
+However, this particle emitter is completely based on a grid, so the global voxel size defines how many particles are generated in each cell.<br>
+Currently it generates 8 particles per cell. This is the particle density that is most useful for the algorithm used in the liquid simulations (FLIP)
+and at this time cannot be altered (also to guarantee a certain simulation quality).
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

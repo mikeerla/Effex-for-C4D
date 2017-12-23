@@ -1,0 +1,297 @@
+@charset "utf-8";
+/* CSS Document */
+* 
+{
+	margin: 0;
+	padding: 0;
+}
+html 
+{
+	font-size: 1em;
+}
+body 
+{	
+	font-family: 'Lato', Arial, sans-serif;
+	color: #222222;
+	background-color: #FFFFFF;
+	font-size: 0.8em;
+	margin: 0;
+	text-align: left;
+}
+#whole 
+{
+	margin: 10px auto;
+	text-align: left;
+	padding: 10px;
+}
+#main 
+{
+	font-family: 'Lato', Arial, sans-serif;
+	min-width: 600px;
+	float: left;
+	clear: both;
+}
+
+/* Hierarchy Header */
+#main div.hierarchy 
+{	
+	float: left;
+	clear: left;
+	padding: 5px;
+}
+#main div.hierarchy a 
+{	
+	color: #D1332E !important;
+	text-decoration: underline !important;
+}
+#main div.hierarchy a:hover 
+{	
+	color: #D1332E !important;
+	text-decoration: none !important;
+}
+
+/* Quicktabs */
+#main div.tabs 
+{	
+	line-height: 30px;
+	clear: left;
+	padding: 5px;
+}
+#main div.tabs span 
+{	
+	padding: 5px;
+	border: none;
+	border-color: #5c9faa;
+	color: black;
+	font-weight: bold;
+}
+
+#main div.tabs a 
+{
+	background-color: #5c9faa;
+	color: #fff !important;
+	text-decoration: none !important;
+	padding: 5px;
+	border: thin;
+	border-color: #000000;
+}
+#main div.tabs a:hover 
+{	
+	background-color: #afd1e2;
+}
+#main div.tabs a:visited 
+{	
+	color: inherit !important;
+	text-decoration: none !important;
+}
+
+/* Subtabs */
+#main div.subtab
+{
+	line-height: 30px;
+	float: none;
+	clear: none;
+	padding: 5px;
+	min-width: 100%;
+	min-height: 30px;
+	width: 100%;
+	color: #fff;
+	background-color: #677a88;
+	margin-top: 10px;
+	font-weight:bold;
+}
+#main div.data
+{
+	float: none;
+	clear: none;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 0px;
+	min-width: 100%;
+	width: 100%;
+	margin: 0px;
+}
+
+#main div.subdatatab
+{
+	float: none;
+	clear: none;
+	padding: 5px;
+	min-width: 95%;
+	width: 95%;
+	background-color: #677a88;
+	margin-top: 10px;
+	font-weight:bold;
+	margin-left: 20px;
+	color: #FFF !important;
+}
+
+#main div.subdatatab span span
+{
+	color: #DDD;
+}
+
+#main div.subdatatab :hover
+{
+	cursor: pointer;
+	color: #DDD;
+}
+
+#main div.subdata
+{
+	float: none;
+	clear: none;
+	padding: 5px;
+	min-width: 95%;
+	width: 95%;
+	background-color: #F7F7F6;
+	margin: 0px;
+	margin-left: 20px;
+}
+.selected
+{
+	visibility: hidden !important;
+	display: none !important;
+	background-color: red !important;
+}
+
+#main div.subdata h4 a
+{
+	display: block;
+	border: 2px !important;
+	border-color: black;
+	background-color: #a8afb8 !important;
+}
+
+#main div.content h4 a:hover
+{
+	cursor: pointer;
+}
+
+/* Tipps, Advice */
+#main div.help 
+{	
+	color: black;
+	float: none;
+	clear: left;
+	padding: 5px;
+	padding-top: 0px;
+	width: 95%;
+	background-color: #A5D786;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border:thin solid black; 
+}
+#main div.content div.help h4
+{	
+	color: #222222;
+	margin: 0px;
+}
+
+/* Content */
+#main div.content {
+	float: left;
+	clear: left;
+	padding: 5px;
+	min-width:inherit;
+	}
+#main div.content h3 {
+	color: #555555;
+	}
+#main div.content h4 
+{
+	font-size: 100%;
+	clear: left;
+	color: #C00;
+	font-weight: bold;	
+	padding-top: 10px;
+	padding-bottom: 4px;
+}
+
+#main div.content h4 a {
+	display: block;
+	color: #111 !important;
+	text-decoration: none !important;
+	background-color: #ededed;
+	min-width: 100%;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	padding: 3px;
+	padding-left: 5px;
+	}
+#main div.content div.subdata h4 a {	
+	display: block;
+	color: #FFF !important;
+	text-decoration: none !important;
+	background-color: #ededed;
+	min-width: 100%;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	padding: 3px;
+	padding-left: 5px;
+	}
+#main div.content h4 a:hover {
+	color: #d1332e !important;
+	text-decoration: none !important;
+	}
+#main div.content div.subdata h4 a:hover {
+	color: #d1332e !important;
+	text-decoration: none !important;
+	}
+#main div.content a {
+	color: #06F !important;
+	text-decoration: none !important;
+	}
+#main div.content  a:hover {
+	text-decoration: underline !important;
+	}
+
+/* Image Handling */
+.imagespace
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.thumbnail{
+position: relative;
+text-decoration: none !important;
+z-index: 0;
+}
+
+.thumbnail:hover{
+background-color: transparent;
+text-decoration: none !important;
+z-index: 50;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+margin: 5px;
+position: absolute;
+padding: 5px;
+left: -1000px;
+border: 1px thin gray;
+visibility: hidden;
+color: white;
+text-decoration: none !important;
+background-color: #222222;
+}
+
+.thumbnail span img
+{ /*CSS for enlarged image*/
+border-width: 0;
+padding: 2px;
+text-decoration: none !important;
+}
+
+.thumbnail:hover span
+{ /*CSS for enlarged image on hover*/
+visibility: visible;
+text-decoration: none !important;
+top: -250px;
+left: 0px; /*position where enlarged image should offset horizontally */
+}

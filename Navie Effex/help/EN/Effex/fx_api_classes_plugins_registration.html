@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_plugins.html">Plugins</a></div>
+<div class="content">
+<h3>Registration</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">Registration</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Bool RegisterFXConstraintPlugin (LONG id, <span style="color:rgb(0,31,174);">const</span> String &str, LONG objectinfo, DataAllocator *npalloc, <span style="color:rgb(0,31,174);">const</span> String &description, BaseBitmap *icon, LONG disklevel)</A></h4><div class="selected"><p><br>
+Predefined calls to register an Effex constraint plugin.
+<br></br>
+<b>Returns</b><br>
+true if the constraint plugin was successfully registered.
+<br></br>
+<b>Parameters</b><BR>
+<i>LONG id</i>:<br>
+the unique plugin id of your constraint.
+<BR></br>
+<i>const String& str</i>:<br>
+the name of your constraint.
+<BR></br>
+<i>LONG objectinfo </i>:<br>
+object flags. Usually you can simply pass 0 here.
+<BR></br>
+<i>DataAllocator* npalloc</i>:<br>
+Pass the static member function pointer to the constraints Alloc function.
+<BR></br>
+<i>const String& description</i>:<br>
+Pass the container id of the constraints description resource.
+<BR></br>
+<i>BaseBitmap* icon</i>:<br>
+Pass an icon for your constraint here.
+<BR></br>
+<i>LONG disklevel</i>:<br>
+To support different versions of your constraint, pass the disk level here.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Bool RegisterFXForcePlugin (LONG id, <span style="color:rgb(0,31,174);">const</span> String &str, LONG objectinfo, DataAllocator *npalloc, <span style="color:rgb(0,31,174);">const</span> String &description, BaseBitmap *icon, LONG disklevel)</A></h4><div class="selected"><p><br>
+Predefined calls to register an Effex force plugin.
+<br></br>
+<b>Returns</b><br>
+true if the force plugin was successfully registered.
+<br></br>
+<b>Parameters</b><BR>
+<i>LONG id</i>:<br>
+the unique plugin id of your force.
+<BR></br>
+<i>const String& str</i>:<br>
+the name of your force.
+<BR></br>
+<i>LONG objectinfo </i>:<br>
+object flags. Usually you can simply pass 0 here.
+<BR></br>
+<i>DataAllocator* npalloc</i>:<br>
+Pass the static member function pointer to the force's Alloc function.
+<BR></br>
+<i>const String& description</i>:<br>
+Pass the container id of the force's description resource.
+<BR></br>
+<i>BaseBitmap* icon</i>:<br>
+Pass an icon for your force here.
+<BR></br>
+<i>LONG disklevel</i>:<br>
+To support different versions of your force, pass the disk level here.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Bool RegisterFXOperatorPlugin (LONG id, <span style="color:rgb(0,31,174);">const</span> String &str, LONG objectinfo, DataAllocator *npalloc, <span style="color:rgb(0,31,174);">const</span> String &description, BaseBitmap *icon, LONG disklevel)</A></h4><div class="selected"><p><br>
+Predefined calls to register an Effex operator plugin.
+<br></br>
+<b>Returns</b><br>
+true if the operator plugin was successfully registered.
+<br></br>
+<b>Parameters</b><BR>
+<i>LONG id</i>:<br>
+the unique plugin id of your operator.
+<BR></br>
+<i>const String& str</i>:<br>
+the name of your operator.
+<BR></br>
+<i>LONG objectinfo </i>:<br>
+object flags. Usually you can simply pass 0 here.
+<BR></br>
+<i>DataAllocator* npalloc</i>:<br>
+Pass the static member function pointer to the operator's Alloc function.
+<BR></br>
+<i>const String& description</i>:<br>
+Pass the container id of the operator's description resource.
+<BR></br>
+<i>BaseBitmap* icon</i>:<br>
+Pass an icon for your operator here.
+<BR></br>
+<i>LONG disklevel</i>:<br>
+To support different versions of your operator, pass the disk level here.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

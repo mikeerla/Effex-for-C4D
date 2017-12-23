@@ -1,0 +1,10 @@
+STRINGTABLE fx_mop_curvature
+{
+	fx_mop_curvature "MOP::Curvature";
+
+	FX_MOP_MESH "Volume";
+	FX_MOP_MESH_SELECTOR "C";
+	FX_MOP_DURATION "Duration";
+	FX_MOP_DURATION_SELECTOR "C";
+	FX_MOP_AREASMOOTHING "Smooth";
+}

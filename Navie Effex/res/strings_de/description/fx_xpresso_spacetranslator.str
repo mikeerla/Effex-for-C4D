@@ -1,0 +1,22 @@
+STRINGTABLE fx_xpresso_spacetranslator
+{
+	fx_xpresso_spacetranslator "Raumkonvertierung";
+	
+	XSPACE_TRANSLATOR_SCENE "Navié Szene";
+	XSPACE_TRANSLATOR_SUBGRIDSPACE "Hochaufl\u00F6sende Voxel Koordinaten";
+	XSPACE_TRANSLATOR_POSITIONTYPE "Positionsraum";
+		XSPACE_TRANSLATOR_POSITIONTYPE_WORLD "C4D Raum (Global)";
+		XSPACE_TRANSLATOR_POSITIONTYPE_PHYSICAL "Physikalischer Raum (Global)";
+		XSPACE_TRANSLATOR_POSITIONTYPE_GRID "Zellkoordinaten (Local)";
+	XSPACE_GLOBAL_OUTPUT "Global";
+        XSPACE_TRANSLATOR_CHANNEL "Referenzkanal (Global)";
+	XSPACE_TRANSLATOR_POS "Position";
+	XSPACE_TRANSLATOR_OUT_INDEX "Zellenindex";
+	XSPACE_TRANSLATOR_OUT_GCOORD "Zellkoordinaten";
+	XSPACE_TRANSLATOR_OUT_PHYSICAL "Lokaler physischer Raum";
+	XSPACE_TRANSLATOR_OUT_C4DWORLD "Lokaler C4D Raum";
+	XSPACE_TRANSLATOR_OUT_PHYSICAL_GLB "Globaler physischer Raum";
+	XSPACE_TRANSLATOR_OUT_C4DWORLD_GLB "Globaler C4D Raum";
+
+	XSPACE_TRANSLATOR_DUMMY	"";
+}

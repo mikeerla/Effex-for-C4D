@@ -1,0 +1,16 @@
+STRINGTABLE fx_levelset_smoother
+{
+	fx_levelset_smoother	"VOP::Levelset Smoother";
+
+	LEVELSET_SMOOTHER_INITIALREDISTANCE "Redistancing at start";
+	LEVELSET_SMOOTHER_VOLUME "Volume";
+	LEVELSET_SMOOTHER_LAPLACE_ITER "Laplace Smoothing";
+	LEVELSET_SMOOTHER_BIHARMONIC_ITER "Biharmonic Smoothing";
+	LEVELSET_SMOOTHER_BIHARMONIC_GAIN "Gain";
+	LEVELSET_SMOOTHER_REDISTANCE_ITER "Redistancing each x-th iteration";	
+		
+	LEVELSET_SMOOTHER_RINIT "Initial Radius (Min<->Max)";
+	LEVELSET_SMOOTHER_RMIN "Min. Particle Radius";
+	LEVELSET_SMOOTHER_RMAX "Max. Particle Radius";
+	LEVELSET_SMOOTHER_VOLUME_SELECTOR "C";
+}

@@ -1,0 +1,16 @@
+STRINGTABLE fx_gop_forces
+{
+	fx_gop_forces "GOP::Kr\u00E4fte";	
+
+	GOP_FORCES_INPUT "Gitterkr\u00E4fte (GF)";
+	GOP_FORCES_INPUT_SELECTOR "C";
+	GOP_FORCES_DURATION "Dauer";
+	GOP_FORCES_DURATION_SELECTOR "C";
+	GOP_FORCES_INTENSITY "Intensit\u00E4t";
+	GOP_FORCES_USEGRAVITY "Globale Gravitation verwenden";
+	GOP_FORCES_MODE "Emissionsmodus";
+	GOP_FORCES_MODE_ADD "Hinzuf\u00FCgen";
+	GOP_FORCES_MODE_SET "\u00DCberschreiben";
+	GOP_FORCES_VELOCITY "Geschwindigkeitskanal";
+	GOP_FORCES_VELOCITY_SELECTOR "C";
+}

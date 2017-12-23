@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_particle.html">Particle</a> : <a href="fx_emitters_particlegridemitter.html">Emitter::Particle In Volume</a></div>
+<div class="content">
+<h3>Constraints</h3>
+</div>
+<div class="tabs">
+<a href="fx_emitters_particlegridemitter_params.html">Parameters</a>
+<span>Constraints</span>
+</div>
+<div class="content">
+<div class="subtab">Constraints</div>
+<div class="data">
+<p>
+<img src="../../img/fx_pemitter_constraints.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FORCE_BASE_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+<img src="../../img/Global_constraints.jpg" border="0"><br></br>
+Restrict and alter the strength of the resulting emission by using constraints. 
+<br></br>
+Please see <a href="nodebases_constraints.html">Constraints</a> for more information.
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_SOLVERS" onclick="HideNextDOM($(this));" >Fluid Dynamics</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_fss_particle_grid_emitter_params_fluid_dynamics.jpg" border="0"><br></br>
+Linking Fluid dynamics here serves two purposes:
+<br></br>
+<b>1.</b> The particle count in a cell is restricted to 8 particles per cell. This avoids particle clumping especially when it comes down to liquid simulations.<br>
+Also the Weak spring uses this 8 particles-per-cell particle density as reference density. The same could be achieved by using a particle count constraint.
+<br></br>
+<b>2.</b> Particles that would lie outside the maximum container box that the according dynamics node defines are not generated. So only particles inside the simulation domain are emitted.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

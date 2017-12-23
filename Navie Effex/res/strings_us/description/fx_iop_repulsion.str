@@ -1,0 +1,12 @@
+STRINGTABLE fx_iop_repulsion
+{
+	fx_iop_repulsion "InstantOperator::Repulsion";
+	
+	IOP_REPULSION_BOUNCE	"Bounce";
+	IOP_REPULSION_DURATION "Duration";
+	IOP_REPULSION_DURATION_SELECTOR "C";
+	IOP_REPULSION_POSITIONBASED "Use Position Velocity";
+	IOP_REPULSION_SLIDEDRAG "Slide Drag";
+
+	IOP_REPULSION_DUMMY_ "";
+}

@@ -1,0 +1,7 @@
+STRINGTABLE fx_preferences
+{
+	fx_preferences			"Effex";
+
+	FXPREF_GLOBAL			"Global";	
+	FXPREF_ONLINE_CHECK		"Check for Updates on Startup";
+}

@@ -1,0 +1,9 @@
+STRINGTABLE fx_channel_vector
+{
+	fx_channel_vector "Vektor Gitterkanal";
+
+	GRIDCHANNEL_MIN_VECTOR "Wert Minimum";
+	GRIDCHANNEL_MAX_VECTOR "Wert Maximum";
+	GRIDCHANNEL_RESET_VECTOR "L\u00F6schwert";
+	GRIDCHANNEL_VECTOR_ISCOLOR "Daten sind Farben";
+}

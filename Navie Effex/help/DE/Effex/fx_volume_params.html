@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_bodies.html">Bodies</a> : <a href="fx_volumes.html">Volumes</a> : <a href="fx_volume.html">Volume</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<a href="fx_volume_quicktab.html">Quicktab</a>
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_volume_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FSSVOLUME_MESHSOURCE" onclick="HideNextDOM($(this));" >Mesh Object</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_fss_volume_object_mesh_object.jpg" border="0"><br></br>
+A valid Effex mesh node meeting the Effex Volume Conditions (see <a href="fx_volume.html">Volume description</a>).
+<br>A volumetric representation (signed distance field) is generated out of the mesh.
+<br></br></p></div>
+<h4><a name="FSSVOLUME_CONTRIBUTE_BOUNDS" onclick="HideNextDOM($(this));" >Contribute to Adaptive Bounds</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_params_contribute.jpg" border="0"><br></br>
+If this is checked this volume will be contributing to the adaptive bounds of the framework.
+<br></br></p></div>
+<h4><a name="FSSVOLUME_NOGRIDOBSTACLE" onclick="HideNextDOM($(this));" >No framework obstacles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_params_noframeworkobstacle.jpg" border="0"><br></br>
+If checked this volume will not be taken into account in the framework as a volume obstacle.
+<br>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: It will NOT affect if this is a Bullet rigid body obstacle or not.
+</div>
+<br></br></p></div>
+<h4><a name="FSSVOLUME_INVERT" onclick="HideNextDOM($(this));" >Invert</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_fss_volume_object_invert.jpg" border="0"><br></br>
+Inverts the inside and the outside.
+<br></br></p></div>
+<h4><a name="FSSVOLUME_FLUIDSAMPLEEXTENT" onclick="HideNextDOM($(this));" >Outside Extent [cells]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_fss_volume_object_extent.jpg" border="0"><br></br>
+The bounding box of the volume covers the volume mesh + this user-defined extent (given in voxels/grid cells). Usually the default value of 3 cells is more than enough.
+However, if you for example invert the volume, you may want to increase the extent to have the Volume defined in more distant areas as well.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Larger extents make the volume mesh generation slower.
+</div>
+<br></br></p></div>
+<h4><a name="FSSVOLUME_INNER_RADIUS" onclick="HideNextDOM($(this));" >Center-to-surface Offset</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_params_centertosurfaceoffset.jpg" border="0"><br></br>
+As the Volume is aware of its inside you can shrink the inside volume area. 100% means the full inside area is used. Lowering the value will shrink the inside in direction of the surface.<br>
+This can be used to for example emit data only near the surface.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Input Mesh Settings</span>
+</div>
+<div class="subdata selected">
+</div>
+<h4><a name="FSSVOLUME_LEVELSETQUALITY" onclick="HideNextDOM($(this));" >Sweeping iterations</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_fss_volume_mesh_settings_sweeping_iterations.jpg" border="0"><br></br>
+Calculating the Volume's sdf (see top of page) is an iterative process called 'Sweeping'.<br> 
+Higher values MAY result in more accurate distances (and therefore better volume and surface normals) but makes the Volume Generation slower. Most of the time sticking with 1 iteration is fine.<br>
+Setting 2 iterations is the best trade-off between good accuracy and performance. You probably will never use more, though it's up to you.
+<br></br></p></div>
+<h4><a name="FSSVOLUME_SAFESWEEP" onclick="HideNextDOM($(this));" >Max. CPUs for Sweeping (0 = all)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_fss_volume_mesh_settings_max_cpu.jpg" border="0"><br></br>
+You can exclusively set the amount of CPU threads (including hyperthreads) to use for the sweeping. The default value of 0 means all available cpu threads are used.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

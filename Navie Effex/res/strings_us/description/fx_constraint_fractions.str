@@ -1,0 +1,9 @@
+STRINGTABLE fx_constraint_fractions
+{
+	fx_constraint_fractions "Constraint::Obstacle fraction";
+
+	CONSTRAINT_FRACTIONS_CHANNEL "Dynamics";
+	CONSTRAINT_FRACTIONS_CHANNEL_SELECTOR "C";
+
+	CONSTRAINT_FRACTIONS_DUMMY_ "";
+}

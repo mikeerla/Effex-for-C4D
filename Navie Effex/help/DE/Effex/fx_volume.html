@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_bodies.html">Bodies</a> : <a href="fx_volumes.html">Volumes</a></div>
+<div class="content">
+<h3>Volume</h3>
+</div>
+<div class="tabs">
+<a href="fx_volume_quicktab.html">Quicktab</a>
+<a href="fx_volume_params.html">Parameters</a>
+</div>
+<div class="content">
+<div class="subtab">Volume</div>
+<div class="data">
+<p>
+The volume node is a core component of the framework and is used by a lot of other nodes such as emitters, constraints, forces to only name a few.<br>
+But let's clear up what a volume actually is in Effex. Roughly spoken: a volume defines an inside and an outside.
+<br></br>
+Think of a plane primitive. This is not a volume because it has no inside. It's just a surface.<br>
+A cube on the other hand is a perfect example for a solid volume. It is a closed polygon mesh and you can easily distinguish the inside and the outside of it.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<i>These conditions must be met:</i><br>
+- Closed polygon mesh = no polygon holes.<br>
+- Resulting from the above point, it has to have an inside and an outside.
+</div>
+<br>
+The volume is internally encoded into a <b>signed distance field (sdf)</b> which has the property of storing the distances to the nearest surface and
+therefore is always aware where the surface is.
+<br></br>
+As the sdf is stored into a special grid inside the volume its resolution depends on the global <a href="fx_server_framework.html#SERVER_PHYSICAL_SCALE">Voxel Size</a> of the Effex Scene it is defined in.
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

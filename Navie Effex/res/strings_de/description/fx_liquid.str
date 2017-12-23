@@ -1,0 +1,32 @@
+STRINGTABLE fx_liquid
+{
+	fx_liquid "Fl\u00FCssigkeiten";
+
+	LIQUID_FLIP "FLIP/APIC Einstellungen";
+	LIQUID_SURFACE_TRACKER "Oberfl\u00E4chentracker";
+	LIQUID_SURFACE_TRACKER_SELECTOR "C";
+	LIQUID_PARTICLES_SELECTOR "C";
+
+	LIQUID_PARTICLES "Partikel";
+	LIQUID_FLIP_MODE "Algorithmus";
+		LIQUID_FLIP_MODE_FLIP "FLIP";
+		LIQUID_FLIP_MODE_APIC "APIC";
+		
+	LIQUID_FLIP_PICFLIP "PIC (dickfl\u00FCssig) <-> FLIP/APIC (d\u00FCnnfl\u00FCssig)";
+	LIQUID_FLIP_GTP "Auf Partikel splatten falls gecached";
+	LIQUID_FLIP_SPH "SPH-Style sampling";
+	LIQUID_FLIP_SPHRADIUS "Radius [Zellgr\u00F6\u00dfe]";
+	LIQUID_FLIP_SPHKERNEL "Kernel";
+	LIQUID_FLIP_HFA_ZONEFACTOR "Bereichsfaktor";
+	LIQUID_FLIP_HFA_THRESHOLD_VELOCITY "Schwellenwert Geschwindigkeit";
+	LIQUID_FLIP_HFA_THRESHOLD_PARTICLES "Schwellenwert Partikel";
+	LIQUID_FLIP_HFA_THRESHOLD_ZONECELLS "Bereich min. Zellen";
+
+	LIQUID_TRACKING_TYPE "Oberfl\u00E4chenerkennung";
+		LIQUID_TRACKING_TYPE_INCELL "Partikel innerhalb Zelle";
+		LIQUID_TRACKING_TYPE_DENSITY "Partikeldichte";
+		LIQUID_TRACKING_TYPE_OFF "Aus";
+	LIQUID_TRACKING_TYPE_DENSITY_LEVELSETRATE "Schwellwert Dichte";
+	LIQUID_TRACKING_TYPE_INCELL_LEVELSETRATE "Schwellwert Partikel";
+	
+}

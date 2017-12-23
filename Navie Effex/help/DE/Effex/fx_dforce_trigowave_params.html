@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_forces.html">Forces</a> : <a href="fx_forces_df.html">Dual Forces (DF)</a> : <a href="fx_dforce_trigowave.html">DF::TrigoWave</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_df_trigowave_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FORCE_TRIGOWAVE_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_gobal_duration.jpg" border="0"><br></br>
+Takes a Duration node in order to define the length of the force emission. This node is optional.
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_STRENGTH" onclick="HideNextDOM($(this));" >Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_strength.jpg" border="0"><br></br>
+The overall strength of the resulting force.
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_SCALE" onclick="HideNextDOM($(this));" >3D Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_3d_scale.jpg" border="0"><br></br>
+Scales the resulting force in space.
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_WAVESPEED" onclick="HideNextDOM($(this));" >Wave Speed [m/s]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_wave_speed.jpg" border="0"><br></br>
+The speed of the wave in meter per second.
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_WAVELENGTH" onclick="HideNextDOM($(this));" >Wave Length</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_wave_length.jpg" border="0"><br></br>
+The length of a wave before the next wave appears.
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_WAVEDIRECTION" onclick="HideNextDOM($(this));" >Wave Direction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_wave_direction.jpg" border="0"><br></br>
+The main direction of the force waves generated.
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_WAVETYPE" onclick="HideNextDOM($(this));" >Wave Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_wave_type.jpg" border="0"><br></br>
+The wave type defines how the waves forming in the main wave direction behave. They can alternate in direction at different intervals and speed.
+
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_AUTOTIME" onclick="HideNextDOM($(this));" >Use Simulation Time</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_use_simulation_time.jpg" border="0"><br></br>
+Automatically use the simulation time of the framework to determine the current wave time. If unchecked the Time [sec] value is used instead.
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_WAVETIME" onclick="HideNextDOM($(this));" >Time [sec]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_time.jpg" border="0"><br></br>
+Lets you define manually the point of time used. Only available if "Use Simulation Time" is deactivated. 
+<br></br>
+The time is given in seconds.
+<br></br></p></div>
+<h4><a name="FORCE_TRIGOWAVE_WAVEOFFSET" onclick="HideNextDOM($(this));" >Wave Offset [seconds]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_trigoWave_params_wave_offset.jpg" border="0"><br></br>
+Lets you add a temporal offset of the wave time to start with a different force wave state
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

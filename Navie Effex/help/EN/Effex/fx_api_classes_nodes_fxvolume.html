@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_nodes.html">Nodes</a> : <a href="fx_api_classes_nodes_fxbase_derived.html">: public FXBase</a></div>
+<div class="content">
+<h3>FXVolume</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXVolume</div>
+<div class="data">
+<p>
+Volumes in Effex are signed distance fields (SDF). This means that in each cell of the internal grid
+a (signed) distance to the nearest surface position is stored.<br>
+Negative distances are always inside of the volume, positive distances outside and 0.0 on the surface
+<br></br>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span>		 GetBounds		(<span style="color:rgb(0,120,120);">vector3d</span>& ref_minimum, <span style="color:rgb(0,120,120);">vector3d</span>& ref_maximum)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+none
+<br></br>
+<b>Parameters</b><BR>
+<i>vector3d& ref_minimum</i>: <br>
+filled with the bottom-front-left corner position of the grid channel bounds.
+<br></br>
+<i>vector3d& ref_minimum</i>: <br>
+filled with the top-back-right corner position of the grid channel bounds.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> 		Inside			(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position) </A></h4><div class="selected"><p><br>
+Checks if a position is inside the volume's bounding box
+<br></br>
+<b>Returns</b><br>
+true if the passed position is inside
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to check if it's inside
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 InsideVolume	(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position, <span style="color:rgb(0,31,174);">float</span> offset = 0.0f) </A></h4><div class="selected"><p><br>
+Checks if a position is inside the volume.
+<br></br>
+<b>Returns</b><br>
+true if the passed position is inside the volume.
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to check if it's inside
+<br></br>
+<i>float offset</i>: <br>
+A virtual offset/displacement of the surface
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span>		 UpdateBounds	(<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+Whenever you change data or add data to a volume you should update its bounds afterward.
+You should never call this in a multiprocessor context.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span>		 GetDistance		(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the interpolated distance value in the volume at the given position
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to get the distance for
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span>		 GetMaxDistance	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the maximum signed distance available inside the volume
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">float</span>		 GetDensity		(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the density of the volume (only available if the volume is a rigid body)
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">float</span> 		GetInvMass		(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the inverse mass of the volume (only available if the volume is a rigid body)
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span>	 GetInvTensor	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the inverse tensor of the volume (only available if the volume is a rigid body)
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 IsObstacle		(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the volume is an obstacle
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 IsGridObstacle	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the volume is a grid obstacle. This is used by the framework and not by rigid bodies.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 IsDynamicBody	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if this is a dynamic rigid body.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> 		IsKinematicBody	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if this is a kinematic body. This means the user has animated (keyframed) the volume source mesh.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 IsStaticBody	(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if this is a non-moving static rigid body.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span>	 GetNormal		(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position) </A></h4><div class="selected"><p><br>
+Retrieve a normal of the volume at the given position. This works at any position inside the volume's bounding box
+and may either point into the volume (if the position is outside) or out of the volume (if the position is inside)
+<br></br>
+<b>Returns</b><br>
+the normal vector
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to get the normal for
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span> 		LinearFalloff	(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position) </A></h4><div class="selected"><p><br>
+Generates a linear falloff value between 0.0 and 1.0. This is only valid inside the volume!
+<br></br>
+<b>Returns</b><br>
+the linear falloff value
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to determine the falloff value for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 ProjectPoint	(<span style="color:rgb(0,120,120);">vector3d</span> &global_physical_position, <span style="color:rgb(0,120,120);">vector3d</span> &result_grid_position, <span style="color:rgb(0,120,120);">vector3d</span>& result_coll_normal, <span style="color:rgb(0,31,174);">double</span> projection = 0.001) </A></h4><div class="selected"><p><br>
+This projects (moves) the given position to  the surface of the volume. This is only valid for positions inside the volume
+<br></br>
+<b>Returns</b><br>
+true if the passed position was inside and was successfully projected.
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& global_physical_position</i>: <br>
+The physical position to project
+<br></br>
+<i>vector3d &result_grid_position</i>: <br>
+Filled with the projected position
+<br></br>
+<i>vector3d &result_grid_position</i>: <br>
+Filled with the collision normal
+<br></br>
+<i>double projection</i>: <br>
+A displacement for the projected position. Higher values result in the projected position being displaced further to the outside.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

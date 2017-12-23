@@ -1,0 +1,16 @@
+STRINGTABLE fx_duration
+{
+	fx_duration "Dauer";
+
+	DURATION_TIMER_LENGTH "Sequenzdauer [Sek]";
+	DURATION_TIMER_START "Beginn der ersten Sequenz [Sek]";
+	DURATION_TIMER_LOOPS "Durchl\u00E4ufe";
+	DURATION_TIMER_LOOPOFFSET "Versatz zwischen Loops [Sek]";
+	DURATION_TIMER_SPLINE "Zeitliche Intensit\u00E4t";
+	DURATION_TIMER_LENGTH_FRAMES "Sequenzdauer [Bilder]";
+	DURATION_TIMER_START_FRAMES "Beginn der ersten Sequenz [Bilder]";
+	DURATION_TIMER_LOOPOFFSET_FRAMES "Versatz zwischen Loops [Bilder]";
+	DURATION_TIMER_FRAMES "In Bildern gegeben";
+
+	DURATION_DUMMY_ "";
+}

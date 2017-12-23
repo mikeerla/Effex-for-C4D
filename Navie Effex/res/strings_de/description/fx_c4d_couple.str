@@ -1,0 +1,16 @@
+STRINGTABLE fx_c4d_couple
+{
+	fx_c4d_couple "Fl\u00FCssigkeitskopplung";
+
+	COUPLE_SETMATRIX "Setze aktuelle Matrix als Ruhezustand"; 
+	COUPLE_DYNAMICS "Dynamik";
+	COUPLE_ROTATION "Winkelgeschwindigkeit";
+	COUPLE_INTEGRATOR "Integrator";
+		COUPLE_INTEGRATOR_EULER1ST "Erster Ordnung - Geringe Pr\u00E4zision";
+		COUPLE_INTEGRATOR_RUNGA2ND "Zweiter Ornung - Mittlere Pr\u00E4zision";
+		COUPLE_INTEGRATOR_RUNGA3RD "Dritter Ordnung - Sehr hohe Pr\u00E4zision";
+		COUPLE_INTEGRATOR_RUNGA4TH "Vierter Ordnung - Beste Pr\u00E4zision";
+	COUPLE_DRAG "Flie\u00dfwiderstand";
+	COUPLE_BUOYANCY "Auftrieb";
+	COUPLE_BLEND "Mit Original mischen";
+}

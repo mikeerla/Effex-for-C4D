@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_plugins.html">Plugins</a></div>
+<div class="content">
+<h3>FXForceData</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXForceData</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> Precompute (<span style="color:rgb(0,120,120);">FXServer</span>* server)</A></h4><div class="selected"><p><br>
+Overloaded to precompute or allocate any data required when the force is sampled.
+<br></br>
+<b>Returns</b><br>
+false if there was an error. If so, the node is set as not-operational (for example if a
+port is not filled although it is necessary for your plugin to correctly operate).
+<br></br>
+<b>Parameters</b><BR>
+<i>FXServer* server</i>:<br>
+The server this node is called from. Use it to retrieve any information you may need..
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> PrecomputeMP (<span style="color:rgb(0,120,120);">FXServer</span>* server)</A></h4><div class="selected"><p><br>
+Overloaded to precompute or allocate any data required when the force is sampled in a multiprocessor context.
+<br></br>
+<b>Returns</b><br>
+false if there was an error. If so, the node is set as not-operational (for example if a
+port is not filled although it is necessary for your plugin to correctly operate).
+<br></br>
+<b>Parameters</b><BR>
+<i>FXServer* server</i>:<br>
+The server this node is called from. Use it to retrieve any information you may need..
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">void</span> Process (<span style="color:rgb(0,31,174);">void</span>* t_data)</A></h4><div class="selected"><p><br>
+Overloaded to process the main code of your force. Make sure your force supports multiprocessor execution.
+<br></br>
+<b>Parameters</b><BR>
+<i>void* t_data</i>:<br>
+You can cast this pointer to ProcessData at least:<br>
+FXAPI::ProcessData* base_data = static_cast&lt; FXAPI::ProcessData* &gt;(t_data);
+<br></br>
+Then depending on base_data->mode you can cast it to either ProcessDataGrids (mode==0) or ProcessDataParticles (mode==1).<br>
+This will contain additional information passed from the node that is calling your force.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">void</span> FreePrecompute (<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+Overloaded to free any precomputed data (in Precompute or PrecomputeMP).
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

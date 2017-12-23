@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_mop.html">Mesh Operators (MOP)</a> : <a href="fx_operators_meshcacher.html">MOP::Cacher</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+<a href="fx_operators_meshcacher_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="MESH_CACHE_MESHERS" onclick="HideNextDOM($(this));" >Implicit Mesher</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_mesh_cache_params_implict_meshers.jpg" border="0"><br></br>
+List of meshers that shall be saved or loaded.
+<br></br></p></div>
+<h4><a name="MESH_CACHE_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_duration.jpg" border="0"><br></br>
+Takes a duration node to define when the cacher should operate in time.
+<br></br></p></div>
+<h4><a name="MESH_CACHE_RENDERONLY" onclick="HideNextDOM($(this));" >Only during rendering</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_only_during_rendering.jpg" border="0"><br></br>
+Any operations are only executed during rendering (picture viewer/NET).
+<br></br></p></div>
+<h4><a name="MESH_CACHE_MODE" onclick="HideNextDOM($(this));" >Cache Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_cache_mode.jpg" border="0"><br></br>
+Define what caching mode you want to set up. Load, Save or Load and Save (which will load the cached data and overwrite it at the end of the frame).
+
+<br></br></p></div>
+<h4><a name="MESH_CACHE_PATHMODE" onclick="HideNextDOM($(this));" >Path</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_path.jpg" border="0"><br></br>
+Defines the folder mode.
+<br></br>
+<b>C4D scene file path</b><br>
+Uses the C4D scene file path. The scene must have been saved.
+<br></br>
+<b>User-Defined</b><br>
+Uses the path defined by the user. See File Path
+
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Select destiantion folder</A></h4><div class="selected"><p><br>
+<img src="../../img/operators_global_select_destination_folder.jpg" border="0"><br></br>
+Opens the folder selection dialog of your OS in order to let you choose a user defined in-/output path.
+<br></br>
+The result of your choice will be displayed in the File Path field.
+
+<br></br></p></div>
+<h4><a name="MESH_CACHE_FILEPATH" onclick="HideNextDOM($(this));" >File Path</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_file_path.jpg" border="0"><br></br>
+The current user-defined in-/output path. You can manually change the path here or use Select destination folder...
+<br></br></p></div>
+<h4><a name="MESH_CACHE_FILENAME" onclick="HideNextDOM($(this));" >File Name</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_file_name.jpg" border="0"><br></br>
+The file name of the in-/output files WITHOUT the file type extension (suffix) and without any frame numbers.<br>
+Effex requires a special naming convention of the file sequences to be loaded correctly:<br>
+</b><br>
+<span style="color:rgb(145,0,0);"><i>[File Name][Frame Number encoded in 5 digits].[SUFFIX]</i></span><br>
+</b>
+<br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+The frame number encoding length is defined by the <a href="#MESH_CACHE_PADDING">Padding</a>
+</div><br>
+No dots may be used in the file sequence names. Only the file suffix should have a dot in front of it.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+For example using "my_Mesher_Name_" (in Frame 123) results in: <b>my_Mesher_Name_00123.mcache</b>
+</div>
+<br></br></p></div>
+<h4><a name="MESH_CACHE_SAVE_FORMAT" onclick="HideNextDOM($(this));" >Fily Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_mesh_cache_params_file_type.jpg" border="0"><br></br>
+Choose a file type for caching the mesh. Currently only the Effex file format is available.
+
+<br></br></p></div>
+<h4><a name="MESH_CACHE_SEQUENCEINFO" onclick="HideNextDOM($(this));" >Cache Sequence</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_cache_sequence.jpg" border="0"><br></br>
+Provides information about the cache file sequence on disk and about its content if available.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Delete Sequence</A></h4><div class="selected"><p><br>
+<img src="../../img/operators_global_delete_sequence.jpg" border="0"><br></br>
+Deletes the files of the sequence (given by the file path and file name) on your hard disk.
+<br></br></p></div>
+<h4><a name="MESH_CACHE_PADDING" onclick="HideNextDOM($(this));" >Padding</A></h4><div class="selected"><p><br></br>
+<img src="../../img/meshcacher_params_padding.jpg" border="0"><br></br>
+Define the padding style added to each cache file name.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Load</span>
+</div>
+<div class="subdata selected">
+<h4><a name="MESH_CACHE_LOAD_FRAME_REVERSE" onclick="HideNextDOM($(this));" >Reverse loading order</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_reverse_loading_order.jpg" border="0"><br></br>
+This will reverse the loading order of cached frames.<br>
+Instead of loading the first frame first, it will load the last frame first.
+<br></br></p></div>
+<h4><a name="MESH_CACHE_LOAD_FRAME" onclick="HideNextDOM($(this));" >Frame to load</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_mesh_cache_params_frame_to_load.jpg" border="0"><br></br>
+Controls the frame which should be loaded. 
+<br></br>
+If this setting is at -1, it will automatically detect the correct frame based on the current C4D frame.
+So it sequentially loads the caches. Any other value >= 0 will directly load the corresponding cache frame (so if set to 21 it will load cache frame 00021).
+<br></br></p></div>
+<h4><a name="MESH_CACHE_LOAD_OFFSET" onclick="HideNextDOM($(this));" >Frame Offset</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_mesh_cache_params_frame_offset.jpg" border="0"><br></br>
+Adds an offset to the cache frame number to be loaded. 
+<br></br>
+An offset of -10 for example will let the loading only start at frame 10 (loading cache frame 0).<br> 
+An offset of +10 will load cache frame 10 at frame 0.
+
+<br></br></p></div>
+<h4><a name="MESH_CACHEFILE_INFO" onclick="HideNextDOM($(this));" >Cache Info</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_mesh_cache_params_cache_info.jpg" border="0"><br></br>
+Displays information about the cache content
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Save</span>
+</div>
+<div class="subdata selected">
+<h4><a name="MESH_CACHE_SAVE_COMPRESS" onclick="HideNextDOM($(this));" >Compress if possible</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_mesh_cache_params_compress_if_possible.jpg" border="0"><br></br>
+This will activate compression of data during cache saving.<br> 
+This will reduce the file sizes tremendously, however writing & loading
+will be slower (writing is already quite a slow operation in the pipeline...depending on your hard drive).
+
+<br></br></p></div>
+<h4><a name="MESH_CACHE_SAVE_FRAME" onclick="HideNextDOM($(this));" >Cache file frame number uses..</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_mesh_cache_params_cache_file_frame.jpg" border="0"><br></br>
+Controls which frame number to encode into the file name of the cache files.
+<br></br>
+<b>Simulation Frame</b><br>
+The simulation frame is used. This is the default setting. The first simulation frame will always be 00000.
+<br></br>
+<b>C4D Frame</b><br>
+The C4D frame is used. The first C4D frame does not necessarily have to be frame 0. If your document timeline range 
+starts with 61234, then the first cache frame will be named cacheFileName61234.cache.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

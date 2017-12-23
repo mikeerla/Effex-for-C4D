@@ -1,0 +1,9 @@
+STRINGTABLE fx_mop_vertexnormals
+{
+	fx_mop_vertexnormals "MOP::Punktnormalen";
+
+	FX_MOP_VNORMALS_MESH "Mesh";
+	FX_MOP_VNORMALS_MESH_SELECTOR "C";
+	FX_MOP_VNORMALS_DURATION "Dauer";
+	FX_MOP_VNORMALS_DURATION_SELECTOR "C";
+}

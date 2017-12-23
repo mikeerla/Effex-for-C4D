@@ -1,0 +1,74 @@
+STRINGTABLE fx_foamspraybubbles
+{
+	fx_foamspraybubbles	"Schaum, Spritzpartikel & Blasen";
+
+	FOAM_SID			"Schaum";
+	SPRAY_SID			"Spritzpartikel";
+	UNIFIED_SID			"Einheitlich";
+
+	FSB_GROUP			"Wasser Partikelgruppe";
+	FSB_GROUP_SELECTOR		"C";
+	FSB_FOAM_TARGET			"Spritzwasser Partikelgruppe";
+	FSB_FOAM_TARGET_SELECTOR	"C";
+	FSB_SPRAY_TARGET		"Spritzwasser Partikelgruppe";
+	FSB_SPRAY_TARGET_SELECTOR	"C";
+	FSB_DYNAMICS			"Dynamics";
+	FSB_DYNAMICS_SELECTOR		"C";
+	FSB_MESHER			"Mesher";
+	FSB_MESHER_SELECTOR		"C";
+	FSB_RECONSTRUCTOR		"Oberfl\u00E4chenrekonstruktion";
+	FSB_RECONSTRUCTOR_SELECTOR	"C";
+	FSB_GROUP_TARGET		"Schaum Partikelgruppe";
+	FSB_GROUP_TARGET_SELECTOR	"C";
+
+	FSB_VOXELSCALE			"Voxelskalierung";
+	FSB_DENSITY			"Sample Dichte";
+	FSB_SMOOTHING			"Kr\u00FCmmungsgl\u00E4ttung";
+	FSB_MODE			"Modus";
+	FSB_MODE_GEOMETRY		"Geometrie";
+	FSB_MODE_PARTICLES		"Partikel";
+
+	FOAM_ON				"Erzeuge Schaumpartikel";
+	FOAM_OUTTOSPRAY			"Konvertiere zu Spritzwassser in der Luft";
+	FOAM_CLAMPTOFLUIDSIM		"Auf dynamischen Rand beschr\u00E4nken";
+	FOAM_CURVATURE			"Schwellenwert Kr\u00FCmmung (0 = flache Bereiche)";
+	FOAM_OFFSET			"Versatz zur Oberfl\u00E4che [voxel]";
+	FOAM_VELOCITY			"Schwellenwert Geschwindigkeit [voxel]";
+	FOAM_VELOCITYRND		"Zuf\u00E4lligkeit";
+	FOAM_VORTICITY			"Schwellenwert Verwirbelung [voxel]";
+	FOAM_VORTICITYRND		"Zuf\u00E4lligkeit";
+	FOAM_AGE			"Max. Lebensdauer";
+	FOAM_AGERND			"Zuf\u00E4lligkeit";
+
+	SPRAY_ON			"Erzeuge Spritzwasser";
+	BUBBLES_ON			"Erzeuge Wasserbl\u00E4schen";
+	SPRAY_OUTTOFOAM			"Konvertiere zu Schaum auf Wasser";
+	SPRAY_CLAMPTOFLUIDSIM		"Auf dynamischen Rand beschr\u00E4nken";
+	SPRAY_MASS			"Ma\u00df";
+	SPRAY_DRAG			"Luftreibung";
+	SPRAY_CURVATURE			"Schwellenwert Kr\u00FCmmung (0 = flache Bereiche)";
+	SPRAY_VELOCITY			"Schwellenwert Geschwindigkeit [voxel]";
+	SPRAY_VELOCITYRND		"Zuf\u00E4lligkeit";
+	SPRAY_VORTICITY			"Schwellenwert Verwirbelung [voxel]";
+	SPRAY_VORTICITYRND		"Zuf\u00E4lligkeit";
+	SPRAY_AGE			"Lebesdauer [Sekunden]";
+	SPRAY_AGERND			"Zuf\u00E4lligkeit";
+	SPRAY_SPEED			"Geschwindigkeit [Multiplikator]";
+	SPRAY_SPEEDRND			"Zuf\u00E4lligkeit";
+	SPRAY_SPEEDNORMAL		"Geschwindigkeit Normale[Multiplikator]";
+	SPRAY_SPEEDNORMALRND		"Zuf\u00E4lligkeit";
+	SPRAY_SPEEDANGLE		"Max. Winkel";
+	SPRAY_SPEEDANGLERND		"Zuf\u00E4lligkeit";
+	SPRAY_KEEPLENGTH		"L\u00E4nge beibehalten";
+
+	FSB_WAVECREST_SAMPLES		"Wellenkammsamples";
+	FSB_WAVECREST_MIN		"Wellenkamm minimum";
+	FSB_WAVECREST_MAX		"Wellenkamm maximum";
+	FSB_TRAPPEDAIR_SAMPLES		"Eingeschlossene Luft Samples";
+	FSB_TRAPPEDAIR_MIN		"Eingeschlossene Luft minimum";
+	FSB_TRAPPEDAIR_MAX		"Eingeschlossene Luft maximum";
+	FSB_ENERGY_MIN			"Kinetische Energie minimum";
+	FSB_ENERGY_MAX			"Kinetische Energie maximum";
+
+	FSB_DUMMY_ "";
+}

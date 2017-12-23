@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_cop.html">Cell Operators (COP)</a> : <a href="fx_cellop_math.html">COP::Math</a></div>
+<div class="content">
+<h3>Params</h3>
+</div>
+<div class="tabs">
+<span>Params</span>
+</div>
+<div class="content">
+<div class="subtab">Params</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="CHANNELOP_MATH_CHANNEL" onclick="HideNextDOM($(this));" >Source Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_celloperator_math_parms_source_channel.jpg" border="0"><br></br>
+The source channel to use as first variable in the mathematical operations. This channel is optional.<br>
+If no source channel is linked, the Value setting is used instead.
+<br></br></p></div>
+<h4><a name="CHANNELOP_MATH_OPERATION" onclick="HideNextDOM($(this));" >Operation</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_celloperator_math_parms_operation.jpg" border="0"><br></br>
+The mathematical operation to use on the two channels. These are simple and common mathematical operations so we assume you have heard of them.
+<br></br>
+<b>Add</b> - adds the values of the source channel to the target channel<br>
+<b>Substract</b> - substracts the values of the source channel from the target channel<br>
+<b>Multiply</b> - multiplies the values of the source channel with the target channel<br>
+<b>Dot Product</b> - calculates the scalar (dot) product of two vector channels<br>
+<b>Min</b> - compares source and target channel and writes the minimum value into the target channel<br>
+<b>Max</b> - compares source and target channel and writes the maximum value into the target channel<br>
+<b>Blend</b> - Blends source channel into the target channel<br>
+<br></br></p></div>
+<h4><a name="CHANNELOP_MATH_VALUE_SCALAR" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_celloperator_math_parms_value.jpg" border="0"><br></br>
+The value for the math operations if no source channel is specified.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

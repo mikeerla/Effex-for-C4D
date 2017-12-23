@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_global.html">Global</a></div>
+<div class="content">
+<h3>ProcessDataGrids</h3>
+</div>
+<div class="content">
+<div class="subtab">ProcessDataGrids</div>
+<div class="data">
+<p>
+<br><img src="../../img/api/processdatagrids.jpg" border="0"">
+<hr line>
+This struct contains additional information for operations on grid based nodes (channels, volumes..).
+<br>Usually it is filled by Effex and passed to the processing functions of custom plugin nodes.
+<br></br>
+The values should never be altered if not explicitly stated.
+<br></br>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">VecInt3D</span> start </A></h4><div class="selected"><p><br>
+The starting cell coordinate in a multiprocessor context.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">VecInt3D</span> end </A></h4><div class="selected"><p><br>
+The ending cell coordinate in a multiprocessor context.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">VecInt3D</span> xyz </A></h4><div class="selected"><p><br>
+The currently processed cell coordinate.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">unsigned</span> long center_index </A></h4><div class="selected"><p><br>
+The cell coordinate given as an array index. Only used for collocated grids.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(74,100,127);">std</span>::<span style="color:rgb(0,120,120);">vector</span>&lt; long &gt; indices </A></h4><div class="selected"><p><br>
+A container of cell indices used for staggered grids. Can be empty!
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span> frac_c </A></h4><div class="selected"><p><br>
+A volume center fraction telling you how much an obstacle is overlapping the current collocated cell.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span> frac_u </A></h4><div class="selected"><p><br>
+A volume fraction telling you how much of an obstacle is overlapping the current staggered cell along the x-direction.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span> frac_v </A></h4><div class="selected"><p><br>
+A volume fraction telling you how much of an obstacle is overlapping the current staggered cell along the y-direction.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span> frac_w </A></h4><div class="selected"><p><br>
+A volume fraction telling you how much of an obstacle is overlapping the current staggered cell along the z-direction.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span> <span style="color:rgb(0,31,174);">const</span> </A></h4><div class="selected"><p><br>
+If the operating node that has filled this struct uses constraints, then this value gives you the final constraint value.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> physical_position </A></h4><div class="selected"><p><br>
+The currently processed position in physical space.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> world_position </A></h4><div class="selected"><p><br>
+The currently processed position in world space.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> op_result </A></h4><div class="selected"><p><br>
+A result variable that can be changed. Currently only used by custom force plugins.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

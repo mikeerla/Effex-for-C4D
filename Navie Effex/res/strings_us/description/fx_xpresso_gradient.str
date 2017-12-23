@@ -1,0 +1,10 @@
+STRINGTABLE fx_xpresso_gradient
+{
+	fx_xpresso_gradient "Gradient";
+
+	XGRAD_SAMPLEPOS	"Sample Position";
+	XGRAD_GRADIENT	"Gradient";
+	XGRAD_COLOR	"Color";
+
+	XGRAD_DUMMY	"";
+}

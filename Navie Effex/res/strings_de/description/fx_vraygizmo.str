@@ -1,0 +1,6 @@
+STRINGTABLE fx_vraygizmo
+{
+	fx_vraygizmo "VRay Gizmo";
+
+	DPIT_VRAYGIZMO_FSS "Kanal";
+}

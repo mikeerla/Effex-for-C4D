@@ -1,0 +1,29 @@
+STRINGTABLE fx_mesher
+{
+	fx_mesher	"Implicit Mesher";
+
+	ID_MESHER_DISPLAY "Ansicht";
+
+	MESHER_RENDERONLY "Nur im Bildmanager ausführen";
+	MESHER_VOLUME "Volumen";
+	MESHER_TYPE "Algorithmus";
+		MESHER_TYPE_CUBES "Marching Cubes";
+		MESHER_TYPE_TETRA "Marching Tets";
+		MESHER_TYPE_TILES "Marching Tiles";
+	MESHER_VOXELSIZE "Voxelgr\u00F6\u00dfe (im Editor)";
+	MESHER_VOXELSIZE_RENDER "Voxelgr\u00F6\u00dfe (im Rendering)";
+	MESHER_ISOSURFACE "Isooberfl\u00E4che bei Wert.. [Voxelgr\u00F6\u00dfe]";
+	MESHER_CALCNORMALS "Normalen berechnen";
+	MESHER_OPTIMIZE "Optimieren";
+	MESHER_ADVECTION "Zeitschritt [sek]";
+	MESHER_SOLVER "Dynamics (Mesh Advektion)";
+	MESHER_VOLUME_SELECTOR "C";
+	MESHER_SOLVER_SELECTOR "C";
+	MESHER_INTERPOLATION "Interpolation";
+		MESHER_INTERPOLATION_LINEAR "Linear";
+		MESHER_INTERPOLATION_COSINE "Kosinus";
+		MESHER_INTERPOLATION_CUBIC "Kubisch";
+		MESHER_INTERPOLATION_HERMITE "Hermite Kubisch";
+		MESHER_INTERPOLATION_QUADRATIC "Quadratisch";
+	MESHER_DISPLAY_PROPERTY "Partikeleigenschaft";
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_vop.html">Volume Operators (VOP)</a></div>
+<div class="content">
+<h3>VOP::Smoother</h3>
+</div>
+<div class="tabs">
+<a href="fx_levelsetsmoother_params.html">Parameters</a>
+</div>
+<div class="content">
+<div class="subtab">VOP::Smoother</div>
+<div class="data">
+<p>
+The levelset smoother allows to smooth any Effex volume (volume, csg, surface reconstructor).
+This is especially useful to smooth liquid volumes generated from particles (which the surface reconstructor does).
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+The algorithm uses a levelset/sdf (so it is grid based) to smooth the surface and tries to preserve details.<br>
+What does it do? It consists of <b>3 main steps</b>: 
+<br></br>
+- pushing the volume surface outward (Laplacian smoothing)<br>
+- pushing it inward. (Biharmonic smoothing)<br>
+- Inbetween it recalculates the volume distances (redistancing) trying to keep details
+<br></br>
+The pushing and pulling happens by using two different particle radii.
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+STRINGTABLE fx_group
+{
+	fx_group "Node Group";
+
+	FX_GROUP_SHOW "Reveal Nodes";
+	FX_GROUP_ICON			"Icon";
+	FX_GROUP_ICON_DEFAULT		"Default";
+	FX_GROUP_PORTTAB		"Gather Ports";
+	FX_GROUP_RESET			"Reset";
+	FX_GROUP_SAVE			"Create Preset..";
+	FX_GROUP_USEGROUP		"Process Node Groups";
+	FX_GROUP_HIDEQUICKTAB		"Hide Quicktab";
+	FX_GROUP_LOCK			"Lock";
+	FX_GROUP_UNLOCK			"Unlock";
+	FX_GROUP_LOCKLIST		"Lock list";
+}

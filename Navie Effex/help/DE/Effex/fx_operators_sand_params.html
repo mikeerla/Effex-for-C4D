@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_gop.html">Grid Operators (GOP)</a> : <a href="fx_operators_sand.html">GOP::Sand</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="FXGRID_SAND_SOLVER" onclick="HideNextDOM($(this));" >Liquid Dynamics [R]</A></h4><div class="selected"><p><br></br>
+Drop here the liquid dynamics to turn into sand dynamics.
+<br></br></p></div>
+<h4><a name="FXGRID_SAND_DENSITY" onclick="HideNextDOM($(this));" >Density Channel [O]</A></h4><div class="selected"><p><br></br>
+Drop here a scalar channel that contains variable densities. This is totally optional.
+<br>For example if you use the densities in the liquid dynamics node you can drop it here so the sand calculations can take them into account as well.
+
+<br></br></p></div>
+<h4><a name="FXGRID_SAND_FRICTION" onclick="HideNextDOM($(this));" >Friction</A></h4><div class="selected"><p><br></br>
+The amount of internal sand friction. You can set this higher than 1.0 but this is purely artistic.
+<br></br></p></div>
+<h4><a name="FXGRID_SAND_FRICTION_YIELD" onclick="HideNextDOM($(this));" >Shear stress threshold</A></h4><div class="selected"><p><br></br>
+Sand piles up so the pile's inside areas become rigid while sand at the surface may flow loosely.
+<br>This depends on the shear stress the sand exhibits, which you can set the threshold for here.
+<br></br></p></div>
+<h4><a name="FXGRID_SAND_FRICTION_WALLS" onclick="HideNextDOM($(this));" >Friction at obstacles</A></h4><div class="selected"><p><br></br>
+The amount of friction at obstacle surfaces.
+<br></br></p></div>
+<h4><a name="FXGRID_SAND_COHESION" onclick="HideNextDOM($(this));" >Cohesion</A></h4><div class="selected"><p><br></br>
+This is a safety constant and adds a bit of loose motion to sand which helps with too rigid sand areas.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

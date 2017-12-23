@@ -1,0 +1,98 @@
+// C4D-StringResource
+// Identifier	Text
+
+STRINGTABLE
+{
+	EFFEX_ABOUT				"About";
+
+	EFFEX_CACHECLEARQ			"Are you sure you want to delete these simulation caches?";
+	EFFEX_CACHERAMCLEARQ			"Are you sure you want to delete the RAM cache?";
+	EFFEX_STARTCACHE			"Start Caching";
+	EFFEX_GASSETUP				"Create Gas Setup";
+	EFFEX_LIQUIDSETUP			"Create Liquid Setup";
+	EFFEX_MESHERSETUP			"Create Fluid Mesher";
+	EFFEX_FOAMSETUP				"Create Foam & Spray Object";
+	
+	DPIT_SQR	"\u00b2";
+	DPIT_CUB	"\u00b3";
+
+	SUPPORT_DOCS		"Documentation";
+	SUPPORT_CHECKUPDATE	"Check for Updates";
+	SUPPORT_DOWNLOAD	"Download";
+	SUPPORT_BINS		"Binaries";
+	SUPPORT_RES		"Resources";
+	SUPPORT_HELP		"Documentation";
+	SUPPORT_BUGSCENE	"Select file";
+	SUPPORT_C4DREPORT	"Include C4D bug report";
+	SUPPORT_PUBLICFILE	"Public File";
+	SUPPORT_BETABUG		"As beta bugreport";
+	SUPPORT_UPLOAD		"Upload bug report";
+	SUPPORT_USERAREA	"User Area";
+	SUPPORT_BUGDB		"Bug Database";
+	SUPPORT_LOGINSAVE	"Save";
+	SUPPORT_LOGINCLOSE	"Close";
+	SUPPORT_LOGINUSER	"Username";
+	SUPPORT_LOGINPASS	"Password";
+	SUPPORT_NOUPDATE	"No Updates";
+	SUPPORT_DOWNUP_CLOSE	"Close";
+	SUPPORT_INPROGRESS	"in Progress";
+	SUPPORT_RESTART		"Please restart C4D to install";
+	SUPPORT_SEARCH		"Search:";
+
+	SUPPORT_LOGINNOTFOUND	"Login information could not be found.";
+	SUPPORT_BUGTICKET_A	"Your bug ticket number is: ";
+	SUPPORT_BUGTICKET_B	"You can trace your bug status in the bug database.";
+	SUPPORT_BUGDESCRIBE	"Please describe the bug as detailed as possible..";
+
+	SUPPORT_UPLOADERROR	"A connection error occured. Your bug report could not be uploaded. Please try again later. Thank you.";
+	SUPPORT_DOWNLOADERROR	"A connection error occured. The updates could not be downloaded. Please try again later. Thank you.";
+	SUPPORT_UPDOWN_COMPLETE	"Completed";
+	
+
+	ONLINEUPDATER_SYMBOL_LOGIN		"Enter user area login data";
+	ONLINEUPDATER_SYMBOL_USERAREA		"Go to user area..";
+	ONLINEUPDATER_SYMBOL_CHECK		"Check for updates";
+	ONLINEUPDATER_SYMBOL_INSTALL		"Download";
+	ONLINEUPDATER_SYMBOL_BETASERVER		"Beta Server";
+	ONLINEUPDATER_SYMBOL_BIN		"Binaries";
+	ONLINEUPDATER_SYMBOL_RES		"Resources";
+	ONLINEUPDATER_SYMBOL_DOC		"Documentation";
+	ONLINEUPDATER_SYMBOL_NOUPDATE		"No updates";
+	ONLINEUPDATER_SYMBOL_INSTALLRESTART	"Restart C4D and Install";
+	ONLINEUPDATER_SYMBOL_CHANGELOG		"Show change log";
+	ONLINEUPDATER_SYMBOL_CBLIB		"Content Browser Library";
+	ONLINEUPDATER_SYMBOL_HLNLIB		"High-Level Node Library";
+	
+	ONLINEUPDATER_SYMBOL_LICENSE_GROUP	"License";
+	ONLINEUPDATER_SYMBOL_LICENSE_SYNC	"Fetch license data";
+	ONLINEUPDATER_SYMBOL_LICENSE_SAVE	"Synchronize changes";
+	ONLINEUPDATER_SYMBOL_LICENSE_USER_STR	"User name";
+	ONLINEUPDATER_SYMBOL_LICENSE_VORNAME_STR "First name";
+	ONLINEUPDATER_SYMBOL_LICENSE_NACHNAME_STR "Last name";
+	ONLINEUPDATER_SYMBOL_LICENSE_EMAIL_STR	"Email";
+	ONLINEUPDATER_SYMBOL_LICENSE_PLZ_STR	"ZIP code";
+	ONLINEUPDATER_SYMBOL_LICENSE_STADT_STR	"City";
+	ONLINEUPDATER_SYMBOL_LICENSE_STRASSE_STR "Street";
+	ONLINEUPDATER_SYMBOL_LICENSE_TEL_STR	"Tel.No.";
+	ONLINEUPDATER_SYMBOL_LICENSE_DIGITS_STR	"Digits";
+	ONLINEUPDATER_SYMBOL_LICENSE_C4DVERSION_STR "C4D Version";
+	ONLINEUPDATER_SYMBOL_LICENSE_SERIAL_STR "License key";
+	ONLINEUPDATER_SYMBOL_LICENSE_SERIALS_STR "License keys";
+	ONLINEUPDATER_SYMBOL_LICENSE_TYPE_STR	"License type";
+	ONLINEUPDATER_SYMBOL_LICENSE_PASS_STR	"New Password";
+	ONLINEUPDATER_SYMBOL_LICENSE_RESPONSE_STR "Server response";
+	ONLINEUPDATER_SYMBOL_LICENSE_PASSREPEAT_STR "Repeat";
+	
+	SERVER_CACHE_WIZARDINFO_START_STR	"Please click on 'Collect all cacheable nodes' to setup your cache";
+	SERVER_CACHE_WIZARDINFO_COLLECT_STR	"This is a list of all nodes that contain data that can be loaded/saved from/to disk. Remove the ones you don't want to write to disk.";
+	SERVER_CACHE_WIZARDINFO_FILETYPE_STR	"Select a cache file type to read/write grid (channel) data and particle data from/to.";
+	SERVER_CACHE_WIZARDINFO_PATHWAY_STR	"Choose the folder location that cache files shall be written to or read from.";
+	SERVER_CACHE_WIZARDINFO_FILENAME_STR	"Give your cache files a fitting name.";
+	SERVER_CACHE_WIZARDINFO_LOADSAVE_STR	"Do you want to load or save simulation data?";
+	SERVER_CACHE_WIZARDINFO_DETAILS_STR	"Finally, give some more details if you want to. Otherwise click 'Setup Cache Nodes' which will create the necessary operators doing the caching.";
+
+	SOUNDINFO_DURATION_STR			"Duration: ";
+	SOUNDINFO_RESOLUTION_STR		"Resolution: ";
+	SOUNDINFO_SAMPLERATE_STR		"Sample rate: ";
+	SOUNDINFO_BITRATE_STR			"Bit rate (uncompressed): ";
+}

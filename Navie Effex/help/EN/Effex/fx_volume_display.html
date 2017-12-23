@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_bodies.html">Bodies</a> : <a href="fx_volumes.html">Volumes</a> : <a href="fx_volumes_bases.html">Bases</a></div>
+<div class="content">
+<h3>Display</h3>
+</div>
+<div class="tabs">
+<span>Display</span>
+</div>
+<div class="content">
+<div class="subtab">Display</div>
+<div class="data">
+<p>
+<img src="../../img/fx_volumes_base_display.jpg" border="0"">
+</p>
+</div>
+<h4><a name="BASE_VOLUME_DRAW" onclick="HideNextDOM($(this));" >On</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_on.jpg" border="0"><br></br>
+This activates or deactivates the volumes viewport display.
+<br></br></p></div>
+<h4><a name="BASE_VOLUME_DRAWMODE" onclick="HideNextDOM($(this));" >Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_mode.jpg" border="0"><br></br>
+Here you can choose between different display modes.
+<br></br>
+<b>Vertices</b>: Volume grid cells are drawn as colored vertices.<br>
+<b>Voxels</b>: Volume grid cells are directly outlined.<br>
+<b>Dot Slice</b>: Volume grid cells are displayed on a 2D slice.<br>
+</br>
+It is always good advise to check which grid cells are really covered by the volume to make
+sure the simulation indeed sees the volume (and what it sees of it) with the current voxel size.
+<br></br></p></div>
+<h4><a name="BASE_VOLUME_DRAW_BANDWIDTH" onclick="HideNextDOM($(this));" >Bandwidth</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_bandwidth.jpg" border="0"><br></br>
+Defines the width of the band of grid cells near the volume surface shown in the viewport.
+<br>A value of 1.0 is the width of a voxel.
+<br></br>
+This value is only used in Vertices or Voxels Mode.
+<br></br></p></div>
+<h4><a name="BASE_VOLUME_DRAW_PLANE" onclick="HideNextDOM($(this));" >Plane</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_plane.jpg" border="0"><br></br>
+This value is only used in 'Dot Slice' display mode and
+lets you choose the display plane for the 2D slice.
+<br></br>
+If set to 'Off' nothing is drawn (obsolete...use the On checkbox)
+<br></br></p></div>
+<h4><a name="BASE_VOLUME_DRAW_MIX" onclick="HideNextDOM($(this));" >Relative Position</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_relativeposition.jpg" border="0"><br></br>
+This value is only used in 'Dot Slice' display mode
+and defines the relative position inside the volume bounding box (grid).
+<br></br></p></div>
+<h4><a name="BASE_VOLUME_DRAW_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_color.jpg" border="0"><br></br>
+The volume display color.
+<br></br></p></div>
+<h4><a name="BASE_VOLUME_DRAW_CUTOFF" onclick="HideNextDOM($(this));" >Display range minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_displayrangemin.jpg" border="0"><br></br>
+This value is only used in 'Dot Slice' display mode
+and defines which <u>inner</u> volume cells are displayed.
+<br>While this is the distance to these cells from the surface
+given in voxels.
+<br></br></p></div>
+<h4><a name="BASE_VOLUME_DRAW_MAX" onclick="HideNextDOM($(this));" >Display range maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_displayrangemax.jpg" border="0"><br></br>
+This value is only used in 'Dot Slice' display mode
+and defines which <u>outer</u> volume cells are displayed.
+<br>While this is the distance to these cells from the surface
+given in voxels.
+<br></br></p></div>
+<h4><a name="BASE_VOLUME_DRAW_AUTOTRANSPARENCY" onclick="HideNextDOM($(this));" >Auto Transparency</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_display_autotransparency.jpg" border="0"><br></br>
+This value is only used in 'Dot Slice' display mode.<br>
+Automatically display the voxels transparently
+based on their distance to the surface.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

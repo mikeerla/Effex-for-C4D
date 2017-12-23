@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_channel.html">Channels</a> : <a href="fx_channel_bases.html">Bases</a></div>
+<div class="content">
+<h3>Display</h3>
+</div>
+<div class="tabs">
+<a href="fx_channel_bases_quicktab.html">Quicktab</a>
+<a href="fx_channel_bases_params.html">Parameters</a>
+<span>Display</span>
+</div>
+<div class="content">
+<div class="subtab">Display</div>
+<div class="data">
+<p>
+<img src="../../img/fx_channel_base_display.jpg" border="0"">
+</p>
+</div>
+<h4><a name="GRIDCHANNEL_DRAWBOUNDS" onclick="HideNextDOM($(this));" >Draw Bounds</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channel_global_display_draw_bounds.jpg" border="0"><br></br>
+Turn <b>ON/OFF</b> the editor display of the channel's adaptive bounds.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_DISPLAY_TYPE" onclick="HideNextDOM($(this));" >Display type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channels_display_displaytype.jpg" border="0"><br></br>
+Either draws each grid cell as a volumetric preview of the data or as a slice of colored dots
+with their color adapted to the data the channel grid holds.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Example</b><br>
+A smoke (scalar) channel will contain grid cell values between 0 (no smoke) and 1.0 (full of smoke)
+and a dot with 1.0 smoke density will be displayed as a white dot while an empty cell will be shown as a black dot.
+</div>
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_DISPLAY_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channels_display_color.jpg" border="0"><br></br>
+The color of the displayed dots. Only used in Dot Display mode.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_DISPLAY_CUTOFF" onclick="HideNextDOM($(this));" >Display range minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channels_display_displayrangemin.jpg" border="0"><br></br>
+This value is only used in 'Dot Slice' display mode
+and defines the minimum value of cells that are displayed.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_DISPLAY_MEDIUM_HIGHSUB" onclick="HideNextDOM($(this));" >Adaptive Subdivisions High</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channels_display_ashigh.jpg" border="0"><br></br>
+During playback the display resolution of the channel can be different. This is advantageous especially
+when loading caches in the editor and speeding up display drawing of the data.
+<br></br>
+This defines the resolution that is used when there is no playback, which should be the higher resolution (hence the naming).
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_DISPLAY_MEDIUM_LOWSUB" onclick="HideNextDOM($(this));" >Adaptive Subdivisions Low</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channels_display_aslow.jpg" border="0"><br></br>
+During playback the display resolution of the channel can be different. This is advantageous especially
+when loading caches in the editor and speeding up display drawing of the data.
+<br></br>
+This defines the resolution that is used when there is playback taking place, which should be the lower resolution (hence the naming).
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_DISPLAY_MEDIUM_ALBEDO" onclick="HideNextDOM($(this));" >Luminance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channels_display_luminance.jpg" border="0"><br></br>
+This is only used in Volumetric display mode and controls the luminance of the display.
+<br></br></p></div>
+<h4><a name="GRIDCHANNEL_DISPLAY_MEDIUM_ABSORPTION" onclick="HideNextDOM($(this));" >Absorbtion</A></h4><div class="selected"><p><br></br>
+<img src="../../img/channels_display_absorbtion.jpg" border="0"><br></br>
+This is only used in Volumetric display mode and controls the absorption of the display.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

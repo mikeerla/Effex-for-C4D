@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_tags.html">Tags</a> : <a href="fx_obstacle.html">Obstacle</a></div>
+<div class="content">
+<h3>Collision</h3>
+</div>
+<div class="tabs">
+<a href="fx_obstacle_tag.html">Tag</a>
+<a href="fx_obstacle_dynamics.html">Dynamics</a>
+<span>Collision</span>
+<a href="fx_obstacle_dynamiccollion.html">Dynamic Coupling</a>
+<a href="fx_obstacle_ramcache.html">RAM Cache</a>
+</div>
+<div class="content">
+<div class="subtab">Collision</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="FXOBSTACLE_GHOST" onclick="HideNextDOM($(this));" >No Collision Response</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_nocollresponse.jpg" border="0"><br></br>
+Don't calculate collision responses with other rigid-bodies.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_MARGIN" onclick="HideNextDOM($(this));" >Margin [m]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_margin.jpg" border="0"><br></br>
+A little collision offset from obstacle surfaces.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_BOUNCE" onclick="HideNextDOM($(this));" >Bounce</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_bounce.jpg" border="0"><br></br>
+Bounce of the rigid body when colliding with another rigid body. Higher values means more bounce.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_FRICTION" onclick="HideNextDOM($(this));" >Translational Friction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_translationalfriction.jpg" border="0"><br></br>
+Friction of the rigid body movement on obstacle surfaces during collision. Higher values mean more drag.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_FRICTION_ANGULAR" onclick="HideNextDOM($(this));" >Rotational Friction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_rotationalfriction.jpg" border="0"><br></br>
+Friction of rigid body rotations on obstacle surfaces during collision. Higher values mean more drag.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_SAMPLE_MODE" onclick="HideNextDOM($(this));" >Contact Sampling</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_contactsampling.jpg" border="0"><br></br>
+Any rigid-body collisions can be stored for later use by other nodes. This defines when these collision contact samples are stored.
+<br>
+<br>
+1. First Contact only - Only the first contact is stored. If the node keeps on sliding these collisions won't be stored.<br>
+2. All contacts - all collisions are stored. This can be slower.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Collision::</span>Constraints</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FXOBSTACLE_COLLISION_CONSTRAINTS_BOUNCE" onclick="HideNextDOM($(this));" >Bounce</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_constraints_bounce.jpg" border="0"><br></br>
+These constraints control the Bounce value.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_CONSTRAINTS_FRICTION" onclick="HideNextDOM($(this));" >Tanslational Friction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_constraints_translationalfriction.jpg" border="0"><br></br>
+These constraints control the Translational Friction  value.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_CONSTRAINTS_FRICTION_ANGULAR" onclick="HideNextDOM($(this));" >Rotational Friction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_collision_constraints_rotationalfriction.jpg" border="0"><br></br>
+These constraints control the Rotational Friction  value.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

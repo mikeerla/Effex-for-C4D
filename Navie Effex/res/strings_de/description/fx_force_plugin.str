@@ -1,0 +1,7 @@
+STRINGTABLE fx_force_plugin
+{
+	fx_force_plugin "Force::Plugin";
+	
+	FORCEPLUGIN_DURATION "Dauer";
+	FORCEPLUGIN_DURATION_SELECTOR "C";
+}

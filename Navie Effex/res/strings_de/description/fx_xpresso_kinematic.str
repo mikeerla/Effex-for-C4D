@@ -1,0 +1,19 @@
+STRINGTABLE fx_xpresso_kinematic
+{
+	fx_xpresso_kinematic "Ballistische Advektion (Transport)";
+
+	XADVECTION_KINEMATIC_TIMESCALE "Zeitliche Skalierung";
+	XADVECTION_KINEMATIC_INTEGRATOR "Integrator";
+		XADVECTION_KINEMATIC_INTEGRATOR_EULER "Euler-Croma";
+		XADVECTION_KINEMATIC_INTEGRATOR_VERLET "Verlet";
+
+	XADVECTION_KINEMATIC_INPOS "Aktuelle C4D Position";
+	XADVECTION_KINEMATIC_INPOSOLD "[Verlet] Alte C4D Position";
+	XADVECTION_KINEMATIC_OUTPOS "Neue C4D Position";
+	XADVECTION_KINEMATIC_GRAVITY "Gravitation [m/s²]";
+	XADVECTION_KINEMATIC_EXTERNAL "Externe Kraft";
+	XADVECTION_KINEMATIC_INVELOCITY "[Euler] Aktuelle Geschwindigkeit";
+	XADVECTION_KINEMATIC_OUTVELOCITY "[Euler] Neue Geschwindigkeit";
+
+	XADVECTION_KINEMATIC_DUMMY	"";
+}

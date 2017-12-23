@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_bodies.html">Bodies</a> : <a href="fx_surfaces.html">Surfaces</a> : <a href="fx_mesh.html">Mesh</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<a href="fx_mesh_quicktab.html">Quicktab</a>
+<span>Parameters</span>
+<a href="fx_mesh_display.html">Display</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_mesh_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FXMESH_MESH" onclick="HideNextDOM($(this));" >Source mesh</A></h4><div class="selected"><p><br></br>
+Drop here the Cinema 4D mesh to inport and convert into an Effex framework mesh.
+<br></br></p></div>
+<h4><a name="FXMESH_MESHMOTION" onclick="HideNextDOM($(this));" >Calculate vertex velocities</A></h4><div class="selected"><p><br></br>
+Deformed meshes (like animated characters for example) that are also used as source for a Volume obstacle have different vertex motions.<br>
+In order to let these deformations affect a fluid simulation correctly, you need to activate this option.<br><br>
+
+The vertex velocities are stored into the Effex mesh vertex property 'Velocity'.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

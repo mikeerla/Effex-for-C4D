@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_server.html">Effex Scene</a></div>
+<div class="content">
+<h3>Framework</h3>
+</div>
+<div class="tabs">
+<span>Framework</span>
+<a href="fx_server_global.html">Global</a>
+<a href="fx_server_bulletdynamics.html">Bullet Dynamics</a>
+<a href="fx_server_cachewizard.html">Cache Wizard</a>
+</div>
+<div class="content">
+<div class="subtab">Framework</div>
+<div class="data">
+<p>
+<img src="../../img/fx_server_framework.jpg" border="0"">
+</p>
+</div>
+<h4><a name="SERVER_WORLD_SCALE" onclick="HideNextDOM($(this));" >Scale: C4D units.. / ..equals Effex units [m]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_scale_c4d_units.jpg" border="0""><img src="../../img/effex_scene_framework_equals_effex_units.jpg" border="0"">
+<br><br>The Effex scene has an own unit system to ensure physically correct time and space integration of any components in the framework.
+The units (SI-Units) used in the simulation are always given in meters. 
+<br></br>
+<i><b>Example</b></i><br> 
+Imagine you have a cube inside of Cinema 4D that is 100cm in size. But in the simulation (representing the real physical world) you want this cube to represent a size of 1cm. Your settings therefore would be [100] and [0.01]. 
+<img src="../../img/effex_scene_scale.jpg" border="0"">
+<br></br></p></div>
+<h4><a name="SERVER_PHYSICAL_SCALE" onclick="HideNextDOM($(this));" >...</A></h4><div class="selected"><p><br></br>
+<a href="#SERVER_WORLD_SCALE">Click me for info</a>
+<br></br></p></div>
+<h4><a name="SERVER_PHYSICAL_VOXELSIZE" onclick="HideNextDOM($(this));" >Global Voxel Size [m]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/voxel_size.jpg" border="0"><br></br>
+Imagine a 3D grid. A grid is partitioned into small grid cells. A Grid cell is also called Volume-Pixel aka Voxel (it's the 3D version of a pixel! Which is just a simple cube)
+and the size of each voxel is defined with this setting. This setting is only applied in the Cinema 4D editor.
+<br></br>
+The voxel size is THE fundamental setting that affects the quality, resolution and performance of the whole framework and any
+objects that work with a grid (for example fluid dynamics, volumes, surface reconstructor, emitters..).
+<br></br>
+Lower values give a higher resolution (more voxels fit into a grid, so more details are possible)
+but also take more memory and take longer to calculate. This is a quality speed trade-off.
+<br></br>
+Keep in mind, changing this setting will re-initialise the whole simulation framework.
+<br></br></p></div>
+<h4><a name="SERVER_PHYSICAL_VOXELSIZE_RENDER" onclick="HideNextDOM($(this));" >Global Render Voxel Size [m]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_global_render_voxel_size.jpg" border="0"><br></br>
+This defines the voxel size of the framework during rendering (either to the picture viewer or via NET).
+<br></br>
+See <a href="#SERVER_PHYSICAL_VOXELSIZE">Global Voxel Size</a> for details.
+<br></br></p></div>
+<h4><a name="SERVER_GRAVITY" onclick="HideNextDOM($(this));" >Gravity [m/s&sup2;]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_gravity.jpg" border="0"><br></br>
+This defines a global gravity acceleration constant. Objects in the framework can (but must not) use this.
+The liquid/viscous dynamics or the spray particles for example by default use this setting. For better local control
+you can set this to 0,0,0.
+<br></br></p></div>
+<h4><a name="SERVER_GLOBALSEED" onclick="HideNextDOM($(this));" >Global Seed</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_global_seed.jpg" border="0"><br></br>
+This is a global seed value for any random settings inside of the framework. Objects can have a local seed value in their
+settings (Attribute Manager) as well.
+<br></br></p></div>
+<h4><a name="SERVER_TIMESTEP_MODE" onclick="HideNextDOM($(this));" >Time stepping (length)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_time_stepping.jpg" border="0"><br></br>
+Stepping simply means going from one frame to the other (stepping through time in intervals), just as Cinema 4D steps through the timeline frame by frame.
+However, in a dynamic framework the stepping can (and sometimes must) be different to a full frame. It can contain
+substeps (fractions of a frame). The length of each of these substeps can be arbitrary (but they will always sum up to a full frame).
+</b><br>
+This defines how the time stepping is done in the framework. There are different modes:
+<br></br>
+<b>Adaptive CFL</b><br>
+The Courant-Friedrich-Lewy condition makes sure that certain algorithms remain stable but also accuracy is linked to stepping.
+Roughly spoken, the CFL condition verifies that grid data does not move further than the size of 1 voxel within a single time step.
+It will adaptively change the length of substeps to meet this criteria. This may result in more or less substeps taken in a single C4D frame.
+This is the prefered method for any simulations. 
+<br></br>
+See <a href="#SERVER_MINSUBSTEPS">Minimum Substeps</a>  and <a href="#SERVER_SUBSTEPS">Maximum Substeps</a>.
+
+<br></br>
+<b>C4D Frame Length</b><br>
+This mode will make the length of a time step to be the length of a C4D frame (same as CFL). but the substepping is not
+adaptive instead the user directly controls the amount of substeps. The length of the taken substeps are therefore always uniform.
+
+<br></br>
+<b>User-Defined</b><br>
+The user defines the length of the time step explicitly in seconds per frame (see <a href="fx_server_framework.html">Explicit Timestep</a>). The length of taken substeps are always uniform.
+
+<br></br></p></div>
+<h4><a name="SERVER_CFLSENSITIVITY" onclick="HideNextDOM($(this));" >CFL sensitivity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_gfl_sensitivity.jpg" border="0"><br></br>
+<i>(only available if Time Stepping::Adaptive (CFL))</i>
+<br></br>
+Roughly spoken, the CFL condition verifies that grid data does not move further than the size of 1 voxel within a single time step.
+<br></br>
+With this setting you can change the allowed length of grid data motion before the CFL mode starts to adaptively subdivide the time step length.
+A value of 2.0 allows movements of the length of 2.0 voxels within a single step etc.
+<br></br>
+This can reduce the amount of substeps taken and therefore improve performance time.
+<br></br>
+However, if you allow your data to move for example 3 voxels per time step, it could easily happen that obstacle volumes that are only 2 voxels thick are missed 
+(and the liquid simply goes through it).
+To compensate this you may either increase the obstacle's volume thickness or decrease the CFL sensitivity.
+<br></br></p></div>
+<h4><a name="SERVER_SECOND" onclick="HideNextDOM($(this));" >Timing</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_timing.jpg" border="0"><br></br>
+If you want to slow down or speed up the simulation, you can use this slider. It is a convenience slider, that will affect all objects in the framework.
+This allows bullet time effects, especially nice for slow-motion shots. A timing of 0% will completely stop the simulation.
+<br></br></p></div>
+<h4><a name="SERVER_TIMESTEP" onclick="HideNextDOM($(this));" >Explicit Timestep [sec/frame]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_explicit_timestep.jpg" border="0"><br></br>
+<i>(only available if Time Stepping::User-Defined)</i>
+<br></br>
+If your C4D scene runs at 25 Fps, the length of a C4D frame is normally 1/25 = 0.04 seconds. To double the length (and therefore double the simulation speed!)
+you would set this value to 0.8. If you set it to 1.0, it will calculate a full second within 1 C4D frame.
+
+<br></br></p></div>
+<h4><a name="SERVER_MINSUBSTEPS" onclick="HideNextDOM($(this));" >Minimum Substeps</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_minimum_maximum_substeps.jpg" border="0"><br></br>
+Defines the minimum amount of substeps the time stepping uses.
+<br></br></p></div>
+<h4><a name="SERVER_SUBSTEPS" onclick="HideNextDOM($(this));" >Maximum Substeps</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_minimum_maximum_substeps.jpg" border="0"><br></br>
+Defines the maximum amount of substeps the time stepping uses.
+<br></br></p></div>
+<h4><a name="SERVER_AUTOTIME" onclick="HideNextDOM($(this));" >Automatic Simulation Time</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_automatic_simulation_time.jpg" border="0"><br></br>
+If activated the simulation time will automatically adapt to the temporal extents of the Cinema 4D scene (usually all frames are used).
+You can explicitly set the simulation length if deactivated. <br>
+<br>
+See From [Frame] and To [Frame].
+
+<br></br></p></div>
+<h4><a name="SERVER_FROM" onclick="HideNextDOM($(this));" >From [Frame]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_from_to_frame.jpg" border="0"><br></br>
+Allows to set the  frame when Effex starts processing (evaluating nodes).
+<br></br></p></div>
+<h4><a name="SERVER_TO" onclick="HideNextDOM($(this));" >To [Frame]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_from_to_frame.jpg" border="0"><br></br>
+Allows to set the frame when Effex stops processing (evaluating nodes).
+<br></br></p></div>
+<h4><a name="SERVER_CPUS" onclick="HideNextDOM($(this));" >CPU Threads (0 = all)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_framework_cpu_threads.jpg" border="0"><br></br>
+Let's you decide how many CPU threads you would like the framework to use. 0 means all your available CPUs (incl. HyperThreading)
+are used to run the framework. Sometimes, especially with lower resolutions it may be advantageous to use less Threads than
+available because starting the threads may take longer than running their tasks! So less CPUs may provide some better performance.
+<br></br>
+This is very scene dependant but generally higher resolutions (lower voxel sizes) benefit from more CPUs, so for final rendering you
+should probably set this back to 0 (assuming you are using a lower voxel size for your final simulation).
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

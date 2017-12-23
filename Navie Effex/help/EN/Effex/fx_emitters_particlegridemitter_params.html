@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_particle.html">Particle</a> : <a href="fx_emitters_particlegridemitter.html">Emitter::Particle In Volume</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+<a href="fx_emitters_particlegridemitter_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_pemitter_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="PARTICLEGRIDEMITTER_VOLUME" onclick="HideNextDOM($(this));" >Volume</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_fss_particle_grid_emitter_params_volume.jpg" border="0"><br></br>
+Takes a <a href="fx_volume.html">Volume</a> to define the area in space where the emitter is allowed to emit particles.
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_PARTICLEFACTORY" onclick="HideNextDOM($(this));" >Target Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_fss_particle_grid_emitter_params_particle_group.jpg" border="0"><br></br>
+Link the <a href="fx_particles_particlegroup.html">Particle Group</a> which should take the generated particles.
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_PARTICLETYPE" onclick="HideNextDOM($(this));" >Particle Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPiV_params_particletype.jpg" border="0"><br></br>
+Defines the particle type to generate.
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_SETTINGS" onclick="HideNextDOM($(this));" >Emission Settings</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_fss_particle_grid_emitter_params_particle_emission_settings.jpg" border="0"><br></br>
+Link <a href="fx_emitters_particleemissionsettings.html">Particle Emission Settings</a> in here that define the emission behavior.
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_PROPS" onclick="HideNextDOM($(this));" >Particle properties to attach</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_fss_particle_grid_emitter_params_particle_properties.jpg" border="0"><br></br>
+The emitter will attach any <a href="fx_particles_properties.html">particle property</a> you assign here to each generated/emitted particle. <br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b><br>
+Remember that each particle automatically gets a Position and a Velocity property attached, so it's not necessary to drop them here.
+<br>If you do drop a velocity property here, it will initialise born particles with its start value.
+</div>
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_COLORSHADER" onclick="HideNextDOM($(this));" >Particle Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPiV_params_particlecolor.jpg" border="0"><br></br>
+Here you can assign a color to the emitted particles by using a channel shader of your choice.<br>
+As particles are generated in mid-air there are no UV coordinates available so the shader can only work in 3D (or any projected) space.
+<br></br>
+
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> You need to attach a color property for this to have an effect. See <a href="#PARTICLEGRIDEMITTER_PROPS">Particle properties to attach</a>.
+</div>
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Placement inside the Volume</span>
+</div>
+<div class="subdata selected">
+</div>
+<h4><a name="PARTICLEGRIDEMITTER_CONSTRAINTS_EXACT" onclick="HideNextDOM($(this));" >Sample Volume per particle</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_fss_particle_grid_emitter_params_exact_evaluation.jpg" border="0"><br></br>
+As the emission is based on a grid, the spatial emission check operates on each cell.<br>
+Particles are however emitted in a subgrid fashion and the check if the emitted particle is inside the given Volume happens in this subgrid
+if activated. Otherwise it will only check once if the cell itself is in the volume (which is faster but results in a voxelized appearance).
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_PHI_MIN" onclick="HideNextDOM($(this));" >Start Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPiV_params_startdistance.jpg" border="0"><br></br>
+Allows to constraint the emission to a certain  area inside the used volume.
+<br>
+The inside always has a finite maximum distance (remember the volume is represented as a signed distance field)
+and therefore 100% means all the inside volume.<br></br>
+The lower this value the more the inside volume area shrinks towards the volume's surface.
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_PHI_MAX" onclick="HideNextDOM($(this));" >End Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPiV_params_enddistance.jpg" border="0"><br></br>
+Allows to constraint the emission to a certain area outside the used volume (make sure the Volume's 'Outside Extent' value is high enough)..
+<br>
+The inside always has a finite maximum distance (remember the volume is represented as a signed distance field)
+and therefore 100% means all the inside volume.<br></br>
+Values lower 0% will shrink the volume from the surface towards the most distant inside
+while (-100% means all the volume is gone).
+<br></br>
+Values higher than 0% will expand the volume from the surface towards the outside. This is especially
+useful to create particles near the surface if the volume is an obstacle at the same time (and you don't want
+particles inside the obstacle anyway).
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Sampling Density</span>
+</div>
+<div class="subdata selected">
+</div>
+<h4><a name="PARTICLEGRIDEMITTER_SAMPLING_MINIMUM" onclick="HideNextDOM($(this));" >Minimum distance to existing particles</A></h4><div class="selected"><p><br></br>
+Defines the minimum distance to existing particles. Avoids particles
+to be generated where there are already particles near the emission location.
+<br></br>
+The default is 100% which means half a voxel. This is the optimal particle density (resulting in 8 particles per cell for standard FLIP liquid simulations).
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_GRIDSUBDIVISIONS_PHI" onclick="HideNextDOM($(this));" >Distance to Volume Surface [voxels]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPiV_params_distancetosurface.jpg" border="0"><br></br>
+This is the reference distance for the following two settings 'Subdivisions..'.
+Defines a distance from the volume's surface.
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_GRIDSUBDIVISIONS_MIN" onclick="HideNextDOM($(this));" >Emission density if > Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPiV_params_subdivisionsgroesser.jpg" border="0"><br></br>
+You can subdivide a grid cell to create more (or less) particles if the cell is further away than given by the 'Distance to Surface' value.
+<br></br></p></div>
+<h4><a name="PARTICLEGRIDEMITTER_GRIDSUBDIVISIONS_MAX" onclick="HideNextDOM($(this));" >Emission density if < Distance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPiV_params_subdivisionskleiner.jpg" border="0"><br></br>
+You can subdivide a grid cell to create more (or less) particles if the cell is nearer than given by the 'Distance to Surface' value.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_piop.html">Particle Instant Operators (PIOP)</a> : <a href="fx_operators_pioprepulsion.html">PIOP::Repulsion</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="IOP_REPULSION_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_gobal_duration.jpg" border="0"><br></br>
+Takes a node of type 'duration' in order to define how long this node should operate. See Duration.
+<br></br>
+If no duration is linked, it will operate indefinetly.
+
+<br></br></p></div>
+<h4><a name="IOP_REPULSION_POSITIONBASED" onclick="HideNextDOM($(this));" >Use Position Velocity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_repulsion_force_params_use_position_velocity.jpg" border="0"><br></br>
+If you are using a <a href="fx_operators_particleadvection_params.html#FX_PARTICLEADVECTION_INTEGRATOR_BALLISTIC">position based particle simulation</a> you must activate this option.<br>
+In order to correctly calculate the repulsion force as a position update.
+<br></br></p></div>
+<h4><a name="IOP_REPULSION_BOUNCE" onclick="HideNextDOM($(this));" >Bounce</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_repulsion_force_params_bounce.jpg" border="0"><br></br>
+The amount of bouncing produced.
+<br></br></p></div>
+<h4><a name="IOP_REPULSION_SLIDEDRAG" onclick="HideNextDOM($(this));" >Slide Drag</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_repulsion_force_params_slide_drag.jpg" border="0"><br></br>
+The amount of drag experienced by the collided particle when it slides along the surface.<br>
+Negative values are only available for artistic purposes!
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+STRINGTABLE fx_property_state
+{
+	fx_property_state "Eigenschaft::Status";
+
+	PROPERTY_VALUE_STATE  "Startwert";
+}

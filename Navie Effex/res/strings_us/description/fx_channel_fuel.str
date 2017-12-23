@@ -1,0 +1,6 @@
+STRINGTABLE fx_channel_fuel
+{
+	fx_channel_fuel "Channel::Fuel Grid";
+
+	GRIDCHANNEL_FUEL_IGNITION_TEMP "Ignition Temperature";
+}

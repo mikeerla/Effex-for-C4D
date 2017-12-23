@@ -1,0 +1,20 @@
+CONTAINER fx_force_base
+{
+	NAME fx_force_base;
+	INCLUDE fx_base;
+	
+	GROUP ID_FORCE_BASE
+	{
+		DEFAULT 1;
+		SEPARATOR ID_PORT_BASE_HEADER { }
+
+		GROUP ID_PORT_BASE
+		{
+			DEFAULT 1; COLUMNS 2; 
+		}
+		
+		SEPARATOR{LINE;}
+
+		LONG FX_FORCE_BASE_ITERATIONS { MIN 0; HIDDEN; }
+	}
+}

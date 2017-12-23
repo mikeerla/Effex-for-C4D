@@ -1,0 +1,13 @@
+STRINGTABLE fx_constraint_particle_property
+{
+	fx_constraint_particle_property "Partikelbeschr\u00E4nkung::Eigenschaft";
+
+	CONSTRAINT_PARTICLE_PROPERTY "Eigenschaft";
+	CONSTRAINT_PARTICLE_PROPERTY_SELECTOR "C";
+	CONSTRAINT_PARTICLE_PROPERTY_SCALARMIN "Skalarbereich Minimum";
+	CONSTRAINT_PARTICLE_PROPERTY_SCALARMAX "Skalarbereich Maximum";
+	CONSTRAINT_PARTICLE_PROPERTY_VECTOR "Vektor Schwellenwert";
+	CONSTRAINT_PARTICLE_PROPERTY_STATE "Zustand";
+
+	CONSTRAINT_PARTICLE_PROPERTY_DUMMY_ "";
+}

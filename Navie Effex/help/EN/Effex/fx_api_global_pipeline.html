@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_global.html">Getting started..</a></div>
+<div class="content">
+<h3>Pipeline</h3>
+</div>
+<div class="content">
+<div class="subtab">Pipeline</div>
+<div class="data">
+<p>
+The Effex scene's nodes are executed inside of a series of pipeline stages.
+The stages are chosen to support a certain chain of nodes and group  them in a meaningful way for simulation purposes.
+<br></br>
+The nodes are executed one by one or in chunks. Each node can decide himself how
+he wants to be executed. The framework also here doesn't care about the input, it just really takes
+care of executing it.
+<br></br>
+The user can choose himself via the Pipeline Viewer when the nodes are executed so you
+are excused to not think about it that much. But the order in which nodes are executed is of course important.<br>
+But codewise, there is nothing you need to do. It's all handled automatically.
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+STRINGTABLE fx_gop_particletolevelset
+{
+	fx_gop_particletolevelset "GOP::Partikel zu Levelset";	
+
+	GOP_PTL_GROUP			"Partikelgruppen";
+	GOP_PTL_GROUP_SELECTOR		"C";
+	GOP_PTL_DURATION		"Dauer";
+	GOP_PTL_DURATION_SELECTOR	"C";
+	GOP_PTL_PARTICLES		"Partikeltyp";
+	GOP_PTL_PARTICLES_PASSIVE	"Passiv";
+	GOP_PTL_PARTICLES_LIQUID	"Fl\u00FCssigkeit";
+	GOP_PTL_PARTICLES_VORTICITY	"Verwirbelung";
+	GOP_PTL_PARTICLES_FOAM		"Gischt";
+	GOP_PTL_MODE			"Modus";
+	GOP_PTL_MODE_INCELL		"Partikel innerhalb Zelle";
+	GOP_PTL_MODE_SPHERE		"Partikelkugeln";
+	GOP_PTL_MODE_DENSITY		"Partikeldichte";
+	GOP_PTL_MODE_POSITIONS		"Partikelpositionen";
+	GOP_PTL_MODE_INCELL_LEVELSETRATE "Schwellwert Partikel";
+	GOP_PTL_MODE_DENSITY_LEVELSETRATE "Schwellwert Dichte";
+	GOP_PTL_EXTRAPOLATESOLIDS	"In Hindernisse extrapolieren";
+	GOP_PTL_TARGET			"Ziel Levelset";
+	GOP_PTL_TARGET_SELECTOR		"C";
+	GOP_PTL_RADIUS			"Radius";
+	GOP_PTL_EXTRAPOLATEMODE		"Modus";
+	GOP_PTL_EXTRAPOLATEMODE_SIMPLE	"Einfach";
+	GOP_PTL_EXTRAPOLATEMODE_ADVANCED "Fortgeschritten";
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_iterators.html">Iterators</a></div>
+<div class="content">
+<h3>FXMeshIterator</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXMeshIterator</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> GetVertex(<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the current vertex location in physical space
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> GetVertexByIndex(long index)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the vertex location in physical space
+<br></br>
+<b>Parameters</b><BR>
+<i>long index</i>: <br>
+pass a vertex index here. The internal iterator is automatically adjusted to this vertex index!
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">VecInt3D</span> GetTriangle(<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the current triangle the iterator is pointing to containing the three vertex indices.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">VecInt3D</span> GetTriangleByIndex(long index)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the triangle containing the three vertex indices.
+<br></br>
+<b>Parameters</b><BR>
+<i>long index</i>: <br>
+pass a triangle index here. The internal iterator is automatically adjusted to this triangle index!
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span> GetProperty_Scalar(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">ParticleProperty</span> type, <span style="color:rgb(0,120,120);">BaseObject</span>* node) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the value of the requested scalar property
+<br></br>
+<b>Parameters</b><BR>
+<i>const ParticleProperty & prop</i>: <br>
+the property type to retrieve. See ParticleProperty for a list of properties.
+<br></br>
+<i>const BaseObject* node_interface</i>: <br>
+optionally a property node interface. This is really only necessary if you want to retrieve a custom property
+because there can be multiple custom properties of the same type. The node interface is the explicit identifier for such a custom property.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> GetProperty_Vector(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">ParticleProperty</span> type, <span style="color:rgb(0,120,120);">BaseObject</span>* node) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the value of the requested vector property
+<br></br>
+<b>Parameters</b><BR>
+<i>const ParticleProperty & prop</i>: <br>
+the property type to retrieve. See ParticleProperty for a list of properties.
+<br></br>
+<i>const BaseObject* node_interface</i>: <br>
+optionally a property node interface. This is really only necessary if you want to retrieve a custom property
+because there can be multiple custom properties of the same type. The node interface is the explicit identifier for such a custom property.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> SetProperty_Scalar(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">double</span> <span style="color:rgb(0,31,174);">new</span>_value, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">ParticleProperty</span> type, <span style="color:rgb(0,120,120);">BaseObject</span>* node)</A></h4><div class="selected"><p><br>
+Overwrites the requested scalar property. If no such property is available it will be created automatically!
+<br></br>
+<b>Parameters</b><BR>
+<i>const double new_value</i>: <br>
+the new scalar property value.
+<br></br>
+<i>const ParticleProperty & prop</i>: <br>
+the property type to set. See ParticleProperty for a list of properties.
+<br></br>
+<i>const BaseObject* node_interface</i>: <br>
+optionally a property node interface. This is really only necessary if you want to change a custom property
+because there can be multiple custom properties of the same type. The node interface is the explicit identifier for such a custom property.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> SetProperty_Vector(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& <span style="color:rgb(0,31,174);">new</span>_value, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">ParticleProperty</span> type, <span style="color:rgb(0,120,120);">BaseObject</span>* node)</A></h4><div class="selected"><p><br>
+Overwrites the requested vector property. If no such property is available it will be created automatically!
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& new_value</i>: <br>
+the new vector property value.
+<br></br>
+<i>const ParticleProperty & prop</i>: <br>
+the property type to set. See ParticleProperty for a list of properties.
+<br></br>
+<i>const BaseObject* node_interface</i>: <br>
+optionally a property node interface. This is really only necessary if you want to change a custom property
+because there can be multiple custom properties of the same type. The node interface is the explicit identifier for such a custom property.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> Init (<span style="color:rgb(0,120,120);">FXVolumeMesh</span>* mesh)</A></h4><div class="selected"><p><br>
+Initialise the iterator for a mesh volume.
+<br></br>
+<b>Returns</b><br>
+true if the iterator was successfully initialised.
+<br></br>
+<b>Parameters</b><BR>
+<i>FXVolumeMesh* mesh</i>: <br>
+the mesh volume to initialise the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> Init (<span style="color:rgb(0,120,120);">FXMesher</span>* mesh)</A></h4><div class="selected"><p><br>
+Initialise the iterator for a mesher.
+<br></br>
+<b>Returns</b><br>
+true if the iterator was successfully initialised.
+<br></br>
+<b>Parameters</b><BR>
+<i>FXMesher* mesh</i>: <br>
+the mesher to initialise the iterator for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> Restart(<span style="color:rgb(0,31,174);">bool</span> tri = <span style="color:rgb(0,31,174);">true</span>, <span style="color:rgb(0,31,174);">bool</span> vert = <span style="color:rgb(0,31,174);">true</span>)</A></h4><div class="selected"><p><br>
+This will reset the iterator so that it points to the first element again.
+<br></br>
+<b>Parameters</b><BR>
+<i>bool tri</i>: <br>
+Pass true if you want to iterate triangles.
+<br></br>
+<i>bool vert</i>: <br>
+Pass true if you want to iterate vertices.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> SetNext(<span style="color:rgb(0,31,174);">bool</span> tri)</A></h4><div class="selected"><p><br>
+Steps the iterator to get the next triangle or vertex. Used for forward stepping.
+<br></br>
+<b>Returns</b><br>
+true if the iterator has been incremented.
+<br></br>
+<b>Parameters</b><BR>
+<i>bool tri</i>: <br>
+Pass true if you want to increment the triangle iterator. Pass false for incrementing the vertex iterator.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> SetPrev(<span style="color:rgb(0,31,174);">bool</span> tri)</A></h4><div class="selected"><p><br>
+Steps the iterator to get the previous triangle or vertex. Used for backward stepping.
+<br></br>
+<b>Returns</b><br>
+true if the iterator has been decremented.
+<br></br>
+<b>Parameters</b><BR>
+<i>bool tri</i>: <br>
+Pass true if you want to decrement the triangle iterator. Pass false for incrementing the vertex iterator.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> Offset(<span style="color:rgb(0,31,174);">bool</span> tri, long offset)</A></h4><div class="selected"><p><br>
+Offsets the iterator to a user defined position. 
+<br>You need to make sure yourself the resulting iterator index does not exceed the
+particle array bounds!
+<br></br>
+<b>Parameters</b><BR>
+<i>bool tri</i>: <br>
+Pass true if you want to offset the triangle iterator. Pass false to offset the vertex iterator.
+
+<br></br>
+<i>const long offset</i>: <br>
+the iterator offset.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> OffsetSafe(<span style="color:rgb(0,31,174);">bool</span> tri, long offset)</A></h4><div class="selected"><p><br>
+Offsets the iterator to a user defined position. 
+<br>Will automatically make sure the resulting iterator does not exceed the array bounds.
+<br></br>
+<b>Returns</b><br>
+true if the resulting iterator is valid.
+<br></br>
+<b>Parameters</b><BR>
+<i>bool tri</i>: <br>
+Pass true if you want to offset the triangle iterator. Pass false to offset the vertex iterator.
+
+<br></br>
+<i>const long offset</i>: <br>
+the iterator offset.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> IsValid(<span style="color:rgb(0,31,174);">bool</span> tri) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the current iterator is valid.
+<br></br>
+<b>Parameters</b><BR>
+<i>bool tri</i>: <br>
+Pass true if you want to check the triangle iterator for validity. Otherwise it will check the vertex iterator.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> <span style="color:rgb(0,120,120);">FXMeshIterator</span>* Alloc(<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+Allocates the iterator. You can use AutoAlloc for a scope based allocation.
+<br></br>
+<b>Returns</b><br>
+the mesh iterator. The user owns the pointed object.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> <span style="color:rgb(0,31,174);">void</span> Free(<span style="color:rgb(0,120,120);">FXMeshIterator</span>*& p)</A></h4><div class="selected"><p><br>
+Frees a previously allocated Mesh Iterator..
+<br></br>
+<b>Parameters</b><BR>
+<i>FXMeshIterator*&</i>: <br>
+Pass the Mesh iterator to free.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+STRINGTABLE fx_psheet
+{
+	fx_psheet "Thin Sheet";
+
+	ID_PSHEET_BASE "Einstellung";
+	
+	PSHEET_PARTICLES "Partikelgruppe";
+	PSHEET_RADIUS_DENSITY "Radius (Dichtesampling)";
+	PSHEET_ANISOTROPIC_RATE "Anisotropischer Schwellwert";
+	PSHEET_CANDIDATES_MINDISTANCE "Locherkennung - Min. Distanz";
+	PSHEET_CANDIDATES_MAXDISTANCE_FINDING "Locherkennung - Max. Distanz";
+	PSHEET_CANDIDATES_MAXDISTANCE_INSERTION "Lochf\u00FCllung - Max. Distanz";
+	PSHEET_CANDIDATES_MINDENSITY "Locherkennung Min. Dichte";
+	PSHEET_CANDIDATES_MAXDENSITY "Locherkennung Max. Dichte";
+	PSHEET_COLLAPSE_MAXDENSITY "Zerfall Max. Dichte";
+	PSHEET_COLLAPSE_MINDISTANCE "Zerfall Min. Distanz";
+	PSHEET_RECALCULATE_ANISOTROPY "Kalkuliere Anisotropie";
+
+	PSHEET_INPUT_FACTORY "Particles";
+		PSHEET_INPUT_FACTORY_PASSIVE "Passiv";
+		PSHEET_INPUT_FACTORY_VORTICITY "Verwirbelung";
+		PSHEET_INPUT_FACTORY_IMPLICIT "Fl\u00FCssigkeit";
+		PSHEET_INPUT_FACTORY_DIFFUSE "Diffuse";
+
+	PSHEET_DISTANCE_INCREASE "Anstieg von Inter-Partikelabstand einbeziehen";
+	
+	PSHEET_PARTICLES_SELECTOR "C";
+
+	PSHEET_DUMMY_ "";
+}

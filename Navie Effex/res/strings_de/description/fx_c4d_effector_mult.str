@@ -1,0 +1,8 @@
+STRINGTABLE fx_c4d_effector_multi
+{
+	fx_c4d_effector_multi "Klone mit Festk\u00F6rpern synchronisieren";
+
+	MULTIVOLUME_EFFECTOR_STRENGTH "St\u00E4rke";
+	MULTIVOLUME_EFFECTOR_VOLUME "MultiMesh";
+	ID_MULTIVOLUME_EFFECTOR "Params";
+}

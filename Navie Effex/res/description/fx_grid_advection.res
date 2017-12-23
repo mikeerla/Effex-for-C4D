@@ -1,0 +1,71 @@
+CONTAINER fx_grid_advection
+{
+	NAME fx_grid_advection;
+	INCLUDE fx_force_base;
+	INCLUDE fx_base_constraints;
+
+	GROUP ID_FORCE_BASE
+	{
+		DEFAULT 1;
+		GROUP ID_PORT_BASE
+		{
+			COLUMNS 2;
+			LINK FX_GRIDADVECTION_CHANNEL
+			{
+				ACCEPT 
+				{ 
+					fx_channel_scalar; 
+					fx_channel_levelset; 
+					fx_channel_temp; 
+					fx_channel_fuel; 
+					fx_channel_fire; 
+					fx_channel_vector; 
+					fx_channel_velocity; 
+					fx_fluid; 
+					fx_liquid;
+					fx_group; 
+				}
+			}
+			BUTTON FX_GRIDADVECTION_CHANNEL_SELECTOR {}
+			LINK FX_GRIDADVECTION_VELOCITY
+			{
+				ACCEPT { fx_channel_velocity; fx_fluid; fx_liquid; fx_group; };
+			}
+			BUTTON FX_GRIDADVECTION_VELOCITY_SELECTOR {}
+		}
+
+		SEPARATOR {LINE;}
+				
+		LONG FX_GRIDADVECTION_PRECISION
+		{
+			CYCLE
+			{
+				FX_GRIDADVECTION_PRECISION_1ST;
+				FX_GRIDADVECTION_PRECISION_2ND;
+				FX_GRIDADVECTION_PRECISION_MASSMOMENTUM;
+				FX_GRIDADVECTION_PRECISION_2ND_MASSMOMENTUM;
+			}
+		}
+		REAL FX_GRIDADVECTION_MIX { MIN 0; MAX 100; UNIT PERCENT; CUSTOMGUI REALSLIDER;}
+		LONG FX_GRIDADVECTION_INTEGRATOR
+		{
+			CYCLE
+			{
+			FX_GRIDADVECTION_INTEGRATOR_EULER1ST;
+			FX_GRIDADVECTION_INTEGRATOR_RUNGA2ND;
+			FX_GRIDADVECTION_INTEGRATOR_RUNGA3RD;
+			FX_GRIDADVECTION_INTEGRATOR_RUNGA4TH;
+			}
+		}
+		LONG FX_GRIDADVECTION_INTERPOLATOR
+		{
+			CYCLE
+			{
+				FX_GRIDADVECTION_INTERPOLATOR_LINEAR;
+				FX_GRIDADVECTION_INTERPOLATOR_CUBIC;
+				FX_GRIDADVECTION_INTERPOLATOR_HERMITE;
+			}
+		}
+	}
+}
+			

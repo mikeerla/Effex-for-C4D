@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="nodegroup.html">Node Group</a></div>
+<div class="content">
+<h3>Quicktab</h3>
+</div>
+<div class="tabs">
+<span>Quicktab</span>
+</div>
+<div class="content">
+<div class="subtab">Quicktab</div>
+<div class="data">
+<p>
+<img src="../../img/fx_nodegroup_quicktab.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FX_GROUP_SHOW" onclick="HideNextDOM($(this));" >Reveal Nodes</A></h4><div class="selected"><p><br></br>
+If activated it will reveal all the grouped nodes in the Object Manager.
+<br>That way you can always go back into the low-level nodes.
+<br></br></p></div>
+<h4><a name="FX_GROUP_PORTTAB" onclick="HideNextDOM($(this));" >Gather Ports</A></h4><div class="selected"><p><br></br>
+If activated (default) all the node ports (link fields) of all grouped nodes will be gathered into a single
+group named 'Ports' (inside the Parameters tab).
+<br></br></p></div>
+<h4><a name="FX_GROUP_USEGROUP" onclick="HideNextDOM($(this));" >Process Node Groups</A></h4><div class="selected"><p><br></br>
+If deactivated other Node Groups that you drop as a child will NOT be included in the grouping.
+<br>This is a convenience setting. You could also attach a Stop tag to the Node Group.
+<br></br></p></div>
+<h4><a name="FX_GROUP_ICON" onclick="HideNextDOM($(this));" >Icon</A></h4><div class="selected"><p><br></br>
+You can choose a custom icon for this Node Group.
+<br>
+The first entries (until the first separator) are icons of the grouped child nodes.<br>
+You can also select a custom icon but it will only be available once you restart Cinema 4D
+unless it is an icon already used in Cinema 4D.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Reset</A></h4><div class="selected"><p><br>
+This will reset the whole Node Group and all the changes
+made with the Node Styler.<br></br>
+Why would you ever use it then? Well, if you rearrange
+the child nodes' order and click reset, it will also reset the order
+of the node specific subgroups in the AM.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Create Preset..</A></h4><div class="selected"><p><br>
+<img src="../../img/fx_nodegroup_createpreset.jpg" border="0"><br></br>
+Click on this button to store this Node Group (and all its children)
+as a High-Level Preset node and appear in the according menu inside the Navi&eacute; menu!
+<br></br>
+You can create new menu categories via this button as well.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+CONTAINER fx_csg
+{
+	NAME fx_csg;
+	INCLUDE fx_base_volume;
+	INCLUDE fx_base_constraints;
+
+	//Basic Tab
+	GROUP ID_FORCE_BASE
+	{			
+		DEFAULT 1;
+		BOOL CSG_VOLUME_SWITCH {}
+		GROUP ID_PORT_BASE
+		{
+			COLUMNS 2;
+			LINK CSG_VOLUME_A { ACCEPT{fx_volume; fx_csg; fx_surface_reconstruction; fx_group;}}
+			BUTTON CSG_VOLUME_A_SELECTOR {}
+			LINK CSG_VOLUME_B { ACCEPT{fx_volume; fx_csg; fx_surface_reconstruction; fx_group;}}
+			BUTTON CSG_VOLUME_B_SELECTOR {}
+		}
+
+		LONG CSG_MODE 
+		{
+			CYCLE
+			{
+				CSG_MODE_UNION;
+				CSG_MODE_INTERSECTION;
+				CSG_MODE_DIFFERENCE;
+				CSG_MODE_UNIONBLEND;
+			}
+		}
+		REAL CSG_ISOSURFACE {STEP 0.1;}
+		REAL CSG_BLEND_RADIUS {MIN 0.0; MAXSLIDER 1.0; STEP 0.001; CUSTOMGUI REALSLIDER;}
+		REAL CSG_BLEND_T {MIN 0.001; STEP 0.1;}
+		
+		LONG CSG_BLENDMODE 
+		{
+			CYCLE
+			{
+				CSG_BLENDMODE_RFUNC_GLOBAL;
+				CSG_BLENDMODE_RFUNC_LOCAL;
+				CSG_BLENDMODE_MIX;
+			}
+		}
+	}
+}

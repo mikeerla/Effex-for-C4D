@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_gop.html">Grid Operators (GOP)</a> : <a href="fx_operators_advection.html">GOP::Advection</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="FX_GRIDADVECTION_CHANNEL" onclick="HideNextDOM($(this));" >Grid Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopadvection_params_gridchannel.jpg" border="0"><br></br>
+The <a href="fx_channel.html">grid channel</a> you want to advect by the linked velocity field.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> The channel must have its advection memory option activated.
+</div>
+<br></br></p></div>
+<h4><a name="FX_GRIDADVECTION_VELOCITY" onclick="HideNextDOM($(this));" >Velocity Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopadvection_params_velocitychannel.jpg" border="0"><br></br>
+The velocity channel (<a href="fx_fluid.html">fluid dynamics</a>) node to use for advecting the grid channel.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b>
+If no grid channel is linked but the velocity channel only, it will advect itself! 
+<br> This is used for the Gaseous dynamics node when simulating smoke & fire.
+</div>
+<br></br></p></div>
+<h4><a name="FX_GRIDADVECTION_PRECISION" onclick="HideNextDOM($(this));" >Precision</A></h4><div class="selected"><p><br></br>
+The advection (transport) precision.
+<br></br>
+<b>1st Order</b><br>
+Low Precision but fast. Good for laminar flow.
+
+<br></br>
+<b>2nd Order</b><br>
+High Precision but a little slower. Good for turbulent flow.
+
+<br></br>
+<b>Mix</b><br>
+Allows blending between 1st and 2nd Order precision. See '1st <-> 2nd Order'.
+<br></br></p></div>
+<h4><a name="FX_GRIDADVECTION_MIX" onclick="HideNextDOM($(this));" >1st <-> 2nd Order</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopadvection_params_1st2ndorder.jpg" border="0"><br></br>
+Mixing between 1st order and 2nd order advection.<br>
+If your fire flow is too turbulent you can try to reduce this value to quickly get a more laminar flow.
+<br></br></p></div>
+<h4><a name="FX_GRIDADVECTION_INTEGRATOR" onclick="HideNextDOM($(this));" >Integrator</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopadvection_params_integrator.jpg" border="0"><br></br>
+Defines the advection integration (accuracy of the result). The quality of advection is directly linked to this setting.
+Higher order integrators are more accurate but slower.
+
+<br></br></p></div>
+<h4><a name="FX_GRIDADVECTION_INTERPOLATOR" onclick="HideNextDOM($(this));" >Interpolation</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopadvection_params_interpolation.jpg" border="0"><br></br>
+Interpolation of velocity grid values is also a fundamental criteria for the quality of the resulting motions.<br>
+Energy, vortices and details are better preserved.
+<br></br>
+<b>Linear</b><br>
+Low quality but super fast (appropriate though in 2nd Order Precision)
+<br></br>
+<b>Quadratic</b><br>
+High quality
+<br></br>
+<b>Hermite Cubic</b><br>
+High and sharp quality but slow
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_tags.html">Tags</a> : <a href="fx_obstacle.html">Obstacle</a></div>
+<div class="content">
+<h3>RAM Cache</h3>
+</div>
+<div class="tabs">
+<a href="fx_obstacle_tag.html">Tag</a>
+<a href="fx_obstacle_dynamics.html">Dynamics</a>
+<a href="fx_obstacle_collision.html">Collision</a>
+<a href="fx_obstacle_dynamiccollion.html">Dynamic Coupling</a>
+<span>RAM Cache</span>
+</div>
+<div class="content">
+<div class="subtab">RAM Cache</div>
+<div class="data">
+<p>
+The RAM cache will store the rigid-body matrix all the time (no matter if you use RAM cache or not). So each time you ran a simulation it is stored automatically.
+<br><br>
+</p>
+</div>
+<h4><a name="FXOBSTACLE_CACHE_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_gobal_duration.jpg" border="0"><br></br>
+Takes a node of type 'duration' in order to define how long the RAM caching should take place.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_CACHE_USE" onclick="HideNextDOM($(this));" >Use RAM cache</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_ramcache_useramcache.jpg" border="0"><br></br>
+Activate using RAM cache.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_CACHE_SUBFRAMES" onclick="HideNextDOM($(this));" >Save subframes</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_ramcache_savesubframes.jpg" border="0"><br></br>
+Subframe positions will be stored as well if checked.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Clear Cache</A></h4><div class="selected"><p><br>
+<img src="../../img/tags_obstacle_ramcache_clearcache.jpg" border="0"><br></br>
+Clears any available cache.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>RAM Cache::</span>Load</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FXOBSTACLE_CACHE_LOAD" onclick="HideNextDOM($(this));" >Use Cache</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_ramcache_usecache.jpg" border="0"><br></br>
+If there is a cache, you can load it by activating this option.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_CACHE_OFFSET" onclick="HideNextDOM($(this));" >Offset [Frames]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_ramcache_load_offset.jpg" border="0"><br></br>
+Offsets the loaded cache frame.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

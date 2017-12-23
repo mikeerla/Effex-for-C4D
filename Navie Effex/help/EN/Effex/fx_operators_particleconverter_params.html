@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_particleconverter.html">POP::Particle Converter</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="PARTICLE_CONVERTER_INPUT_FACTORY" onclick="HideNextDOM($(this));" >Source Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_source_particles.jpg" border="0"><br></br>
+The particle type of the Source Group to use.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_INPUT" onclick="HideNextDOM($(this));" >Source Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_source_group.jpg" border="0"><br></br>
+The source particle group which contains the particles that you want to convert, transfer or kill.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_OUTPUT_FACTORY" onclick="HideNextDOM($(this));" >Target Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_target_particles.jpg" border="0"><br></br>
+The particle type of the Source Group to use (if you have defined a Target Group that one will be used instead). If you set the mode to 'Nirvana' the particles will be killed.
+
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_OUTPUT" onclick="HideNextDOM($(this));" >Target Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_target_group.jpg" border="0"><br></br>
+The target particle group which should take the converted or transfered particles from the source group. This is optional if you want to kill particles only.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_SAMPLES" onclick="HideNextDOM($(this));" >Particle Emission Settings</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_particle_emission_settings.jpg" border="0"><br></br>
+When you convert the particles you can create new particles around the original particles. This is done using the linked Particle Emission Settings.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_PROPERTIES" onclick="HideNextDOM($(this));" >Particle Properties</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_particle_properties.jpg" border="0"><br></br>
+Any particle properties linked here will be attached to the converted/transfered particles.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_CREATE" onclick="HideNextDOM($(this));" >Kill original</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_kill_original.jpg" border="0"><br></br>
+Defines if the original particles shall be killed after conversion or transfer.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_ONLY_PARTICLE_LOCATION" onclick="HideNextDOM($(this));" >Only at particle location</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_only_at_particle_location.jpg" border="0"><br></br>
+Only one particle will be created from the original particle at the source location.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_SAMPLESVAR" onclick="HideNextDOM($(this));" >Variation</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_variation.jpg" border="0"><br></br>
+Variation factor for the generation of the new particles from the source particles.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span> Passive - Liquid - Vorticity Particles</span>
+</div>
+<div class="subdata selected">
+<h4><a name="PARTICLE_CONVERTER_TO_PASSIVEPARTICLES_VELOCITY" onclick="HideNextDOM($(this));" >Velocity multiplier</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_passive_particles_velocity_multiplier.jpg" border="0"><br></br>
+The converted particles take over the velocity of the source particles. With this multiplier you can increase/decrease the initial velocity of new particles.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_TO_VORTICITYPARTICLES_ALIGNMENT" onclick="HideNextDOM($(this));" >Alignment</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_vorticity_particles_alignment.jpg" border="0"><br></br>
+Takes an alignment mode which defines the initial vorticity direction of the converted particles.
+<br></br></p></div>
+<h4><a name="PARTICLE_CONVERTER_TO_IMPLICITPARTICLES_ACCELERATION" onclick="HideNextDOM($(this));" >Acceleration multiplier</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_particle_converter_params_liquid_particles_acceleration_multiplier.jpg" border="0"><br></br>
+The converted particles take over the acceleration of the source particles. With this multiplier you can increase/decrease the initial acceleration of new particles.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

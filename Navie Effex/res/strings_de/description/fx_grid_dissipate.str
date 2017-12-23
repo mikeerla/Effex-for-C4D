@@ -1,0 +1,10 @@
+STRINGTABLE fx_grid_dissipate
+{
+	fx_grid_dissipate "GOP::Aufl\u00F6sen";
+
+	GRID_DISSIPATE_CHANNEL "Kanal";
+	GRID_DISSIPATE_FACTOR "Aufl\u00F6sen [/sec]";
+	GRID_DISSIPATE_CHANNEL_SELECTOR "C";
+
+	GRID_DISSIPATE_DUMMY_ "";
+}

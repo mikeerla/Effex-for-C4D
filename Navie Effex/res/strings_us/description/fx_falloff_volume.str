@@ -1,0 +1,11 @@
+STRINGTABLE fx_falloff_volume
+{
+	fx_falloff_volume	"Volume Falloff";
+	
+	VOLUMEFALLOFF_VOLUME	"Effex Volume";
+	VOLUMEFALLOFF_SCALE_SPACE "Scale Space";
+		VOLUMEFALLOFF_SCALE_SPACE_FALLOFF "Effector";
+		VOLUMEFALLOFF_SCALE_SPACE_VOLUME "Volume";
+		VOLUMEFALLOFF_SCALE_SPACE_VOLUMELINK "Volume Reference";
+	VOLUMEFALLOFF_UNCLAMPED "Clamped to inside volume";
+}

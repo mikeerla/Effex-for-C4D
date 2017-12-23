@@ -1,0 +1,7 @@
+STRINGTABLE fx_volume_multi
+{
+	fx_volume_multi "MultiVolume";
+
+	MULTIVOLUME_MESHES "Mesh Objects";	
+	MULTIVOLUME_MESHES_SELECTOR "C";
+}

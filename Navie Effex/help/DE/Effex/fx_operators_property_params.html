@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_property.html">POP::Property</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+<a href="fx_operators_property_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="POP_PROPERTY_INPUT" onclick="HideNextDOM($(this));" >Particle group</A></h4><div class="selected"><p><br></br>
+Define the particle group with the particles to modify.
+<br></br></p></div>
+<h4><a name="POP_PROPERTY_TARGET" onclick="HideNextDOM($(this));" >Target Property</A></h4><div class="selected"><p><br></br>
+Define the target property to modify. If no such property is attached to the particles nothing will happen.
+<br></br></p></div>
+<h4><a name="POP_PROPERTY_SOURCE" onclick="HideNextDOM($(this));" >Source Property</A></h4><div class="selected"><p><br></br>
+Define the source property to read and then write into the target property. If no such property is attached to the particles nothing will happen.
+<br></br></p></div>
+<h4><a name="POP_PROPERTY_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+Define when this node operates.
+<br></br></p></div>
+<h4><a name="RATE_TYPE" onclick="HideNextDOM($(this));" >Data type</A></h4><div class="selected"><p><br></br>
+<i>(Only available if no 'Source Property' is defined)</i>
+<br><br>Define the data type of the 'Value' to modify the target particle property with.
+<br>This value can either be a <b>scalar (floating point)</b>, a <b>vector</b> or an <b>integer</b> value depending on 'Data type' setting.
+<br></br></p></div>
+<h4><a name="RATE_SCALAR" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+<i>(Only available if no 'Source Property' is defined)</i>
+<br><br>Define a value to change the target property with (according to 'Math. Opertion' setting).
+<br></br></p></div>
+<h4><a name="POP_PROPERTY_INPUT_FACTORY" onclick="HideNextDOM($(this));" >Particle type</A></h4><div class="selected"><p><br></br>
+Define the particle type (subgroup) of the particle group to access the property from.
+<br></br></p></div>
+<h4><a name="POP_PROPERTY_OPERATION" onclick="HideNextDOM($(this));" >Math. Operation</A></h4><div class="selected"><p><br></br>
+Define how the source property or Value is applied to the target property using the selected math operation.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: The 'Dot Product' operation makes only sense for vector properties and will result in a scalar value.
+</div>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

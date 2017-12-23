@@ -1,0 +1,30 @@
+STRINGTABLE fx_psheet
+{
+	fx_psheet "Thin Sheet";
+
+	ID_PSHEET_BASE "Settings";
+	
+	PSHEET_PARTICLES "Particle Group";
+	PSHEET_RADIUS_DENSITY "Density Radius";
+	PSHEET_ANISOTROPIC_RATE "Anisotropic threshold";
+	PSHEET_CANDIDATES_MINDISTANCE "Hole Detection - Min. Distance";
+	PSHEET_CANDIDATES_MAXDISTANCE_FINDING "Hole Detection - Max. Distance";
+	PSHEET_CANDIDATES_MAXDISTANCE_INSERTION "Hole Filling - Max. Distance";
+	PSHEET_CANDIDATES_MINDENSITY "Hole Detection - Min. Density";
+	PSHEET_CANDIDATES_MAXDENSITY "Hole Detection - Max. Density";
+	PSHEET_COLLAPSE_MAXDENSITY "Collapse Max. Density";
+	PSHEET_COLLAPSE_MINDISTANCE "Collapse Min. Distance";
+	PSHEET_RECALCULATE_ANISOTROPY "Calculate Anisotropy";
+
+	PSHEET_INPUT_FACTORY "Particles";
+		PSHEET_INPUT_FACTORY_PASSIVE "Passive";
+		PSHEET_INPUT_FACTORY_VORTICITY "Vorticity";
+		PSHEET_INPUT_FACTORY_IMPLICIT "Liquid";
+		PSHEET_INPUT_FACTORY_DIFFUSE "Diffuse";
+
+	PSHEET_DISTANCE_INCREASE "Check for increasing inter-particle distance";
+	
+	PSHEET_PARTICLES_SELECTOR "C";
+
+	PSHEET_DUMMY_ "";
+}

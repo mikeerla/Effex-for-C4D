@@ -1,0 +1,16 @@
+STRINGTABLE fx_c4d_couple
+{
+	fx_c4d_couple "Fluid Coupling";
+
+	COUPLE_SETMATRIX "Set Current as Rest Matrix";
+	COUPLE_DYNAMICS "Dynamics";
+	COUPLE_ROTATION "Angular Speed";
+	COUPLE_INTEGRATOR "Integrator";
+		COUPLE_INTEGRATOR_EULER1ST "1st Order - Low Precision";
+		COUPLE_INTEGRATOR_RUNGA2ND "2nd Order - Mid Precision";
+		COUPLE_INTEGRATOR_RUNGA3RD "3rd Order - Very Good Precision";
+		COUPLE_INTEGRATOR_RUNGA4TH "4th Order - Best Precision";
+	COUPLE_DRAG "Flow Resistance";
+	COUPLE_BUOYANCY "Buoyancy";
+	COUPLE_BLEND "Blend with Original";
+}

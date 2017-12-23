@@ -1,0 +1,8 @@
+STRINGTABLE fx_channel_scalar
+{
+	fx_channel_scalar "Channel::Scalar Grid";
+
+	GRIDCHANNEL_MIN_SCALAR "Minimum Value";
+	GRIDCHANNEL_MAX_SCALAR "Maximum Value";
+	GRIDCHANNEL_RESET_SCALAR "Clearing Value";
+}

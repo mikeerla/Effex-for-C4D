@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_nodes.html">Nodes</a> : <a href="fx_api_classes_nodes_fxbase_derived.html">: public FXBase</a></div>
+<div class="content">
+<h3>FXMesher</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXMesher</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Matrix		 GetMg				(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the global Matrix of the resulting mesh. The matrix is always given in physical space.
+
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span>		 UpdateMesh 			(<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+If you change the mesh's vertices call UpdateMesh.<br></br>
+<b>Returns</b><br>
+true if the mesh has been successfully updated.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> long GetTriangleCount		(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">FXMesher</span>* meshvolume)</A></h4><div class="selected"><p><br>
+This is a global function.
+<br></br>
+<b>Returns</b><br>
+the amount of triangles in the passed mesher's mesh.
+<br></br>
+<b>Parameters</b><BR>
+<i>const FXMesher* meshvolume</i>: <br>
+The mesher to retrieve the triangle count from
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> long GetVertexCount			(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">FXMesher</span>* meshvolume)</A></h4><div class="selected"><p><br>
+This is a global function.
+<br></br>
+<b>Returns</b><br>
+the amount of vertices in the passed mesher's mesh.
+<br></br>
+<b>Parameters</b><BR>
+<i>const FXMesher* meshvolume</i>: <br>
+The mesher to retrieve the vertices count from
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> <span style="color:rgb(0,31,174);">bool</span> HasUVdata				(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">FXMesher</span>* meshvolume)</A></h4><div class="selected"><p><br>
+This is a global function.
+<br></br>
+<b>Returns</b><br>
+true if the passed mesher's mesh contains uv data.
+<br></br>
+<b>Parameters</b><BR>
+<i>const FXMesher* meshvolume</i>: <br>
+The mesher to check for uv data
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+STRINGTABLE fx_grid_combustion_fire
+{
+	fx_grid_combustion_fire "Verbrennung";
+
+	GRID_COMBUSTION_TEMPERATURE "Temperatur";
+	GRID_COMBUSTION_FIRE "Feuer";
+	GRID_COMBUSTION_FUEL "Benzin";
+	GRID_COMBUSTION_SMOKE "Rauch";
+	GRID_COMBUSTION_MODE "Modus";
+		GRID_COMBUSTION_MODE_FUEL "Benzin";
+		GRID_COMBUSTION_MODE_FUEL_OXYGEN "Benzin / Sauerstoff";
+	GRID_COMBUSTION_BURNINGRATE "Verbrennungsrate [/sek]";
+	GRID_COMBUSTION_OXYGEN "Stoichiometrischer Mischfaktor";
+	GRID_COMBUSTION_IGNITION_TEMP "Entz\u00FCndungstemperatur [kelvin]";
+	GRID_COMBUSTION_HEAT "Temperaturemission [kelvin]";
+	GRID_COMBUSTION_HEATUPCURVE "Temperaturentwicklung (Lebenszeit Feuer)";
+	GRID_COMBUSTION_SOOT "Ru\u00df Emission [Dichte/sek]";
+	GRID_COMBUSTION_SOOTCURVE "Ru\u00dfentwicklung (Lebenszeit Feuer)";
+	GRID_COMBUSTION_EXPANSION "Ausdehnung [/sek]";
+	GRID_COMBUSTION_CONSTRAINTS "Beschr\u00E4nkung";
+	GRID_COMBUSTION_DIVERGENCE "Fluid Dynamics (Ausdehnung)";
+	
+	GRID_COMBUSTION_TEMPERATURE_SELECTOR "C";
+	GRID_COMBUSTION_FIRE_SELECTOR "C";
+	GRID_COMBUSTION_FUEL_SELECTOR "C";
+	GRID_COMBUSTION_SMOKE_SELECTOR "C";
+	GRID_COMBUSTION_DIVERGENCE_SELECTOR "C";
+
+	GRID_COMBUSTION_MOEFFECTORS "Mograph Effektors";
+
+	GRID_COMBUSTION_DUMMY_ "";
+}

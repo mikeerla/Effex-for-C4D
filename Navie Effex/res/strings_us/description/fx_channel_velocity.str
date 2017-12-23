@@ -1,0 +1,4 @@
+STRINGTABLE fx_channel_velocity
+{
+	fx_channel_velocity "Channel::Velocity Grid";
+}

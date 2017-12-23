@@ -1,0 +1,38 @@
+CONTAINER fx_pop_piop
+{
+	NAME fx_pop_piop;
+	INCLUDE fx_force_base;
+	INCLUDE fx_base_constraints;
+
+	GROUP ID_FORCE_BASE
+	{
+		DEFAULT 1;
+		GROUP ID_PORT_BASE
+		{
+			COLUMNS 2;
+			LINK FX_POP_PIOP_PARTICLES { ACCEPT { fx_particlegroup;  fx_group;} }
+			BUTTON FX_POP_PIOP_PARTICLES_SELECTOR {SCALE_V; FIT_H;}
+
+			LINK	FX_POP_PIOP_DURATION {ACCEPT{fx_duration; fx_group;}}
+			BUTTON	FX_POP_PIOP_DURATION_SELECTOR {SCALE_V; FIT_H;}
+			
+			IN_EXCLUDE FX_POP_PIOP_OPERATORS
+			{
+				NUM_FLAGS 0; INIT_STATE 0; SEND_SELCHNGMSG 0;
+				ACCEPT { fx_iop_spawn; fx_iop_repulsion; fx_iop_volumeproject; fx_group;}
+			}
+			BUTTON FX_POP_PIOP_OPERATORS_SELECTOR {SCALE_V; FIT_H;}
+		}
+		LONG FX_POP_PIOP_INPUT_FACTORY
+		{
+			CYCLE
+			{
+				FX_POP_PIOP_INPUT_FACTORY_PASSIVE;
+				FX_POP_PIOP_INPUT_FACTORY_VORTICITY;
+				FX_POP_PIOP_INPUT_FACTORY_IMPLICIT;
+				FX_POP_PIOP_INPUT_FACTORY_DIFFUSE;
+			}
+		}		
+	}
+}
+			

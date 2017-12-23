@@ -1,0 +1,26 @@
+STRINGTABLE fx_fluid_pb
+{
+	fx_fluid_pb "Fl\u00FCssigkeiten PBF";
+
+	FLUID_PBF_GROUP_MATERIAL "Eigenschaften";
+	FLUID_PBF_GROUP_DYNAMICS "Dynamiken";
+	FLUID_PBF_GROUP_SOLVER "Solver";
+		
+	FLUID_PBF_PARTICLES "Partikelgruppen";
+	FLUID_PBF_RADIUS "Radius";
+	FLUID_PBF_DENSITY "Globale Dichte [kg/m\U00B3]";
+	FLUID_PBF_VISCOSITY "Globale Viskosit\U00E4t";
+	FLUID_PBF_COLLIDE "Kollisionen erkennen";
+	FLUID_PBF_CMARGIN "Kollisionsversatz";
+	FLUID_PBF_RELAX "Relax Faktor";
+	FLUID_PBF_SOLVER_ITERATIONS "Durchl\u00E4ufe";
+	FLUID_PBF_DELTAQ "Delta Q";
+	FLUID_PBF_PK "Tensile Instability k";
+	FLUID_PBF_PN "Tensile Instability n";
+	FLUID_PBF_OPERATORS "PIOPs";
+	FLUID_PBF_MAXNEIGHBORS "Max. Neighbors";
+	FLUID_PBF_VORTICITY "Vorticity";
+	//SELECTORS
+	FLUID_PBF_PARTICLES_SELECTOR "C";
+	FLUID_PBF_OPERATORS_SELECTOR "C";
+}

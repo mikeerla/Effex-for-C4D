@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_particles.html">Particles</a></div>
+<div class="content">
+<h3>Particle Group</h3>
+</div>
+<div class="tabs">
+<a href="fx_particlegroup_quicktab.html">Quicktab</a>
+<a href="fx_particlegroup_parameters.html">Parameters</a>
+<a href="fx_particlegroup_display.html">Display</a>
+</div>
+<div class="content">
+<div class="subtab">Particle Group</div>
+<div class="data">
+<p>
+The particle group is a container for any Effex particles that are generated inside of the framework (so by any other node).<br>
+<br>
+Overall there are four different predefined particle types (and therefore four subgroups in the particle group) with different purposes
+but they are not restricted to these purposes. It's only for user convenience that these particle types are defined but you can use them,
+like any other part of the framework, for any purpose you want.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b><u>PASSIVE PARTICLES</u></b><br>
+Passive particles to create ballistic particle systems.
+
+<br></br>
+<b><u>LIQUID PARTICLES</u></b><br>
+Liquid Particles are specifically used by any liquid simulation (FLIP, SPH...).
+
+<br></br>
+<b><u>VORTICITY PARTICLES</u></b><br>
+Vorticity particles are explicitly used by the <a href="fx_force_particleturbulence.html">GF::Particle Turbulence</a> node.
+
+<br></br>
+<b><u>DIFFUSE PARTICLES</u></b><br>
+Diffuse particles are used to simulate secondary particles like foam, spray and bubbles
+(from a large-scale point of view so these are not meant to simulate close-up versions).
+<br><br>
+The <a href="fx_surfaces_foamspraybubbles.html">POP::Foam/Spray/Bubbles</a> node will specifically create and modify diffuse particles.
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

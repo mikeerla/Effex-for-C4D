@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_gop.html">Grid Operators (GOP)</a> : <a href="fx_operators_diffusor.html">GOP::Diffusor</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="GRID_DIFFUSION_CHANNEL" onclick="HideNextDOM($(this));" >Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopdif_params_channel.jpg" border="0"><br></br>
+The <a href="fx_channel.html">Grid channel</a> to diffuse.
+<br></br></p></div>
+<h4><a name="GRID_DIFFUSION_TYPE" onclick="HideNextDOM($(this));" >Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopdif_params_mode.jpg" border="0"><br></br>
+Defines the type of blurring.
+<br><br>
+<b>Kernel</b><br>
+Uses a falloff kernel to diffuse cells. This mode allows to sample
+cells also further away. The Diffusion setting determines the radius.
+<br><br>
+<b>Nearest Neighbor</b><br>
+Diffuses a grid cell only by neighbor cell values. The diffusion setting
+has therefore only limited range. <br>Use more iterations for stronger diffusion in this mode.
+<br></br></p></div>
+<h4><a name="GRID_DIFFUSION" onclick="HideNextDOM($(this));" >Diffusion</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopdif_params_diffusion.jpg" border="0"><br></br>
+The amount of diffusion (or length of the kernel) given in voxel size. Be careful with high values. Higher values take longer to calculate. 
+<br></br></p></div>
+<h4><a name="GRID_DIFFUSION_ITER" onclick="HideNextDOM($(this));" >Iterations</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopdif_params_iterations.jpg" border="0"><br></br>
+The diffusion process can be looped by setting a higher iteration count. Takes linearly more time per iteration.
+<br></br></p></div>
+<h4><a name="GRID_DIFFUSION_ITER_INTENSITY" onclick="HideNextDOM($(this));" >Intensity [iteration]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopdif_params_intenstiyiteration.jpg" border="0"><br></br>
+Defines the diffusion intensity per iteration. You can use the spline graph to control the intensity. 
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<i><b>Example: </i></b><br><br>
+If you have 3 iterations, then.. <br>
+- the leftmost point of the spline graph's x-axis defines the value for the 1st iteration.<br>
+- the center defines the value for the 2nd iteration<br>
+- the rightmost point defines the value the 3rd iteration<br>
+</div>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

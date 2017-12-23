@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_surfaces_foamspraybubbles.html">POP::Foam/Spray/Bubbles</a></div>
+<div class="content">
+<h3>Unified</h3>
+</div>
+<div class="tabs">
+<a href="fx_surfaces_foamspraybubbles_params.html">Parameters</a>
+<span>Unified</span>
+<a href="fx_surfaces_foamspraybubbles_foam.html">Foam</a>
+<a href="fx_surfaces_foamspraybubbles_spray.html">Spray</a>
+</div>
+<div class="content">
+<div class="subtab">Unified</div>
+<div class="data">
+<p>
+<img src="../../img/fx_foamspray_unified.jpg" border="0"">
+<br><br>
+Unified means that all diffuse particles are generated unified by the same set of settings.<br>
+It uses unitless potentials (minimum - maximum) which define the probability of diffuse particles being generated.
+<br><br>
+This makes it easy to handle because you don't need to worry about explicit values that fit the simulation.
+
+</p>
+</div>
+<h4><a name="FSB_ENERGY_MIN" onclick="HideNextDOM($(this));" >Kinetic Energy minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_unified_kinetic_energy_minimum.jpg" border="0"><br></br>
+The minimum kinetic energy of the liquid flow required to generate diffuse particles.
+<br></br></p></div>
+<h4><a name="FSB_ENERGY_MAX" onclick="HideNextDOM($(this));" >Kinetic energy maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_unified_kinetic_energy_maximum.jpg" border="0"><br></br>
+The maximum kinetic energy of the liquid flow required to generate diffuse particles.
+<br></br></p></div>
+<h4><a name="FSB_WAVECREST_SAMPLES" onclick="HideNextDOM($(this));" >Wavecrest samples</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_unified_wavecrest_samples.jpg" border="0"><br></br>
+The amount of diffuse particles generated at wave crests.
+<br></br></p></div>
+<h4><a name="FSB_WAVECREST_MIN" onclick="HideNextDOM($(this));" >Wavecrest minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_unified_wavecrest_min.jpg" border="0"><br></br>
+The minimum wavecrest potential.
+<br></br></p></div>
+<h4><a name="FSB_WAVECREST_MAX" onclick="HideNextDOM($(this));" >Wavecrest maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_unified_wavecrest_max.jpg" border="0"><br></br>
+The maximum wavecrest potential.
+<br></br></p></div>
+<h4><a name="FSB_TRAPPEDAIR_SAMPLES" onclick="HideNextDOM($(this));" >Trapped Air samples</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_unified_trapped_air_samples.jpg" border="0"><br></br>
+The amount of diffuse particles generated in trapped air regions.
+<br></br></p></div>
+<h4><a name="FSB_TRAPPEDAIR_MIN" onclick="HideNextDOM($(this));" >Trapped Air minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_unified_trapped_air_min.jpg" border="0"><br></br>
+Minimum trapped air potential.
+<br></br></p></div>
+<h4><a name="FSB_TRAPPEDAIR_MAX" onclick="HideNextDOM($(this));" >Trapped Air maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_unified_trapped_air_max.jpg" border="0"><br></br>
+Maximum trapped air potential.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

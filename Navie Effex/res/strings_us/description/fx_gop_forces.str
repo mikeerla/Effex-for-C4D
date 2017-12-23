@@ -1,0 +1,16 @@
+STRINGTABLE fx_gop_forces
+{
+	fx_gop_forces "GOP::Forces";
+
+	GOP_FORCES_INPUT "Grid Forces (GF)";
+	GOP_FORCES_INPUT_SELECTOR "C";
+	GOP_FORCES_DURATION "Duration";
+	GOP_FORCES_DURATION_SELECTOR "C";
+	GOP_FORCES_INTENSITY "Intensity";
+	GOP_FORCES_USEGRAVITY "Use global gravity";
+	GOP_FORCES_MODE "Emission Mode";
+	GOP_FORCES_MODE_ADD "Add";
+	GOP_FORCES_MODE_SET "Overwrite";
+	GOP_FORCES_VELOCITY "Velocity channel";
+	GOP_FORCES_VELOCITY_SELECTOR "C";
+}

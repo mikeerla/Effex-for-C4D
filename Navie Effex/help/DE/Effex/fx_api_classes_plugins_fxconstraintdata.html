@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_plugins.html">Plugins</a></div>
+<div class="content">
+<h3>FXConstraintData</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXConstraintData</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> IsParticleConstraint (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+Overloaded to define if this constraint is specifically a particle constraint.
+<br></br>
+<b>Returns</b><br>
+true if it is a particle constraint. In that case you need to overload GetParticleConstraint!
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">void</span> PrecomputeConstraint (<span style="color:rgb(0,31,174);">void</span>* t_data)</A></h4><div class="selected"><p><br>
+Overloaded to precompute or allocate any data required when the constraint is sampled.<br>
+Make sure you support multiple processors. Constraints are always called in a multiprocessor context.
+<br></br>
+<b>Parameters</b><BR>
+<i>void* t_data</i>:<br>
+Currently unused. May contain additional data specific to a constraint.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">void</span> FreePrecomputeConstraint (<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+Overloaded to free any precomputed data (in PrecomputeConstraint).
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> GetConstraint (<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& position, <span style="color:rgb(0,31,174);">double</span>& src_value, <span style="color:rgb(0,31,174);">void</span>* local_data, <span style="color:rgb(0,31,174);">int</span> cpu = 0)</A></h4><div class="selected"><p><br>
+Overloaded when your constraint is sampled by other nodes.<br>
+This is always called in a multiprocessor context.
+<br></br>
+<b>Returns</b><br>
+true if sampling was successful and if the src_value is not 0.0! Otherwise return false.
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& position</i>:<br>
+Physical position this constraint is sampled for.
+<br></br>
+<i>double& src_value</i>: <br>
+This is the constraint value. This could be the result of several constraints so may not strictly be the explicit constraint value
+alone. If you overwrite it and other constraints already operated on it, their constraint value is gone!<br>
+Best is to multiply your constraint value with the original value.
+<br></br>
+Be sure to call Base::GetConstraint().
+<br></br>
+<i>void* local_data</i>: <br>
+Currently unused
+<br></br>
+<i>int cpu</i>: <br>
+The current cpu thread your constraint is called from.
+<br></br>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> GetParticleConstraint (<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& position, <span style="color:rgb(0,31,174);">double</span>& src_value, <span style="color:rgb(0,31,174);">void</span>* local_data, <span style="color:rgb(0,31,174);">int</span> cpu = 0, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">void</span>* t_particle = NULL)</A></h4><div class="selected"><p><br>
+Overloaded when your particle constraint is sampled by other nodes.<br>
+This is always called in a multiprocessor context.
+<br></br>
+<b>Returns</b><br>
+true if sampling was successful and if the src_value is not 0.0! Otherwise return false.
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& position</i>:<br>
+Physical position this constraint is currently sampled for.
+<br></br>
+<i>double& src_value</i>: <br>
+This is the constraint value. This could be the result of several constraints so may not strictly be the explicit constraint value
+alone. If you overwrite it and other constraints already operated on it, their constraint value is gone!<br>
+Best is to multiply your constraint value with the original value.
+<br></br>
+Be sure to call Base::GetConstraint().
+<br></br>
+<i>void* local_data</i>: <br>
+Currently unused
+<br></br>
+<i>int cpu</i>: <br>
+The current cpu thread your constraint is called from.
+<br></br>
+<i>const void* t_particle</i>: <br>
+Contains the FXParticle this constraint should take into account. Only used for particle constraints!
+<br></br>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_forces.html">Forces</a> : <a href="fx_forces_pf.html">Particle Forces (PF)</a> : <a href="fx_pforce_coffee.html">PF::Coffee</a></div>
+<div class="content">
+<h3>Scripting</h3>
+</div>
+<div class="tabs">
+<a href="fx_pforce_coffee_params.html">Parameters</a>
+<span>Scripting</span>
+</div>
+<div class="content">
+<div class="subtab">Scripting</div>
+<div class="data">
+<p>
+<img src="../../img/fx_pf_coffee_script.jpg" border="0"">
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Open Editor</A></h4><div class="selected"><p><br>
+<img src="../../img/particleforce_coffee_scripting_open_editor.jpg" border="0"><br></br>
+Opens the standard C4D COFFEE Expression Editor.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Compile</A></h4><div class="selected"><p><br>
+<img src="../../img/particleforce_coffee_scripting_compile.jpg" border="0"><br></br>
+Compiles (parses the code and checks for its validity) the script code.
+<br></br></p></div>
+<h4><a name="FX_COFFEE_CODE" onclick="HideNextDOM($(this));" >Script Code</A></h4><div class="selected"><p><br></br>
+<img src="../../img/particleforce_coffee_scripting_script_code.jpg" border="0"><br></br>
+Here you can write the COFFEE script that creates the acceleration force.<br>
+Once assigned to the particle group Forces list, it will call the given script code for each particle in that group.
+<br></br>
+There are predefined Effex variables that you can access beside the usual COFFEE functionality or that offer you information about the current particle and its content.
+<br></br>
+<b>main(op)</b> - op is the COFFEE force itself (the correct object pointer is passed here during rendering...so you can extract the render basedocument from it)<br>
+<b>intensity</b> - the node's "Intensity" float slider value<br>
+<b>particle_pos</b> - the physical position vector of the particle<br>
+<b>particle_acceleration</b> - the current acceleration vector of the particle<br>
+<b>particle_index</b> - the particle index in the particle group<br>
+<br></br>
+By default the script code generates a simple drag force.
+<br></br></p></div>
+<h4><a name="FX_COFFEE_VALUES" onclick="HideNextDOM($(this));" >User Defined Variables</A></h4><div class="selected"><p><br></br>
+<img src="../../img/particleforce_coffee_scripting_use_defined_variables.jpg" border="0"><br></br>
+This list takes nodes of type "Value".<br>
+Once you assigned a Value node, the script code automatically creates a new variable which is named equal to the Value node's name.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b><i>Example: </b></i><br>
+The Value node's name is "brains", then you can automatically access the variable "brains" in the script which allows to access the node's value.
+<br></br>
+Therefore you can create an arbitrary amount of new float, integer or vector variables and control them from within the Value node's settings (and conslusively via Xpresso).
+</div>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

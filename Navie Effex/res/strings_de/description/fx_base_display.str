@@ -1,0 +1,7 @@
+STRINGTABLE fx_base_display
+{
+	fx_base_display "Anzeige";
+
+	FX_BASE_DISPLAYTAB "Anzeige";
+	FX_BASE_DRAW "An";
+}

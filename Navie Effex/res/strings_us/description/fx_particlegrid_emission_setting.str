@@ -1,0 +1,9 @@
+STRINGTABLE fx_particlegrid_emission_setting
+{
+	fx_particlegrid_emission_setting "FSS Particle Grid Emission Settings";
+
+	PARTICLEGRID_EMISSION_SETTINGS_BASESETTINGS "Particle Emission Settings";
+	PARTICLEGRID_EMISSION_SETTINGS_JITTER "Jittering";
+
+	PARTICLEGRID_EMISSION_SETTINGS_DUMMY_ "";
+}

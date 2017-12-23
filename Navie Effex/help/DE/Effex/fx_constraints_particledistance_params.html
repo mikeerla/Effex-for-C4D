@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_constraints.html">Constraints</a> : <a href="fx_constraints_particledistance.html">CS::Distance To Particle</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_cs_distparticle_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="CONSTRAINT_PARTICLEDISTANCE_PARTICLES" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_global_particle_group.jpg" border="0"><br></br>
+The <a href="fx_particles_particlegroup.html">Particle group</a> used to find the nearest particle (in the radius defined by Ratio) and to calculate the distance to.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_PARTICLEDISTANCE_FACTORY" onclick="HideNextDOM($(this));" >Particle Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_global_particle_type.jpg" border="0"><br></br>
+The particle type to use from the Particle Group for finding the distance to.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_PARTICLEDISTANCE_RATIO" onclick="HideNextDOM($(this));" >Ratio</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_particle_distance_constraint_ratio.jpg" border="0"><br></br>
+The radius to find the nearst particle in. Particles further than this distance to the location the caller node currently processes are automatically excluded.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

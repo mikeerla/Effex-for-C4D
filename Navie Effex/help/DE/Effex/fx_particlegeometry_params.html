@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_particles.html">Particles</a> : <a href="fx_particlegeometry.html">Particle Geometry</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_particlegeo_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="POP_GEOMETRY_INPUT" onclick="HideNextDOM($(this));" >Particle group</A></h4><div class="selected"><p><br></br>
+Defines the <a href="fx_particles_particlegroup.html">Particle Group</a> to read particles from.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+Define when (temporally) and how long this node operates.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_RENDERONLY" onclick="HideNextDOM($(this));" >Only during rendering</A></h4><div class="selected"><p><br></br>
+If activated objects/geometry are/is only generated during rendering.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_INPUT_FACTORY" onclick="HideNextDOM($(this));" >Particle type</A></h4><div class="selected"><p><br></br>
+Define which particle type (subgroup) of the input particle groups to use.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_POSITION" onclick="HideNextDOM($(this));" >Position Type</A></h4><div class="selected"><p><br></br>
+Define which particle position to use.
+<br><br>
+<b>Position</b><br>
+The real particle position.
+<br><br>
+<b>Deformed Position</b><br>
+The deformed particle position (i.e. deformed by a <a href="fx_operators_deform.html">POP::Deform</a>)
+<br><br>
+<b>Weighted Position</b><br>
+The weighted position (i.e. calculated by a <a href="fx_operators_po_volumeproperties.html">POP::Volume Properties</a>)
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_TYPE" onclick="HideNextDOM($(this));" >Clones</A></h4><div class="selected"><p><br></br>
+The input (child) objects are cloned for being attached to particles. This defines the type of clone generated.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Please refer to the Cinema 4D help for more info on Instances.
+</div>
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_ALIGNMENT" onclick="HideNextDOM($(this));" >Alignment</A></h4><div class="selected"><p><br></br>
+Defines the alignment of attached clones on the particle.
+
+<br><br>
+<b>X/Y/Z Axis</b><br>
+Clones are aligned along one of the global axis directions.
+<br><br>
+<b>Travel direction</b><br>
+Clones are aligned along the travel direction of the particle they are attached to.
+<br><br>
+<b>Look at Camera</b><br>
+Clones are always facing the camera. This mode can be used for sprites rendering.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Scale</span>
+</div>
+<div class="subdata selected">
+<h4><a name="POP_GEOMETRY_SCALE_UNIFORM" onclick="HideNextDOM($(this));" >Uniform Randomizing</A></h4><div class="selected"><p><br></br>
+If activated randomizing the scale happens with the same value for each scale axis (X/Y/Z).
+<br>Otherwise you can define scale for each axis separately.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_SCALE" onclick="HideNextDOM($(this));" >Scale</A></h4><div class="selected"><p><br></br>
+The scale of a clone along each axis.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_SCALE_VAR" onclick="HideNextDOM($(this));" >Randomize X</A></h4><div class="selected"><p><br></br>
+Randomizes the 'Scale' along the X-axis.
+<br><br>If 'Uniform Randomizing' is activated, it also controls the scale along the Y and Z axis.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_SCALE_VARY" onclick="HideNextDOM($(this));" >Randomize Y</A></h4><div class="selected"><p><br></br>
+Randomizes the 'Scale' along the Y axis.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_SCALE_VARZ" onclick="HideNextDOM($(this));" >Randomize Z</A></h4><div class="selected"><p><br></br>
+Randomizes the 'Scale' along the Z axis.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_SCALE_VELOCITY" onclick="HideNextDOM($(this));" >Motion Scale</A></h4><div class="selected"><p><br></br>
+Controls the scaling along the particle's travel direction.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_SCALE_VELOCITYVAR" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the motion scaling factor.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Rotation</span>
+</div>
+<div class="subdata selected">
+<h4><a name="POP_GEOMETRY_ROTATION" onclick="HideNextDOM($(this));" >Rotation</A></h4><div class="selected"><p><br></br>
+Controls the rotation of clones along each axis.
+<br></br></p></div>
+<h4><a name="POP_GEOMETRY_ROTATION_VAR" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the clone rotation.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

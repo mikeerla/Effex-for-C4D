@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_gop.html">Grid Operators (GOP)</a> : <a href="fx_operators_combustion.html">GOP::Combustion</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="GRID_COMBUSTION_TEMPERATURE" onclick="HideNextDOM($(this));" >Temperature</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_temperature.jpg" border="0"><br></br>
+Takes a scalar channel that contains temperature information. This node is required.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_SMOKE" onclick="HideNextDOM($(this));" >Smoke</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_smoke.jpg" border="0"><br></br>
+Takes a scalar channel that takes smoke/soot information. This node is optional. If not linked no soot will be generated.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_FIRE" onclick="HideNextDOM($(this));" >Fire</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_fire.jpg" border="0"><br></br>
+Takes a fire channel that contains burning information. This node is required.<br>
+The fire channel's 'Cooling Point', Flames Lifetime and Flames Afterlife settings are used in the simple fire combustion model.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_FUEL" onclick="HideNextDOM($(this));" >Fuel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_fuel.jpg" border="0"><br></br>
+Takes a scalar channel that contains fuel information. This node is optional.
+<br></br>
+By linking a channel here you automatically switch the internal algorithm to a fuel-based combustion model. If it is not linked
+the normal fire model is used (see top for a description).
+
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_DIVERGENCE" onclick="HideNextDOM($(this));" >Fluid Dynamics (Expansion)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_fluid_dynamics.jpg" border="0"><br></br>
+Takes a fluid dynamics node to emit pressure into resulting in expansion. This node is optional.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_MODE" onclick="HideNextDOM($(this));" >Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_mode.jpg" border="0"><br></br>
+Only available if a fuel channel is linked. Defines which fuel combustion model to use (see top for a description).
+<br></br>
+<b>Fuel</b><br>
+<b>Fuel / Oxygen</b><br>
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_BURNINGRATE" onclick="HideNextDOM($(this));" >Burning Rate [/sec]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_burning_rate.jpg" border="0"><br></br>
+Defines how fast the fuel is burnt away. Automatically results in higher emissions of temperature, soot and expansion.<br>
+The burning rate is per second and can also be higher than 1.0.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_OXYGEN" onclick="HideNextDOM($(this));" >Stoichiometric mixture</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_stoichiometric_mixture.jpg" border="0"><br></br>
+<i>Only available if Mode is set to 'Fuel / Oxygen'.</i>
+<br></br>
+Defines the a fuel to oxygen (air) ratio that must be available in a grid cell in order to let combustion take place.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_IGNITION_TEMP" onclick="HideNextDOM($(this));" >Ignition Temperature [kelvin]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_ignition_temperature.jpg" border="0"><br></br>
+This is only used if no fuel channel is linked (so only in the simple fire combustion model). If you have a fuel channel, then the channels ignition temperature is used instead.
+<br></br>
+The ignition temperature is the temperature that must be reached before the fire starts to burn. <br>
+Sensible values here range from 400 to 1000 kelvin (taking real world fuels as reference).
+<br></br>
+In the simple fire mode however you directly emit flames into the fire channel and this then defines the minimum temperature written.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_HEAT" onclick="HideNextDOM($(this));" >Temperature Emission [kelvin]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_temperature_emission.jpg" border="0"><br></br>
+<i>(only available in fuel mode)</i>
+<br></br>
+How much temperature is generated during combustion. Given in kelvin.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_HEATUPCURVE" onclick="HideNextDOM($(this));" >Temperature (fire lifetime)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_temperature _fire_lifetime.jpg" border="0"><br></br>
+<i>(only available in the simple combustion (non-fuel) mode)</i>
+<br></br>
+Defines a procedural temperature rising profile (curve range is from ignition temperature to cooling point). <br>
+The duration of this range is defined by the 'Flames Lifetime' setting of the linked fire channel.
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_SOOT" onclick="HideNextDOM($(this));" >Soot Emission [density/sec]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_soot_emission.jpg" border="0"><br></br>
+How much soot is generated per second during combustion (only used if a smoke channel is linked).
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_SOOTCURVE" onclick="HideNextDOM($(this));" >Soot Emission (fire lifetime)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_soot_emission_fire_lifetime.jpg" border="0"><br></br>
+Defines a procedural smoke emission profile (curve range is from ignition temperature to cooling point).<br>
+The duration of this range is defined by the 'Flames Lifetime' setting of the linked fire channel.
+<br></br>
+Usually soot emission is highest when the fire dies off (so at the cooling point and right side of the curve).
+<br></br></p></div>
+<h4><a name="GRID_COMBUSTION_EXPANSION" onclick="HideNextDOM($(this));" >Expansion [/sec]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_combustion_params_expansion.jpg" border="0"><br></br>
+How much pressure is generated per second during combustion (only used if a fluid dynamics node is linked).<br>
+This results in expanding motion and is a key value for explosions.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

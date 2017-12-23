@@ -1,0 +1,13 @@
+STRINGTABLE fx_force_gravity
+{
+	fx_force_gravity "Force::Richtung";
+
+	FORCE_GRAVITY "Manuelle Richtung";
+	FORCE_GRAVITY_ALIGNMENT "Richtung [via Ausrichtung]";
+	FORCE_GRAVITY_INTENSITY "St\u00E4rke";
+	FORCE_GRAVITY_SETTINGS "Emissionseinstellungen";
+	FORCE_GRAVITY_ALIGNMENT_SELECTOR "C";
+	FORCE_GRAVITY_SETTINGS_SELECTOR "C";
+
+	FORCE_GRAVITY_DUMMY_ "";
+}

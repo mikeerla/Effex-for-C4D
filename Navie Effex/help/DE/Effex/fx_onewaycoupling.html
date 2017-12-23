@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_tags.html">Tags</a></div>
+<div class="content">
+<h3>One-Way Fluid Coupling</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">One-Way Fluid Coupling</div>
+<div class="data">
+<p>
+This tag allows to couple any Cinema 4D object to the flow of a fluid simulation. This means the object with a fluid coupling tag attached will be influenced by the flow and may be boosted away by explosions or strong wind forces.
+<br></br>
+This coupling is a one-way coupling, means the object is influenced by the fluid but the fluid is not influenced by the object.
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Set Current as Rest Matrix</A></h4><div class="selected"><p><br>
+<img src="../../img/tags_one_way_fluid_coupling_tag_set_current_as_rest_matrix.jpg" border="0"><br></br>
+Set the current object matrix (position and rotation) as rest matrix. 
+<br></br>
+So whenever the timeline is reset to the beginning the object is set back to this original position and rotation.
+<br></br></p></div>
+<h4><a name="COUPLE_DYNAMICS" onclick="HideNextDOM($(this));" >Dynamics</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_one_way_fluid_coupling_tag_dynamics.jpg" border="0"><br></br>
+Link here the fluid dynamics node that contains the velocity field that
+you want to use for fluid coupling. This node is required.
+<br></br></p></div>
+<h4><a name="COUPLE_DRAG" onclick="HideNextDOM($(this));" >Flow Resistance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_one_way_fluid_coupling_tag_flow_resistance.jpg" border="0"><br></br>
+Adds some drag to the resulting motion to simulate flow resistance.
+<br></br></p></div>
+<h4><a name="COUPLE_BLEND" onclick="HideNextDOM($(this));" >Blend with Original</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_one_way_fluid_coupling_tag_blend_with_original.jpg" border="0"><br></br>
+Blend the coupling effect with the original motion of the coupled object (so this tag is attached to).<br>
+Allows to smoothly integrate with existing dynamics (its limited though).
+<br></br></p></div>
+<h4><a name="COUPLE_ROTATION" onclick="HideNextDOM($(this));" >Angular Speed</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_one_way_fluid_coupling_tag_angular_speed.jpg" border="0"><br></br>
+The angular speed influence, so the rotational strength the fluid flow excerts on the object. Lower values allow the object to rotate more smoothly (even with very strong fluid flows).<br>
+This is like a rotational flow resistance value.
+<br></br></p></div>
+<h4><a name="COUPLE_INTEGRATOR" onclick="HideNextDOM($(this));" >Integrator</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_one_way_fluid_coupling_tag_integrator.jpg" border="0"><br></br>
+When the object is transported by the fluid dynamics motion 
+there can be several physical integration modes which all result in more precision of the transport. The path of the transport is approximated more precisely depending on which mode you choose.
+<br></br>
+These are the available modes:
+<br></br>
+<b>_ 1st Order:</b> Fast - Low accuracy<br>
+<b>_ 2nd Order:</b> Pretty fast - Good accuracy<br>
+<b>_ 3rd Order:</b> Slow - Very Good accuracy<br>
+<b>_ 4th Order:</b> Very slow - Best accuracy
+<br></br></p></div>
+<h4><a name="COUPLE_BUOYANCY" onclick="HideNextDOM($(this));" >Buoyancy</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_one_way_fluid_coupling_tag_buoyancy.jpg" border="0"><br></br>
+This buoyancy value allows to mimic a buoyant effect such as objects
+rising in water (due to lower matter density) and flowing on top.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

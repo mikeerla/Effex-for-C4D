@@ -1,0 +1,15 @@
+STRINGTABLE fx_grid_sand
+{
+	fx_grid_sand "GOP::Sand";
+
+	FXGRID_SAND_SOLVER "Liquid Dynamics [R]";
+	FXGRID_SAND_DENSITY "Density Channel [O]";
+
+	FXGRID_SAND_FRICTION "Friction";
+	FXGRID_SAND_FRICTION_YIELD "Shear stress threshold";
+	FXGRID_SAND_FRICTION_WALLS "Friction at obstacles";
+	FXGRID_SAND_COHESION "Cohesion";
+
+	FXGRID_SAND_SOLVER_SELECTOR "C";
+	FXGRID_SAND_DENSITY_SELECTOR "C";
+}

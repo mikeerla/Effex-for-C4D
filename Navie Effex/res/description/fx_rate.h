@@ -1,0 +1,18 @@
+#ifndef FX_RATE_H
+#define FX_RATE_H
+
+enum
+{
+	RATE_TYPE = 5000,
+			RATE_TYPE_SCALAR = 0,
+			RATE_TYPE_VECTOR,
+			RATE_TYPE_INTEGER,
+	RATE_SCALAR = 5001,
+	RATE_VECTOR,
+	RATE_INTEGER,
+	
+	RATE_DUMMY_
+
+};
+
+#endif

@@ -1,0 +1,11 @@
+STRINGTABLE fx_pforce_separation
+{
+	fx_pforce_separation "ParticleForce::Separation";
+	
+	PFORCE_SEPARATION_INTENSITY "Intensity";
+	PFORCE_SEPARATION_DURATION "Duration";
+	PFORCE_SEPARATION_DURATION_SELECTOR "C";
+	PFORCE_SEPARATION_RADIUS "Sampling Radius";
+
+	PFORCE_SEPARATION_DUMMY_ "";
+}

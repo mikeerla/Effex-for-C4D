@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_po_weakspring.html">POP::Weak Spring</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="PFORCE_CORRECTOR_PARTICLES" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_particle_group.jpg" border="0"><br></br>
+The particle group to calculate the properties for.
+<br></br></p></div>
+<h4><a name="PSURFACEPROPERTY_INPUT_FACTORY" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_particles.jpg" border="0"><br></br>
+The particle type of the Particle Group to use.
+
+<br></br></p></div>
+<h4><a name="PFORCE_CORRECTOR_DYNAMICS" onclick="HideNextDOM($(this));" >Fluid Dynamics (Boundary)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_weak_spring_params_fluid_dynamics_boundary.jpg" border="0"><br></br>
+Link a fluid dynamics node in order to get the domain boundary being taken into account for any simulation particles.
+<br></br></p></div>
+<h4><a name="PFORCE_CORRECTOR_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_global_duration.jpg" border="0"><br></br>
+Takes a duration node in order to control when of the weak spring operation is evaluated.
+<br></br></p></div>
+<h4><a name="PFORCE_CORRECTOR_ITERATIONS" onclick="HideNextDOM($(this));" >Iterations</A></h4><div class="selected"><p><br></br>
+Define how many times the operator should be executed. 
+<br>If you use more than 1 iterations, you may want to decrease the stiffness parameter to get a softer displacement of the particle positions.
+<br></br></p></div>
+<h4><a name="PFORCE_CORRECTOR_SPACING" onclick="HideNextDOM($(this));" >Particle Spacing</A></h4><div class="selected"><p><br></br>
+Defines the particle spacing of the simulation. The default is 0.5 (half a voxel size).
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note: Usually you won't change this except you know exactly what you are doing!</b>
+</div>
+<br></br></p></div>
+<h4><a name="PFORCE_CORRECTOR_SPRINGFORCE" onclick="HideNextDOM($(this));" >Spring stiffness</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_weak_spring_params_fluid_spring_stiffness.jpg" border="0"><br></br>
+The spring stiffness. Be careful with this. The lower the time step (or rather the more substeps) the higher you can set the stiffness without it getting unstable.
+<br></br></p></div>
+<h4><a name="PFORCE_CORRECTOR_FORCERESAMPLING" onclick="HideNextDOM($(this));" >Enforce Resampling</A></h4><div class="selected"><p><br></br>
+<img src="../../img/popweakspring_params_resamplingerzwingen.jpg" border="0"><br></br>
+Especially at boundaries particles can clump together. This option tries to resample the particle positions to avoid numerical issues.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: It should used with care and probably only in highly dynamic scenes as it may show popping.
+</div>
+<br></br></p></div>
+<h4><a name="PFORCE_CORRECTOR_BOUNDARYPARTICLE" onclick="HideNextDOM($(this));" >Mimic Boundary Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/popweakspring_params_mimcboundary.jpg" border="0"><br></br>
+During displacement of positions in this node, collisions with boundaries are included (if a Fluid Dynamics node is assigned).
+<br>Activating this option will basically try to offset the particles from the collision surface, however it does this with an impulse rather than displacement.
+<br><br>Can be used arbitrarily if you see fit but is also most useful for dynamic scenes or if you need improved slipping behavior at boundary edges.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

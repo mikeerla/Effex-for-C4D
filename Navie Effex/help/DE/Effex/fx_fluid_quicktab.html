@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_dynamics.html">Dynamics</a> : <a href="fx_fluid.html">Fluid Dynamics</a></div>
+<div class="content">
+<h3>Quicktab</h3>
+</div>
+<div class="tabs">
+<span>Quicktab</span>
+<a href="fx_fluid_params.html">Parameters</a>
+<a href="fx_fluid_characteristica.html">Characteristica</a>
+<a href="fx_fluid_dynamics.html">Dynamics</a>
+<a href="fx_fluid_solver.html">Solver</a>
+<a href="fx_fluid_display.html">Display</a>
+</div>
+<div class="content">
+<div class="subtab">Quicktab</div>
+<div class="data">
+<p>
+<img src="../../img/fx_fluiddynamics_quicktab.jpg" border="0"">
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Variable Density</A></h4><div class="selected"><p><br>
+<img src="../../img/fluiddynamics_quicktab_variabledensity.jpg" border="0"><br></br>
+Creates the necessary nodes to user-define variable density and also links the newly generated nodes in the appropriate link fields (mainly Characteristica tab).
+<br><br>
+<u>The following nodes are generated:</u><br>
+1. Scalar Grid Channel - holds the density values<br>
+2. POP::ParticleData To Grid - to write values from particles into the scalar channel<br>
+3. Container::Channel/Value - to tell the POP into which channel and which value to write
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Variable Viscosity</A></h4><div class="selected"><p><br>
+<img src="../../img/fluiddynamics_quicktab_variableviscosity.jpg" border="0"><br></br>
+Creates the necessary nodes to user-define variable viscosity and also links the newly generated nodes in the appropriate link fields (mainly Characteristica tab).
+<br><br>
+<u>The following nodes are generated:</u><br>
+1. Scalar Grid Channel - holds the viscosity values<br>
+2. POP::ParticleData To Grid - to write values from particles into the scalar channel<br>
+3. Container::Channel/Value - to tell the POP into which channel and which value to write
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Particle Turbulence</A></h4><div class="selected"><p><br>
+<img src="../../img/fluiddynamics_quicktab_particleturbulence.jpg" border="0"><br></br>
+Creates the necessary nodes to apply turbulences from vorticity particles and also links the newly generated nodes in the appropriate link fields (mainly Dynamics::Grid Forces) and among each other.
+<br><br>
+<u>The following nodes are created:</u><br>
+1. Emitter::Particle In Volume - to generate Vorticity particles<br>
+2. Settings::Particle Emission - Emission setting<br>
+3. Alignment - defines the initial vorticity direction<br>
+4. Duration - defines duration of particle emission<br>
+5. CS::Noise - to vary the vorticity particle emission<br>
+6. POP::Advection - to let the vorticity particles be transported passively by the liquid motion<br>
+7. GF::Particle Turbulence - the actual turbulence force calculated from the vorticity particles<br>
+8. POP::Converter - to kill vorticity particles<br>
+9. CS::Volume - used by above POP::Converter to kill vorticity particles only outside the liquid body volume
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

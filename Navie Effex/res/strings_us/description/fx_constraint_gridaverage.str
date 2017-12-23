@@ -1,0 +1,8 @@
+STRINGTABLE fx_constraint_gridaverage
+{
+	fx_constraint_gridaverage "Constraint::Grid Average";
+
+	CONSTRAINT_GRIDAVERAGE_CHANNEL "Channel";
+	CONSTRAINT_GRIDAVERAGE_THRESHOLD "Threshold";
+	CONSTRAINT_GRIDAVERAGE_CHANNEL_SELECTOR "C";
+}

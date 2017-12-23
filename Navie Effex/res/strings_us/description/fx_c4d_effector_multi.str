@@ -1,0 +1,8 @@
+STRINGTABLE fx_c4d_effector_multi
+{
+	fx_c4d_effector_multi "MultiMesh Effector";
+
+	MULTIVOLUME_EFFECTOR_STRENGTH "Strength";
+	MULTIVOLUME_EFFECTOR_VOLUME "MultiMesh";	
+	ID_MULTIVOLUME_EFFECTOR "Params";
+}

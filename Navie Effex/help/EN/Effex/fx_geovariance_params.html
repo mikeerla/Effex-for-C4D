@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_particles.html">Particles</a> : <a href="fx_geovariance.html">GeoVariance</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_variance_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FX_MULTIVARIANCE_RND_TYPE" onclick="HideNextDOM($(this));" >Variance Type</A></h4><div class="selected"><p><br></br>
+Choose a mode to determine which child object to use.
+<br><br>
+<b>Random</b><br>
+A child will be selected randomly.
+<br><br>
+<b>Row</b><br>
+Child objects are selected as defined by the child object order. Child 1, Child 2, Child 3...
+<br><br>
+<b>Noise</b><br>
+Uses a noise value to select a child. White noise values will select the last child, black noise values will select the first child. Otherwise accordingly an interpolated child.
+<br><br>
+<b>Index</b><br>
+Selects a specific child by index. Index 0 will use the first child. Index value must be smaller than available child count.
+<br>The last child is therefore selected if Index value is 'child count - 1'
+<br><br>
+<b>Exception</b><br>
+Same as row but lets you select a certain amount of children (see Length) to exclude after each chosen child object.
+<br>So it selects Child 1 -> then excludes the next 3 children -> Then takes child 5 -> excludes next 3...
+<br><br>
+<b>Series</b><br>
+This lets you choose a series (see Length) of children to select.
+<br>For example starting at the second child -> then selects 'Length' amount of children -> starting at second child again -> selects 'Length' amount of children...
+<br><br>
+<b>Elevation</b><br>
+Lets you control which child to select based on elevation. Selecting this mode will reveal additional settings in the AM.
+<br></br></p></div>
+<h4><a name="FX_MULTIVARIANCE_NUMBER" onclick="HideNextDOM($(this));" >Index</A></h4><div class="selected"><p><br></br>
+<i>Only if 'Variance Type' = Index</i><br>
+<br>
+The child index 0 is the first child. Maximum possible value is 'amount of child objects - 1'.
+<br></br></p></div>
+<h4><a name="FX_MULTIVARIANCE_SERIESLEN" onclick="HideNextDOM($(this));" >Length</A></h4><div class="selected"><p><br></br>
+<i>Only if 'Variance Type' = Exception, Series</i><br>
+<br>
+Defines the length (amount of child objects) of a series or an exception series.
+<br></br></p></div>
+<h4><a name="FX_MULTIVARIANCE_START" onclick="HideNextDOM($(this));" >Start index</A></h4><div class="selected"><p><br></br>
+<i>Only if 'Variance Type' = Row, Exception, Series</i><br>
+<br>
+The start child object index to start the row, exception or series from.
+<br>Index 0 is the first child. Maximum possible value is 'amount of child objects - 1'.
+<br></br></p></div>
+<h4><a name="FX_MULTIVARIANCE_SEED" onclick="HideNextDOM($(this));" >Seed</A></h4><div class="selected"><p><br></br>
+<i>Only if 'Variance Type' = Random, Noise</i><br>
+<br>
+The seed value for the internal random or noise generator.
+<br></br></p></div>
+<h4><a name="FX_MULTIVARIANCE_HEIGHT_MIN" onclick="HideNextDOM($(this));" >Low</A></h4><div class="selected"><p><br></br>
+<i>Only if 'Variance Type' = Elevation</i><br>
+<br>
+The minimum height for selection control range (see Distribution).
+<br></br></p></div>
+<h4><a name="FX_MULTIVARIANCE_HEIGHT_MAX" onclick="HideNextDOM($(this));" >High</A></h4><div class="selected"><p><br></br>
+<i>Only if 'Variance Type' = Elevation</i><br>
+<br>
+The maximum height for selection control range (see Distribution).
+<br></br></p></div>
+<h4><a name="FX_MULTIVARIANCE_HEIGHT_DISTRIBUTION" onclick="HideNextDOM($(this));" >Distribution</A></h4><div class="selected"><p><br></br>
+<i>Only if 'Variance Type' = Elevation</i><br>
+<br>
+Controls which child to select on the specified height range.<br>
+<br>By default (a linear spline curve) for the minimum height the first child is selected, for the maximum the last child is selected and inbetween the minimum and maximum the other children accordingly.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

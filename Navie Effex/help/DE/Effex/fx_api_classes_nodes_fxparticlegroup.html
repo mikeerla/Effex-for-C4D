@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_nodes.html">Nodes</a> : <a href="fx_api_classes_nodes_fxbase_derived.html">: public FXBase</a></div>
+<div class="content">
+<h3>FXParticleGroup</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXParticleGroup</div>
+<div class="data">
+<p>
+The Particle Group holds all particle subgroups and manages them.
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">FXParticle</span>* GetParticle    (long index, <span style="color:rgb(0,120,120);">ParticleFactoryTypes</span> subgroup)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+FXParticle with the given index in the given subgroup. Returns nullptr if particle does not exist.
+<br></br>
+<b>Parameters</b><BR>
+<i>long index</i>: <br>
+The particle index. Should be between 0 and GetParticleCount
+<br></br>
+<i>ParticleFactoryTypes subgroup</i>: <br>
+The subgroup type to retrieve the particle from
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">FXParticle</span>* AddParticle    (<span style="color:rgb(0,120,120);">ParticleFactoryTypes</span> subgroup)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+FXParticle that has been added. Returns nullptr if something went wrong.
+<br></br>
+<b>Parameters</b><BR>
+<i>ParticleFactoryTypes subgroup</i>: <br>
+The subgroup type to add the particle to
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >long GetParticleCount (<span style="color:rgb(0,120,120);">ParticleFactoryTypes</span> subgroup)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+The amount of particles available in the subgroup
+<br></br>
+<b>Parameters</b><BR>
+<i>ParticleFactoryTypes subgroup</i>: <br>
+The subgroup type to check the particle count for
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> UpdateBounds (<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+Whenever you change a particle group (for example if you change a position of a particle or if you add a particle) you should call UpdateBounds.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> FindNeighbors (<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">ParticleFactoryTypes</span> subgroup, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& global_position, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">double</span> radius, <span style="color:rgb(74,100,127);">std</span>::<span style="color:rgb(0,120,120);">vector</span>& neighbors, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">int</span> cpu = 0)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+none
+<br></br>
+<b>Parameters</b><BR>
+<i>const ParticleFactoryTypes</i>: <br>
+The subgroup type
+<br></br>
+<i>const vector3d& global_position</i>: <br>
+The physical positon to find particle neighbors for
+<br></br>
+<i>const double radius</i>: <br>
+The maximum distance around the physical position to search for neighboring particles. The radius is given in physical space units.
+<br></br>
+<i>std::vector<NeighborData>& neighbors</i>: <br>
+Filled with the found neighboring particles
+<br></br>
+<i>const int cpu</i>: <br>
+The cpu thread for the search. Pass if you are in a multiprocessor context.
+<br></br>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> SetDirtySearch (<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">ParticleFactoryTypes</span> subgroup)</A></h4><div class="selected"><p><br>
+If you change any particle position in the given subgroup of this particle group you should update
+the internal search algorithm by calling SetDirtySearch
+<br></br>
+<b>Parameters</b><BR>
+<i>const ParticleFactoryTypes</i>: <br>
+The subgroup type to update the searcher for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> IsCached (<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">ParticleFactoryTypes</span> subgroup) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the given subgroup is cached. This is not the same as FXBase::IsCached.
+<br></br>
+<b>Parameters</b><BR>
+<i>const ParticleFactoryTypes</i>: <br>
+The subgroup type to check the cached state for.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

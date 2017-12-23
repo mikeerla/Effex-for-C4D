@@ -1,0 +1,11 @@
+STRINGTABLE fx_pforce_cohesion
+{
+	fx_pforce_cohesion "ParticleForce::Cohesion";
+	
+	PFORCE_COHESION_INTENSITY "Intensity";
+	PFORCE_COHESION_DURATION "Duration";
+	PFORCE_COHESION_RADIUS "Sampling Radius";
+	PFORCE_COHESION_DURATION_SELECTOR "C";
+
+	PFORCE_COHESION_DUMMY_ "";
+}

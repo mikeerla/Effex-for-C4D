@@ -1,0 +1,12 @@
+STRINGTABLE fx_gop_redistance
+{
+	fx_gop_redistance "GOP::Redistance";
+
+	GOP_REDISTANCE_TARGET			"Levelset";
+	GOP_REDISTANCE_TARGET_SELECTOR		"C";
+	GOP_REDISTANCE_DURATION			"Duration";
+	GOP_REDISTANCE_DURATION_SELECTOR	"C";
+	GOP_REDISTANCE_MODE			"Method";
+	GOP_REDISTANCE_MODE_SWEEP		"Fast Sweeping";
+	GOP_REDISTANCE_MODE_MARCH		"Fast Marching";
+}

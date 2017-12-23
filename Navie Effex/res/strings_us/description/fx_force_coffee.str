@@ -1,0 +1,12 @@
+STRINGTABLE fx_force_coffee
+{
+	fx_force_coffee "Force::Coffee";
+
+	FORCE_COFFEE_INTENSITY "Intensity";
+	FORCE_COFFEE_SETTINGS "Emission Settings";
+	FORCE_COFFEE_SETTINGS_SELECTOR "C";
+	FORCE_COFFEE_DURATION "Duration";
+	FORCE_COFFEE_DURATION_SELECTOR "C";
+
+	FORCE_COFFEE_DUMMY_ "";
+}

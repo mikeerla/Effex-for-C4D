@@ -1,0 +1,20 @@
+STRINGTABLE fx_kernel
+{
+	fx_kernel "Falloff Kernel";
+	
+	KERNEL "Falloff";
+		KERNEL_GAUSS "Gaussian";
+		KERNEL_POLY6 "Poly6";
+		KERNEL_POLY6SMOOTH "Poly6 smooth";
+		KERNEL_VISCOSITY "Viscosity";
+		KERNEL_SPIKEY "Spikey";
+		KERNEL_SPIKEYSMOOTH "Spikey smooth";
+		KERNEL_SMOOTH "Smooth";
+		KERNEL_SHARP "Sharp";
+		KERNEL_WYVILL "Wyvill";
+		KERNEL_BLINN "Blinn";
+		KERNEL_SPLINE "Cubic Spline";
+		KERNEL_POLYNOMIAL "Polynomial";
+		KERNEL_CUSTOM "Custom";
+	KERNEL_SPLINEGRAPH "Falloff";
+}

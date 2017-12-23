@@ -1,0 +1,22 @@
+STRINGTABLE fx_csg
+{
+	fx_csg	"CSG";
+
+	CSG_MODE "Modus";
+		CSG_MODE_UNION "Union";
+		CSG_MODE_INTERSECTION "Schnittmenge";
+		CSG_MODE_DIFFERENCE "Unterschied";
+		CSG_MODE_UNIONBLEND "Union Blend";
+	CSG_ISOSURFACE "Iso-Oberfl\u00E4che";
+	CSG_VOLUME_A "Volumen A";
+	CSG_VOLUME_B "Volumen B";
+	CSG_VOLUME_A_SELECTOR "C";
+	CSG_VOLUME_B_SELECTOR "C";
+	CSG_VOLUME_SWITCH "Volumen tauschen";
+	CSG_BLEND_RADIUS "Blendradius";
+	CSG_BLEND_T "T";
+	CSG_BLENDMODE "Blend Mode";
+		CSG_BLENDMODE_RFUNC_GLOBAL "R-Function Global";
+		CSG_BLENDMODE_RFUNC_LOCAL "R-Function Local";
+		CSG_BLENDMODE_MIX "Mix";
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_bodies.html">Bodies</a> : <a href="fx_volumes.html">Volumes</a> : <a href="fx_surfaces_surfacereconstructor.html">Surface Reconstructor</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+<a href="fx_surfaces_surfacereconstructor_display.html">Display</a>
+<a href="fx_surfaces_surfacereconstructor_constraints.html">Constraints</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_reconstructor_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="SURFACE_RECONSTRUCTION_GROUP" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_paricle_group.jpg" border="0"><br></br>
+The particle group that contains the particles to reconstruct a surface from.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_SURFACE_TRACKER" onclick="HideNextDOM($(this));" >Surface tracker</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_surface_tracker.jpg" border="0"><br></br>
+Place a surface tracker here to extract volume depth information from. <br>
+Currently only the liquid/viscous dynamics contain an internal surface tracker that can be used. 
+<br></br>
+This will activate the Constraints::Max. Distance setting.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_KERNEL" onclick="HideNextDOM($(this));" >Kernel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_kernel.jpg" border="0"><br></br>
+Link a custom Kernel node here to define the falloff kernel used for reconstruction. If none is linked a standard cubic spline kernel will be used.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_RENDERONLY" onclick="HideNextDOM($(this));" >Render Only</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_render_only.jpg" border="0"><br></br>
+If activated it will only operate if rendering to the picture viewer or NET renderer.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_PARTICLES" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_particles.jpg" border="0"><br></br>
+The particle type to use from the linked Particle Group.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_VOXELSCALE" onclick="HideNextDOM($(this));" >Voxel Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_voxel_scale.jpg" border="0"><br></br>
+The surface reconstructor can calculate the surface with a higher resolution (internally) than the global voxel size. This is a scaling factor for the global voxel size.<br>
+A value of 2.0 will give half the global voxel size (doubling the resolution).
+<br></br>
+Usually a value of 1.0 is good for very fast previews. For final rendering a value of 2 is recommended. <br>
+A value of 3 is rarely used but may be necessary sometimes (especially when using the anisotropic mode).
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_SURFACETYPE" onclick="HideNextDOM($(this));" >Weighting</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_weighting.jpg" border="0"><br></br>
+Defines the weighting of the mesher. There are two algorithms available.
+<br></br>
+<b>Isotropic</b><br>
+Uses Isotropic weighting.
+<br></br>
+<b>Anisotropic</b><br>
+Uses Anisotropic weighting which can result in thin areas getting even thinner.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_SEARCHCOUNT_MIN" onclick="HideNextDOM($(this));" >Min. Neighbors</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_min_max_neighbors.jpg" border="0"><br></br>
+Minimum amount of neighbors that need to be found to be included in the weighting.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_SEARCHCOUNT_MAX" onclick="HideNextDOM($(this));" >Max. Neighbors</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_min_max_neighbors.jpg" border="0"><br></br>
+Maximum amount of neighbors that need to be found to be included in the weighting. The higher this value the better the smoothing approximation.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> Using higher values results in slower calculations.
+</div>
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_RADIUS" onclick="HideNextDOM($(this));" >Particle Radius [voxel]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_particle_radius.jpg" border="0"><br></br>
+The radius of a particle. Values between 0.5 and 1.0 make most sense here. The value is given in grid cell/voxel size (1.0 = size of a grid cell).
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Lower values result in smaller features but may miss neighboring particles. In that case increase the Falloff Length.
+</div>
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_SMOOTHINGRADIUS" onclick="HideNextDOM($(this));" >Falloff Length [particle radius]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_falloff_length.jpg" border="0"><br></br>
+The falloff length defines the maximum distance to search for neighboring particles to calculate a weighted result. Higher values
+result in smoother surfaces but also small scale details may disappear.
+<br></br>
+The falloff length is always a multiplier of the Particle radius. So a value of 3.0 is 3.0 * Particle Radius.
+
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Parameters::</span>Isotropic</span>
+</div>
+<div class="subdata selected">
+<img src="../../img/fx_reconstructor_isotropic.jpg" border="0"">
+<h4><a name="SURFACE_RECONSTRUCTION_ISOTROPIC_POSITION" onclick="HideNextDOM($(this));" >Position type</A></h4><div class="selected"><p><br></br>
+Defines which position of a particle to take into account for reconstruction.
+<br><br>
+<b>Position</b><br>
+The position of the particle.
+<br><br>
+<b>Weighted Position</b><br>
+The weighted position as calculated by a <a href="fx_operators_po_volumeproperties_params.html#PVALUETOPROPERTY_WEIGHTEDPOS">POP::Volume Properties</a>.
+<br><br>
+<b>Deformed Position</b><br>
+The deformed position of the particle (e.g. calculated by a <a href="fx_operators_deform.html">POP::Deform</a>).
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_ISOTROPIC_USEDENSITYPOS" onclick="HideNextDOM($(this));" >Density Compactness</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_isotropic_density_compactness.jpg" border="0"><br></br>
+<i>Only available if particles have a density attached (for example via a Volume Properties node).</i>
+<br></br>
+This gives the surface a more compact appearance based on the particle isodensity.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_ISOTROPIC_USEISODENSITY" onclick="HideNextDOM($(this));" >Density Decay</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_isotropic_density_decay.jpg" border="0"><br></br>
+<i>Only available if particles have a density attached (for example via a Volume Properties node).</i>
+<br></br>
+This gets rid of 'Ghost surfaces artefacts' which are small surfaces being reconstructed between particles where there shouldn't necessarily be a surface anymore
+because the particles are too far away from each other.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_ISOTROPIC_DECAYMIN" onclick="HideNextDOM($(this));" >Minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_isotropic_density_minimum_maximum.jpg" border="0"><br></br>
+<i>Only available if particles have a density attached (for example via a Volume Properties node).</i>
+<br></br>
+The minimum isodensity for the decay falloff.
+<br></br></p></div>
+<h4><a name="SURFACE_RECONSTRUCTION_ISOTROPIC_DECAYMAX" onclick="HideNextDOM($(this));" >Maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_surface_reconstructor_params_isotropic_density_minimum_maximum.jpg" border="0"><br></br>
+<i>Only available if particles have a density attached (for example via a Volume Properties node).</i>
+<br></br>
+The maximum isodensity for the decay falloff. The higher you set this the more 'Ghost surface artefacts' disappear. At some (scene dependant) threshold this will also affect
+the normal surface (which you don't want to happen). Values between 1.0 and 2.5 give best results.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="materials.html">Materials</a></div>
+<div class="content">
+<h3>Gas Renderer</h3>
+</div>
+<div class="tabs">
+<a href="fx_shader_gas_presets.html">Presets</a>
+<a href="fx_shader_gas_general.html">General</a>
+<a href="fx_shader_gas_smoke.html">Smoke</a>
+<a href="fx_shader_gas_fire.html">Fire</a>
+<a href="fx_shader_gas_compositing.html">Compositing</a>
+</div>
+<div class="content">
+<div class="subtab">Gas Renderer</div>
+<div class="data">
+<p>
+The Gas Render is a volumetric voxel shader material that is used to render smoke and fire in a highly realistic manner and is blazing fast. It
+supports the rendering of any scalar channel.</p>
+<p><br />            
+Technically the renderer is an adaptive single-scattering ray marcher. This
+means for every ray that c4d shoots per pixel the renderer will march in
+adaptive step lengths along the ray and samples the linked input channel
+data while it travels along the ray. At each step it also calculates the
+lighting from scene lights and the absorption and scattering effects of the participating media. </p>
+<p>&nbsp;</p>
+<p>It includes single-scattering and multiple scattering effects for highly realistic results.</p>
+<p><br />
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+This material shader must be attached to a Cinema 4D environement object or a polygon object in order
+to let it render volumetric data.</p>
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

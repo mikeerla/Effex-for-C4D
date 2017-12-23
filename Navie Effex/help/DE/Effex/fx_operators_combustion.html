@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_gop.html">Grid Operators (GOP)</a></div>
+<div class="content">
+<h3>GOP::Combustion</h3>
+</div>
+<div class="tabs">
+<a href="fx_operators_combustion_params.html">Parameters</a>
+</div>
+<div class="content">
+<div class="subtab">GOP::Combustion</div>
+<div class="data">
+<p>
+The combustion operator is used in conjunction with the following nodes in order to simulate fire, fuel and resulting explosion behaviors using fluid simulations.<br>
+<br>
+<table border="0" >
+<tr>
+<td width="160">
+<a href="fx_operators_cooling.html">GOP::Cooling</a>
+</td><td>cooling down temperature<br> </td>
+</tr>
+<tr>
+<td>
+<a href="fx_operators_diffusor.html">GOP::Diffusor</a>
+</td><td>simulating temperature spreading (required for fuel)<br> </td>
+</tr>
+<tr>
+<td>
+<a href="fx_fluid.html">Gaseous Dynamics</a>
+</td><td>informing fluid simulation about explosion expansions<br></td>
+</tr>
+</table>
+<br><hr line></br>
+<i>It contains three different fire models:</i>
+<br></br>
+<b>1. Simple fire combustion</b><br>
+This model does not use any fuel channels but assumes that the combustion directly takes place whereever the user defines it to.
+It is more an artistic model that is easy to handle because it is partly of procedural nature.
+<br></br>
+<b>2. Fuel-Fire combustion</b><br>
+This model uses a fuel channel that can be ignited and then start combusting. This is still a simple but more complex algorithm that
+allows you to simulate spreading of fire. This generates diffuse flames.
+<br></br>
+<b>3. Fuel-Oxygen-Fire combustion</b><br>
+This model uses a fuel channel that can be ignited and then start combusting. It furthermore takes into account a fuel-oxygen ratio in order
+to more realistically calculate combustions. This is a more complex algorithm but can also generate nice plumes.
+<br></br>
+
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>A rough overview of the stages in a combustion process these algorithms model:</b><br><br>
+a.) Once the ignition temperature of a fuel is reached it ignites (combustion process starts)<br>
+b.) The temperature is rising (due to chemical reactions producing energy) and the fluid expands<br>
+c.) Temperature rises until it reaches a critical temperature (Cooling point). How high depends on the type of fuel. <br>
+d.) Soot/smoke as combustion products are produced (high temperature makes them glow = flames visible)<br>
+e.) Once the Cooling point is reached the temperature drops quickly (that's why flames disappear visually so fast).
+</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

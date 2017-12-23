@@ -1,0 +1,17 @@
+STRINGTABLE fx_gop_tolevelset
+{
+	fx_gop_tolevelset "GOP::Zu Levelset";	
+
+	GOP_TL_SOURCE			"Skalarkanäle";
+	GOP_TL_SOURCE_SELECTOR		"C";
+	GOP_TL_DURATION			"Dauer";
+	GOP_TL_DURATION_SELECTOR	"C";
+	GOP_TL_MODE			"Oberfl\u00E4chenidentifikation";
+	GOP_TL_MODE_SPHERE		"Zellkugeln";
+	GOP_TL_MODE_DENSITY		"Zellenwert";
+	GOP_TL_MODE_DENSITY_THRESHOLD	"Schwellwert";
+	GOP_TL_MODE_SPHERE_RADIUS	"Radius";
+	GOP_TL_TARGET			"Ziel Levelset";
+	GOP_TL_TARGET_SELECTOR		"C";
+	GOP_TL_MERGE			"Mit Ziel zusammenführen";
+}

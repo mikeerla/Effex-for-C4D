@@ -1,0 +1,10 @@
+STRINGTABLE fx_c4d_splinelength
+{
+	fx_c4d_splinelength "Splinewachstum";
+
+	FXC4D_SPLINELENGTH_LENGTH "L\u00e4nge";
+	FXC4D_SPLINELENGTH_TYPE "L\u00e4ngentyp";
+		FXC4D_SPLINELENGTH_TYPE_A "Punkt-um-Punkt";
+		FXC4D_SPLINELENGTH_TYPE_B "Ganzes Spline";
+	FXC4D_SPLINELENGTH_INVERT "Invertieren";
+}

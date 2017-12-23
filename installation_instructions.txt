@@ -1,0 +1,25 @@
+INSTALLATION INSTRUCTIONS
+-------------------------
+Cinema 4D R16 or higher
+
+Inside this repository you find the following 2 folders:
+- "Navie": this is the usual C4D plugin folder of Effex
+- "dlls": library files
+
+
+
+Effex 2.8 
+----------
+
+1. Open Cinema 4D (or NET/SERVER) and open the preferences of Cinema 4D (shortcut: CTRL+E)
+2. The preferences dialog of Cinema 4D is open. At the bottom there is a button saying "Open preferences folder". Click it!
+3. The preferences folder opens up. Inside you will find a subfolder named: plugins.
+Extract the 'Navie' folder into this 'plugins' folder.
+
+
+On Windows you also have to do the following:
+-------------------------------------------------------
+1. Open the folder on your HD where Cinema 4D is installed (where the Cinema4D.exe resides)
+2. Extract all the files from the "dlls" folder into it
+
+Effex 2.8 is now installed.

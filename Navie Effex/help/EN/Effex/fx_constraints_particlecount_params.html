@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_constraints.html">Constraints</a> : <a href="fx_constraints_particlecount.html">CS::Particle Count</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_cs_pcount_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="CONSTRAINT_PARTICLECOUNT_PARTICLES" onclick="HideNextDOM($(this));" >Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_global_particle_group.jpg" border="0"><br></br>
+The <a href="fx_particles_particlegroup.html">particle group</a> used to find the particles (in the radius defined by Search Radius) and to calculate the amount of found neighbors.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_PARTICLECOUNT_FACTORY" onclick="HideNextDOM($(this));" >Paricle Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_global_particle_type.jpg" border="0"><br></br>
+The particle type to use from the Particle Group for the search.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_PARTICLECOUNT_RADIUS" onclick="HideNextDOM($(this));" >Search Radius [voxel]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_particle_count_constraint_search_radius.jpg" border="0"><br></br>
+The radius (around a currently processed position) to find the particles in. Particles further than this distance are automatically excluded.
+<br></br></p></div>
+<h4><a name="CONSTRAINT_PARTICLECOUNT_MINCNT" onclick="HideNextDOM($(this));" >Minimum Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_particle_count_constraint_minimum_maximum_particles.jpg" border="0"><br></br>
+The minimum amount of particles found. Defines the range start.
+<br></br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<i><b>Example:</i></b><br>
+If you have Minimum Particles set to 3 and 1, 2 or 3 particles are found inside the search radius, the resulting constraint intensity will always be 0%.
+Only particle counts bigger than 3 will result in a non-zero intensity.
+<br></br>
+Particle counts between Minimum and Maximum Particles will return values between 0% and 100% if 'Interpolate in Range' is activated. Otherwise 100%.
+</div>
+<br></br></p></div>
+<h4><a name="CONSTRAINT_PARTICLECOUNT_MAXCNT" onclick="HideNextDOM($(this));" >Maximum Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_particle_count_constraint_minimum_maximum_particles.jpg" border="0"><br></br>
+The maximum amount of particles found. Defines the range end.<br><br>
+
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Particle counts between Minimum and Maximum Particles will be between 0% and 100% if 'Interpolate in Range' is activated. Otherwise 100%.
+</div>
+<br></br></p></div>
+<h4><a name="CONSTRAINT_PARTICLECOUNT_RANGED" onclick="HideNextDOM($(this));" >Interpolate in Range</A></h4><div class="selected"><p><br></br>
+<img src="../../img/constraints_particlecount_params_interpolateinrange.jpg" border="0"><br></br>
+By default this constraint returns either a value of 0 or 1. Activating this option will instead return an interpolated value. 
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Example:</B><br>
+'Minimum/Maximum Particles' is set to 0 and 4 respectively.
+<br><br>Now if the constraint finds 2 particles inside the given 'Search Radius' the constraint would by default return 1.0 because 3 is inside the Min/Max range.
+Activating this option it would return 0.5 instead (= Found/Maximum = 2/4 = 0.5)
+</div>
+<br></br></p></div>
+<h4><a name="CONSTRAINT_PARTICLECOUNT_BOUNDEDMAX" onclick="HideNextDOM($(this));" >Clamp Maximum</A></h4><div class="selected"><p><br></br>
+By default the constraint returns either a value of..
+<br>
+<br>
+<u>0.0</u><br>
+1. particle count inside search radius is smaller than 'Minimum Particles'<br>
+2. particle count inside search radius is bigger than 'Maximum Particles' and 'Bounded Maximum' is set to 'Clamp to Minimum'<br>
+<br>
+<u>1.0</u><br>
+1. particle count inside search radius is >= 'Minimum Particles'<br>
+2. particle count inside search radius is <= 'Maximum Particles' if 'Bounded Maximum' is set to 'Clamp to Minimum'<br>
+<br><br>
+1. Unbounded - constraint's output is not clamped<br>
+2. Clamp to Maximum - constraint's output is clamped to 1.0<br>
+3. Clamp to Minimum - constraint's output is clamped to 0.0 (only in case if more particles were found)
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

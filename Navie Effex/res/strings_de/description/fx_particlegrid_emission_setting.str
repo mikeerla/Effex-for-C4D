@@ -1,0 +1,9 @@
+STRINGTABLE fx_particlegrid_emission_setting
+{
+	fx_particlegrid_emission_setting "Partikelemission";
+
+	PARTICLEGRID_EMISSION_SETTINGS_BASESETTINGS "Partikel Emissionseinstellungen";
+	PARTICLEGRID_EMISSION_SETTINGS_JITTER "Jittering";
+
+	PARTICLEGRID_EMISSION_SETTINGS_DUMMY_ "";
+}

@@ -1,0 +1,11 @@
+STRINGTABLE fx_force_vortex
+{
+	fx_force_vortex "Kraft::Wirbeln";
+
+	FORCE_VORTEX_INTENSITY	"Intensit\u00E4t";
+	
+	FORCE_VORTEX_DURATION "Dauer";
+	FORCE_VORTEX_DURATION_SELECTOR "C";
+
+	FORCE_VORTEX_DUMMY_ "";
+}

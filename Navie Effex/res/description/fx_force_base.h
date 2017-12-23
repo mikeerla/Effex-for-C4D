@@ -1,0 +1,13 @@
+#ifndef FX_FORCE_BASE_H
+#define FX_FORCE_BASE_H
+
+enum
+{	
+	ID_FORCE_BASE = 2601,
+	ID_PORT_BASE,
+	ID_PORT_BASE_HEADER,
+	FX_FORCE_BASE_ITERATIONS
+
+};
+
+#endif

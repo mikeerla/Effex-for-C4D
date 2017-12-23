@@ -1,0 +1,8 @@
+STRINGTABLE fx_channel_fire
+{
+	fx_channel_fire "Feuer Gitterkanal";
+
+	GRIDCHANNEL_FIRE_COOLING_POINT "K\u00FChlungspunkt [kelvin]";
+	GRIDCHANNEL_FIRE_DEATHRATE "Flamme Lebenszeit [sec]";
+	GRIDCHANNEL_FIRE_AFTERLIFE "Flammen Nachleben [sec]";
+}

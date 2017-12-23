@@ -1,0 +1,17 @@
+STRINGTABLE fx_gop_tolevelset
+{
+	fx_gop_tolevelset "GOP::To Levelset";
+
+	GOP_TL_SOURCE			"Scalar Channels";
+	GOP_TL_SOURCE_SELECTOR		"C";
+	GOP_TL_DURATION			"Duration";
+	GOP_TL_DURATION_SELECTOR	"C";
+	GOP_TL_MODE			"Free Surface identification";
+	GOP_TL_MODE_SPHERE		"Cell Spheres";
+	GOP_TL_MODE_DENSITY		"Cell Threshold";
+	GOP_TL_MODE_DENSITY_THRESHOLD	"Threshold";
+	GOP_TL_MODE_SPHERE_RADIUS	"Radius";
+	GOP_TL_TARGET			"Target Levelset";
+	GOP_TL_TARGET_SELECTOR		"C";
+	GOP_TL_MERGE			"Merge with Target";
+}

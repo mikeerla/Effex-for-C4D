@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_plugins.html">Plugins</a></div>
+<div class="content">
+<h3>FXOperatorData</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXOperatorData</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> Precompute (<span style="color:rgb(0,120,120);">FXServer</span>* server)</A></h4><div class="selected"><p><br>
+Overloaded to precompute or allocate any data required when the operator is evaluated.
+<br></br>
+<b>Returns</b><br>
+false if there was an error. If so, the node is set as not-operational (for example if a
+port is not filled although it is necessary for your plugin to correctly operate).
+<br></br>
+<b>Parameters</b><BR>
+<i>FXServer* server</i>:<br>
+The server this node is called from. Use it to retrieve any information you may need..
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> PrecomputeMP (<span style="color:rgb(0,120,120);">FXServer</span>* server)</A></h4><div class="selected"><p><br>
+Overloaded to precompute or allocate any data required when the operator is evaluated in a multiprocessor context.
+<br></br>
+<b>Returns</b><br>
+false if there was an error. If so, the node is set as not-operational (for example if a
+port is not filled although it is necessary for your plugin to correctly operate).
+<br></br>
+<b>Parameters</b><BR>
+<i>FXServer* server</i>:<br>
+The server this node is called from. Use it to retrieve any information you may need..
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">void</span> Process (<span style="color:rgb(0,31,174);">void</span>* t_data)</A></h4><div class="selected"><p><br>
+Overloaded to process the main code of your operator. Make sure your operator supports multiprocessor execution
+if UseOwnThread is not overloaded or returns true!
+<br></br>
+<b>Parameters</b><BR>
+<i>void* t_data</i>:<br>
+You can cast this pointer to ProcessData:<br>
+FXAPI::ProcessData* base_data = static_cast&lt; FXAPI::ProcessData* &gt;(t_data);
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">void</span> FreePrecompute (<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+Overloaded to free any precomputed data (in Precompute or PrecomputeMP).
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> UseOwnThread (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+Overloaded to define if you want this operator to be evaluated by Effex own multiprocessor handler.
+<br>Usually you only overload it if you want your node to be evaluated by a single processor or if you want to use your own threading.
+<br></br>
+<b>Returns</b><br>
+true if you want to use your own thread.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> IsMultiStep (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+Overloaded to define if your operator shall be evaluated several times (for multistep algorithms for example).
+<br>By default an operator is called only once.
+<br></br>
+<b>Returns</b><br>
+true if your operator needs to be called multiple times.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> IsMultiPrecompute (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+Overloaded to define if your operator requires multiple calls to Precompute, PrecomputeMP and FreePrecompute.
+<br>By default they are only called once, even in a multistep operator.
+<br></br>
+<b>Returns</b><br>
+true if your operator's Precompute, PrecomputeMP and FreePrecomputed needs to be called multiple times.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">virtual</span> <span style="color:rgb(0,31,174);">bool</span> IsUpdateable (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+Overloaded to define if your operator can be updated. This happens when the timeline is not running but when the pipeline updates during a single frame.
+<br>If you don't overload it, the operator defaults to not being updateable.
+<br></br>
+<b>Returns</b><br>
+true if your operator requires an update. Usually not necessary.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

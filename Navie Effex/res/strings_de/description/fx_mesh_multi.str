@@ -1,0 +1,7 @@
+STRINGTABLE fx_mesh_multi
+{
+	fx_mesh_multi	"MultiMesh";
+
+	FXMESHMULTI_MESHES	"C4D Meshes";
+	FXMESHMULTI_MESHES_SELECTOR	"C";
+}

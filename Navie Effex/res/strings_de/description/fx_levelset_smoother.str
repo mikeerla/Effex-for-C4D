@@ -1,0 +1,16 @@
+STRINGTABLE fx_levelset_smoother
+{
+	fx_levelset_smoother	"GOP::Levelset Smoother";
+
+	LEVELSET_SMOOTHER_INITIALREDISTANCE "Vor Beginn Distanzkorrektur";
+	LEVELSET_SMOOTHER_VOLUME "Volumen";
+	LEVELSET_SMOOTHER_LAPLACE_ITER "Laplace Gl\u00E4ttung";
+	LEVELSET_SMOOTHER_BIHARMONIC_ITER "Biharmonische Gl\u00E4ttung";
+	LEVELSET_SMOOTHER_BIHARMONIC_GAIN "Anteil";
+	LEVELSET_SMOOTHER_REDISTANCE_ITER "Distanzkorrektur jede x-te Wiederholung";	
+		
+	LEVELSET_SMOOTHER_RINIT "Anfangsradius (Min<->Max)";
+	LEVELSET_SMOOTHER_RMIN "Min. Partikelradius";
+	LEVELSET_SMOOTHER_RMAX "Max. Partikelradius";
+	LEVELSET_SMOOTHER_VOLUME_SELECTOR "C";
+}

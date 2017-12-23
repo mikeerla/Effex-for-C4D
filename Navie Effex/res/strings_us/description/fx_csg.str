@@ -1,0 +1,22 @@
+STRINGTABLE fx_csg
+{
+	fx_csg	"Constructive Solid Geometry";
+
+	CSG_MODE "Mode";
+		CSG_MODE_UNION "Union";
+		CSG_MODE_INTERSECTION "Intersection";
+		CSG_MODE_DIFFERENCE "Difference";
+		CSG_MODE_UNIONBLEND "Union Blend";
+	CSG_ISOSURFACE "Isosurface";
+	CSG_VOLUME_A "Volume A";
+	CSG_VOLUME_B "Volume B";
+	CSG_VOLUME_A_SELECTOR "C";
+	CSG_VOLUME_B_SELECTOR "C";
+	CSG_VOLUME_SWITCH "Switch Volumes";
+	CSG_BLEND_RADIUS "Blend Radius";
+	CSG_BLEND_T "T";
+	CSG_BLENDMODE "Blend Mode";
+		CSG_BLENDMODE_RFUNC_GLOBAL "R-Function Global";
+		CSG_BLENDMODE_RFUNC_LOCAL "R-Function Local";
+		CSG_BLENDMODE_MIX "Mix";
+}

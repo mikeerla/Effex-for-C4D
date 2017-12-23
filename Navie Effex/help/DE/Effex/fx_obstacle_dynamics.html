@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_tags.html">Tags</a> : <a href="fx_obstacle.html">Obstacle</a></div>
+<div class="content">
+<h3>Dynamics</h3>
+</div>
+<div class="tabs">
+<a href="fx_obstacle_tag.html">Tag</a>
+<span>Dynamics</span>
+<a href="fx_obstacle_collision.html">Collision</a>
+<a href="fx_obstacle_dynamiccollion.html">Dynamic Coupling</a>
+<a href="fx_obstacle_ramcache.html">RAM Cache</a>
+</div>
+<div class="content">
+<div class="subtab">Dynamics</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="FXOBSTACLE_DYNAMICS_TRANSFER_TO_ORIG" onclick="HideNextDOM($(this));" >Apply to original mesh</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_applytooriginalmesh.jpg" border="0"><br></br>
+In case this tag sits on a Mesh or Volume node, this will apply the internal mesh motions back to the original C4D mesh. Usually you want this.
+<br><br>
+Note: This option does not work for MoGraph Cloners used in a MultiMesh. Use our specific <a href="fx_surfaces_multivolumeeffector.html">MoGraph Effector</a> for this instead.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DYNAMICS_ACTIVE_ON_COLL" onclick="HideNextDOM($(this));" >Activate on collision</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_activateoncollision.jpg" border="0"><br></br>
+If this rigid-body is dynamic, it will only start being dynamic if collisions (with other rigid-bodies or particles) are encountered.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DYNAMICS_ACTIVE_ON_VELO" onclick="HideNextDOM($(this));" >Activate on speed..</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_activateonspeed.jpg" border="0"><br></br>
+If this rigid-body is dynamic, it will only start being dynamic if it reaches a certain velocity.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DYNAMICS_ACTIVE_ON_VELO_THRESHOLD" onclick="HideNextDOM($(this));" >Threshold</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_threshold.jpg" border="0"><br></br>
+Defines the velocity threshold for "Activate on speed..". This speed threshold is given in physical simulation space.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DYNAMICS_INITIAL_DIR" onclick="HideNextDOM($(this));" >Initial Alignment</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_initialalignment.jpg" border="0"><br></br>
+Here you can define an Alignment node to provide the objects with a start direction.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DYNAMICS_INITIAL_FORCE" onclick="HideNextDOM($(this));" >Speed</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_speed.jpg" border="0"><br></br>
+The initial speed if an alignment node is linked in "Initial Alignment". This speed value is given in physical simulation space.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_DAMPING" onclick="HideNextDOM($(this));" >Translational Damping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_translationaldamping.jpg" border="0"><br></br>
+General damping of rigid-body movements.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_COLLISION_DAMPING_ANGULAR" onclick="HideNextDOM($(this));" >Rotational Damping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_rotationaldamping.jpg" border="0"><br></br>
+General damping of rigid-body rotations.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DYNAMICS_FACTOR_LINEAR" onclick="HideNextDOM($(this));" >Translational Factor</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_translationalfactor.jpg" border="0"><br></br>
+General multipliers for rigid-body movements.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DYNAMICS_FACTOR_ANGULAR" onclick="HideNextDOM($(this));" >Rotational Factor</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_rotationalfactor.jpg" border="0"><br></br>
+General multipliers for rigid-body rotations.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Dynamics::</span>Constraints</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FXOBSTACLE_DYNAMICS_CONSTRAINTS_DAMPING" onclick="HideNextDOM($(this));" >Translational Damping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_constraints_translationaldamping.jpg" border="0"><br></br>
+These constraints control the translational damping.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DYNAMICS_CONSTRAINTS_DAMPING_ANGULAR" onclick="HideNextDOM($(this));" >Rotational Damping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamics_constraints_rotationaldamping.jpg" border="0"><br></br>
+These constraints control the rotational damping.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

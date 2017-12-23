@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_nodes.html">Nodes</a> : <a href="fx_api_classes_nodes_fxbase_derived.html">: public FXBase</a> : <a href="fx_api_classes_nodes_fxvolume_derived.html">: public FXVolume</a></div>
+<div class="content">
+<h3>FXVolumeMesh</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXVolumeMesh</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">BaseObject</span>* GetMeshInterface		(<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the polygon object this volume is generated from.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Matrix		 GetMg					(<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+the global Matrix of the internal effex mesh. The matrix is always given in physical space.<br>
+This is not necessarily the same as the matrix of the cinema 4d polygon object as it may be an interpolated state.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span>		 GetMotion				(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& physical_position, <span style="color:rgb(0,120,120);">vector3d</span>& linear, <span style="color:rgb(0,120,120);">vector3d</span>& angular) </A></h4><div class="selected"><p><br>
+This lets you retrieve the motion data of the internal effex mesh at a specific point in space.
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& physical_position</i>: <br>
+The physical position to get the motion data for.
+<br></br>
+<i>vector3d& linear</i>: <br>
+Filled with the translational velocity since the last substep
+<br></br>
+<i>vector3d& angular</i>: <br>
+Filled with the angular velocity since the last substep
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> long GetTriangleCount		(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">FXVolumeMesh</span>* meshvolume)</A></h4><div class="selected"><p><br>
+This is a global function.
+<br></br>
+<b>Returns</b><br>
+the amount of triangles in the passed mesh volume's mesh.
+<br>This is not necessarily the same as the polygon count of the original cinema 4d polygon object.
+<br></br>
+<b>Parameters</b><BR>
+<i>const FXVolumeMesh* meshvolume</i>: <br>
+The mesh volume to retrieve the triangle count from
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> long GetVertexCount			(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">FXVolumeMesh</span>* meshvolume)</A></h4><div class="selected"><p><br>
+This is a global function.
+<br></br>
+<b>Returns</b><br>
+the amount of vertices in the passed mesh volume's mesh.
+<br></br>
+<b>Parameters</b><BR>
+<i>const FXVolumeMesh* meshvolume</i>: <br>
+The mesh volume to retrieve the vertices count from
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">static</span> <span style="color:rgb(0,31,174);">bool</span> HasUVdata				(<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">FXVolumeMesh</span>* meshvolume)</A></h4><div class="selected"><p><br>
+This is a global function.
+<br></br>
+<b>Returns</b><br>
+true if the passed mesh volume's mesh contains uv data.
+<br></br>
+<b>Parameters</b><BR>
+<i>const FXVolumeMesh* meshvolume</i>: <br>
+The mesh volume to check for uv data
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

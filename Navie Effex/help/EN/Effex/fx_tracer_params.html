@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_particles.html">Particles</a> : <a href="fx_tracer.html">Particle Tracer</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_tracer_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FXC4D_TRACER_PARTICLES" onclick="HideNextDOM($(this));" >Particle Groups</A></h4><div class="selected"><p><br></br>
+Define the <a href="fx_particles_particlegroup.html">Particle Group</a> to read the particles from.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+Define when (temporally) and how long this node operates.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_FACTORY" onclick="HideNextDOM($(this));" >Particle Type</A></h4><div class="selected"><p><br></br>
+Define which particle type (subgroup) of the input particle groups to use.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_MINMOVEMENT" onclick="HideNextDOM($(this));" >Motion Length: Minimum</A></h4><div class="selected"><p><br></br>
+The minimum distance a particle must have travelled before a new spline path point is generated for it. 
+<br>If it travelled less than Minimum within one substep, no spline point is generated.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_MAXMOVEMENT" onclick="HideNextDOM($(this));" >Maximum</A></h4><div class="selected"><p><br></br>
+The maximum distance a particle can travel (within one framework (sub)step) until a spline point is generated.<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Example</b><br>
+A particle travels 20cm and Maximum is set to 10cm. It will generate 2 spline path points. The first at 10cm and the second at 20cm.
+</div>
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_MAXAGE" onclick="HideNextDOM($(this));" >Maximum Lifetime</A></h4><div class="selected"><p><br></br>
+Defines the maximum lifetime (given in frames) until a spline path dies.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_MAXAGE_VAR" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the lifetime.
+<br>A value of 0% means all spline paths have the same life time. 100% varies the life time between 0 and Maximum lifetime.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_DEATHMODE" onclick="HideNextDOM($(this));" >Death Mode</A></h4><div class="selected"><p><br></br>
+Controls how the traced spline paths die.
+<br><br>
+<b>One Vertex per frame</b><br>
+Once the lifetime of a spline point ended, it will die. No other spline points of the same path will die even if their lifetime has ended.
+<br>
+<br>
+<b>Length per frame</b><br>
+A specific used-defined length of the spline path will die off each frame.
+<br>
+<br>
+<b>Percent per frame</b><br>
+A specific used-defined percentage of the spline path length will die off each frame.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_DEATHONCE" onclick="HideNextDOM($(this));" >Remain dead</A></h4><div class="selected"><p><br></br>
+The spline path may die faster than corresponding particle can produce new trace points.
+In that case the spline may have completely died.
+<br><br>
+If you activate this option, no more path traces will be generated if that happens. It will remain dead.
+<br>Otherwise the spline path will keep on regenerating a new particle spline path.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_DEATHRATE" onclick="HideNextDOM($(this));" >Death rate (Length)</A></h4><div class="selected"><p><br></br>
+<i>Only used if Death Mode = Lenght per frame</i><br>
+<br>
+The user-defined path length to kill.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_DEATHRATEPERCENT" onclick="HideNextDOM($(this));" >Death rate (Percent)</A></h4><div class="selected"><p><br></br>
+<i>Only used if Death Mode = Percent per frame</i><br>
+<br>
+The user-defined path length percentage to kill.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_DEATHRATE_VAR" onclick="HideNextDOM($(this));" >Randomize</A></h4><div class="selected"><p><br></br>
+Randomizes the death rate value.
+<br></br></p></div>
+<h4><a name="FXC4D_TRACER_SPLINEOBJECT_TYPE" onclick="HideNextDOM($(this));" >Type, Close Spline...</A></h4><div class="selected"><p><br></br>
+Please refer to the Cinema 4D help for these general purpose Cinema 4D spline settings. 
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

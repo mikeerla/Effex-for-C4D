@@ -1,0 +1,6 @@
+STRINGTABLE fx_property_scalar
+{
+	fx_property_scalar "Eigenschaft::Skalar";
+
+	PROPERTY_VALUE_SCALAR		"Startwert";
+}

@@ -1,0 +1,6 @@
+STRINGTABLE fx_property_state
+{
+	fx_property_state "Property::State";
+
+	PROPERTY_VALUE_STATE  "Initial value";
+}

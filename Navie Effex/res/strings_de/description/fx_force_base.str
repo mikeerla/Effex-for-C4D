@@ -1,0 +1,9 @@
+STRINGTABLE fx_force_base
+{
+	fx_force_base "Kraft::Base";
+
+	ID_FORCE_BASE "Parameter";
+	ID_PORT_BASE "";
+	ID_PORT_BASE_HEADER "";
+	FX_FORCE_BASE_ITERATIONS "Iterationen";
+}

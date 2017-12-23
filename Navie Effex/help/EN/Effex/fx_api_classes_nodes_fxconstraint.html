@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_nodes.html">Nodes</a> : <a href="fx_api_classes_nodes_fxbase_derived.html">: public FXBase</a></div>
+<div class="content">
+<h3>FXConstraint</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">FXConstraint</div>
+<div class="data">
+<p>
+A constraint is a delegate node called by other operational nodes. <br>
+It does not do anything on its own per se but is always triggered by another node.
+<br></br>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> IsInverted    (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the user has set the "inverted" option in the interface
+
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> IsParticleConstraint (<span style="color:rgb(0,31,174);">void</span>) </A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if this is a particle constraint. Otherwise it is a pure grid constraint.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> GetConstraint (<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& position, <span style="color:rgb(0,31,174);">double</span>& src_value, <span style="color:rgb(0,31,174);">void</span>* local_data, <span style="color:rgb(0,31,174);">int</span> cpu = 0)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the constraint value could be retrieved and if that value is != 0.0. false if there was an error or if the sampled value is 0.0.
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& position</i>: <br>
+The physical positon to sample
+<br></br>
+<i>double& src_value</i>: <br>
+Filled with the constraint value. This could be the result of several constraints so may not strictly be the explicit constraint value.
+<br></br>
+<i>void* local_data</i>: <br>
+Currently unused
+<br></br>
+<i>int cpu</i>: <br>
+The current cpu thread. Pass if you are working in a multithreaded context.
+<br></br>
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">bool</span> GetConstraintParticle (<span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,120,120);">vector3d</span>& position, <span style="color:rgb(0,31,174);">double</span>& src_value, <span style="color:rgb(0,31,174);">void</span>* local_data, <span style="color:rgb(0,31,174);">int</span> cpu = 0, <span style="color:rgb(0,31,174);">const</span> <span style="color:rgb(0,31,174);">void</span>* t_particle = NULL)</A></h4><div class="selected"><p><br>
+<b>Returns</b><br>
+true if the constraint value could be retrieved and if that value is != 0.0. false if there was an error or if the sampled value is 0.0.
+<br></br>
+<b>Parameters</b><BR>
+<i>const vector3d& position</i>: <br>
+The physical positon to sample
+<br></br>
+<i>double& src_value</i>: <br>
+Filled with the constraint value. This could be the result of several constraints so may not strictly be the explicit constraint value.
+<br></br>
+<i>void* local_data</i>: <br>
+Currently unused
+<br></br>
+<i>int cpu</i>: <br>
+The current cpu thread. Pass if you are working in a multithreaded context.
+<br></br>
+<i>const void* t_particle</i>: <br>
+Pass the FXParticle this constraint should take into account. Only used for particle constraints (mandatory)!
+<br></br>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

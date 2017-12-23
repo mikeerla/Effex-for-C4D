@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_gop.html">Grid Operators (GOP)</a> : <a href="fx_operators_cooling.html">GOP::Cooling</a></div>
+<div class="content">
+<h3>Params</h3>
+</div>
+<div class="tabs">
+<span>Params</span>
+</div>
+<div class="content">
+<div class="subtab">Params</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="GRID_COOLING_TEMPERATURE" onclick="HideNextDOM($(this));" >Temperature Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_grid_cooling_params_temperature_channel.jpg" border="0"><br></br>
+Takes a temperature or scalar channel that contains temperature information.
+
+<br></br></p></div>
+<h4><a name="GRID_COOLING_FIRE" onclick="HideNextDOM($(this));" >Fire Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operators_grid_cooling_params_fire_channel.jpg" border="0"><br></br>
+Takes a fire channel that contains burning time information. 
+<br>You must link the fire channel here if you are using a <a href="fx_operators_combustion.html">GOP::Combustion</a> to simulate fire.
+<br></br></p></div>
+<h4><a name="GRID_COOLING_TYPE" onclick="HideNextDOM($(this));" >Cooling Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopcooling_params_coolingtype.jpg" border="0"><br></br>
+Defines how the cooling should happen (in conjunction with the cooling Factor).
+<br></br>
+<b>Physical</b><br>
+Temperature channel values are reduced based on the <a href="fx_operators_cooling.html">physical temperature cooling</a> equations. 
+<br></br>
+<b>Exponential</b><br>
+Temperature channel values are reduced exponentially.
+
+<br></br></p></div>
+<h4><a name="GRID_COOLING_FACTOR" onclick="HideNextDOM($(this));" >Factor</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gopcooling_params_factor.jpg" border="0"><br></br>
+The cooling factor. In physical mode 100% does not mean the temperature will completely disappear.<br>
+Physical cooling can roughly be described as: the higher the temperature, the higher the reduction rate.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

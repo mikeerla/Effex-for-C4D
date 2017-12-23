@@ -1,0 +1,9 @@
+STRINGTABLE fx_channel_vector
+{
+	fx_channel_vector "Channel::Vector Grid";
+
+	GRIDCHANNEL_MIN_VECTOR "Minimum Value";
+	GRIDCHANNEL_MAX_VECTOR "Maximum Value";
+	GRIDCHANNEL_RESET_VECTOR "Clearing Value";
+	GRIDCHANNEL_VECTOR_ISCOLOR "Is color data";
+}

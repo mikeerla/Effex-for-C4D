@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_operators_particleadvection.html">POP::Advection</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="FX_PARTICLEADVECTION_PARTICLES" onclick="HideNextDOM($(this));" >Particles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_particles.jpg" border="0"><br></br>
+Define the particle group you would like to calculate advection, collision and aging for.
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_OPERATORS" onclick="HideNextDOM($(this));" >PIOPs</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_piops.jpg" border="0"><br></br>
+Drop here any <a href="fx_operators_piop.html">PIOP</a> (Particle Instant Operator) nodes to evaluate on collision here.
+<br>The operators are indeed called at the very moment when the collision takes place for a particle.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Inculde</A></h4><div class="selected"><p><br>
+<img src="../../img/operator_padvection_params_include.jpg" border="0"><br></br>
+Defines whether the 'Dynamics' list excludes the assigned nodes or includes them.
+<br>By default it excludes which means it will use any existing fluid dynamic nodes.
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_DYNAMICS" onclick="HideNextDOM($(this));" >Dynamics</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_dynamics.jpg" border="0"><br></br>
+Define here any dynamic nodes (to read their velocity field) (ref)used for advection.
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_INPUT_FACTORY" onclick="HideNextDOM($(this));" >Particle type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_particletype.jpg" border="0"><br></br>
+Define which particle type (subgroup) of the input particle group to use.
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_MODE" onclick="HideNextDOM($(this));" >Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_mode.jpg" border="0"><br></br>
+Defines what kind of advection you would like to perform.
+<br><br>
+<b>Off</b><br>
+Well, obviously none. No transport is calculated (and therefore no collision detection).
+<br><br>
+<b>Dynamics</b><br>
+The velocity field of a dynamics node is sampled to drive the particle transport.
+If you want particles to move in a fluid simulation, this is the mode to set.
+<br><br>
+<b>Ballistic</b><br>
+The particle velocity and/or position (and old position) are used to calculate motions based on Newton's law or alike.
+<br>So similar to Thinking Particles and C4D's own particles.
+<br><br>
+<b>Dynamics & Ballistic if outside</b><br>
+This uses 'Dynamics' if the particles are inside the given dynamics node's container box and otherwise uses the ballistic mode.
+<br>That way you can have particles keep on moving physically outside of the simulation space.
+
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_INTEGRATOR" onclick="HideNextDOM($(this));" >Integrator</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_integrator.jpg" border="0"><br></br>
+<i>Only if 'Mode' = Dynamics, Dynamics & Ballistic if outside</i>
+<br><br>
+The velocity field from the dynamics node must be sampled for the transport. It can do this with more or less precision (taking more or fewer samples).<br>
+This is done by integrators while higher orders mean better quality.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Artist Version:</b> this sets the quality of the particle transport. <br>
+<b>Mathematical version:</b> this defines the numerical integration method of ODEs.
+</div>
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_INTEGRATOR_BALLISTIC" onclick="HideNextDOM($(this));" >Integrator</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_integratorverlet.jpg" border="0"><br></br>
+<i>Only if 'Mode' = Ballistic</i>
+<br><br>
+Defines the particle based (ballistic) transport method.
+Each method integrates Newton's equation of motion but using different algorithms.
+<br><br>
+<b>Euler (velocity-based)</b><br>
+This is a velocity-based approach which means only the velocity of the particles is required to calculate the physical motion.<br>
+The position and velocity properties will be updated.
+<br><br>
+<b>Verlet (position-based)</b><br>
+This is a position-based approach which means only the position (and the old position*) of the particles is required to calculate the physical motion.<br>
+The position and the old position properties will be updated.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: make sure to attach an 'Old Position' particle property in your particle emitters if you use the Verlet mode.
+</div>
+<br>
+<b>Euler (Position-Based-Fluids)</b><br>
+This is a position-based approach which means only the position of the particles is required to calculate the physical motion.<br>
+This mode is specifically designed and used in conjunction with the <a href="fx_pbf.html">Liquid Dynamics PBF</a> node.
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_SUBSTEPS" onclick="HideNextDOM($(this));" >Substeps</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_substeps.jpg" border="0"><br></br>
+Defines how many substeps are taken during the transport calculations.<br>
+More substeps result in better accuracy but also take longer to calculate.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b><br>
+These substeps have nothing to do with the Effex Scene substeps. If you want so, these are substeps inside of a substep only for the advection node.
+</div>
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_KILLOUTSIDE" onclick="HideNextDOM($(this));" >Kill Outside Dynamics</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_killoutsidedyn.jpg" border="0"><br></br>
+Kills particles that end up outside the given dynamics container box.
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_COLLISIONS" onclick="HideNextDOM($(this));" >Collision Detection</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_collisiondetection.jpg" border="0"><br></br>
+Defines against which obstacles the particles should collide.
+<br><br>
+<b>Off</b><br>
+No collision detection calculated.
+<br><br>
+<b>Obstacle Volumes</b><br>
+Calculates collisions with any volumes that are marked as an obstacle.
+<br><br>
+<b>Dynamics Boundary</b><br>
+Same as 'Obstacle Volumes' but additionally checks collisions against the given dynamics node's container.
+<br>Even more, it uses a special obstacle field and therefore is faster than using 'Obstacle Volumes'.
+<br></br></p></div>
+<h4><a name="FX_PARTICLEADVECTION_MARGIN" onclick="HideNextDOM($(this));" >Collision Margin</A></h4><div class="selected"><p><br></br>
+<img src="../../img/operator_padvection_params_collisionmargin.jpg" border="0"><br></br>
+Defines a collision surface offset.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

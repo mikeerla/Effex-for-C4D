@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a></div>
+<div class="content">
+<h3>POP::Surface Tension</h3>
+</div>
+<div class="tabs">
+<a href="fx_operators_po_surfacetension_params.html">Parameters</a>
+</div>
+<div class="content">
+<div class="subtab">POP::Surface Tension</div>
+<div class="data">
+<p>
+Surface tension is only of importance in small scale scenarios of liquids (droplets wobbling) but can create more realistic and interesting behaviors
+such as breaking up of sheets due to surface tension (it's quite the opposite of the thin sheet algorithm).
+<br></br>
+The theory of surface tension is quite simple: liquid particles feel attracted to other liquid particles. <br>
+The problem remains a challenging task though.
+<br></br>
+The surface tension node is an SPH technique (while the liquid simulations in Effex are currently only using FLIP) and has been adapted to work with FLIP.<br>
+It contains two different algorithms, one is a cohesion model by Teschner et al 2011 and the other is the cohesion/repulsion model by
+Techner et al 2014. 
+<br></br>
+Both have a time step restriction which means that enough substeps must be used (or an accordingly low time step) in order for the algorithm to remain stable
+though in the end they are just forces (only a special force in this case, that's why it is an operator).
+<br></br>
+<i>The following nodes are either required or optional:</i><br>
+<b>1.</b> Surface Properties node (required in Surface Properties mode. Not required in Cohesion mode)<br>
+<b>2. </b>Volume Properties node (optional but can speed up the calculations tremendously. Not really required in Cohesion mode as all particles can be used)
+
+
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

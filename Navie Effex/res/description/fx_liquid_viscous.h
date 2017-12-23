@@ -1,0 +1,12 @@
+#ifndef FX_LIQUID_VISCOUS_H
+#define FX_LIQUID_VISCOUS_H
+
+enum
+{	
+	SOLVER_SEP_VISCOSITY = 2100,
+
+	LIQUID_VISCOSITY_DUMMY_
+
+};
+
+#endif

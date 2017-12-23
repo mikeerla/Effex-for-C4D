@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a></div>
+<div class="content">
+<h3>Global Functions</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">Global Functions</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Bool InitEffex(<span style="color:rgb(0,31,174);">void</span>)</A></h4><div class="selected"><p><br>
+This must be called before you do anything with the Effex API. It is enough to call it before you Register your plugins.
+<br>See the SDK project's main.cpp provided with the Effex API for an example.
+<br></br>
+<b>Returns</b><br>
+true if the Effex library has been successfully initialised.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> OpenCandidatePopup(<span style="color:rgb(74,100,127);">std</span>::<span style="color:rgb(0,120,120);">vector</span>&lt; <span style="color:rgb(0,120,120);">FXBase</span>* &gt;& items,  FXTypeInfos& types, <span style="color:rgb(0,120,120);">BaseObject</span>* caller, LONG linkfield_id, <span style="color:rgb(0,31,174);">bool</span> is_inexclude)</A></h4><div class="selected"><p><br>
+This call allows you to support candidate buttons much like Effex does.
+<br></br>
+<b>Parameters</b><BR>
+<i>std::vector&lt; FXBase* &gt;& items</i>:<br>
+Should contain the nodes in the scene the user can insert into the corresponding port (link field).<br>
+You can use GetNodes to fill the vector container.
+<BR></br>
+<i>FXTypeInfos& items</i>:<br>
+Should contain the plugin ids and names of the nodes that are compatible with the corresponding port
+and that are displayed in the 'Create..' submenu of the Candidate popup.
+<BR></br>
+<i>BaseObject* caller</i>:<br>
+The node interface you are calling the Candidate button from
+<BR></br>
+<i>LONG linkfield_id</i>:<br>
+The element id of the target link field (so the ID assigned in the .res/.h resource files of your node interface.
+<BR></br>
+<i>bool is_inexclude</i>:<br>
+Pass true if the target port is an inexclude list instead of a simple link field.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">FXBase</span>*	GetNode				(<span style="color:rgb(0,120,120);">FXScene</span>* scene, <span style="color:rgb(0,120,120);">BaseObject</span>* node, <span style="color:rgb(0,120,120);">NodeRetrieveType</span> type)</A></h4><div class="selected"><p><br>
+Finds any Effex node inside a specific Effex Scene.
+<br></br>
+<b>Returns</b><br>
+the Effex node if found. Otherwise it returns nullptr.
+<br></br>
+<b>Parameters</b><BR>
+<i>FXScene* scene</i>:<br>
+The FXScene to find the node in.
+<BR></br>
+<i>BaseObject* node</i>:<br>
+The node interface of the node to be found.
+<BR></br>
+<i>NodeRetrieveType type</i>:<br>
+the type of node to search for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> GetNodes(<span style="color:rgb(0,120,120);">FXScene</span>* scene, <span style="color:rgb(0,120,120);">InExcludeData</span>* filter, <span style="color:rgb(74,100,127);">std</span>::<span style="color:rgb(0,120,120);">vector</span>&lt; <span style="color:rgb(0,120,120);">FXBase</span>* &gt;& result, <span style="color:rgb(0,120,120);">NodeRetrieveType</span> type)</A></h4><div class="selected"><p><br>
+Finds several Effex nodes of a certain type inside a specific Effex Scene.
+<br></br>
+<b>Parameters</b><BR>
+<i>FXScene* scene</i>:<br>
+The FXScene to find the nodes in.
+<BR></br>
+<i>InExlcudeData* filter</i>:<br>
+Pass a list of node interfaces to filter the found nodes.<br>
+Passing nullptr will find all nodes of the specified NodeRetrieveType available in the scene.
+<BR></br>
+<i>std::vector&lt; FXBase* &gt;& result </i>:<br>
+Filled with the found nodes.
+<BR></br>
+<i>NodeRetrieveType type</i>:<br>
+the type of node to search for.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> PhysicalToWorld		(<span style="color:rgb(0,120,120);">FXScene</span>* scene, <span style="color:rgb(0,120,120);">vector3d</span>& physical_position)</A></h4><div class="selected"><p><br>
+Converts a position given in physical space to the Cinema 4D world space.
+<br></br>
+<b>Parameters</b><BR>
+<i>FXScene* scene</i>:<br>
+The FXScene where the conversion shall take place (and that defines the physical space of the input position)
+<BR></br>
+<i>vector3d& physical_position</i>:<br>
+Pass the physical position which as a result will be in world space after calling the function.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">void</span> WorldToPhysical		(<span style="color:rgb(0,120,120);">FXScene</span>* scene, <span style="color:rgb(0,120,120);">vector3d</span>& world_position)</A></h4><div class="selected"><p><br>
+Converts a position given in Cinema 4D world space to the Effex physical space..
+<br></br>
+<b>Parameters</b><BR>
+<i>FXScene* scene</i>:<br>
+The FXScene where the conversion shall take place (and that defines the physical space)
+<BR></br>
+<i>vector3d& world_position</i>:<br>
+Pass the world position which as a result will be in physical space after calling the function.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+STRINGTABLE fx_mesh
+{
+	fx_mesh	"Mesh";
+
+	ID_FXMESH_DISPLAY	"Display";
+
+	FXMESH_MESH		"Source mesh";
+	FXMESH_MESH_SELECTOR	"C";
+	FXMESH_DISPLAY_PROPERTY "Property (vertex data)";
+	FXMESH_DISPLAY_DRAW	"Draw Brush data";
+	FXMESH_MESHMOTION	"Calculate vertex velocities";
+	FXMESH_DISPLAY_THRESHOLD "Maximum property value";
+	FXMESH_DISPLAY_PROPERTY_BRUSH "Property (brush data)";
+	FXMESH_DISPLAY_THRESHOLD_BRUSH "Maximum property value";
+	FXMESH_DISPLAY_PROPERTY_SELECTOR "C";
+	FXMESH_DISPLAY_PROPERTY_BRUSH_SELECTOR "C";
+	
+	FXMESH_QUICKTAB_OBSTACLE "Obstacle On/Off";
+	FXMESH_QUICKTAB_VOLUME	 "Create Volume";
+	FXMESH_QUICKTAB_CURVATURE "Mesh curvature";
+	FXMESH_QUICKTAB_SMOOTHING "Mesh smoothing";
+}

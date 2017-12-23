@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_forces.html">Forces</a> : <a href="fx_forces_gf.html">Grid Forces (GF)</a> : <a href="fx_force_external.html">GF::External</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_gf_external_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FORCE_GRAVITY_ALIGNMENT" onclick="HideNextDOM($(this));" >Direction [via Aligment]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_external_params_direction_via_alignment.jpg" border="0"><br></br>
+Takes a node of type 'Alignment' to define the direction of the emitted force. <br></br>
+An alignment node allows more complex directions to be created. If you want to create a simple attractor force for example you
+would use an Alignment node here with an inverted spherical direction.
+
+<br></br></p></div>
+<h4><a name="FORCE_GRAVITY_SETTINGS" onclick="HideNextDOM($(this));" >Emission Settings</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_external_params_emission_settings.jpg" border="0"><br></br>
+Takes a node of type "Emission settings" to introduce additional functionality for the wind force emission.<br>
+Settings like duration, shot etc. of the Emission settings are used when the force is emitted and gives you additional control.
+<br></br></p></div>
+<h4><a name="FORCE_GRAVITY_INTENSITY" onclick="HideNextDOM($(this));" >Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_external_params_strength.jpg" border="0"><br></br>
+The strength of the resulting directional force (so the length of the emitted vector). Higher values result in more intense motions.
+<br></br></p></div>
+<h4><a name="FORCE_GRAVITY" onclick="HideNextDOM($(this));" >Manual Direction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_external_params_manual_direction.jpg" border="0"><br></br>
+Here you can manually set the direction of the resulting force. This one is only used if no 'Direction' node is linked.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

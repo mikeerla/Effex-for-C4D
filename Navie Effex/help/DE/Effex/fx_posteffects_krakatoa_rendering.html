@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_posteffects.html">Post Effects</a> : <a href="fx_posteffects_krakatoa.html">KrakatoaSR (Effex)</a></div>
+<div class="content">
+<h3>Rendering</h3>
+</div>
+<div class="tabs">
+<a href="fx_posteffects_krakatoa_basic.html">Basic</a>
+<a href="fx_posteffects_krakatoa_precomputation.html">Precomputations</a>
+<span>Rendering</span>
+<a href="fx_posteffects_krakatoa_passes.html">Passes</a>
+</div>
+<div class="content">
+<div class="subtab">Rendering</div>
+<div class="data">
+<p>
+In the following all description content that is displayed in italic
+is a quote taken from the thinkbox Krakatoa MY user reference manual which
+you can find here: <a href="http://www.thinkboxsoftware.com/krakatoa-my-render-settings/">http://www.thinkboxsoftware.com/krakatoa-my-render-settings/</a>
+</p>
+</div>
+<h4><a name="FX_KRAKATOA_RENDERMODE" onclick="HideNextDOM($(this));" >Splatting Type</A></h4><div class="selected"><p><br></br>
+<i>Particles - the particles will be drawn as pixel-sized points, filtered over multiple pixels according to the Filtering settings.<br>
+Voxels - the particles will be registered on a voxel grid and the voxels will be rendered using a plane marching at half-way angle between the view direction and the light direction, once per light. 
+</i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_FILTER" onclick="HideNextDOM($(this));" >Point Render Filter</A></h4><div class="selected"><p><br></br>
+<i>
+    <b>Nearest</b> - Draws the particle in exactly one pixel by using the pixel that has the maximum coverage.<br>
+    <b>Bilinear</b> - Default. When Point Filter Size is 1, draws the particle into the closest 2x2 pixels using bilinear filtering. Covers more pixels as the Filter Size increases.<br>
+    <b>Bicubic</b>  - Draws the particle into the closest 3x3 pixels using bicubic filtering.
+</i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_BILINEARFILTER_SIZE" onclick="HideNextDOM($(this));" >Point Filter Size</A></h4><div class="selected"><p><br></br>
+<i>
+    Default is 1.
+    This is the Final Pass Bilinear Filter Size - higher values produce blurrier rendering. The image below shows the result of applying a Bilinear Filter with sizes of 1, 2, 3 and 4 to the same PRT Volume particles while illuminating with Shadows set to Bilinear Filter Size 1:
+</i>
+<br>
+<a class="thumbnail" href="#thumb">
+              <img class="imagespace" src="http://www.thinkboxsoftware.com/storage/krakatoa-support-images/KRA2_HappyBuddha_FinalPassFilter.png?__SQUARESPACE_CACHEVERSION=1321901458482" width="100px" height="66px" border="0" />
+              <span><img src="http://www.thinkboxsoftware.com/storage/krakatoa-support-images/KRA2_HappyBuddha_FinalPassFilter.png?__SQUARESPACE_CACHEVERSION=1321901458482" /><br />Image Courtesy Thinkbox Software</span></a>
+<br>
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Rendering::</span>Color</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FX_KRAKATOA_COLOR_PROPERTYMODE" onclick="HideNextDOM($(this));" >Source</A></h4><div class="selected"><p><br></br>
+Defines which coloring mode to use.
+<br></br>
+<b>Color field</b><br>
+Uses the Color field for a constant color applied to particles.
+<br></br>
+<b>Property:Color</b><br>
+Uses the color property of the particles. If they don't have
+one attached the Color field will be used.
+<br></br>
+<b>Particle Property</b><br>
+Uses a user-defined particle property
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_COLOR_PROPERTY" onclick="HideNextDOM($(this));" >Particle Property</A></h4><div class="selected"><p><br></br>
+<i>(Only available if Source: Particle Property)</i>
+<br></br>
+Takes a particle property of any type.<br>
+If it is a scalar property it's value will be color mapped with the <a href="#FX_KRAKATOA_COLOR_SCALARMAPPING">Map on Scalar Property</a> gradient.<br>
+If it is a vector (and not a color property in specific) the length of the vector will be mapped on the gradient.
+<br></br>
+For both cases the range is defined by <a href="#FX_KRAKATOA_COLOR_RANGEMIN">Range Minimum</a> and <a href="#FX_KRAKATOA_COLOR_RANGEMAX">Range Maximum</a>
+(while for vector properties only Range Maximum is of interest).
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<i>(Only used if Source: Color field)</i>
+<br></br>
+The color assigned to particles.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_COLOR_SCALARMAPPING" onclick="HideNextDOM($(this));" >Map on Scalar Property</A></h4><div class="selected"><p><br></br>
+<i>(Only used if Source: Particle Property)</i>
+<br></br>
+The color mapping based on the property value inside the range that is defined by <a href="#FX_KRAKATOA_COLOR_RANGEMIN">Range Minimum</a> and <a href="#FX_KRAKATOA_COLOR_RANGEMAX">Range Maximum</a>
+(while for vector properties only Range Maximum is of interest).
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_COLOR_RANGEMIN" onclick="HideNextDOM($(this));" >Range Minimum</A></h4><div class="selected"><p><br></br>
+<i>(Only if Source: Particle Property)</i>
+<br></br>
+The minimum of the input range.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_COLOR_RANGEMAX" onclick="HideNextDOM($(this));" >Range Maximum</A></h4><div class="selected"><p><br></br>
+<i>(Only if Source: Particle Property)</i>
+<br></br>
+The maximum of the input range.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Rendering::</span>Density</span>
+</div>
+<div class="subdata selected">
+Here we can find settings to define the density of a particle.
+<h4><a name="FX_KRAKATOA_DENSITY_PROPERTY" onclick="HideNextDOM($(this));" >Particle Property</A></h4><div class="selected"><p><br></br>
+Takes a particle property of any type.<br>
+If it is a scalar property it's value will be directly used.<br>
+If it is a vector (and not a color property in specific) the length of the vector will be mapped on the range that is defined from 0.0 to <a href="#FX_KRAKATOA_DENSITY_VECMAX">Max. Length</a>
+(while for vector properties only Range Maximum is of interest).
+
+
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_DENSITY_VECMAX" onclick="HideNextDOM($(this));" >Max. Length</A></h4><div class="selected"><p><br></br>
+<i>(Only if Particle Property is linked)</i>
+<br></br>
+The maximum of the input range.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_DENSITY_COEFFICIENT" onclick="HideNextDOM($(this));" >Density</A></h4><div class="selected"><p><br></br>
+<i>The Density and the Exponent values are used to define a single render property = (Density) * 10 ^ (Exponent)<br>
+This makes it easy to increase/decrease the value by orders of magnitude or express very small or very large numbers. For example, instead of entering 0.00000005, the user can enter 5.0 and -8.
+They define a global Density scale for all particles. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_DENSITY_EXPONENT" onclick="HideNextDOM($(this));" >Exponent</A></h4><div class="selected"><p><br></br>
+<i>The Density and the Exponent values are used to define a single render property = (Density) * 10 ^ (Exponent)<br>
+This makes it easy to increase/decrease the value by orders of magnitude or express very small or very large numbers. For example, instead of entering 0.00000005, the user can enter 5.0 and -8.
+They define a global Density scale for all particles. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_DENSITY_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+You can modify the density of particles by using constraints.<br>
+This allows to extent the render features tremendously and offers
+an amazing amount of control in Krakatoa Renderings.
+<br></br>
+Drop any constraints in here. See 'Constraints' for more information.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Rendering::</span>Absorption</span>
+</div>
+<div class="subdata selected">
+Here you can find settings that define the absorption behavior of the medium.
+<h4><a name="FX_KRAKATOA_ABSORPTION_PROPERTY" onclick="HideNextDOM($(this));" >Particle property</A></h4><div class="selected"><p><br></br>
+Takes a particle property of any type. This node is optional.<br>
+If no particle property is used, the absorption color is used instead.
+<br></br>
+If it is a scalar property it's value will be color mapped with the <a href="#FX_KRAKATOA_ABSORPTION_SCALARMAPPING">Map on Scalar Property</a> gradient.<br>
+If it is a vector (and not a color property in specific) the length of the vector will be mapped on the gradient.
+<br></br>
+For both cases the range is defined by <a href="#FX_KRAKATOA_ABSORPTION_RANGEMIN">Range Minimum</a> and <a href="#FX_KRAKATOA_ABSORPTION_RANGEMAX">Range Maximum</a>
+(while for vector properties only Range Maximum is of interest).
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_ABSORPTIONCOLOR" onclick="HideNextDOM($(this));" >Absorption Color</A></h4><div class="selected"><p><br></br>
+The Absorption Color used. This rather defines which colors
+of the lighting are absorbed more or less. Darker values mean more absorption.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_ABSORPTION_PREVIEW" onclick="HideNextDOM($(this));" >Preview</A></h4><div class="selected"><p><br></br>
+The color of the particles and the absorption color both result in
+a color that is not easy to predict. This is a preview of the approximate color resulting from absorption.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_ABSORPTION_SCALARMAPPING" onclick="HideNextDOM($(this));" >Map on Scalar Property</A></h4><div class="selected"><p><br></br>
+<i>(Only used if a Particle Property is linked)</i>
+<br></br>
+The color mapping based on the property value inside the range that is defined by <a href="#FX_KRAKATOA_ABSORPTION_RANGEMIN">Range Minimum</a> and <a href="#FX_KRAKATOA_ABSORPTION_RANGEMAX">Range Maximum</a>
+(while for vector properties only Range Maximum is of interest).
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_ABSORPTION_RANGEMIN" onclick="HideNextDOM($(this));" >Property Range Minimum</A></h4><div class="selected"><p><br></br>
+<i>(Only if Particle Property is linked)</i>
+<br></br>
+The minimum of the input range.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_ABSORPTION_RANGEMAX" onclick="HideNextDOM($(this));" >Property Range Maximum</A></h4><div class="selected"><p><br></br>
+<i>(Only if Particle Property is linked)</i>
+<br></br>
+The maximum of the input range for the mapping.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_ABSORPTION_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+You can modify the absorption of particles by using constraints.<br>
+This allows to extent the render features tremendously and offers
+an amazing amount of control in Krakatoa Renderings.
+<br></br>
+Drop any constraints in here. See 'Constraints' for more information.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Rendering::</span>Emission</span>
+</div>
+<div class="subdata selected">
+The following settings allow to control the luminance emission of particles.
+<h4><a name="FX_KRAKATOA_EMISSION_PROPERTY" onclick="HideNextDOM($(this));" >Particle Property</A></h4><div class="selected"><p><br></br>
+Takes a particle property of any type. This node is optional.<br>
+If no particle property is used, the Emission color is used instead.
+<br></br>
+If it is a scalar property it's value will be color mapped with the <a href="#FX_KRAKATOA_EMISSION_SCALARMAPPING">Map on Scalar Property</a> gradient.<br>
+If it is a vector (and not a color property in specific) the length of the vector will be mapped on the gradient.
+<br></br>
+For both cases the range is defined by <a href="#FX_KRAKATOA_EMISSION_RANGEMIN">Range Minimum</a> and <a href="#FX_KRAKATOA_EMISSION_RANGEMAX">Range Maximum</a>
+(while for vector properties only Range Maximum is of interest).
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_EMISSION_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+The emission color used if no particle property is used.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_EMISSION_STRENGTH" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<i>The Intensity  and the Exponent values are used to define a single render property = (Intenisty) * 10 ^ (Exponent<br>
+This makes it easy to increase/decrease the value by orders of magnitude or express very small or very large numbers. For example, instead of entering 0.00000005, the user can enter 5.0 and -8.
+They define a global Density scale for all particles. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_EMISSION_EXPONENT" onclick="HideNextDOM($(this));" >Exponent</A></h4><div class="selected"><p><br></br>
+<i>The Intensity  and the Exponent values are used to define a single render property = (Intenisty) * 10 ^ (Exponent)<br>
+This makes it easy to increase/decrease the value by orders of magnitude or express very small or very large numbers. For example, instead of entering 0.00000005, the user can enter 5.0 and -8.
+They define a global Density scale for all particles. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_EMISSION_SCALARMAPPING" onclick="HideNextDOM($(this));" >Map on Scalar Property</A></h4><div class="selected"><p><br></br>
+<i>(Only used if a Particle Property is linked)</i>
+<br></br>
+The color mapping based on the property value inside the range that is defined by <a href="#FX_KRAKATOA_EMISSION_RANGEMIN">Range Minimum</a> and <a href="#FX_KRAKATOA_EMISSION_RANGEMAX">Range Maximum</a>
+(while for vector properties only Range Maximum is of interest).
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_EMISSION_RANGEMIN" onclick="HideNextDOM($(this));" >Property Range Minimum</A></h4><div class="selected"><p><br></br>
+<i>(Only if Particle Property is linked)</i>
+<br></br>
+The minimum of the input range for the mapping.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_EMISSION_RANGEMAX" onclick="HideNextDOM($(this));" >Property Range Maximum</A></h4><div class="selected"><p><br></br>
+<i>(Only if Particle Property is linked)</i>
+<br></br>
+The maximum of the input range for the mapping.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_EMISSION_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+You can modify the luminance emission of particles by using constraints.<br>
+This allows to extent the render features tremendously and offers
+an amazing amount of control in Krakatoa Renderings.
+<br></br>
+Drop any constraints in here. See 'Constraints' for more information.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Rendering::</span>Scattering</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FX_KRAKATOA_OPTICAL_PHASE" onclick="HideNextDOM($(this));" >Phase</A></h4><div class="selected"><p><br></br>
+Shading Modes
+<br></br>
+<b>Isotropic, Henyey-Greenstein, Schlick</b><br>
+No special requirements. All particles can use them.
+<br></br>
+<b>Phong Surface Shading</b><br>
+Particles must have a normal property attached for surface shading.
+<br></br>
+<b>Kajiya-Kai Hair, Marschner Hair</b><br>
+Particles must have a normal and a tangent property attached
+(usually used for hair rendering).
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OPTICAL_PHASE_ANISOTROPY_PROPERTY" onclick="HideNextDOM($(this));" >Anisotropy Property</A></h4><div class="selected"><p><br></br>
+Takes a particle property of any type. This node is optional.
+<br></br>
+If it is a scalar property its value will be directly used.<br>
+If it is a vector (and not a color property in specific) the length of the vector will be mapped on the range that is defined from 0.0 to <a href="#FX_KRAKATOA_OPTICAL_PHASE_ANISOTROPY_VECMAX">Max. Length</a>
+(while for vector properties only Range Maximum is of interest).
+<br></br>
+If no property is linked the Anisotropy value is used instead.
+
+
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OPTICAL_PHASE_ANISOTROPY_VECMAX" onclick="HideNextDOM($(this));" >Max. Length</A></h4><div class="selected"><p><br></br>
+<i>(Only if Particle Property is linked)</i>
+<br></br>
+The maximum of the input range.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OPTICAL_PHASE_ANISOTROPY" onclick="HideNextDOM($(this));" >Anisotropy</A></h4><div class="selected"><p><br></br>
+The anisotropic factor of the used 'Phase' function.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OPTICAL_ANISOTROPY_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+You can modify the anisotropy of particles by using constraints.<br>
+This allows to extent the render features tremendously and offers
+an amazing amount of control in Krakatoa Renderings.
+<br></br>
+Drop any constraints in here. See 'Constraints' for more information.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Rendering::</span>Self-Shadowing</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FX_KRAKATOA_OCCLUSION_FILTER" onclick="HideNextDOM($(this));" >Render Filter</A></h4><div class="selected"><p><br></br>
+<i>
+    <b>Nearest</b> - Draws the particle in exactly one pixel by using the pixel that has the maximum coverage.<br>
+    <b>Bilinear</b> - Default. When Filter Size is 1, draws the particle into the closest 2x2 pixels using bilinear filtering. Covers more pixels as the Filter Size increases.<br>
+    <b>Bicubic</b>  - Draws the particle into the closest 3x3 pixels using bicubic filtering.
+</i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OCCLUSION_BILINEARFILTER_SIZE" onclick="HideNextDOM($(this));" >Filter Size</A></h4><div class="selected"><p><br></br>
+<i>This is the Bilinear Filter Size - higher values produce blurrier shadows. 
+In the image below, the same PRT Volume particles were rendered using Filter Size of 1,2,4 and 8.
+</i>
+<br>
+<a class="thumbnail" href="#thumb">
+              <img class="imagespace" src="http://www.thinkboxsoftware.com/storage/krakatoa-support-images/KRA2_HappyBuddha_ShadowFilter.png?__SQUARESPACE_CACHEVERSION=1321900697671" width="100px" height="66px" border="0" />
+              <span><img src="http://www.thinkboxsoftware.com/storage/krakatoa-support-images/KRA2_HappyBuddha_ShadowFilter.png?__SQUARESPACE_CACHEVERSION=1321900697671" /><br />Image Courtesy Thinkbox Software</span></a>
+<br>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OCCLUSION_DENSITY_PROPERTY" onclick="HideNextDOM($(this));" >Particle Property</A></h4><div class="selected"><p><br></br>
+Takes a particle property of any type. This node is optional.
+<br></br>
+If it is a scalar property it's value will be directly used.<br>
+If it is a vector (and not a color property in specific) the length of the vector will be mapped on the range that is defined from 0.0 to <a href="#FX_KRAKATOA_DENSITY_VECMAX">Max. Length</a>
+(while for vector properties only Range Maximum is of interest).<br>
+If it is a color property it's color is used directly.
+<br></br>
+If no property is linked the Density setting is used instead.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OCCLUSION_DENSITY_VECMAX" onclick="HideNextDOM($(this));" >Max. Length</A></h4><div class="selected"><p><br></br>
+<i>(Only if Particle Property is linked)</i>
+<br></br>
+The maximum of the input range.
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OCCLUSION_DENSITY_COEFFICIENT" onclick="HideNextDOM($(this));" >Density</A></h4><div class="selected"><p><br></br>
+<i>The Self-Shadow Density and the Exponent values are used to define a single render property = (Self-Shadow Density) * 10 ^ (Exponent)<br>
+This makes it easy to increase/decrease the value by orders of magnitude or express very small or very large numbers. For example, instead of entering 0.00000005, the user can enter 5.0 and -8.<br>
+They define a global Density scale for all particles. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OCCLUSION_DENSITY_EXPONENT" onclick="HideNextDOM($(this));" >Exponent</A></h4><div class="selected"><p><br></br>
+<i>The Self-Shadow Density and the Exponent values are used to define a single render property = (Self-Shadow Density) * 10 ^ (Exponent)<br>
+This makes it easy to increase/decrease the value by orders of magnitude or express very small or very large numbers. For example, instead of entering 0.00000005, the user can enter 5.0 and -8.<br>
+They define a global Density scale for all particles. </i>
+<br></br></p></div>
+<h4><a name="FX_KRAKATOA_OCCLUSION_DENSITY_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+You can modify the self-shadowing absorption of particles by using constraints.<br>
+This allows to extent the render features tremendously and offers
+an amazing amount of control in Krakatoa Renderings.
+<br></br>
+Drop any constraints in here. See 'Constraints' for more information.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

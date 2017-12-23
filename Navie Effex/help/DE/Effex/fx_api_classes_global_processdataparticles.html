@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_classes.html">Classes</a> : <a href="fx_api_classes_global.html">Global</a></div>
+<div class="content">
+<h3>ProcessDataParticles</h3>
+</div>
+<div class="content">
+<div class="subtab">ProcessDataParticles</div>
+<div class="data">
+<p>
+<br><img src="../../img/api/processdataparticles.jpg" border="0"">
+<hr line>
+This struct contains additional information for operations on particle based nodes (particle groups).
+<br>Usually it is filled by Effex and passed to the processing functions of custom plugin nodes.
+<br></br>
+The values should never be altered if not explicitly stated.
+<br></br>
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">unsigned</span> <span style="color:rgb(0,31,174);">int</span> start </A></h4><div class="selected"><p><br>
+The starting particle index in a multiprocessor context.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">unsigned</span> <span style="color:rgb(0,31,174);">int</span> end </A></h4><div class="selected"><p><br>
+The ending particle index in a multiprocessor context.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">double</span> <span style="color:rgb(0,31,174);">const</span> </A></h4><div class="selected"><p><br>
+If the operating node that has filled this struct uses constraints, then this value gives you the final constraint value.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">unsigned</span> long index </A></h4><div class="selected"><p><br>
+The currently processed particle index.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,31,174);">unsigned</span> <span style="color:rgb(0,31,174);">char</span> type </A></h4><div class="selected"><p><br>
+The type of the current particle. See ParticleFactoryTypes.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> physical_position </A></h4><div class="selected"><p><br>
+The currently processed particle position in physical space.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> world_position </A></h4><div class="selected"><p><br>
+The currently processed particle position in world space.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" ><span style="color:rgb(0,120,120);">vector3d</span> op_result </A></h4><div class="selected"><p><br>
+A result variable that can be changed. Currently only used by custom force plugins.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

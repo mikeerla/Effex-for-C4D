@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_particle.html">Particle</a> : <a href="fx_emitters_particlemeshemitter.html">Emitter::Particle On Mesh</a></div>
+<div class="content">
+<h3>Constraints</h3>
+</div>
+<div class="tabs">
+<a href="fx_emitters_particlemeshemitter_params.html">Parameters</a>
+<span>Constraints</span>
+</div>
+<div class="content">
+<div class="subtab">Constraints</div>
+<div class="data">
+<p>
+<img src="../../img/fx_pmeshemitter_constraints.jpg" border="0"">
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br>
+<img src="../../img/Global_constraints.jpg" border="0"><br></br>
+Restrict and alter the strength of the resulting emission by using constraints. 
+<br></br>
+Please see <a href="fx_constraints_general.html">Constraints</a> for more information.
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_CONSTRAINT_SHADER" onclick="HideNextDOM($(this));" >Restriction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPoM_constraints_restriction.jpg" border="0"><br></br>
+This allows for texture based emission (greyscale). Colors below the threshold value mean no emission.
+<br></br>
+As this is a restriction value, any colors sampled from the given shader/texture will be converted into greyscale value.
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_CONSTRAINT_SHADERTHRESHOLD" onclick="HideNextDOM($(this));" >Threshold</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitterPoM_constraints_threshold.jpg" border="0"><br></br>
+Defines the texture based emission threshold. Locations where colors are below this threshold value result in no emission.
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_CONSTRAINT_CURVATURE" onclick="HideNextDOM($(this));" >Invert</A></h4><div class="selected"><p><br></br>
+Inverts the mesh curvature based emission.<br>
+Areas with curvature lower than the threshold will then have emission instead of high curvature areas.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> The mesh node linked must have mesh curvatures generated to make this work. See <a href="fx_operators_meshcurvature.html">MOP::Curvature</a>.
+</div>
+<br></br></p></div>
+<h4><a name="PARTICLEMESHEMITTER_CONSTRAINT_CURVATURETHRESHOLD" onclick="HideNextDOM($(this));" >Curvature Threshold (0.0 = off)</A></h4><div class="selected"><p><br></br>
+Set this value higher than 0.0 to activate curvature based emission.<br>
+Higher threshold value will restrict emission more and more to areas with high curvature.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+<b>Note:</b> The mesh node linked must have mesh curvatures generated to make this work. See <a href="fx_operators_meshcurvature.html">MOP::Curvature</a>.
+</div>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

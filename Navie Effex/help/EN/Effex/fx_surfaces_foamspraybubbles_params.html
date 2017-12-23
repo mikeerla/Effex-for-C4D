@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_pop.html">Particle Operators (POP)</a> : <a href="fx_surfaces_foamspraybubbles.html">POP::Foam/Spray/Bubbles</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+<a href="fx_surfaces_foamspraybubbles_unified.html">Unified</a>
+<a href="fx_surfaces_foamspraybubbles_foam.html">Foam</a>
+<a href="fx_surfaces_foamspraybubbles_spray.html">Spray</a>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_foamspray_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FSB_GROUP" onclick="HideNextDOM($(this));" >Liquid Particle Group</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fsb_params_liquidparticlegroup.jpg" border="0"><br></br>
+The particle group that contains liquid particles. This node is required.
+<br></br></p></div>
+<h4><a name="FSB_GROUP_TARGET" onclick="HideNextDOM($(this));" >Target Particles (Foam)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fsb_params_tpfoam.jpg" border="0"><br></br>
+The particle group that will take any diffuse foam particles generated. This node is optional.<br>
+If no particle group is linked here, the Liquid Particle Group is used for storing diffuse particles.
+<br></br></p></div>
+<h4><a name="FSB_DYNAMICS" onclick="HideNextDOM($(this));" >Target Particles (Spray)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/fsb_params_tpspray.jpg" border="0"><br></br>
+The particle group that will take any diffuse spray particles generated. This node is optional.<br>
+If no particle group is linked here, the Liquid Particle Group is used for storing diffuse particles.
+<br></br></p></div>
+<h4><a name="FSB_DYNAMICS" onclick="HideNextDOM($(this));" >Dynamics</A></h4><div class="selected"><p><br></br>
+Drop here the liquid dynamics node.
+<br></br></p></div>
+<h4><a name="FSB_MESHER" onclick="HideNextDOM($(this));" >Mesher</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_mesher.jpg" border="0"><br></br>
+Takes an implicit mesher node. This node is only required in the Geometry mode.
+<br></br></p></div>
+<h4><a name="FSB_RECONSTRUCTOR" onclick="HideNextDOM($(this));" >Surface Reconstructor</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_surface_reconstructor.jpg" border="0"><br></br>
+Takes a surface reconstructor to extract the volume from it.
+<br></br>
+This node is optional in Geometry mode (but it can speed up calculations while being a little less accurate than using a Mesher alone).<br>
+This node is also optional in Particles mode, however in that case you instead need a Surface Properties node (calculating normal and curvature).
+<br></br></p></div>
+<h4><a name="FSB_MODE" onclick="HideNextDOM($(this));" >Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_mode.jpg" border="0"><br></br>
+Defines which algorithm to use.
+<br></br>
+<b>Geometry</b><br>
+The geometry mode generates diffuse materials based on geometric (topological) features of the simulation. That's why a mesher is required.
+<br></br>
+<b>Particles</b><br>
+The particles mode is based on a particles and their distribution. Topological information will be directly extracted from particles.
+<br></br></p></div>
+<h4><a name="FSB_VOXELSCALE" onclick="HideNextDOM($(this));" >Voxel Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_voxel_scale.jpg" border="0"><br></br>
+The voxel scale (higher values mean higher resolution) for the calculation of curvature from the liquid volume (or surface reconstructor if assigned...it will be resampled in that case).
+<br></br></p></div>
+<h4><a name="FSB_DENSITY" onclick="HideNextDOM($(this));" >Sampling Density</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_sampling_density.jpg" border="0"><br></br>
+Only used in Geometry mode this option is the density of diffuse particles (distance to each other) generated.
+<br></br></p></div>
+<h4><a name="FSB_SMOOTHING" onclick="HideNextDOM($(this));" >Curvature Smoothing</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_curvature_smoothing.jpg" border="0"><br></br>
+In Geometry mode curvature is distributed onto the mesh(er)'s surface. This value allows you to smooth the curvature which results in lower curvature values.
+<br></br></p></div>
+<h4><a name="FOAM_ON" onclick="HideNextDOM($(this));" >Generate Foam</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_generate_foam.jpg" border="0"><br></br>
+Turn on/off generation of foam particles.
+<br></br></p></div>
+<h4><a name="SPRAY_ON" onclick="HideNextDOM($(this));" >Generate Spray</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_generate_spray.jpg" border="0"><br></br>
+Turn on/off generation of spray particles.
+<br></br></p></div>
+<h4><a name="BUBBLES_ON" onclick="HideNextDOM($(this));" >Generate Bubbles</A></h4><div class="selected"><p><br></br>
+<img src="../../img/surfaces_foam_spray_bubbles_params_generate_bubbles.jpg" border="0"><br></br>
+Turn on/off generation of bubble particles.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

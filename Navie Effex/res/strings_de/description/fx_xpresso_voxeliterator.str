@@ -1,0 +1,10 @@
+STRINGTABLE fx_xpresso_voxeliterator
+{
+	fx_xpresso_voxeliterator "Voxel Iterator";
+	
+	XVOXELITER_FROM		"Von (Zellenkoordinate)";
+	XVOXELITER_TO		"Bis (Zellenkoordinate)";
+	XVOXELITER_OUT		"Voxelindex";
+
+	XVOXELITER_DUMMY	"";
+}

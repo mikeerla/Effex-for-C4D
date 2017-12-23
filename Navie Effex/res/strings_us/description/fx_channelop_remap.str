@@ -1,0 +1,11 @@
+STRINGTABLE fx_channelop_remap
+{
+	fx_channelop_remap "CellOperator::Range Mapping";
+
+	CHANNELOP_REMAP_GRADIENT "Gradient";
+	CHANNELOP_REMAP_CHANNEL "Source Channel";
+	CHANNELOP_REMAP_CHANNEL_SELECTOR "C";
+	CHANNELOP_REMAP_ISVECTOR "Vector Value";
+
+	CHANNELOP_REMAP_DUMMY_ "";
+}

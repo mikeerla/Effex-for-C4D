@@ -1,0 +1,10 @@
+#ifndef FX_PROPERTY_STATE_H
+#define FX_PROPERTY_STATE_H
+
+enum
+{
+	PROPERTY_VALUE_STATE = 1000
+
+};
+
+#endif

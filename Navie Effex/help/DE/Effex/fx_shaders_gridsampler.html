@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_shaders.html">Shaders</a></div>
+<div class="content">
+<h3>Grid Sampler</h3>
+</div>
+<div class="tabs">
+</div>
+<div class="content">
+<div class="subtab">Grid Sampler</div>
+<div class="data">
+<p>
+The Grid Sampler allows to read out channels from any node that is grid-based
+and output a color for it (except when the channel already contains colors).
+<br></br>
+This shader is also used for rendering your smoke,fire and explosion simulations with VRay.<br>
+Use it in the volumetric settings of the VRay4C4D renderer.
+<br></br>
+Please see the <a href="fx_vraygizmo.html">VRay Gizmo</a> for more setup information.
+</p>
+</div>
+<h4><a name="FX_GRIDSAMPLER_CHANNEL" onclick="HideNextDOM($(this));" >Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_channel.jpg" border="0"><br></br>
+Takes a grid based node. This node is required.
+<br></br>
+Valid nodes are:
+ <br></br>
+<b>Volumes (SDF)<br>
+Surface Reconstructor (implicit grid)<br>
+Fluid Dynamics (velocity)<br>
+Scalar/Vector channels</b>
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_RANGE_MIN" onclick="HideNextDOM($(this));" >Input Minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_input_minimum.jpg" border="0"><br></br>
+Defines the range minimum used to map scalar  values and vector lengths
+for being colored by the Color gradient.
+<br></br>
+<i><b>Example:</b></i><br>
+You have a fluid dynamics node linked (which is a vector).<br>
+We know the minimum length of the velocity vector can only be 0.0. So this would be our minimum.
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_RANGE_MAX" onclick="HideNextDOM($(this));" >Input Maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_particle_sampler_shader_input_maximum.jpg" border="0"><br></br>
+Defines the range maximum used to map scalar  values and vector lengths
+for being colored by the Color gradient.
+<br></br>
+<i><b>Example:</b></i><br>
+You have a dynamics node linked (which gives us a velocity vector channel).<br>
+We know the maximum length of the velocity vector can be arbitrary. So we choose a value of 100.0.<br>
+If the velocity length is 50.0, the mapped value is 0.5 (0...50...100. Exactly in the middle of the range).
+<br></br>
+The color at the gradient center is therefore output.
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_SURFACECOORDINATE" onclick="HideNextDOM($(this));" >Use UVW coordinate</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_use_uvw_coordinate.jpg" border="0"><br></br>
+If activated it will use the UVW coordinate and not the world space coordinate.
+<br></br>
+This is only used for compatibility with old VRay versions (prior to 1.2.6.1) where you need to activate this setting.<br>
+Otherwise leave it off.
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_ADVECT" onclick="HideNextDOM($(this));" >Advection Timestep</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_advection_timestep.jpg" border="0"><br></br>
+During rendering the channel data can be advected resulting in more details.<br>
+Setting this too high may result in artefacts though. The value is given in seconds. The default value of 0.033 represents one frame. 
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_COLOR_PRESETS" onclick="HideNextDOM($(this));" >Presets</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_gridsampler_presets.jpg" border="0"><br></br>
+Two coloring modes can be chosen.<br>
+Either using a custom color gradient or a blackbody color spectrum (flame colors).
+<br></br>
+If you use the blackbody mode, the channel values should be defined in temperature range.
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color.jpg" border="0"><br></br>
+Defines the color of the mapped channel value.
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_COLOR_HEATPLANCK" onclick="HideNextDOM($(this));" >Color (Blackbody)</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color_preview.jpg" border="0"><br></br>
+A preview of the blackbody color spectrum.
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_COLOR_HEATPLANCK_CLAMP" onclick="HideNextDOM($(this));" >Tone Mapping Type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color_tonemappingtype.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+As the Blackbody spectrum is highly dynamic (its intensities can go beyond 100% and are radiance values) it must be converted to RGB space. The tone mapping is used for this. You have several color spaces and encoding systems as targets to accomplish this.
+<br></br>
+<b>NTSC</b><br>
+Blackbody spectrum as perceived on NTSC systems
+<br></br>
+<b>PAL/Secam</b><br>
+Blackbody spectrum as perceived on PAL/SECAM systems
+<br></br>
+<b>SMPTE</b><br>
+Blackbody spectrum as perceived in SMPTE standard (see http://www. smpte.org, SMPTE 0274M HD 1080 Standard)
+<br></br>
+<b>HDTV</b><br>
+Blackbody spectrum as perceived in HDTV standard
+<br></br>
+<b>CIE Human perception</b><br>
+Blackbody spectrum taking into account the perception of human eyes (physically most accurate mode)
+<br></br>
+<b>CIE REC 709</b><br>
+Blackbody spectrum as perceived in HD Widescreen (16:9) standard
+
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_COLOR_HEATPLANCK_BOOST" onclick="HideNextDOM($(this));" >Color Boost</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color_colorboost.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Allows to boost certain colors of the Blackbody spectrum.
+<br></br>
+<b>X-component:</b> Redish part<br>
+<b>Y-component:</b> Yellowish part<br>
+<b>Z-component:</b> Red-Yellow shift
+
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_COLOR_HEATPLANCK_INTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_intensity.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Blackbody intensity. This results in a brighter appearance of the colors.
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_COLOR_HEATPLANCK_SCALE" onclick="HideNextDOM($(this));" >Temperature scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_grid_sampler_shader_color_temperaturescale.jpg" border="0"><br></br>
+<i>(Only available when Type: Blackbody)</i>
+<br></br>
+Rescales the temperature that is used to extract the Blackbody colors. This results in the spectrum to be shifted more to the white point.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Grid Sampler::</span>Clipping</span>
+</div>
+<div class="subdata selected">
+Clips the output to the given range.
+<h4><a name="FX_GRIDSAMPLER_RANGEOUT_MIN" onclick="HideNextDOM($(this));" >Output Minimum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_global_clipping_output_minimum.jpg" border="0"><br></br>
+The minimum of the output range. Output colors will not be lower than this value.
+<br></br></p></div>
+<h4><a name="FX_GRIDSAMPLER_RANGEOUT_MAX" onclick="HideNextDOM($(this));" >Output Maximum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/shaders_global_clipping_output_maximum.jpg" border="0"><br></br>
+The maximum of the output range. Output colors will not be higher than this value.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

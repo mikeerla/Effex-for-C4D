@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="materials.html">Materials</a> : <a href="fx_shader_gas.html">Gas Renderer</a></div>
+<div class="content">
+<h3>Smoke</h3>
+</div>
+<div class="tabs">
+<a href="fx_shader_gas_presets.html">Presets</a>
+<a href="fx_shader_gas_general.html">General</a>
+<span>Smoke</span>
+<a href="fx_shader_gas_fire.html">Fire</a>
+<a href="fx_shader_gas_compositing.html">Compositing</a>
+</div>
+<div class="content">
+<div class="subtab">Smoke</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="GASSHADER_SMOKE_DENSITY" onclick="HideNextDOM($(this));" >Density Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_density_channel.jpg" border="0"><br></br>
+The channel to render as smoke. It can be any scalar channel.<br>
+This node is required.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_FLUID" onclick="HideNextDOM($(this));" >Fluid Dynamics</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_fluid_dynamics.jpg" border="0"><br></br>
+Takes a fluid dynamics node to allow render advection. This node is optional.<br>
+The <a href="#GASSHADER_SMOKE_ADVECTION">Advection</a> setting is activated once linked.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_ADVECTION" onclick="HideNextDOM($(this));" >Advection</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_fluid_dynamics_advection.jpg" border="0"><br></br>
+During rendering the channel data can be advected resulting in way sharper and more details.<br>
+Setting this too high may result in artefacts though.
+<br></br>
+The value is given as a percentage of a second (e.g 10% are 0.1 seconds).
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Color</span>
+</div>
+<div class="subdata selected">
+Here you can define a color for your smoke in rendering. 
+<br></br>
+Be aware that the absorption of color is also based on this color. So a red value does not necessarily result in red smoke
+(the sun seems yellow but air particles scatter and absorb the light depending on its wavelength
+so that the sky is blue in the end, because the other colors are absorbed and scattered differently).
+<br></br>
+A preview of the actual shaded color is given in the self-shadowing options named <a href="#GASSHADER_SMOKE_OCCLUSION_ABSORPTION_PREVIEW">Preview</a>.
+<h4><a name="GASSHADER_SMOKE_COLOR" onclick="HideNextDOM($(this));" >Color Channel</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_color_color_channel.jpg" border="0"><br></br>
+Takes a vector channel filled with according color values. This node is optional.
+<br></br>
+You could create such a vector channel in simulation (beside the smoke channel), emit color values (with a grid emitter) and let it be advected
+by the fluid simulation just as the scalar smoke channel does.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_COLOR_MAPPING" onclick="HideNextDOM($(this));" >Mapping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_color_mapping.jpg" border="0"><br></br>
+Only used if no color channel is linked.
+<br></br>
+Defines the color of the smoke based on the density channel values (the density values are already
+modified by the <a href="#GASSHADER_SMOKE_DENSITY_MAPPING">Density Mapping</a> at this point).
+<br></br>
+The mapping range is defined by the density channel 
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MIN_SCALAR">Minimum Value</a> and
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MAX_SCALAR">Maximum Value</a> settings.
+
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Density</span>
+</div>
+<div class="subdata selected">
+The density defined by the <a href="#GASSHADER_SMOKE_DENSITY">Density Channel</a>
+can be modulated with the following settings and allow to give the smoke its main appearance.
+<br></br>
+The density of smoke is always mapped between 0.0 and 1.0 (after the <a href="#GASSHADER_SMOKE_DENSITY_MAPPING">density mapping</a> took place), defined in kilogramm per cubic meter (kg/m&sup3;)
+<br></br>
+It must be noted that smoke in the real world may have a higher maximum density of (~8.0 kg/m&sup3; is a good reference value), 
+in order to achieve this please use the <a href="#GASSHADER_SMOKE_DENSITY_MULTIPLIER">density multiplier</a> setting. Although this fact is most probably only of real interest if you also use real world optical properties.
+<br></br>
+Btw instead of trying to get a certain look by modifying the simulation, you should rather rely
+on the density settings to alter the density distribution. It's very valueable setup time you save.
+<h4><a name="GASSHADER_SMOKE_DENSITY_MULTIPLIER" onclick="HideNextDOM($(this));" >Multiplier</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_density_multiplier.jpg" border="0"><br></br>
+This is a linear multiplier for the density values.
+<br></br>
+The density maximum is 100% (1kg/m&sup3;), even if your channel has higher values the render channel internally created will remap the data to the 0-1 range.
+However, with the density multiplier you can increase the density to go beyond 100%. The advantage is that you can create thicker smoke while keeping the general properties (like brightness for example).
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_DENSITY_MAPPING" onclick="HideNextDOM($(this));" >Mapping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_density_mapping.jpg" border="0"><br></br>
+Remaps the smoke density values.
+<br></br>
+The mapping range is defined by the density channel 
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MIN_SCALAR">Minimum Value</a> and
+<a href="fx_channel_scalargrid_params.html#GRIDCHANNEL_MAX_SCALAR">Maximum Value</a> settings.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_DENSITY_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_density_constraints.jpg" border="0"><br></br>
+Allows to control the amount of density by using constraints.<br>
+This effectively allows to modify the density arbitrarily in time and space...fully multithreaded.
+<br></br>
+See <a href="fx_constraints_general.html">Constraints</a> for more information.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_DENSITY_BLURITER" onclick="HideNextDOM($(this));" >Blur iterations</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_density_blur_iterations.jpg" border="0"><br></br>
+Defines the amount of blurring passes performed on the density channel data.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_DENSITY_BLUR" onclick="HideNextDOM($(this));" >Blur amount</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_density_blur_amount.jpg" border="0"><br></br>
+Defines the strength (length of falloff kernel) of the blurring per iteration. The value is given in grid cell/voxel size.
+<br></br>
+The rendering may have a much higher resolution than the smoke voxels and therefore unpleasing blocky appearance may be visible. You can counteract these sharp blocky features by simply diffuse the smoke render grid.
+<br></br>
+This allows for smoother transitions of the smoke, but also results in less details. As blurring is an iterative process and can be slow for large values, this should always be used with caution and sensible values.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Noise</span>
+</div>
+<div class="subdata selected">
+Here you can define a noise that will be applied to the density channel data before rendering.<br>
+It is almost the same as using a Noise constraint in the above Constraints list.
+<br></br>
+Most of the settings are equal to the Cinema 4D noise settings and we refer you to the Cinema 4D help for these entries for a detailed description.<br>
+That's why we only list the settings here that are not C4D specific.
+<h4><a name="GASSHADER_SMOKE_DENSITY_NOISE_SPACE" onclick="HideNextDOM($(this));" >Space</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_density_noise_space.jpg" border="0"><br></br>
+Defines in which space the noise should be evaluated.
+<br></br>
+<b>C4D World</b><br>
+The noise is evaluated in Cinema 4D world space units.
+<br></br>
+<b>Physical</b><br>
+The noise is evaluated in physical simulation space which is defined automatically
+by the linked <a href="#GASSHADER_SMOKE_DENSITY">Density Channel</a>.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_DENSITY_NOISE_DENSITY" onclick="HideNextDOM($(this));" >Mapping</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_density_mapping.jpg" border="0"><br></br>
+Allows to remap the noise with a gradient. It allows to modulate the noise with much more control
+than using the contrast, brightness etc. settings (though they are great for quick adjustments).
+<br></br>
+The mapping range is defined by the density channel 
+<a href="fx_channel_scalargrid_object.html#GRIDCHANNEL_MIN_SCALAR">Minimum Value</a> and
+<a href="fx_channel_scalargrid_object.html#GRIDCHANNEL_MAX_SCALAR">Maximum Value</a> settings.
+
+<br></br></p></div>
+</div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Scattering</span>
+</div>
+<div class="subdata selected">
+Defines the thickness (or opacity) and brightness by the following settings.
+<br></br>
+As smoke has the property of being transparent in a special way the optical properties, so the way we visually perceive the appearance of smoke, are tremendously important for rendering.
+<br></br>
+The smoke's appearance can be described as being the sum of several scattering and absorption events.
+<br></br>
+When a light ray passes through a smoke cloud, the light is scattered by the smoke particles and some of the light scatters into the direction of the viewer (so to the camera). This determines the brightness of the smoke (luminance, albedo).
+<br></br>
+The probability of the light being scattered into a certain direction is determined with a so-called phase function (Phase). For ease of comprehension you could compare it to the Cinema 4D Fresnel shader, which mimics light reflectance dependent on the viewing angle.
+<br></br>
+If the light scatters into the direction of the camera then this is called forward-scattering. If it scatters away from the camera view this is called back-scattering. You can control this behavior with the (anisotropy) value.
+<br></br>
+However, light is also absorbed by the smoke particles, which determines the darkening and opacity of the smoke (absorption). Smoke particles are also emitting light due to the interaction with light (emission).
+<br></br>
+All these settings form the optical properties of the smoke. Always keep in mind that these optical properties are evaluated at each sample position! So at each step along the ray.
+<h4><a name="GASSHADER_SMOKE_OPTICAL_AMBIENT" onclick="HideNextDOM($(this));" >Ambient</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_ambient.jpg" border="0"><br></br>
+This is an ambient illumination value that is added to the result nearly independant of the illumination equations.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OPTICAL_ABSORPTION" onclick="HideNextDOM($(this));" >Absorption</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_absorbtion.jpg" border="0"><br></br>
+The absorption coefficient defines how the light is absorbed by the smoke density.
+<br></br>
+Higher values result in the smoke to appear thicker and more dense (more opaque) but also darker (if backlit) or brighter (if front lit)
+while lower values result in the smoke to appear very thin or foggy.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OPTICAL_LUMINANCE" onclick="HideNextDOM($(this));" >Luminance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_luminance.jpg" border="0"><br></br>
+Defines how much light is scattered into the direction of the used camera.
+Higher values result in brighter smoke.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OPTICAL_PHASE" onclick="HideNextDOM($(this));" >Phase</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_phase.jpg" border="0"><br></br>
+A phase function defines in which direction light can scatter. <br>
+Different types of particles scatter light differently. Some scatter it more biased to a certain direction (anisotropic), some more into all directions (isotropic).
+<br></br>
+But that's why the phase function is a core ingredient to realistically render smoke (and other gaseous participating media).
+It's worth taking some time adjusting the following values.
+<br></br>
+To make it easier to understand this setting, please think of the moon. Yes, the moon. Because the moon phases (half moon etc.) is where this function got its name from.
+<br></br>
+And it works like the moon phases. Imagine a single small smoke particle. When light comes from the left it interacts with the particle and the particle scatters light, just like the moon. That's the bright part of the moon.
+<br></br>
+The phase function specifies this scattering (phase), how big it is, what shape it has and how much light is scattered into the direction of the camera.
+ <br></br>
+<i>These are the available phase functions:</i>
+<br></br>
+<b>Isotropic</b><br>
+The light is scattered in all directions with the same amount
+<br></br>
+<b>Henyey-Greenstein and Henyey-Greenstein Nishita</b><br>
+Useful for smoke in general with different light distributions. Good approximation of Mie scattering.
+<br></br>
+<b>Double Henyey-Greenstein</b><br>
+This allows to control the scattering with two Henyey-Greenstein phases
+and gives more control by evaluating one phase for backscattering and one for forwardscattering
+<br></br>
+<b>Rayleigh</b><br>
+Useful for thin (cigarette) smoke
+<br></br>
+<b>Mie</b><br>
+Useful for puffy media like clouds
+<br></br>
+<b>Hazy</b><br>
+Useful for hazy scenarios
+<br></br>
+<b>Murky</b><br>
+Useful for murky scenarios
+<br></br>
+<b>Schlick</b><br>
+A variation of the Henyey-Greenstein phase, so also useful for smoke
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OPTICAL_PHASE_ANISOTROPY" onclick="HideNextDOM($(this));" >Anisotropy</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_anisotropy.jpg" border="0"><br></br>
+Defines how strong the smoke scatters light anisotropically (so biased to a certain direction).  It is the probability of light reaching the camera.
+<br></br>
+This is a property of the smoke particle and depends on the incoming light and the viewers direction
+(so changes to lights or view will give different results. That's why sometimes in real life you cannot see thin smoke until you change your position).
+
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OPTICAL_PHASE_INTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_intensity.jpg" border="0"><br></br>
+The overall intensity of the phase function.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Constraints</span>
+</div>
+<div class="subdata selected">
+In these linkfields you can control several scattering features with constraints.
+<h4><a name="GASSHADER_SMOKE_OPTICAL_CONSTRAINTS_ABSORPTION" onclick="HideNextDOM($(this));" >Absorption</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_constraints_absorption.jpg" border="0"><br></br>
+Controls absorption in space and time.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OPTICAL_CONSTRAINTS_LUMINANCE" onclick="HideNextDOM($(this));" >Luminance</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_constraints_luminance.jpg" border="0"><br></br>
+Controls luminance  in space and time.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OPTICAL_CONSTRAINTS_ANISOTROPY" onclick="HideNextDOM($(this));" >Anisotropy</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_constraints_global_anisotropy.jpg" border="0"><br></br>
+Controls anisotropy in space and time.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OPTICAL_CONSTRAINTS_INTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_scattering_constraints_global_intensity.jpg" border="0"><br></br>
+Controls intensity in space and time.
+<br></br></p></div>
+</div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Multiple Scattering</span>
+</div>
+<div class="subdata selected">
+A particle scatters light into the direction of the camera. That is called single scattering. 
+<br>However, it is not only scattering into this one direction (according to the phase function). A smoke particle also scatters light into other directions.<br>
+This light then also hits other particles which again scatter light in several directions and probably also again into the direction of the camera. And this happens thousands and millions of times inside of a participating medium such as
+smoke (depending on the absorption and scattering properties and of course the phase function!). 
+<br><br>This is called multiple scattering. However calculating each scattering event would definetly be a performance killer. That's why  Effex uses a quicker
+but still physical based algorithm to calculate multiple scattering..
+<br></br>
+Multiple scattering is most prominent in low density smoke. Very thick smoke does not encounter much multiple scattering (light is absorbed so fast that it's visually neglectable) so it is worth checking out before final rendering if it's really necessary to use multiple scattering.<br>
+As this is a physical based algorithm it works best with real world optical properties. Multiple Scattering requires additional memory and render time.
+<h4><a name="GASSHADER_USEMS" onclick="HideNextDOM($(this));" >Activate</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_activate.jpg" border="0"><br></br>
+Turn on/off multiple scattering contributions.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_HOMOGEN" onclick="HideNextDOM($(this));" >Homogeneous density</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_homogeneous_density.jpg" border="0"><br></br>
+If you have a homegenous media (a constant density throughout the whole render grid) activate this setting. It calculates the multiple scattering contribution very quickly. Useful for example to render uniform haze.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_MAPSIZE" onclick="HideNextDOM($(this));" >Voxel Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_voxel_scale.jpg" border="0"><br></br>
+Internal channels are created that are used for calculating the multiple scattering maps and this defines the resolution 
+based on the voxel size of the Density channel. A value of 0.5 will half the resolution (double the voxel size).
+<br></br>
+This is useful to speed up the rendering especially when high resolutions are rendered.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_DIFFUSION" onclick="HideNextDOM($(this));" >Blurring</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_blurring.jpg" border="0"><br></br>
+The scattered light diffusion. The more often light has been scattered in the medium the more prominent this diffusion value becomes.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_MINCONTRIBUTION" onclick="HideNextDOM($(this));" >Minimum Contribution</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_minimum_contribution.jpg" border="0"><br></br>
+The minimum scattered light contribution that should be taken into account.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_STEPSIZE_USEGENERAL" onclick="HideNextDOM($(this));" >Use Global</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_use_global.jpg" border="0"><br></br>
+If activated it uses the global step size setting of the gas renderer.<br>
+Otherwise the Step Size setting below can set a custom step size. Most of the time not necessary though.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_STEPSIZE" onclick="HideNextDOM($(this));" >Step size</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_use_global_step_size.jpg" border="0"><br></br>
+This is the initial step size. As the algorithm uses an adaptive step size once it started calculating this has only little impact on the performance but lower values may get rid of appearing banding artefacts.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_SPACESCALE" onclick="HideNextDOM($(this));" >Space Scaling</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_space_scaling.jpg" border="0"><br></br>
+Allows to rescale the light space in order to fake a smaller light traveling space and therefore more scattered light energy is preserved.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_ABSORPTION_USEGENERAL" onclick="HideNextDOM($(this));" >Use Global</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_use_global.jpg" border="0"><br></br>
+Uses the global Scattering::Absorption setting if activated. Otherwise you can define a custom absorption coefficient.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_ABSORPTION" onclick="HideNextDOM($(this));" >Absorption</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_use_global_absorption.jpg" border="0"><br></br>
+The light absorption. Higher values result in less light contribution.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_PHASE_ANISOTROPY" onclick="HideNextDOM($(this));" >Anisotropy</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_anisotropy.jpg" border="0"><br></br>
+Defines how strong the smoke scatters light anisotropically (so biased to a certain direction). It is the probability of light reaching the camera.
+<br></br>
+This is a property of the smoke particle and depends on the incoming light and the viewers direction
+(so changes to lights or view will give different results. That's why sometimes in real life you cannot see thin smoke until you change your position).
+
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_PHASE_INTENSITY" onclick="HideNextDOM($(this));" >Phase Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_phase_intensity.jpg" border="0"><br></br>
+This defines the intensity of the Scattering::Phase function, which is also used in multiple scattering.
+It does not affect the single-scattering result.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_SCATTERING" onclick="HideNextDOM($(this));" >Scattering</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_scattering.jpg" border="0"><br></br>
+The amount of scattering. Higher values will result in the scattered light being spread in wider angles.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_SCATTER_SCALE" onclick="HideNextDOM($(this));" >Path length scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_path_length_scale.jpg" border="0"><br></br>
+Allows to rescale the path length taken to mimic different scales.<br>
+Lowering this value can create great luminant volume scattering effects.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_MSA_AUTO" onclick="HideNextDOM($(this));" >Auto scattering angle</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_auto_scattering_angle.jpg" border="0"><br></br>
+The mean scattering angle is automatically calculated.
+<br></br></p></div>
+<h4><a name="GASSHADER_MS_MSA" onclick="HideNextDOM($(this));" >Mean Scattering Angle</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_mean_scattering.jpg" border="0"><br></br>
+The mean scattering angle given as a percentage of 360&deg;. This is a medium specific property that determines how the particle of that medium scatters light generally. Higher values result in more light contribution as light is scattered "wider" from a particle.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Constraints</span>
+</div>
+<div class="subdata selected">
+Here you can control multiple scattering features with constraints in space and time.
+<h4><a name="GASSHADER_SMOKE_MS_CONSTRAINTS_SCATTERING" onclick="HideNextDOM($(this));" >Scattering</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_constraints_scattering.jpg" border="0"><br></br>
+Controls scattering in space and time. 
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_MS_CONSTRAINTS_SCATTERSCALE" onclick="HideNextDOM($(this));" >Path length scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_path_length_scale.jpg" border="0"><br></br>
+Controls path length  in space and time. 
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_MS_CONSTRAINTS_ANISOTROPY" onclick="HideNextDOM($(this));" >Anisotropy</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_constraints_anisotropy.jpg" border="0"><br></br>
+Controls anisotropy in space and time. 
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_MS_CONSTRAINTS_INTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_multiple_scattering_constraints_intensity.jpg" border="0"><br></br>
+Controls intensity in space and time. 
+<br></br></p></div>
+</div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Self-Shadowing</span>
+</div>
+<div class="subdata selected">
+Holds settings for the self shadowing (compareable to the shading within a normal C4D Material) of the smoke. Actually the self-shadowing is linked to the absorption coefficient of the smoke (see optical properties) but Effex allows you to have a custom coefficient for the self-shadowing.<br>
+The self-shadowing is pre-calculated into the Self-Shadow Grid and therefore the settings affect  the preprocessing time at each frame. 
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_TRAPEZOIDAL" onclick="HideNextDOM($(this));" >Precise integration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_precise_integration.jpg" border="0"><br></br>
+The light equations for a participating media and all the absorption and scattering integration
+is more precise with this (trapezoidal) integration and results in sharper effects.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_RAYJITTER" onclick="HideNextDOM($(this));" >Jittering</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_jittering.jpg" border="0"><br></br>
+The rays that the shader marches along could end in
+banding artefacts if a big step lengths are used.<br>
+This jitters the ray in order to get rid of banding. It gives a more noisy result
+which is not as troubling to the viewer as the banding and it can be smoothed in compositing by noise reduction.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_STEPMIN" onclick="HideNextDOM($(this));" >Min. Step Length</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_min_step_length.jpg" border="0"><br></br>
+The minimum step length that should be used during adaptive shadow ray marching.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_STEPMAX" onclick="HideNextDOM($(this));" >Max. Step Length</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_min_step_length.jpg" border="0"><br></br>
+The maximum step length that should be used during adaptive shadow ray marching.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_ARTISTIC" onclick="HideNextDOM($(this));" >Artistic Coloring</A></h4><div class="selected"><p><br></br>
+Usually when light colors interact in a participating medium, absorption and scattering result in the self-shadows to not
+be the color of the light or smoke. Activating this option will give a more artistic result, trying to mimic the set color instead of the physically correct one.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_color.jpg" border="0"><br></br>
+The absorption given as a color. You can define that way which color is absorbed more or less.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_ABSORPTION_PREVIEW" onclick="HideNextDOM($(this));" >Preview</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_preview.jpg" border="0"><br></br>
+By absorbing and scattering light, different colors than expected can happen. <br>
+This gives an approximate preview of the resulting color. It cannot be changed.
+<br></br>
+The settings affecting this color-preview are the smoke Color and the self-shadowing Color.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_ABSORPTION" onclick="HideNextDOM($(this));" >Absorption</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_absorption.jpg" border="0"><br></br>
+The absorption coefficient defines how the light is absorbed by the smoke density.
+<br></br>
+Higher values result in the smoke self-shadows to appear thicker and more dense (more opaque).
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSION_CONSTRAINTS" onclick="HideNextDOM($(this));" >Constraints</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_global_constraints.jpg" border="0"><br></br>
+You can use constraints to control the absorption coefficient for self-shadowing in time and space.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Self-Shadow Grid</span>
+</div>
+<div class="subdata selected">
+This integrates a light map, which is a variation of a deep shadow map, to be used for precomputing and therefore speeding up the rendering considerably.
+<br></br>
+The light map is comparable to a Shadow map in Cinema 4D. It precalculates the lighting of the smoke to allow for faster renderings. However, the light map in Effex is a 3D grid (unlike Shadow maps in C4D which are 2D) that's why this makes it very flexible to use (for example it allows to include the self-shadowing of the smoke).
+<br></br>
+However, of course as it is precalculated and has an explicit resolution, it is less accurate than light-shadow calculations that are done on the fly (though it is not THAT different which makes it so feasible to use beside the enormous speedup that is gained).
+<br></br>
+A light map requires additional memory in RAM, so you might want to keep track of the <a href="#GASSHADER_SMOKE_OCCLUSIONMAP_VOXELSCALE">Voxel Scale</a>.
+</div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSIONMAP_VOXELSCALE" onclick="HideNextDOM($(this));" >Voxel Scale</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_grid_voxel_scale.jpg" border="0"><br></br>
+Defines the resolution of the self-shadow grid. Lower values result in a lower resolution.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSIONMAP_EXTRAPOLATE" onclick="HideNextDOM($(this));" >Extrapolation [voxels]</A></h4><div class="selected"><p><br></br>
+Extrapolates light map values into areas outside the actual smoke region (for interpolation reasons).
+Values between 1-2 make most sense.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSIONMAP_BLURITER" onclick="HideNextDOM($(this));" >Blur Iterations</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_grid_blur_iterations.jpg" border="0"><br></br>
+You can blur the light map for rendering.<br> 
+This allows for smoother transitions of the light (also the overall brightness of the light map is reduced), but also results in less details.
+<br></br>
+Blurring is in general a slow process but it can generate very nice light map scenarios and even fake multiple scattering events to a certain degree. The blurring operation can be applied iteratively and this defines the amount of iterations.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_OCCLUSIONMAP_BLUR" onclick="HideNextDOM($(this));" >Blur amount</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_self_shadowing_grid_blur_amount.jpg" border="0"><br></br>
+Defines the strength (length of falloff kernel) of the blurring per iteration. The value is given in grid cell/voxel size.
+As blurring is an iterative process and can be slow for large values, this should always be used with caution and sensible values.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Shadows</span>
+</div>
+<div class="subdata selected">
+Holds settings for the generation of shadows from smoke. 
+<h4><a name="GASSHADER_SMOKE_SHADOWS_RECEIVE" onclick="HideNextDOM($(this));" >Receive</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_receive.jpg" border="0"><br></br>
+Turn on/off if the smoke shall receive shadows from other objects in the scene.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_SHADOWS_RECEIVE_DENSITY" onclick="HideNextDOM($(this));" >Density</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_density.jpg" border="0"><br></br>
+The resulting shadow density.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_SHADOWS_RECEIVE_DENSITY_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_color.jpg" border="0"><br></br>
+The color of the received shadow.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_SHADOWS_CAST" onclick="HideNextDOM($(this));" >Cast</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_cast.jpg" border="0"><br></br>
+Turn on/off if the smoke casts shadows onto other objects in the scene.
+<br></br>
+<b>Note:</b><br>
+Hard Shadows and Area Shadows are fully supported. Soft Shadows (Shadow maps) have restricted support. Shadow maps in C4D require geometry to be calculated and do not support volumetrics.<br>
+So you need any geometry behind the smoke (for example a floor under the smoke) to let the shadow maps calculate shadows and then the smoke is also taken into account.
+
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_SHADOWS_CAST_INTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_intensity.jpg" border="0"><br></br>
+The density of the casted shadows.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_SHADOWS_RAYJITTER" onclick="HideNextDOM($(this));" >Jittering</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_jittering.jpg" border="0"><br></br>
+The shadow rays that the shader marches along could end in banding artefacts if big step lengths are used.<br>
+This jitters the ray in order to get rid of banding. It gives a more noisy result<br>
+which is not as troubling to the viewer as the banding and it can be smoothed in compositing by noise reduction.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_SHADOWS_STEPMIN" onclick="HideNextDOM($(this));" >Min. Step length</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_minsteplength.jpg" border="0"><br></br>
+The minimum step length that should be used during adaptive shadow ray marching.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_SHADOWS_STEPMAX" onclick="HideNextDOM($(this));" >Max. Step length</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_maxsteplength" border="0"><br></br>
+The maximum step length that should be used during adaptive shadow ray marching.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_SHADOWS_COLOR" onclick="HideNextDOM($(this));" >Color</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_shadows_color.jpg" border="0"><br></br>
+The color of the casted shadow.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Smoke::</span>Renderer</span>
+</div>
+<div class="subdata selected">
+Controls which rendering features see the gas renderer.
+<h4><a name="GASSHADER_SMOKE_RENDER_INVISIBLE" onclick="HideNextDOM($(this));" >Visible for Camera</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_renderer_visible_for_camera.jpg" border="0"><br></br>
+Gas Renderer is visible for the camera view.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_RENDER_GI" onclick="HideNextDOM($(this));" >Visible for GI</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_renderer_visible_for_gi.jpg" border="0"><br></br>
+Gas renderer is visible for Global Illumination.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_RENDER_TRANSPARENCY" onclick="HideNextDOM($(this));" >Visible for Transparency</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_renderer_visible_for_transparency.jpg" border="0"><br></br>
+Gas Renderer is visible behind transparent objects.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_RENDER_REFRACTION" onclick="HideNextDOM($(this));" >Visible for Refraction</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_renderer_visible_for_refraction.jpg" border="0"><br></br>
+Gas Renderer is visible in refractions.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_RENDER_REFLECTION" onclick="HideNextDOM($(this));" >Visible for Reflection</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_renderer_visible_for_reflection.jpg" border="0"><br></br>
+Gas Renderer is visible in reflections.
+<br></br></p></div>
+<h4><a name="GASSHADER_SMOKE_RENDER_AO" onclick="HideNextDOM($(this));" >Visible for AO</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gas_renderer_smoke_renderer_visible_for_ao.jpg" border="0"><br></br>
+Gas Renderer is visible to Ambient Occlusion..
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

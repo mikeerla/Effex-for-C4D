@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_emitters.html">Emitters</a> : <a href="fx_emitters_particle.html">Particle</a> : <a href="fx_emitters_particleemissionsettings.html">Settings::Particle Emission</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_psettings_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="PARTICLEMESH_EMISSION_SETTINGS_RATE" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_emission_settings_object_rate.jpg" border="0"><br></br>
+Takes a node of type <a href="fx_general_value.html">Value</a> and is the setting for an emission rate.<br><br>
+This node is optional (and is of no use for a Particle Grid Emitter), you can use it in a Particle On Mesh Emitter to define the exact amount of particles.
+<br></br></p></div>
+<h4><a name="PARTICLEMESH_EMISSION_SETTINGS_ALIGNMENT" onclick="HideNextDOM($(this));" >Alignment</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_emission_settings_object_aligment.jpg" border="0"><br></br>
+Takes a node of type <a href="fx_general_alignment.html">Alignment</a>. It is used currently only used for emitting Vorticity particles to initialise their vorticity direction property when they are born.
+<br></br></p></div>
+<h4><a name="PARTICLEMESH_EMISSION_SETTINGS_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_emission_settings_object_fss_duration.jpg" border="0"><br></br>
+Takes a duration node that defines how long the node (that is using these emission settings) is operating. This node is optional.
+<br></br></p></div>
+<h4><a name="PARTICLEMESH_EMISSION_SETTINGS_RATEVALUE" onclick="HideNextDOM($(this));" >Value</A></h4><div class="selected"><p><br></br>
+<img src="../../img/gridemission_object_value1.jpg" border="0"><br></br>
+The emission value if no Value node is linked. Has no effect in an Emitter::Particle In Volume.<br>
+However for Emitter::Particle On Mesh you can define the exact amount of particles generated for example.
+<br></br></p></div>
+<h4><a name="PARTICLEMESH_EMISSION_SETTINGS_PERFRAME" onclick="HideNextDOM($(this));" >Shot</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_emission_settings_object_shot.jpg" border="0"><br></br>
+Shot will enforce that the emitter using these settings will emit the particles directly and not time integrated (not based on the current sub time step). <br>
+So deactivated the particle count is emitted per second and if activated per frame.
+<br></br></p></div>
+<h4><a name="PARTICLEMESH_EMISSION_SETTINGS_TEMPORAL_INTENSITY" onclick="HideNextDOM($(this));" >Temporal Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_emission_settings_object_fss_temporal_strength.jpg" border="0"><br></br>
+Only available if a <a href="fx_general_duration.html">Duration</a> node is linked. Allows to define the particle count strength in the range of the duration sequence.
+<br></br></p></div>
+<h4><a name="PARTICLEMESH_EMISSION_SETTINGS_JITTER" onclick="HideNextDOM($(this));" >Jitter</A></h4><div class="selected"><p><br></br>
+<img src="../../img/emitters_particle_emission_settings_object_jitter.jpg" border="0"><br></br>
+Jitters the particles randomly to make their distribution more irregular (this can be beneficial in a liquid simulation).<br>
+100% means full jiterring intensity, 0% means the particles are placed ordered (in a regular fashion).
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

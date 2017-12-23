@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_forces.html">Forces</a> : <a href="fx_forces_gf.html">Grid Forces (GF)</a> : <a href="fx_force_swirling.html">GF::Swirling</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+<img src="../../img/fx_gf_swirling_parameters.jpg" border="0"">
+</p>
+</div>
+<h4><a name="FORCE_SWIRLING_DURATION" onclick="HideNextDOM($(this));" >Duration</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_gobal_duration.jpg" border="0"><br></br>
+Takes a node of type 'duration' in order to define how long the swirling force should operate. See Duration.
+<br></br>
+If no duration is linked, the force will act indefinetly.
+
+<br></br></p></div>
+<h4><a name="FORCE_SWIRLING_CONSERVE" onclick="HideNextDOM($(this));" >Conserve Momentum</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_swirling_params_conservemom.jpg" border="0"><br></br>
+Activating this will take into account momentum conservation
+of the flow's vorticity. It is checked by default because it takes nearly
+no time at all to be calculated (and is only an option for backward compatibility).
+<br>
+You should always keep it activated.
+<br></br></p></div>
+<h4><a name="FORCE_SWIRLING_ADAPTIVE" onclick="HideNextDOM($(this));" >Spatial Adaptivity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_swirling_params_spatial adaptivity.jpg" border="0"><br></br>
+This option spatially adapts the vorticity strength based on flow helicity
+and allows much higher values to be used.<br>
+It will intensify  turbulences only where rolling motions indeed exist and not in places with vorticity alone.
+<br>
+It therefore generates much more stable and realistic turbulences.
+<br></br></p></div>
+<h4><a name="FORCE_SWIRLING_INTENSITY" onclick="HideNextDOM($(this));" >Intensity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/force_swirling_params_intensity.jpg" border="0"><br></br>
+The intensity of the swirling force.<br></br>
+As the force does only intensify existing motions the intensity should be altered with care. 
+Too high settings may result in the motions to become too turbulent and the simulation to become a velocity mess.
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: to avoid these messy velocities use the "Spatial adaptivity" option which results in more stable results.
+</div>
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

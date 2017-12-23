@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_operators.html">Operators</a> : <a href="fx_operators_vop.html">Volume Operators (VOP)</a> : <a href="fx_levelsetsmoother.html">VOP::Smoother</a></div>
+<div class="content">
+<h3>Parameters</h3>
+</div>
+<div class="tabs">
+<span>Parameters</span>
+</div>
+<div class="content">
+<div class="subtab">Parameters</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="LEVELSET_SMOOTHER_VOLUME" onclick="HideNextDOM($(this));" >Volume</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_levelset_smoother_object_volume.jpg" border="0"><br></br>
+Takes the volume that shall be smoothed.
+<br></br></p></div>
+<h4><a name="LEVELSET_SMOOTHER_LAPLACE_ITER" onclick="HideNextDOM($(this));" >Laplace Smoothing</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_levelset_smoother_object_laplace_smoothing.jpg" border="0"><br></br>
+Amount of Laplacian Smoothing iterations. This results in the surface being pushed outward. <br>
+Experiments showed that lower values are enough to push the surface to a state that is advantageous for the following biharmonic smoothing.
+<br></br></p></div>
+<h4><a name="LEVELSET_SMOOTHER_BIHARMONIC_ITER" onclick="HideNextDOM($(this));" >Biharmonic Smoothing</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_levelset_smoother_object_biharmonic_smoothing.jpg" border="0"><br></br>
+Amount of Biharmonic Smoothing iterations. This results in the surface being pulled inward.<br>
+The default value of 250 is a good trade-off between quality and performance. Higher values are definetly possible but slow down the process (depending on Levelset Redistancing)
+<br></br></p></div>
+<h4><a name="LEVELSET_SMOOTHER_BIHARMONIC_GAIN" onclick="HideNextDOM($(this));" >Gain</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_levelset_smoother_object_gain.jpg" border="0"><br></br>
+A strength multiplier.
+<br></br></p></div>
+<h4><a name="LEVELSET_SMOOTHER_REDISTANCE_ITER" onclick="HideNextDOM($(this));" >Levelset Redistancing</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_levelset_smoother_object_levelset_redistancing.jpg" border="0"><br></br>
+Defines the iteration interval to perform the redistancing (see top of page) on the volume and therefore trying to keep details inbetween biharmonic smoothing iterations.<br>
+Higher values result in faster execution of the smoother but you trade quality for it. Lower values result in better quality but as redistancing is called more frequently it becomes slower.
+<br></br>
+The default value of 50 will perform redistancing every 50th Biharmonic Smoothing iteration.
+<br></br></p></div>
+<h4><a name="LEVELSET_SMOOTHER_RINIT" onclick="HideNextDOM($(this));" >Init</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_levelset_smoother_object_init.jpg" border="0"><br></br>
+This is the value between the Min. and Max. Radii that is used to initialise the smoother with.<br> 
+This should be approximately same as (or a little higher than) the particle radius used in the Surface reconstructor (if you are using the smoother on it).
+<br></br></p></div>
+<h4><a name="LEVELSET_SMOOTHER_RMIN" onclick="HideNextDOM($(this));" >Min. Radius</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_levelset_smoother_object_min.jpg" border="0"><br></br>
+The minimum particle radius possible.
+<br></br></p></div>
+<h4><a name="LEVELSET_SMOOTHER_RMAX" onclick="HideNextDOM($(this));" >Max. Radius</A></h4><div class="selected"><p><br></br>
+<img src="../../img/volume_levelset_smoother_object_max.jpg" border="0"><br></br>
+The maximum particle radius possible.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

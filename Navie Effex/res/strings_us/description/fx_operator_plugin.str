@@ -1,0 +1,7 @@
+STRINGTABLE fx_operator_plugin
+{
+	fx_operator_plugin "Operator::Plugin";
+	
+	OPERATORPLUGIN_DURATION "Duration";
+	OPERATORPLUGIN_DURATION_SELECTOR "C";
+}

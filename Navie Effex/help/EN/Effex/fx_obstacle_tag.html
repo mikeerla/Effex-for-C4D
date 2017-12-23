@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_tags.html">Tags</a> : <a href="fx_obstacle.html">Obstacle</a></div>
+<div class="content">
+<h3>Tag</h3>
+</div>
+<div class="tabs">
+<span>Tag</span>
+<a href="fx_obstacle_dynamics.html">Dynamics</a>
+<a href="fx_obstacle_collision.html">Collision</a>
+<a href="fx_obstacle_dynamiccollion.html">Dynamic Coupling</a>
+<a href="fx_obstacle_ramcache.html">RAM Cache</a>
+</div>
+<div class="content">
+<div class="subtab">Tag</div>
+<div class="data">
+<p>
+</p>
+</div>
+<h4><a name="FXOBSTACLE_MATERIAL_SPEC" onclick="HideNextDOM($(this));" >Mass via..</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_tag_massvia.jpg" border="0"><br></br>
+Define how the mass should be derived for this Rigid-Body.
+<br><br>
+1. Mass - Currently the best way to do so<br>
+2. Density - Requires this tag to sit on a mesh volume. Works kind of but you are better off using Mass mode.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_MASS" onclick="HideNextDOM($(this));" >Mass [kg]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_tag_mass.jpg" border="0"><br></br>
+The mass of the object in SI-Units.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DENSITY" onclick="HideNextDOM($(this));" >Density [kg/m&sup3;]</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_tag_density.jpg" border="0"><br></br>
+The density of the object in SI-Units which allows to dervice mass from (if this tag sits on a volume).
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_CENTEROFMASS" onclick="HideNextDOM($(this));" >Center of Gravity</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_tag_centerofgravity.jpg" border="0"><br></br>
+Drop any object in here that has a position and that one will be the new Center of Gravity of the rigid-body.
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Tag::</span>Simulation</span>
+</div>
+<div class="subdata selected">
+<h4><a name="FXOBSTACLE_DEACTIVATION" onclick="HideNextDOM($(this));" >Translational deactivation at..</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_tag_sim_translationaldeactivation.jpg" border="0"><br></br>
+If rigid-bodies move only slightly over a certain period of time the Bullet dynamics can put them to rest. This defines the time in seconds before this happens. Usually you don't change this.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_DEACTIVATION_ANGULAR" onclick="HideNextDOM($(this));" >Rotational deactivation at..</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_tag_sim_rotationaldeactivation.jpg" border="0"><br></br>
+If rigid-bodies rotate only slightly over a certain period of time the Bullet dynamics can put them to rest. This defines the maximum rotation angle before this happens. Usually you don't change this.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_api.html">Developer API</a> : <a href="fx_api_global.html">Getting started..</a></div>
+<div class="content">
+<h3>Server and Scenes</h3>
+</div>
+<div class="content">
+<div class="subtab">Server and Scenes</div>
+<div class="data">
+<p>
+As soon as a C4D scene is openend (it doesn't matter if it's an editor scene or a render scene) 
+it starts in the background the Effex scene server which handles all the Effex scenes available and executes them.
+<br></br>
+Whenever the user creates an Effex Scene object in the object manager the server creates a scene node internally.
+The object in Cinema 4D is only considered to be an interface. <br></br>
+The internal node does not know anything about this object except that it provides attributes and port information.
+<br>
+The same happens for any Effex object that is placed inside an Effex scene.
+Internally the Effex scene creates a new node for this object interface.
+<br></br>
+The framework code is only minorly dependant on the C4D API (or any changes to it).
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

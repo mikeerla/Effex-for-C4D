@@ -1,0 +1,10 @@
+CONTAINER fx_channel_fuel
+{
+	NAME fx_channel_fuel;
+	INCLUDE fx_channel_scalar;
+	
+	GROUP GRIDCHANNEL_SPECIFICS
+	{
+		REAL GRIDCHANNEL_FUEL_IGNITION_TEMP {MIN 1; MAX 5000; STEP 1.0;}
+	}
+}

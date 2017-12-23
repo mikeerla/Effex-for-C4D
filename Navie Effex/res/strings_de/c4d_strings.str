@@ -1,0 +1,98 @@
+// C4D-StringResource
+// Identifier	Text
+
+STRINGTABLE
+{
+	EFFEX_ABOUT				"About";
+
+	EFFEX_CACHECLEARQ			"Are you sure you want to delete these simulation caches?";
+	EFFEX_CACHERAMCLEARQ			"Are you sure you want to delete the RAM cache?";
+	EFFEX_STARTCACHE			"Start Caching";
+	EFFEX_GASSETUP				"Create Gas Setup";
+	EFFEX_LIQUIDSETUP			"Create Liquid Setup";
+	EFFEX_MESHERSETUP			"Create Fluid Mesher";
+	EFFEX_FOAMSETUP				"Create Foam & Spray Object";
+	
+	DPIT_SQR	"\u00b2";
+	DPIT_CUB	"\u00b3";
+
+	SUPPORT_DOCS		"Dokumentation";
+	SUPPORT_CHECKUPDATE	"Check for Updates";
+	SUPPORT_DOWNLOAD	"Download";
+	SUPPORT_BINS		"Binaries";
+	SUPPORT_RES		"Resources";
+	SUPPORT_HELP		"Dokumentation";
+	SUPPORT_BUGSCENE	"Select file";
+	SUPPORT_C4DREPORT	"Include C4D bug report";
+	SUPPORT_PUBLICFILE	"Public File";
+	SUPPORT_BETABUG		"As beta bugreport";
+	SUPPORT_UPLOAD		"Upload bug report";
+	SUPPORT_USERAREA	"User Area";
+	SUPPORT_BUGDB		"Bug Database";
+	SUPPORT_LOGIN		"Login Settings";
+	SUPPORT_LOGINSAVE	"Save";
+	SUPPORT_LOGINCLOSE	"Close";
+	SUPPORT_LOGINUSER	"Username";
+	SUPPORT_LOGINPASS	"Password";
+	SUPPORT_NOUPDATE	"No Updates";
+	SUPPORT_DOWNUP_CLOSE	"Close";
+	SUPPORT_INPROGRESS	"in Progress";
+	SUPPORT_RESTART		"Please restart C4D to install";
+	SUPPORT_SEARCH		"Suche (Element ID):";
+
+	SUPPORT_LOGINNOTFOUND	"Login information could not be found.";
+	SUPPORT_BUGTICKET_A	"Your bug ticket number is: ";
+	SUPPORT_BUGTICKET_B	"You can trace your bug status in the bug database.";
+	SUPPORT_BUGDESCRIBE	"Please describe the bug as detailed as possible..";
+
+	SUPPORT_UPLOADERROR	"A connection error occured. Your bug report could not be uploaded. Please try again later. Thank you.";
+	SUPPORT_DOWNLOADERROR	"A connection error occured. The updates could not be downloaded. Please try again later. Thank you.";
+	SUPPORT_UPDOWN_COMPLETE	"Completed";	
+
+	ONLINEUPDATER_SYMBOL_LOGIN		"Kundenbereich Logindaten eingeben";
+	ONLINEUPDATER_SYMBOL_USERAREA		"Gehe zum Kundenbereich..";
+	ONLINEUPDATER_SYMBOL_CHECK		"Auf Updates pr\u00FCfen";
+	ONLINEUPDATER_SYMBOL_INSTALL		"Herunterladen";
+	ONLINEUPDATER_SYMBOL_BETASERVER		"Beta Server";
+	ONLINEUPDATER_SYMBOL_BIN		"Binaries";
+	ONLINEUPDATER_SYMBOL_RES		"Resourcen";
+	ONLINEUPDATER_SYMBOL_DOC		"Dokumentation";
+	ONLINEUPDATER_SYMBOL_NOUPDATE		"Keine Updates";
+	ONLINEUPDATER_SYMBOL_INSTALLRESTART	"Neustart & installieren";
+	ONLINEUPDATER_SYMBOL_CHANGELOG		"Change log anzeigen";
+	ONLINEUPDATER_SYMBOL_CBLIB		"Content Browser Bibliothek";
+	ONLINEUPDATER_SYMBOL_HLNLIB		"High-Level Node Bibliothek";
+	
+	ONLINEUPDATER_SYMBOL_LICENSE_GROUP	"Lizenz";
+	ONLINEUPDATER_SYMBOL_LICENSE_SYNC	"Lizenzdaten abrufen";
+	ONLINEUPDATER_SYMBOL_LICENSE_SAVE	"\u00C4nderungen synchronisieren";
+	ONLINEUPDATER_SYMBOL_LICENSE_USER_STR	"Username";
+	ONLINEUPDATER_SYMBOL_LICENSE_VORNAME_STR "Vorname";
+	ONLINEUPDATER_SYMBOL_LICENSE_NACHNAME_STR "Nachname";
+	ONLINEUPDATER_SYMBOL_LICENSE_EMAIL_STR	"Email";
+	ONLINEUPDATER_SYMBOL_LICENSE_PLZ_STR	"Postleitzahl";
+	ONLINEUPDATER_SYMBOL_LICENSE_STADT_STR	"Stadt";
+	ONLINEUPDATER_SYMBOL_LICENSE_STRASSE_STR "Stra\u00DFe";
+	ONLINEUPDATER_SYMBOL_LICENSE_TEL_STR	"Tel.Nr.";
+	ONLINEUPDATER_SYMBOL_LICENSE_DIGITS_STR	"Ziffern";
+	ONLINEUPDATER_SYMBOL_LICENSE_C4DVERSION_STR "C4D Version";
+	ONLINEUPDATER_SYMBOL_LICENSE_SERIAL_STR "Lizenzschl\u00FCssel";
+	ONLINEUPDATER_SYMBOL_LICENSE_SERIALS_STR "Lizenzschl\u00FCssel";
+	ONLINEUPDATER_SYMBOL_LICENSE_TYPE_STR	"Lizenztyp";
+	ONLINEUPDATER_SYMBOL_LICENSE_PASS_STR	"Neues Passwort";
+	ONLINEUPDATER_SYMBOL_LICENSE_RESPONSE_STR "Serverantwort";
+	ONLINEUPDATER_SYMBOL_LICENSE_PASSREPEAT_STR "Widerholen";
+	
+	SERVER_CACHE_WIZARDINFO_START_STR	"Bitte klicken Sie auf 'Alle cachef\u00E4higen Nodes sammeln' um das Cachen aufzusetzen";
+	SERVER_CACHE_WIZARDINFO_COLLECT_STR	"Dies ist eine Liste mit allen Nodes die Daten enthalten, welche Sie auf/von ihrer Festplatte speichern/laden k\u00F6nnen. Entfernen sie die Eintr‰ge die Sie nicht ben\u00F6tigen.";
+	SERVER_CACHE_WIZARDINFO_FILETYPE_STR	"W\u00E4hlen Sie bitte das Dateiformat aus zum Lesen/Schreiben von Gitter- und Partikeldaten.";
+	SERVER_CACHE_WIZARDINFO_PATHWAY_STR	"W\u00E4hlen Sie nun einen Ordnerpfad aus in dem sich entweder Cachedateien (zum Laden) befinden oder in dem Cachedateien erzeugt werden sollen (Speichern).";
+	SERVER_CACHE_WIZARDINFO_FILENAME_STR	"Ein geeigneter Name darf auch nicht fehlen...";
+	SERVER_CACHE_WIZARDINFO_LOADSAVE_STR	"M\u00F6chten Sie Simulationsdaten laden oder speichern? M\u00F6chten Sie noch weitere Details zu ihrem gew‰hlten Modus setzen, dann klicken Sie auf 'Weiter'. Andernfalls stellen sie das Setup fertig in dem Sie auf 'Cache-Nodes erzeugen' klicken.";
+	SERVER_CACHE_WIZARDINFO_DETAILS_STR	"Abschlieﬂend k\u00F6nnen Sie hier Details setzen. Stellen sie das Setup fertig in dem Sie auf 'Cache-Nodes erzeugen' klicken.";
+	
+	SOUNDINFO_DURATION_STR			"Dauer: ";
+	SOUNDINFO_RESOLUTION_STR		"Aufl\u00F6sung: ";
+	SOUNDINFO_SAMPLERATE_STR		"Samplerate: ";
+	SOUNDINFO_BITRATE_STR			"Bitrate (unkomprimiert): ";
+}

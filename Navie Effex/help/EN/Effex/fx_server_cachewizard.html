@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="objects.html">Nodes</a> : <a href="fx_server.html">Effex Scene</a></div>
+<div class="content">
+<h3>Cache Wizard</h3>
+</div>
+<div class="tabs">
+<a href="fx_server_framework.html">Framework</a>
+<a href="fx_server_global.html">Global</a>
+<a href="fx_server_bulletdynamics.html">Bullet Dynamics</a>
+<span>Cache Wizard</span>
+</div>
+<div class="content">
+<div class="subtab">Cache Wizard</div>
+<div class="data">
+<p>
+<img src="../../img/fx_server_wizard.jpg" border="0"">
+<br><br>
+Caching (saving simulation data into files on your HD) is one of the important sections repeatingly appearing on the schedule.
+<br>That's why Effex has a Cache wizard that helps with the setup to save and load caches easily. 
+<br><br>
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+Note: The settings in here do NOT cache anything themselves! It is only lending a hand defining the settings for the objects that take over the caching.
+</div>
+
+</p>
+</div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Collect all cacheable nodes</A></h4><div class="selected"><p><br>
+<img src="../../img/effex_scene_cachewizard_collect_all_cacheable_nodes.jpg" border="0"><br></br>
+Clicking this button is probably the first thing you will do. It will collect all child objects that can be cached by Effex.<br>
+The nodes list below will be filled with the according objects. If you don't want an added object to be included in the caching process
+you can now manually remove it from the list.
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Setup Cache Nodes</A></h4><div class="selected"><p><br>
+<img src="../../img/effex_scene_cachewizard_setup_cache_nodes.jpg" border="0"><br></br>
+Clicking this button is the last thing you will do. It will create, based on the collected nodes and your other Cache Wizard settings, the Caching objects
+(Particle Cacher, Grid Cacher, Mesh Cacher) that will take care of the caching (saving or loading) during simulation.
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_NODES" onclick="HideNextDOM($(this));" >Nodes</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_nodes.jpg" border="0"><br></br>
+List of objects that can be cached. Filled by clicking the Collect all cacheable nodes button.
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_RENDERONLY" onclick="HideNextDOM($(this));" >Only during rendering</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_only_during_rendering.jpg" border="0"><br></br>
+Any operations are only executed during rendering (picture viewer/NET).
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_MODE" onclick="HideNextDOM($(this));" >Cache Mode</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_cache_mode.jpg" border="0"><br></br>
+Define what caching mode you want to set up. <b>Load</b> or <b>Save</b>.
+
+
+
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_NEWSCENE" onclick="HideNextDOM($(this));" >Create Another Effex Scene</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_create_another_effex_scene.jpg" border="0"><br></br>
+<i>(Only available if Cache Mode::Load)</i>
+<br></br>
+Most of the time when you load your caches, you are finished setting up the simulation and you want to either
+check the saved cache result quickly or you load saved caches for rendering (either tests or final rendering).
+<br></br>
+As the Effex scene runs the simulation no matter what objects are in there (even if you load caches, the framework doesn't care; 
+it keeps on stepping based on the settings of the Effex Scene), optimizing the current Effex Scene with all the simulation objects
+in it, can be tedious (you would need to turn off all objects that are not needed anymore when loading cached data).
+<br></br>
+<i>Create Another Effex Scene</i> therefore allows you to set up another Effex Scene that only contains objects that are required in order to
+load the saved caches. This saves valuable time and it has another advantage: you can switch between saving and loading without further 
+hassles by simply deactivating the corresponding Effex scene object.
+<br></br>
+And of course you can extent and modify the loaded cache scene just as usual (that is the advantage of the framework not caring..).
+This for example allows to split simulation (e.g. dynamics) and render elements (surface reconstruction, meshing..) into different stages.
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_SAVE_PARTICLES" onclick="HideNextDOM($(this));" >Particle file type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_particle_file_type.jpg" border="0"><br></br>
+Defines the out-/input file type for any generated Particle cachers.<br><br>
+
+<div style="border-left: 2px; color: black; background-color: #EDE; padding: 4px;">
+The Effex format however is the only format that supports storage of multiple Particle Groups. So if you are not exchanging data with other applications
+you probably want to stick to the Effex format. It's also the fastest format and provides highest compatibility and support.
+</div>
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_SAVE_GRIDS" onclick="HideNextDOM($(this));" >Grid file type</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_grid_file_type.jpg" border="0"><br></br>
+Defines the out-/input file format for any generated Grid cachers (if they exist in the Nodes list).
+
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_PATHMODE" onclick="HideNextDOM($(this));" >Path</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_path.jpg" border="0"><br></br>
+Defines the folder mode.
+<br></br>
+<b>C4D scene file path</b><br>
+Uses the C4D scene file path. The scene must have been saved.
+<br></br>
+<b>User-defined</b><br>
+Uses the path defined by the user. See File Path
+<br></br></p></div>
+<h4><a name="" onclick="HideNextDOM($(this));" >Select destination folder</A></h4><div class="selected"><p><br>
+<img src="../../img/effex_scene_cachewizard_select_destination_folder.jpg" border="0"><br></br>
+Opens the folder selection dialog of your OS in order to let you choose a user defined in-/output path.
+The result of your choice will be displayed in the File Path field.
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_FILEPATH" onclick="HideNextDOM($(this));" >File Path</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_file_path_file_name.jpg" border="0"><br></br>
+The current user-defined in-/output path. You can manually change the path here or use Select destination folder...
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_FILENAME" onclick="HideNextDOM($(this));" >File Name</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_file_path_file_name.jpg" border="0"><br></br>
+The file name of the in-/output files WITHOUT the file type extension (suffix) and without any frame numbers.
+Effex requires a special naming convention of the file sequences to be loaded correctly:
+<br></br>
+<span style="color:rgb(145,0,0);"><i>[File Name][Frame Number encoded in 5 digits].[SUFFIX]</i></span>
+<br></br>
+No dots may be used in the file sequence names. Only the file suffix should have a dot in front of it.
+Example for a valid file sequence name (in this case frames 127 and 128 of Houdini's bgeo file format):
+<br></br>
+<b>myFilenameTest00127.bgeo<br>
+myFilenameTest00128.bgeo</b>
+etc.
+<br></br>
+This sequence could be loaded by setting 'File Name' to "myFilenameTest".
+<br></br></p></div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Cache Wizard::</span>Load</span>
+</div>
+<div class="subdata selected">
+<h4><a name="SERVER_CACHE_LOAD_FRAME_INITIALISE" onclick="HideNextDOM($(this));" >Only initialise</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_load_only_initialise.jpg" border="0"><br></br>
+Only initialise will force the cachers to only operate in the first frame. This is useful if you want to let a simulation
+start from a certain cache frame on (it loads the cached data to initialise the simulation).
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_LOAD_FRAME_REVERSE" onclick="HideNextDOM($(this));" >Reverse loading order</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_load_reverse_loading_order.jpg" border="0"><br></br>
+This will reverse the loading order of cached frames.<br>
+Instead of loading the first frame first, it will load the last frame first.
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_LOAD_FRAME" onclick="HideNextDOM($(this));" >Frame to Load</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_load_frame_to_load.jpg" border="0"><br></br>
+Controls the frame which should be loaded. If this setting is at -1, it will automatically detect the correct frame based on the current C4D frame.
+So it sequentially loads the caches. Any other value >= 0 will directly load the corresponding cache frame (so if set to 21 it will load cache frame 00021).
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_LOAD_OFFSET" onclick="HideNextDOM($(this));" >Frame Offset</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_load_frame_offset.jpg" border="0"><br></br>
+Adds an offset to the cache frame number to be loaded. 
+<br></br>
+An offset of -10 for example will let the loading only start at frame 10 (loading cache frame 0). 
+An offset of +10 will load cache frame 10 at frame 0.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Cache Wizard::</span>Save</span>
+</div>
+<div class="subdata selected">
+<h4><a name="SERVER_CACHE_SAVE_COMPRESS" onclick="HideNextDOM($(this));" >Compress if possible</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_save_compress_if_possible.jpg" border="0"><br></br>
+This will activate compression of data during cache saving. This will reduce the file sizes tremendously, however writing & loading
+will be slower (writing is already quite a slow operation in the pipeline...depending on your hard drive).
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_SAVE_FRAME" onclick="HideNextDOM($(this));" >Cache file frame number uses..</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_save_cache_file_frame_number_uses.jpg" border="0"><br></br>
+Controls which frame number to encode into the file name of the cache files.
+<br></br>
+<b>Simulation Frame</b><br>
+The simulation frame is used. This is the default setting. The first simulation frame will always be 00000.
+
+<br></br>
+<b>C4D Frame</b><br>
+The C4D frame is used. The first C4D frame does not necessarily have to be frame 0. 
+If your document timeline range starts with 61234, then the first cache frame will be named cacheFileName61234.cache.
+
+<br></br></p></div>
+<h4><a name="SERVER_CACHE_SAVE_EXCLUDE" onclick="HideNextDOM($(this));" >Include Properties</A></h4><div class="selected"><p><br></br>
+<img src="../../img/effex_scene_cachewizard_save_include_properties.jpg" border="0"><br></br>
+Particle Cachers by default store the position and velocity properties of particles (because these are always available).<br>
+If you want more properties included in the cache you can drag & drop them in here and it'll happen.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

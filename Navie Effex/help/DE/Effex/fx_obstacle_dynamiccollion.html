@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>Navi&eacute; Documentation</title><link href="../../style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+ <script type="text/javascript" src="../../jquery.min.js"></script>
+ <script type="text/javascript" src="../../tools.js"></script>
+ <script type="text/javascript" src="../../jquery.hashchange.min.js"></script>
+ <script type="text/javascript"> $( document ).ready( function() { hashchanged(); });$(function(){$(window).hashchange( function(){ hashchanged(); })});</script>
+
+</head>
+<body>
+<div id="whole">
+<div id="main">
+<span style="font-weight: 900; font-size: 4em;">NAVI&Eacute;</span><br>
+ <div class="hierarchy">
+<a href="../index.html">Documentation</a> : <a href="index.html">Effex</a> : <a href="fx_tags.html">Tags</a> : <a href="fx_obstacle.html">Obstacle</a></div>
+<div class="content">
+<h3>Dynamic Coupling</h3>
+</div>
+<div class="tabs">
+<a href="fx_obstacle_tag.html">Tag</a>
+<a href="fx_obstacle_dynamics.html">Dynamics</a>
+<a href="fx_obstacle_collision.html">Collision</a>
+<span>Dynamic Coupling</span>
+<a href="fx_obstacle_ramcache.html">RAM Cache</a>
+</div>
+<div class="content">
+<div class="subtab">Dynamic Coupling</div>
+<div class="data">
+<p>
+Rigid-Bodies support physical-based two-way coupling with fluid (Gas & Liquid dynamics) simulations.
+<br>This means that the rigid-body affects the fluid flow and the fluid flow affects the rigid-body as well!
+<br><br>
+The default values are the physically correct interaction strengths but for artistic purposes you can change these here.
+</br><br>
+</p>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Dynamic Coupling::</span>Solid-Fluid</span>
+</div>
+<div class="subdata selected">
+Control how strongly the rigid-body (solid) motion affects the fluid flow.
+<h4><a name="FXOBSTACLE_STRENGTH_TRANSLATION" onclick="HideNextDOM($(this));" >Translational Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamiccoupling_sf_fs_translationalstrength.jpg" border="0"><br></br>
+Define how strong rigid-body translations (Movements) affect the flow. 100% is the physically calculated value.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_STRENGTH_ROTATION" onclick="HideNextDOM($(this));" >Rotational Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamiccoupling_sf_fs_rotationalstrength.jpg" border="0"><br></br>
+Define how strong rigid-body rotations affect the flow. 100% is the physically calculated value.
+<br></br></p></div>
+</div>
+<div class="subdatatab">
+<span onclick="HideNextDOM($(this));"><span>Dynamic Coupling::</span>Fluid-Solid</span>
+</div>
+<div class="subdata selected">
+Control how strongly the fluid flow affects the rigid-body (solid) motion.
+<h4><a name="FXOBSTACLE_STRENGTH_TRANSLATION_FLUID" onclick="HideNextDOM($(this));" >Translational Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamiccoupling_sf_fs_translationalstrength.jpg" border="0"><br></br>
+Define how strong flow translations (Movements) affect the rigid-body solid. 100% is the physically calculated value.
+<br></br></p></div>
+<h4><a name="FXOBSTACLE_STRENGTH_ROTATION_FLUID" onclick="HideNextDOM($(this));" >Rotational Strength</A></h4><div class="selected"><p><br></br>
+<img src="../../img/tags_obstacle_dynamiccoupling_sf_fs_rotationalstrength.jpg" border="0"><br></br>
+Define how strong flow rotations affect the rigid-body solid. 100% is the physically calculated value.
+<br></br></p></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
